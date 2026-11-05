@@ -75,10 +75,22 @@ function withProductDocuments(product: Product): Product {
 /**
  * WordPress sends every field it has saved, emptied ones included, so the client can remove a text;
  * a field never saved there keeps the default copy (src/data/settings.json).
+ *
+ * The home film was saved with the old preview host (stripline.olas.co.il). The files themselves
+ * are the ones in public/video, so those links play from this site.
  */
+const PREVIEW_FILM = /^https?:\/\/stripline\.olas\.co\.il(\/video\/hero-[^?#]*)$/;
+function filmOnThisSite(url: string): string {
+  return url.match(PREVIEW_FILM)?.[1] ?? url;
+}
+
 export async function getSettings(): Promise<Settings> {
   const s = await wpGet<Partial<Settings>>("/settings", "settings", {});
-  return { ...(settingsSeed as unknown as Settings), ...s };
+  const settings = { ...(settingsSeed as unknown as Settings), ...s };
+  settings.hero_video = filmOnThisSite(settings.hero_video);
+  settings.hero_video_mobile = filmOnThisSite(settings.hero_video_mobile);
+  settings.hero_poster = filmOnThisSite(settings.hero_poster);
+  return settings;
 }
 
 export async function getFamilies(): Promise<Family[]> {
