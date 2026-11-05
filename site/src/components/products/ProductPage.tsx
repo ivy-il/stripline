@@ -22,7 +22,9 @@ export default function ProductPage({ product, family, related, s }: { product: 
   const drawings = product.drawing_images?.length ? product.drawing_images : [product.drawing_image].filter(Boolean);
   const sheet = `/products/${product.slug}/sheet?download=1`;
   const scene = product.hero_image || familyScene(family, s.default_scene);
-  const waText = encodeURIComponent(fill(s.pp_whatsapp_msg, { product: `${product.name_he} (${product.code})` }));
+  const productUrl = `https://stripline.co.il/products/${product.slug}`;
+  const waMessage = fill(s.pp_whatsapp_msg, { product: `${product.name_he} (${product.code})`, url: productUrl });
+  const waText = encodeURIComponent(waMessage.includes(productUrl) ? waMessage : `${waMessage}\n${productUrl}`);
 
   return (
     <>
