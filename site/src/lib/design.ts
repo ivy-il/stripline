@@ -16,6 +16,21 @@ export function familyTile(f: Family, products: Product[], fallback: string): st
   return f.tile || (first ? productImage(first) : fallback);
 }
 
+/**
+ * WhatsApp button: the CMS phrase plus the agent's name.
+ * A Hebrew prefix letter sticks to the next word (כתבו ל + דני → כתבו לדני).
+ * Any other ending keeps a space (דברו עם דני).
+ */
+const HEBREW_PREFIX = /[בכהלמשו]$/;
+
+export function agentButtonLabel(cta: string, name: string): string {
+  const prefix = cta.trim();
+  const who = name.trim();
+  if (!prefix) return who;
+  if (!who) return prefix;
+  return HEBREW_PREFIX.test(prefix) ? prefix + who : `${prefix} ${who}`;
+}
+
 /** Pages that open on a full-bleed photo, so the header sits on it in white. */
 export function hasPhotoHero(path: string): boolean {
   return path === "/" || /^\/(about|products|projects)(\/|$)/.test(path) && !path.endsWith("/sheet");

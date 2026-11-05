@@ -152,7 +152,11 @@ li.open>.cflip-topic .chev{transform:rotate(180deg)}
 .prod-acts{display:flex;flex-wrap:wrap;gap:10px}
 /* the WhatsApp row spans exactly the width of the three buttons above it */
 .prod-cta{display:flex;flex-direction:column;gap:18px;width:fit-content;max-width:100%}
-.prod-wa{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:10px}
+.prod-ask{display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;padding-top:28px}
+.prod-ask-copy{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.prod-ask-title{font-size:var(--fs-card);line-height:var(--lh-card);font-weight:var(--fw-med)}
+.prod-ask-sub{color:var(--muted);font-size:var(--fs-small);line-height:var(--lh-small)}
+.prod-wa{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:10px;width:100%}
 .prod-wa .btn{justify-content:center}
 .prod-draw{padding-block:var(--sp-section);border-bottom:1px solid var(--line)}
 .prod-draw-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 40px;align-items:end;margin-bottom:var(--sp-block)}

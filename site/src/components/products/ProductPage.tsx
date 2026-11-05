@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Download, PencilRuler } from "lucide-react";
 import Arrow, { WhatsAppIcon } from "@/components/design/Arrow";
 import { fill, Rich } from "@/components/design/Rich";
-import { familyScene, productImage } from "@/lib/design";
+import { agentButtonLabel, familyScene, productImage } from "@/lib/design";
 import { drawingPdf, productAccessories, productFeatures, productSizes, productUsage } from "@/lib/product-text";
 import { productLabels } from "@/lib/product-labels";
 import type { Family, Product, Settings } from "@/lib/types";
@@ -22,6 +22,8 @@ export default function ProductPage({ product, family, related, s }: { product: 
   const drawings = product.drawing_images?.length ? product.drawing_images : [product.drawing_image].filter(Boolean);
   const sheet = `/products/${product.slug}/sheet?download=1`;
   const scene = product.hero_image || familyScene(family, s.default_scene);
+  const waTitle = s.pp_wa_title.trim() || "מעוניינים במוצר הזה? יש לכם שאלה?";
+  const waSub = s.pp_wa_sub.trim() || "צוות STRIPLINE זמין לכם בוואטסאפ";
   const productUrl = `https://stripline.co.il/products/${product.slug}`;
   const waMessage = fill(s.pp_whatsapp_msg, { product: `${product.name_he} (${product.code})`, url: productUrl });
   const waText = encodeURIComponent(waMessage.includes(productUrl) ? waMessage : `${waMessage}\n${productUrl}`);
@@ -70,10 +72,16 @@ export default function ProductPage({ product, family, related, s }: { product: 
                 <ProductActions product={product} labels={productLabels(s)} />
               </div>
               {s.solutions_agents.some((a) => a.whatsapp) && (
-                <div className="prod-wa">
-                  {s.solutions_agents.filter((a) => a.whatsapp).map((a) => (
-                    <a key={a.name} className="btn sand" href={`https://wa.me/${a.whatsapp}?text=${waText}`} target="_blank" rel="noopener"><WhatsAppIcon /> {s.agent_cta} {a.name}</a>
-                  ))}
+                <div className="prod-ask">
+                  <div className="prod-ask-copy">
+                    <p className="prod-ask-title"><Rich text={waTitle} /></p>
+                    <p className="prod-ask-sub"><Rich text={waSub} wordmark={false} /></p>
+                  </div>
+                  <div className="prod-wa">
+                    {s.solutions_agents.filter((a) => a.whatsapp).map((a) => (
+                      <a key={a.name} className="btn sand" href={`https://wa.me/${a.whatsapp}?text=${waText}`} target="_blank" rel="noopener"><WhatsAppIcon /> <span>{agentButtonLabel(s.agent_cta, a.name)}</span></a>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

@@ -5,6 +5,7 @@ import SolFrame from "@/components/home/SolFrame";
 import Arrow, { WhatsAppIcon } from "@/components/design/Arrow";
 import { HeadLines, Rich, lines } from "@/components/design/Rich";
 import { albumLabels, buildAlbumSpreads } from "@/lib/album";
+import { agentButtonLabel } from "@/lib/design";
 import { getFamilies, getProducts, getSettings } from "@/lib/wp";
 
 /** Every text, image and the film on this page come from WordPress > תוכן האתר > עמוד הבית. */
@@ -79,7 +80,7 @@ export default async function HomePage() {
             {s.solutions_closing_kicker && <p className="ask">{s.solutions_closing_kicker}</p>}
             <div className="acts">
               {s.solutions_agents.map((a) => (
-                <a key={a.name} className="btn sand" href={a.whatsapp ? `https://wa.me/${a.whatsapp}` : "/contact"} target="_blank" rel="noopener"><WhatsAppIcon /> {s.agent_cta} {a.name}</a>
+                <a key={a.name} className="btn sand" href={a.whatsapp ? `https://wa.me/${a.whatsapp}` : "/contact"} target="_blank" rel="noopener"><WhatsAppIcon /> <span>{agentButtonLabel(s.agent_cta, a.name)}</span></a>
               ))}
               {s.air_link.map((l) => <Link key={l.href + l.label} className="arrow" href={l.href}>{l.label} <Arrow /></Link>)}
             </div>
