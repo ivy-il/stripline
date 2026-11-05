@@ -41,6 +41,8 @@ npm run build && npm start
 
 בלי הגדרת וורדפרס האתר רץ מנתוני ה-seed שב-`site/src/data/*.json`.
 
+**פריסה (Vercel):** הפרויקט ב-Vercel מחובר למאגר `ivy-il/stripline` עם Root Directory = `site`. כל push ל-`main` נפרס לייצור (`stripline.co.il`), וכל branch אחר מקבל כתובת Preview. משתני הסביבה (`WP_API_URL`, `REVALIDATE_SECRET`) מוגדרים ב-Vercel, לא במאגר.
+
 פריסה לאחסון משותף (DirectAdmin / cPanel, בלי קונטיינרים): ראו [DEPLOY-DIRECTADMIN.md](DEPLOY-DIRECTADMIN.md).
 `npm run pack:static` מייצר HTML סטטי לאחסון PHP רגיל, ו-`npm run pack:hosting` אורז אפליקציית Node.
 
