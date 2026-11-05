@@ -168,6 +168,8 @@ function stripline_settings_fields(): array {
         'pp_accessories' => ['product', 'כותרת "אביזרים"', 'text'],
         'pp_usage' => ['product', 'כותרת "שימוש"', 'text'],
         'pp_sheet_btn' => ['product', 'כפתור דף מוצר PDF', 'text'],
+        'pp_wa_title' => ['product', 'כפתורי וואטסאפ – כותרת מעל הכפתורים', 'text'],
+        'pp_wa_sub' => ['product', 'כפתורי וואטסאפ – שורה מתחת לכותרת', 'text'],
         'pp_whatsapp_msg' => ['product', 'הודעת הוואטסאפ המוכנה בכפתורי "דברו עם" ({product} = שם המוצר והמק"ט)', 'text'],
         'pp_drawing' => ['product', '"שרטוט טכני" (כפתור, חלון וכותרת)', 'text'],
         'pp_install' => ['product', '"הוראות התקנה" (כפתור וחלון)', 'text'],

@@ -8,20 +8,20 @@ import { Lg } from "./Arrow";
  */
 const TOKEN = /(\*\*[^*]+\*\*|\[[^\]]+\]\([^)\s]+\)|STRIPLINE)/g;
 
-export function Rich({ text }: { text?: string | null }) {
+export function Rich({ text, wordmark = true }: { text?: string | null; wordmark?: boolean }) {
   if (!text) return null;
   return (
     <>
       {text.split(TOKEN).map((part, i) => {
         if (!part) return null;
-        if (part === "STRIPLINE") return <Lg key={i} />;
-        if (part.startsWith("**") && part.endsWith("**")) return <b key={i}><Rich text={part.slice(2, -2)} /></b>;
+        if (part === "STRIPLINE") return wordmark ? <Lg key={i} /> : <Fragment key={i}>{part}</Fragment>;
+        if (part.startsWith("**") && part.endsWith("**")) return <b key={i}><Rich text={part.slice(2, -2)} wordmark={wordmark} /></b>;
         const link = /^\[([^\]]+)\]\(([^)\s]+)\)$/.exec(part);
         if (link) {
           const [, label, href] = link;
           return /^https?:\/\//.test(href)
-            ? <a key={i} href={href} target="_blank" rel="noopener"><Rich text={label} /></a>
-            : <Link key={i} href={href}><Rich text={label} /></Link>;
+            ? <a key={i} href={href} target="_blank" rel="noopener"><Rich text={label} wordmark={wordmark} /></a>
+            : <Link key={i} href={href}><Rich text={label} wordmark={wordmark} /></Link>;
         }
         return <Fragment key={i}>{part}</Fragment>;
       })}
