@@ -1,0 +1,294 @@
+/* The flip book album (AlbumBook): every open spread pairs the product's room photo with its product page.
+   Restored from the earlier site; the old palette names map onto the design's tokens. */
+.album, .album-zoom { --gold: var(--brass); --font-logo: var(--font); --book-nav-space: 38px; }
+/* Flip book ------------------------------------------------------ */
+.book-mirror {
+  transform: scaleX(-1);
+}
+.book-page-inner {
+  transform: scaleX(-1);
+  width: 100%;
+  height: 100%;
+}
+.stf__parent {
+  margin: 0 auto;
+}
+.book-page {
+  background: #fff;
+  overflow: hidden;
+}
+.book-page.--left {
+  box-shadow: inset -7px 0 30px -7px rgba(0, 0, 0, 0.25);
+}
+.book-page.--right {
+  box-shadow: inset 7px 0 30px -7px rgba(0, 0, 0, 0.25);
+}
+.book-page.hard {
+  background: var(--ink);
+}
+/* Flip book album: a landscape spread pairs an atmosphere photo with the product's page.
+ * Faces size their type from the page itself (cqw/cqh), so the same markup serves the
+ * turning book, the phone cards and any container width. */
+.album { width: 100%; margin-inline: auto; }
+.album .real-book { width: 100%; margin: 0; padding-inline: 0; }
+.album-face { position: relative; display: block; width: 100%; height: 100%; overflow: hidden; container-type: size; direction: rtl; text-align: right; }
+.album-scene { background: #2a2620; color: #fff; }
+.album-scene img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.album-scene::after { position: absolute; inset: 0; content: ''; background: linear-gradient(to top, #14110dd9, #14110d00 48%); }
+.album-scene-copy { position: absolute; z-index: 1; inset: auto 6cqw 7cqh; display: flex; flex-direction: column; gap: 1cqh; }
+.album-scene-family { color: #e3bb80; font-size: 2.5cqw; }
+.album-scene-name { font-size: 5.6cqw; font-weight: 700; line-height: 1.15; text-wrap: balance; }
+.album-product { display: flex; width: 100%; height: 100%; flex-direction: column; padding: 7cqh 8cqw 6cqh; background: #f5f2ec; color: var(--ink); font-size: 2.55cqw; }
+.album-product-top { display: flex; justify-content: space-between; padding-bottom: 3cqh; border-bottom: 1px solid #cdb17e; color: #4a453f; font-size: .78em; }
+.album-product-brand { display: inline-flex; align-items: center; }
+.album-product-brand .lg { height: .9em; }  /* the client's vector wordmark (design: .pg-top .lg) */
+.album-product-main { display: grid; flex: 1; grid-template-columns: 42% minmax(0, 1fr); align-items: center; gap: 6cqw; min-height: 0; padding-block: 4cqh; direction: ltr; }
+.album-product-image { display: grid; align-self: stretch; min-height: 0; place-items: center; overflow: hidden; border-radius: 1.6cqw; background: #e6e0d6; }
+.album-product-image img { max-width: 84%; max-height: 84%; object-fit: contain; mix-blend-mode: multiply; }
+.album-product-copy { display: flex; flex-direction: column; min-width: 0; max-height: 100%; overflow: hidden; direction: rtl; }
+.album-product-name { font-size: 1.9em; font-weight: 700; line-height: 1.15; text-wrap: balance; }
+.album-product-dash { width: 2.2em; height: 2px; flex-shrink: 0; margin-top: .8em; background: #b8894a; }
+.album-product-detail { display: -webkit-box; overflow: hidden; flex-shrink: 0; margin-top: .9em; padding-top: .9em; border-top: 1px solid #cdb17e; color: #4a453f; line-height: 1.55; -webkit-box-orient: vertical; -webkit-line-clamp: 1; }
+.album-product-code { align-self: flex-start; margin-top: .45em; color: #a77940; font-family: var(--font-logo), sans-serif; font-size: .85em; letter-spacing: .1em; }
+.album-product-desc { display: -webkit-box; flex-shrink: 0; overflow: hidden; margin-top: .9em; color: #4a453f; line-height: 1.55; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+.album-product-label { margin-top: 1em; padding-bottom: .25em; border-bottom: 1px solid #c1a36d; color: #ae8b4d; font-size: .85em; }
+.album-product-sizes { display: -webkit-box; overflow: hidden; margin-top: .4em; font-size: .9em; line-height: 1.45; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.album-product-foot { display: flex; align-items: center; justify-content: space-between; padding-top: 3cqh; border-top: 1px solid #bdb6aa; color: #4a453f; font-size: .68em; letter-spacing: .18em; }
+.album-product-zoom { display: inline-flex; align-items: center; gap: .45em; }
+.album-product-zoom svg { width: 1em; height: 1em; }
+/* The arrows sit directly under the book. */
+.album-controls { position: relative; z-index: 5; display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 14px; }
+.album-nav { display: grid; width: 40px; height: 40px; flex-shrink: 0; place-items: center; border: 1px solid #8c857a; border-radius: 50%; background: #f7f4efcc; color: #4e483f; cursor: pointer; transition: background-color .2s ease, color .2s ease; }
+.album-nav:hover:not(:disabled) { background: #29251f; color: #fff; }
+.album-nav:disabled { opacity: .3; cursor: default; }
+.album-status { display: flex; min-width: 170px; flex-direction: column; align-items: center; color: #6f6555; font-size: 12px; line-height: 1.45; }
+.album-status-name { max-width: 52vw; overflow: hidden; color: var(--ink); font-size: 14px; font-weight: 500; text-overflow: ellipsis; white-space: nowrap; }
+.album-hint { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 8px; color: #8d8478; font-size: 12px; }
+/* Phones: one spread per screen-wide card, photo above the product page, swiped sideways. */
+.album-strip { display: flex; gap: 12px; overflow-x: auto; margin-inline: -12px; padding: 4px 12px 12px; scroll-snap-type: x mandatory; overscroll-behavior-x: contain; }
+.album-card { display: flex; flex: 0 0 100%; flex-direction: column; overflow: hidden; border-radius: 10px; background: #fff; box-shadow: 0 12px 26px -14px rgba(27, 25, 23, .5); scroll-snap-align: center; }
+.album-card-scene { display: block; aspect-ratio: 4 / 3; }
+.album-card-product { display: block; aspect-ratio: 1; }
+.album-card .album-scene-family { font-size: 3.6cqw; }
+.album-card .album-scene-name { font-size: 7cqw; }
+.album-card .album-product { padding-block: 5cqw 4cqw; font-size: 3.6cqw; }
+.album-card .album-product-desc { -webkit-line-clamp: 3; }
+/* Enlarged spread */
+.album-zoom { position: fixed; inset: 0; z-index: 60; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: clamp(12px, 3vw, 40px); background: #14110de6; backdrop-filter: blur(6px); }
+.album-zoom-close { position: fixed; top: 14px; left: 14px; z-index: 2; display: grid; width: 40px; height: 40px; place-items: center; border-radius: 50%; background: #fff; color: var(--ink); cursor: pointer; }
+.album-zoom-spread { display: grid; width: min(100%, 1500px); height: min(calc(100dvh - 150px), 780px); grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); overflow: hidden; border-radius: 10px; background: #fff; box-shadow: 0 30px 60px -20px #000a; }
+.album-zoom-scene { position: relative; min-height: 0; background: #25221b; }
+.album-zoom-scene > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.album-zoom-card { position: absolute; bottom: 6%; inset-inline-start: 4%; width: min(48%, 350px); padding: 18px; border-radius: 8px; background: #12120fec; color: #f0eae0; }
+.album-zoom-card-title { display: flex; flex-direction: column; gap: 2px; color: #e3bb80; font-size: 12px; }
+.album-zoom-card-title strong { color: #fff; font-size: 19px; font-weight: 500; line-height: 1.25; }
+.album-zoom-card ul { margin-top: 10px; }
+.album-zoom-card li { display: flex; align-items: center; gap: 12px; padding-block: 10px; border-top: 1px solid #b18b4840; font-size: 13px; line-height: 1.5; }
+.album-zoom-icon { width: 22px; height: 22px; flex-shrink: 0; color: #b98532; stroke-width: 1.3; }
+.album-zoom-download { width: 100%; justify-content: center; margin-top: 8px; padding: 11px 8px; background: #ad792d; color: #fff; font-size: 14px; font-weight: 400; }
+.album-zoom-download:hover { background: #be8b3e; }
+.album-zoom-product { display: flex; min-height: 0; flex-direction: column; gap: 16px; overflow-y: auto; padding: clamp(18px, 2.4vw, 36px); }
+.album-zoom-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.album-zoom-head h2 { font-size: clamp(22px, 2.2vw, 32px); font-weight: 500; line-height: 1.15; text-wrap: balance; }
+.album-zoom-head p { margin-top: 6px; color: #ae8b4d; font-family: var(--font-logo), sans-serif; font-size: 14px; letter-spacing: .1em; text-align: right; }
+.album-zoom-head img { width: 38%; max-height: 150px; object-fit: contain; mix-blend-mode: multiply; }
+.album-zoom-group { color: #322d26; font-size: 14px; line-height: 1.6; }
+.album-zoom-group h3 { margin-bottom: 6px; padding-bottom: 4px; border-bottom: 1px solid #c1a36d; color: #ae8b4d; font-weight: 500; }
+.album-zoom-link { justify-content: center; margin-top: auto; font-size: 14px; text-align: center; }
+.album-zoom-nav { display: flex; gap: 14px; }
+.album-zoom-nav .album-nav { border-color: #fff; background: #fff; }
+@media (max-width: 767px) {
+  .album-zoom { justify-content: flex-start; overflow-y: auto; padding: 64px 12px 16px; }
+  .album-zoom-spread { height: auto; flex-shrink: 0; grid-template-columns: 1fr; overflow: visible; }
+  .album-zoom-scene { display: flex; flex-direction: column; overflow: hidden; border-radius: 10px 10px 0 0; }
+  .album-zoom-scene > img { position: static; aspect-ratio: 4 / 3; height: auto; }
+  .album-zoom-card { position: static; width: 100%; border-radius: 0; }
+  .album-zoom-product { overflow: visible; }
+  .album-zoom-nav { position: sticky; bottom: 0; flex-shrink: 0; }
+}
+/* The photographed hardcover album (book-real.webp, 1959 x 635) frames the live leaves, which sit
+ * exactly on its printed page area: x 86-1872, y 4-620. Keep the image and these insets together. */
+.album-shell { position: relative; padding: .2% 4.44% .77% 4.39%; background: url('/images/book-real.webp') center / 100% 100% no-repeat; filter: drop-shadow(0 18px 18px rgba(27, 25, 23, .32)); cursor: zoom-in; }
+.album-shell:focus-visible { outline-offset: 6px; }
+.album-leaves { position: relative; z-index: 1; background: #f5f2ec; }
+.album-leaves::after { position: absolute; inset: 0 calc(50% - 3.5%) 0; z-index: 30; content: ''; pointer-events: none; background: linear-gradient(90deg, #0000, #00000014 35%, #0000003d 50%, #00000014 65%, #0000); }
+/* Live paper: the canvas overflows the resting pages (FLAT_OVERFLOW in lib/flat-book-three.ts)
+ * so a lifted sheet is not clipped; it never takes pointer events. */
+.album-leaves-3d { aspect-ratio: 1786 / 616; background: #f5f2ec; }
+.album-canvas { position: absolute; top: -30%; left: -6%; width: 112%; height: 160%; opacity: 0; pointer-events: none; transition: opacity .3s ease; }
+.album-canvas[data-ready="true"] { opacity: 1; }
+.album-leaves-3d::after { content: none; }
+/* Phone: the designed catalogue as a portrait flip book (MobileCatalog). Its palette is scoped here. */
+.mcat { --stage: oklch(95.5% .006 85); --stage-line: oklch(86% .014 80); --ink: oklch(98.5% .004 95); --ink-foreground: oklch(21% .002 80); --ink-muted: oklch(52% .012 80); --brass: oklch(67% .062 72); }
+/* Full-bleed: the book takes the whole screen width, whatever box the section puts it in. */
+.album[data-mobile="true"] { width: 100vw; max-width: none; margin-inline: calc(50% - 50vw); }
+/* 100vw includes a classic scrollbar's width; clip that sliver instead of scrolling sideways. */
+html:has(.album[data-mobile="true"]) { overflow-x: clip; }
+/* Flip book search and table of contents. */
+.cat-tools { position: relative; z-index: 20; display: flex; gap: 10px; max-width: 640px; margin: 0 auto 14px; }
+.cat-tools-field { position: relative; }
+.cat-tools-field:first-child { flex: 1; min-width: 0; }
+.cat-search { display: flex; align-items: center; gap: 10px; height: 42px; padding-inline: 16px; border: 1px solid #d9d1c6; border-radius: 999px; background: #fff; color: var(--muted); transition: border-color .2s ease, box-shadow .2s ease; }
+.cat-search:focus-within { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(184, 137, 74, .16); }
+.cat-search input { flex: 1; min-width: 0; height: 100%; outline: none; background: transparent; color: var(--ink); font-size: 14px; }
+.cat-search input::-webkit-search-cancel-button { display: none; }
+.cat-search button { display: grid; width: 24px; height: 24px; flex-shrink: 0; place-items: center; border-radius: 50%; background: #f1ede6; color: var(--ink); cursor: pointer; }
+.cat-toc { display: inline-flex; align-items: center; gap: 8px; height: 42px; padding-inline: 16px; border: 1px solid #d9d1c6; border-radius: 999px; background: #fff; color: var(--ink); font-size: 14px; white-space: nowrap; cursor: pointer; transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+.cat-toc:hover, .cat-toc[aria-expanded="true"] { border-color: var(--ink); background: var(--ink); color: #fff; }
+.cat-panel { position: absolute; top: calc(100% + 6px); inset-inline: 0; max-height: min(70dvh, 520px); overflow-y: auto; padding: 6px; border: 1px solid #e2dbd0; border-radius: 12px; background: #fff; box-shadow: 0 18px 40px -18px rgba(27, 25, 23, .45); }
+.cat-panel-toc { inset-inline: auto 0; width: max(100%, 280px); }
+.cat-panel button { display: flex; width: 100%; align-items: baseline; gap: 10px; padding: 9px 12px; border-radius: 8px; color: var(--ink); font-size: 14px; text-align: right; cursor: pointer; }
+.cat-panel button:hover, .cat-panel button:focus-visible { background: #f5f1ea; }
+.cat-panel-title { display: flex; min-width: 0; flex-direction: column; }
+.cat-panel-title small { color: var(--muted); font-size: 12px; }
+.cat-panel-dots { flex: 1; border-bottom: 1px dotted #cfc5b7; }
+.cat-panel-page { margin-inline-start: auto; color: #a77940; font-size: 12px; white-space: nowrap; }
+.cat-panel-toc .cat-panel-page { margin-inline-start: 0; }
+.cat-panel-empty { padding: 12px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.album-status-family { color: #a77940; font-size: 11px; }
+.album[data-mobile="true"] .cat-tools { margin-bottom: 0; padding: 12px 12px 10px; background: oklch(95.5% .006 85); }
+@media (min-width: 768px) {
+  .catalog-page .album:has(.cat-tools) { width: min(100%, calc((100cqh - 150px) * 3.2)); }
+}
+/* The resting spread in HTML, over the WebGL paper: real text stays sharp; the canvas shows through for the turn. */
+.album-rest { position: absolute; inset: 0; z-index: 1; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); direction: ltr; pointer-events: none; transition: opacity .2s ease; }
+.album-rest::after { position: absolute; inset: 0 calc(50% - 3.5%); content: ''; background: linear-gradient(90deg, #0000, #00000014 35%, #0000003d 50%, #00000014 65%, #0000); }
+.album-leaves-3d[data-turning="true"] .album-rest { opacity: 0; transition: none; }
+/* Type sizes of the printed sheet, so the spread does not reflow when the canvas takes over. */
+.album-rest :is(.album-product-desc, .album-product-detail) { font-size: .925em; }
+/* Hovering the product photo reveals its PDF sheet download; keyboard focus reveals it too. */
+.album-product-image { position: relative; }
+.album-rest .album-product-image { pointer-events: auto; }
+.album-product-pdf { position: absolute; inset-inline: 0; bottom: 6%; width: max-content; margin-inline: auto; display: inline-flex; align-items: center; gap: .5em; padding: .7em 1.3em; border-radius: 999px; background: var(--ink); color: var(--bone); font-size: clamp(11px, 1.1cqw, 15px); font-weight: var(--fw-med); opacity: 0; transform: translateY(6px); transition: opacity .2s ease, transform .2s ease, background .2s; pointer-events: none; }
+.album-product-image:hover .album-product-pdf, .album-product-pdf:focus-visible { opacity: 1; transform: none; pointer-events: auto; }
+.album-product-pdf:hover { background: var(--brass); }
+/* Phones and touch screens have no hover: the book shows no PDF button there (the product page has it). */
+@media (hover: none), (max-width: 767px) { .album-product-pdf { display: none; } }
+.album-back{display:flex;justify-content:center;margin-top:18px}
+
+/* ---------- catalogue tools from the design: table of contents + go to page ---------- */
+.book-tools{display:flex;justify-content:space-between;align-items:center;gap:12px 20px;flex-wrap:wrap;margin-bottom:28px;position:relative;z-index:30;width:100%}
+.book-tools .pill{font:inherit;font-size:var(--fs-small);line-height:var(--lh-small);color:var(--ink);background:var(--paper,#F7F4EF);border:1px solid var(--line);border-radius:999px;padding:.55em 1.1em;cursor:pointer;display:inline-flex;align-items:center;gap:.6em;transition:border-color .2s,background .2s}
+.book-tools .pill:hover{border-color:var(--ink)}
+.book-tools .pill:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.toc{position:relative}
+.toc .chev{transition:transform .2s}
+.toc [aria-expanded="true"] .chev{transform:rotate(180deg)}
+.toc-list{position:absolute;inset-inline-start:0;top:calc(100% + 8px);min-width:min(300px,86vw);max-height:min(70dvh,520px);overflow-y:auto;margin:0;padding:6px 0;list-style:none;background:var(--paper,#F7F4EF);border:1px solid var(--line);border-radius:10px;box-shadow:0 18px 40px -20px rgba(24,23,22,.35);text-align:start}
+.toc-list[hidden]{display:none}
+.toc-list button{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;gap:16px;padding:.6em 1.1em;font-size:var(--fs-small);line-height:var(--lh-small);cursor:pointer}
+.toc-list button:hover,.toc-list button:focus-visible{background:var(--stone)}
+.toc-list button[aria-current="true"]{font-weight:var(--fw-med)}
+.toc-list .pn{color:var(--muted);font-variant-numeric:tabular-nums}
+.jump{display:flex;align-items:center;gap:8px;flex-wrap:wrap;position:relative}
+.jump label{font-size:var(--fs-small);line-height:var(--lh-small);color:var(--muted)}
+.jump input.pill{width:5.2em;text-align:center;cursor:text;direction:ltr}
+.jump input.pill::placeholder{color:var(--muted)}
+.jump .jump-err{position:absolute;top:calc(100% + 3px);inset-inline-start:0;white-space:nowrap;font-size:var(--fs-xs);line-height:var(--lh-xs);color:var(--err)}  /* out of flow: the controls never move */
+.jump .jump-err:empty{display:none}
+
+/* ---------- phone: one product page at a time, then family + name, then go to page ---------- */
+.album[data-mobile="true"]{width:100%;margin-inline:auto;display:flex;flex-direction:column;align-items:center;gap:16px}
+html:has(.album[data-mobile="true"]){overflow-x:visible}
+.album[data-mobile="true"] .book-tools{justify-content:center;margin-bottom:4px}
+.album[data-mobile="true"] .book-tools .toc-list{inset-inline-start:50%;transform:translateX(50%)}
+.album[data-mobile="true"] .jump{margin-top:6px;margin-bottom:8px;justify-content:center}
+.album[data-mobile="true"] .jump label{flex-basis:100%;text-align:center}
+.album[data-mobile="true"] .jump .jump-err{inset-inline-start:0;inset-inline-end:0;text-align:center}
+.album[data-mobile="true"] .book-cap{align-items:center;text-align:center;margin-top:4px}
+.album-phone{width:100%;padding:10px;background:#2A2927;border-radius:6px;box-shadow:0 40px 70px -30px rgba(24,23,22,.45),0 2px 0 #191817;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.album-phone:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.album-phone .album-face{height:auto;container-type:inline-size;box-shadow:inset -6px 0 10px -8px rgba(0,0,0,.3)}
+.album-phone .album-product{height:auto;padding:7cqi 7cqi 5cqi;font-size:max(13px,3.4cqi);background:var(--paper,#F7F4EF)}
+.album-phone .album-product-top{padding-bottom:3cqi;font-size:.8em}
+.album-phone .album-product-main{display:flex;flex-direction:column;align-items:stretch;gap:0;padding-block:5cqi 0;direction:rtl}
+.album-phone .album-product-image{aspect-ratio:1.5;border-radius:6px;align-self:stretch}
+.album-phone .album-product-image img{max-width:76%;max-height:76%}
+.album-phone .album-product-copy{max-height:none;padding-block:6cqi 5cqi}
+.album-phone .album-product-name{font-size:1.75em;font-weight:var(--fw-med)}
+.album-phone .album-product-dash{margin-top:.6em;width:2.6em}
+.album-phone .album-product-desc{-webkit-line-clamp:4;margin-top:.8em}
+.album-phone .album-product-detail{-webkit-line-clamp:2;margin-top:1.2em;padding-top:1em}
+.album-phone .album-product-foot{padding-top:3cqi}
+
+/* The resting spread shows the same printed sheet as the turn: the HTML copy above the canvas laid
+   its text out slightly differently, so the text jumped whenever a turn began and ended. Only the
+   PDF button stays from it, over the product photo. */
+.album-rest .album-face{visibility:hidden}
+.album-rest .album-product-pdf{visibility:visible}
+.album-rest::after{content:none}
+
+/* phone: the page-flip book (portrait, one product page at a time) */
+.album-phone{touch-action:pan-y;user-select:none;transition:opacity .3s}
+.album-phone .sp-page{background:var(--paper,#F7F4EF)}
+.album-phone .album-face{height:100%}
+.album-phone .album-product{height:100%}
+.album-phone .album-product-main{flex:1;min-height:0}
+.album-phone .album-product-image{flex:none}
+.album-phone .album-product-copy{flex:1;min-height:0;overflow:hidden}
+
+/* desktop: the open spread on page-flip, in the dark album cover of the design */
+.album-paper{padding:10px;background:#2A2927;border-radius:6px;box-shadow:0 40px 70px -30px rgba(24,23,22,.45),0 2px 0 #191817;transition:opacity .3s;user-select:none;outline:none}
+.album-paper:focus-visible,.album-phone:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.album-paper .sp-page{background:#f5f2ec}
+.album-paper .album-face,.album-paper .album-product{height:100%}
+.album-paper .stf__item,.album-phone .stf__item{cursor:pointer}
+
+/* page-flip stacks its pages with z-indexes in the hundreds; keep them inside the book so the header stays on top */
+.album-paper,.album-phone{position:relative;isolation:isolate}
+
+/* home catalog: the book takes the design's width (.book-row: max(1040px, 72.2vw)) */
+@media (min-width:768px){.catalog .cat2 .album{max-width:max(1040px,72.2vw)}}
+/* under the book (design .book-foot): name at the start, catalogue button at the end */
+.album-foot{margin-top:max(14px,2.4vw);direction:rtl}
+.album-foot-acts{display:flex;align-items:center;gap:10px}
+.album[data-mobile="true"] .book-cap{margin-top:16px;text-align:center;align-items:center}
+.album[data-mobile="true"]>.btn{display:flex;width:max-content;margin:24px auto 0}
+
+/* ---------- book pages at the design's sizes (STRIPLINE-site .book). The design sizes its type in
+   cqi of the whole book; a page here is half of it, so every value is doubled into cqw of the page. ---------- */
+.album-paper .sp-page{background:var(--paper)}
+.album-paper .album-product{padding:6.8cqw 7.6cqw;background:var(--paper);font-size:3.24cqw}
+.album-paper .album-product-top,.album-paper .album-product-foot{font-size:2.5cqw;font-weight:var(--fw-med);letter-spacing:.2em;color:var(--muted);line-height:var(--lh-xs)}
+.album-paper .album-product-top{padding-bottom:2.8cqw;border-bottom-color:var(--brass)}
+.album-paper .album-product-foot{padding-top:2.8cqw;border-top-color:var(--line)}
+.album-paper .album-product-brand .lg,.album-phone .album-product-brand .lg{height:.66em}
+.album-paper .album-product-main{grid-template-columns:38% minmax(0,1fr);align-items:start;gap:4.8cqw;padding-block:5.2cqw}
+.album-paper .album-product-image{align-self:start;aspect-ratio:.8;border-radius:4px;background:#E8E2D8}
+.album-paper .album-product-copy{gap:2.4cqw}
+.album-paper .album-product-name{font-size:6.2cqw;font-weight:var(--fw-med);line-height:var(--lh-card)}
+.album-paper .album-product-dash,.album-phone .album-product-dash{display:none}  /* design: no rule under the title */
+.album-paper :is(.album-product-desc,.album-product-detail),.album-rest :is(.album-product-desc,.album-product-detail){margin-top:0;font-size:3.24cqw;line-height:1.55}
+.album-paper .album-product-desc{color:#4a433c}
+.album-paper .album-product-detail{padding-top:2.4cqw;border-top-color:var(--line);color:var(--muted);-webkit-line-clamp:2}
+.album-paper .album-scene::after{background:linear-gradient(180deg,transparent 45%,rgba(18,18,17,.7))}
+.album-paper .album-scene-copy{inset:auto 0 0;padding:6.8cqw;gap:0}
+.album-paper .album-scene-family{font-size:3.4cqw;font-weight:var(--fw-med);color:#D9BE8E;line-height:var(--lh-small)}
+.album-paper .album-scene-name{font-size:6.8cqw;font-weight:var(--fw-med);line-height:var(--lh-card)}
+
+/* phone: the design's phone sizes (@media max-width:600px .book), in cqi of the page */
+.album-phone .album-product{padding:6cqi 6.5cqi;font-size:3.3cqi;background:var(--paper)}
+.album-phone .album-product-top,.album-phone .album-product-foot{font-size:2.4cqi;font-weight:var(--fw-med);letter-spacing:.2em;color:var(--muted)}
+.album-phone .album-product-top{border-bottom-color:var(--brass)}
+.album-phone .album-product-foot{border-top-color:var(--line)}
+.album-phone .album-product-name{font-size:5cqi;font-weight:var(--fw-med);line-height:var(--lh-card)}
+.album-phone :is(.album-product-desc,.album-product-detail){font-size:3.3cqi;line-height:1.55}
+.album-phone .album-product-desc{color:#4a433c}
+.album-phone .album-product-detail{border-top-color:var(--line);color:var(--muted)}
+
+/* Phone pages: the atmosphere photo on top, the product (picture beside its copy) below. */
+.album-phone .album-face{display:flex;flex-direction:column}
+.album-phone-scene{position:relative;display:block;flex:none;aspect-ratio:1.6;overflow:hidden;background:#2a2620}
+.album-phone-scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.album-phone .album-product{flex:1;min-height:0;height:auto}
+.album-phone .album-product-main{display:grid;grid-template-columns:42% minmax(0,1fr);align-items:start;gap:5cqi;padding-block:4.5cqi;direction:ltr}
+/* Every product picture in the same square frame, whatever the length of its copy. */
+.album-phone .album-product-image{aspect-ratio:1;align-self:start;min-height:0}
+.album-phone .album-product-image img{width:76%;height:76%;max-width:none;max-height:none;object-fit:contain}
+.album-phone .album-product-copy{padding-block:0;direction:rtl}
+
+/* Phone: the two decks share one cell; the forward deck is mirrored so its "next" turn runs the other way, and its pages are mirrored back. */
+.album-decks{display:grid}
+.album-decks>div{grid-area:1/1;min-width:0}
+.album-mirror{transform:scaleX(-1)}
+.album-mirror .album-face{transform:scaleX(-1)}

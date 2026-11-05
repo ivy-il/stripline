@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "./design.css";
+@import "./site.css";
+@import "./album.css";
+
+/* Tailwind colour names used by the product modals and the PDF sheet, mapped onto the design's palette. */
+@theme inline {
+  --color-cream: var(--bone);
+  --color-cream-2: var(--paper);
+  --color-paper: #ffffff;
+  --color-ink: var(--ink);
+  --color-ink-2: #3a342e;
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-gold: var(--brass);
+  --color-gold-2: #b8955f;
+  --color-gold-soft: #efe6d7;
+  --font-sans: var(--font);
+}

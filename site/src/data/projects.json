@@ -1,0 +1,176 @@
+[
+  {
+    "slug": "linear-ac",
+    "title": "מיזוג ליניארי",
+    "location": "תל אביב",
+    "year": "2024",
+    "type": "מגורים",
+    "description_he": "מטבח מינימליסטי עם חזיתות אחידות. סלוטים ליניאריים מקבילים לקווי הנגרות, וווסתי כמות אוויר לאיזון בין המטבח לסלון.",
+    "image": "/images/projects/pj-linear-ac-1.webp",
+    "gallery": [],
+    "products": [
+      "slot",
+      "vcd"
+    ]
+  },
+  {
+    "slug": "briga",
+    "title": "בריגה",
+    "location": "נתניה",
+    "year": "2023",
+    "type": "מגורים",
+    "description_he": "מסדרון כניסה עם חיפוי אבן ומחיצת עץ. התריסים הליניאריים שולבו בקו התאורה של התקרה, בגוון החיפוי.",
+    "image": "/images/projects/pj-briga-1.webp",
+    "gallery": [],
+    "products": [
+      "lbd-lbdb-lbdd",
+      "slot"
+    ]
+  },
+  {
+    "slug": "briga-ir-yamim",
+    "title": "בריגה עיר ימים",
+    "location": "נתניה",
+    "year": "2025",
+    "type": "מגורים",
+    "description_he": "דירות יוקרה עם חללים פתוחים ונוף לים. סלוטים דקים בקו התקרה ותריסים ליניאריים דקורטיביים בנגרות, בגימור לבן שמשתלב בתקרת הגבס.",
+    "image": "/images/projects/pj-briga-ir-yamim-1.webp",
+    "gallery": [
+      "/images/projects/pj-briga-ir-yamim-2.webp"
+    ],
+    "products": [
+      "slot",
+      "lbd-lbdb-lbdd"
+    ]
+  },
+  {
+    "slug": "briga-tower",
+    "title": "בריגה טאוור נתניה",
+    "location": "נתניה",
+    "year": "2024",
+    "type": "מגורים",
+    "description_he": "לובי כניסה ודירות במגדל מגורים. בלובי שולבו סלוטים ליניאריים בתקרה הכהה, ובדירות גרילי EILAT ותריסי יניקה נסתרים בחדרי השינה.",
+    "image": "/images/projects/pj-briga-tower-1.webp",
+    "gallery": [
+      "/images/projects/pj-briga-tower-2.webp"
+    ],
+    "products": [
+      "slot",
+      "eilat",
+      "sd-sdd"
+    ]
+  },
+  {
+    "slug": "tzukei-hashmura",
+    "title": "צוקי השמורה",
+    "location": "מרכז הארץ",
+    "year": "2024",
+    "type": "מגורים",
+    "description_he": "דירות עם מטבחים פתוחים וקווי נגרות ארוכים. הסלוטים ממשיכים את קו הנגרות והתאורה, ותריסי היניקה הוסתרו בחדרי הרחצה.",
+    "image": "/images/projects/pj-tzukei-hashmura-1.webp",
+    "gallery": [
+      "/images/projects/pj-tzukei-hashmura-2.webp"
+    ],
+    "products": [
+      "slot",
+      "sd-sdd"
+    ]
+  },
+  {
+    "slug": "private-house",
+    "title": "בית פרטי",
+    "location": "השרון",
+    "year": "2024",
+    "type": "מגורים",
+    "description_he": "בית פרטי עם סלון פתוח ותקרה נקייה. מפזרים אדריכליים PA בחדרים וסלוטים לאורך חלונות הוויטרינה.",
+    "image": "/images/projects/pj-private-house-1.webp",
+    "gallery": [
+      "/images/projects/pj-private-house-2.webp"
+    ],
+    "products": [
+      "slot",
+      "pa"
+    ]
+  },
+  {
+    "slug": "villa-caesarea",
+    "title": "וילה בקיסריה",
+    "location": "קיסריה",
+    "year": "2025",
+    "type": "מגורים",
+    "description_he": "סלוטים ליניאריים לאורך כל קו התקרה בסלון ובמטבח, בגימור RAL 9016, עם תריסי יניקה נסתרים בחדרי השינה. הפתרון תוכנן יחד עם האדריכל כך שקו האוויר ממשיך את קו התאורה.",
+    "image": "/images/projects/pj-villa-caesarea-1.webp",
+    "gallery": [],
+    "products": [
+      "slot",
+      "eilat",
+      "ad"
+    ]
+  },
+  {
+    "slug": "briga-blue-bay",
+    "title": "בריגה בלו ביי",
+    "location": "נתניה",
+    "year": "2025",
+    "type": "מגורים",
+    "description_he": "חדר כושר ומתקני דיירים בפרויקט מגורים. סלוטים בין רצועות התקרה ומפזרי מערבולת לפיזור מהיר בחלל עם עומס חום גבוה.",
+    "image": "/images/projects/pj-briga-blue-bay-1.webp",
+    "gallery": [],
+    "products": [
+      "slot",
+      "swr"
+    ]
+  },
+  {
+    "slug": "residential-suite",
+    "title": "סוויטת מגורים",
+    "location": "תל אביב",
+    "year": "2024",
+    "type": "מגורים",
+    "description_he": "סוויטת הורים עם קירות זכוכית ונוף עירוני. סלוט כפול בקו הווילון ודלת שירות בגימור התקרה לגישה למערכת.",
+    "image": "/images/projects/pj-residential-suite-1.webp",
+    "gallery": [],
+    "products": [
+      "slot",
+      "ad"
+    ]
+  },
+  {
+    "slug": "azrieli-negev",
+    "title": "קניון עזריאלי הנגב, באר שבע",
+    "location": "באר שבע",
+    "year": "2024",
+    "type": "מסחר",
+    "description_he": "מתחם קניות בהיקף גדול עם תקרות גבוהות וגגון זכוכית. שילוב של תעלות נחירים לטווח ארוך בחללים הפתוחים וסלוטים רציפים לאורך מעברי ההולכים, בגוון התקרה.",
+    "image": "/images/projects/pj-azrieli-negev-1.webp",
+    "gallery": [
+      "/images/projects/pj-azrieli-negev-2.webp",
+      "/images/projects/pj-azrieli-negev-3.webp"
+    ],
+    "products": [
+      "jr",
+      "slot",
+      "rcd-rcd-r-rcdh-rcd-rh"
+    ]
+  },
+  {
+    "slug": "villa-center",
+    "title": "וילה במרכז הארץ",
+    "location": "מרכז הארץ",
+    "year": "2025",
+    "type": "מגורים",
+    "description_he": "וילה בסגנון קלאסי עם תקרות מעוטרות, כרכובים ופנלים. סלוטים ליניאריים שולבו לאורך קווי הכרכוב והתקרה, כך שפתחי האוויר נעלמים בתוך הפרטים האדריכליים ולא מתחרים בנברשות ובכיפת הזכוכית.",
+    "image": "/images/projects/pj-villa-center-4.webp",
+    "gallery": [
+      "/images/projects/pj-villa-center-1.webp",
+      "/images/projects/pj-villa-center-2.webp",
+      "/images/projects/pj-villa-center-3.webp",
+      "/images/projects/pj-villa-center-5.webp"
+    ],
+    "products": [
+      "slot",
+      "pa",
+      "ad"
+    ]
+  }
+]

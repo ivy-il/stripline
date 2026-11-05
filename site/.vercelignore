@@ -1,0 +1,8 @@
+.next
+.next-*
+node_modules
+.env*.local
+tsconfig.tsbuildinfo
+out
+dist-static
+dist-hosting

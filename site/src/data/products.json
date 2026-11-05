@@ -1,0 +1,4550 @@
+[
+ {
+  "slug": "dd-dd1",
+  "code": "DD, DD1",
+  "codes": [
+   "DD",
+   "DD1"
+  ],
+  "name": "Double deflection grille",
+  "name_he": "תריס אספקה דו-כיווני",
+  "subtitle_he": "תריס אספקה דו-כיווני",
+  "family": "grilles",
+  "short_he": "תריס אלומיניום עם להבים מתכווננים בשורה אחת (DD1) או בשתי שורות (DD) לכיוון זרימת האוויר.",
+  "description_he": "תריס אלומיניום עם להבים מתכווננים בשורה אחת (DD1) או בשתי שורות (DD) לכיוון זרימת האוויר.",
+  "description_en": "Aluminium ventilation grille equipped with individually Extruded aluminum material, electrostatic field painted adjustable blades that allow air flow direction. This can be white RAL 9016. provided with two rows of adjustable blades - called Other RAL colors available on request. double deflection grille DD or a single row of adjustable Natural anodised aluminum. blades - called DD1.",
+  "application_en": "Supply/ exhaust of the air flow",
+  "characteristics_en": [
+   "The front row blades are mounted perpendicular to the length \"L\".",
+   "The grille is provided with mounting holes (standard).",
+   "A masked settlement frame CC can be provided (optional)",
+   "The mounting of the grille into the settlement frame is carried out using a clip mechanism to ease the mounting/ DD1 removal process.",
+   "Specially designed for paneled ceiling insertion (600 x 600 mm), the 595 x 595 mm (exterior) grille is provided without mounting holes.",
+   "The air flow can be adjusted by mounting an air control damper OBD on the grille inlet.",
+   "The grilles with length more than 500 mm are provided with intermediate shaft for reinforcement."
+  ],
+  "accessories_en": [
+   "Settlement frame made of galvanized sheet metal CC Air control damper with opposable blades OBD Insulated/Non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [],
+  "assembly_en": [
+   "Visible mounting holes on grille frame (standard).",
+   "Settlement frame (optional)"
+  ],
+  "catalog_pages": [
+   3,
+   4
+  ],
+  "image": "/products/photos/dd-dd1.png",
+  "hero_image": "/products/backgrounds/dd-dd1-v1.webp",
+  "drawing_image": "/products/drawings/dd-dd1.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "שיטת התקנה",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "אפשרות לחיבור נסתר באמצעות מסגרת התקנה CC וקליפסים, לפי הדגם וההזמנה.",
+     "גרסת 595 × 595 מ״מ לתקרת אריחים מסופקת ללא חורי התקנה."
+    ]
+   },
+   {
+    "title": "כיוון האוויר",
+    "items": [
+     "להבי השורה הקדמית מתכווננים בנפרד; DD כולל שתי שורות ו-DD1 שורה אחת.",
+     "דמפר OBD, אם הוזמן, מתחבר בכניסת הגריל."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/dd-dd1.dwg",
+  "pdf_url": "/pdf/original/dd-dd1.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/dd-dd1-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/dd-dd1.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 3-4",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/dd-dd1.pdf",
+  "installation_drawing_image": "/products/drawings/dd-dd1-installation.png"
+ },
+ {
+  "slug": "egg-eggd",
+  "code": "EGG, EGGD",
+  "codes": [
+   "EGG",
+   "EGGD"
+  ],
+  "name": "Perforated grille",
+  "name_he": "תריס מחורר",
+  "subtitle_he": "תריס מחורר",
+  "family": "grilles",
+  "short_he": "תריס אלומיניום מחורר (EGG) עם אפשרות לדמפר ויסות (EGGD), ליניקה ולאספקה.",
+  "description_he": "תריס אלומיניום מחורר (EGG) עם אפשרות לדמפר ויסות (EGGD), ליניקה ולאספקה.",
+  "description_en": "Rectangular ventilation grille with grid that allows the evacua- tion of high air flow rates with minimum pressure loss EGG/EGGD.",
+  "application_en": "Exhaust and recirculation of the air flow.",
+  "characteristics_en": [
+   "The grid measures 12.5 x 12.5mm, at 0 or 45 degrees.",
+   "Grille is provided with countersunk holes for mounting (standard) EGG/EGGD.",
+   "Specifically designed for integration into the ceiling box dimensions 600 x 600 mm, the 595 x 595 mm grille (external mesurement) is provided without mounting holes.",
+   "Optionally for EGG, a settlement frame can be used for concealed mounting and mounting holes on inlet connection for EGGD.",
+   "The grille is mounted into the settlement frame using a clip mechanism, allowing fast detachment/installation.",
+   "EGGD is opened via a click type system (open/close by pressing).",
+   "Optionally, an air filter FIL can be mounted on the inlet connection of the grille."
+  ],
+  "accessories_en": [
+   "Air filter FIL",
+   "Air control damper with opposable blades OBD Settlement frame made of galvanized metal sheet CC Insulated/Non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [
+   "Aluminum material, electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request.",
+   "Natural anodised aluminum."
+  ],
+  "assembly_en": [
+   "Mounting screws (standard)",
+   "Settlement frame (optional) EGG.",
+   "For EGGD, with screws on the inlet connection of the grille (optional)."
+  ],
+  "catalog_pages": [
+   5,
+   6
+  ],
+  "image": "/products/photos/egg-eggd.png",
+  "hero_image": "/products/backgrounds/egg-eggd-v1.webp",
+  "drawing_image": "/products/drawings/egg-eggd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "שיטת התקנה",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "EGG: אפשרות לחיבור נסתר למסגרת CC.",
+     "EGGD: אפשרות לקיבוע בחורי החיבור שבכניסת הגריל.",
+     "גרסת 595 × 595 מ״מ לתקרת אריחים מסופקת ללא חורים."
+    ]
+   },
+   {
+    "title": "גישה למסנן",
+    "items": [
+     "בדגם EGGD דלת הגישה נפתחת ונסגרת בלחיצה.",
+     "מסנן FIL, אם הוזמן, ממוקם בכניסת הגריל."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/egg-eggd.dwg",
+  "pdf_url": "/pdf/original/egg-eggd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/egg-eggd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/egg-eggd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 5-6",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/egg-eggd.pdf",
+  "installation_drawing_image": "/products/drawings/egg-eggd-installation.png"
+ },
+ {
+  "slug": "eilat",
+  "code": "EILAT",
+  "codes": [
+   "EILAT"
+  ],
+  "name": "EILAT grille",
+  "name_he": "גריל אילת",
+  "subtitle_he": "גריל אילת",
+  "family": "grilles",
+  "short_he": "גריל ליניארי עם שתי שורות להבים מתכוונים לאספקת אוויר / פליטת אוויר. עיצוב נקי, משתלב באופן מושלם בכל חלל.",
+  "description_he": "גריל ליניארי עם שתי שורות להבים מתכוונים לאספקת אוויר / פליטת אוויר. עיצוב נקי, משתלב באופן מושלם בכל חלל.",
+  "description_en": "Rectangular ventilation grille with two rows of adjustable blades and operating lever.",
+  "application_en": "Supply/ exhaust of the air flow",
+  "characteristics_en": [
+   "The front row blades are mounted perpendicular to the length \"L\" and are individually adjustable.",
+   "Additional blades are mounted perpendicular to the \"H\" (high) and allow adjustment of air flow through the operating lever.",
+   "The action lever operates on a maximum length of 500 mm. For larger dimensions, additional operating lever will be mounted.",
+   "The grille is provided with mounting holes (standard)."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Extruded aluminum material, electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [
+   "Standard mounting, with screws."
+  ],
+  "catalog_pages": [
+   7,
+   8
+  ],
+  "image": "/products/photos/eilat.png",
+  "hero_image": "/products/backgrounds/eilat-v1.webp",
+  "drawing_image": "/products/drawings/eilat.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "שיטת התקנה",
+    "items": [
+     "מיועד להתקנה בקיר או בתקרה.",
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת."
+    ]
+   },
+   {
+    "title": "מידות חיבור",
+    "items": [
+     "מידת החיבור: L × H, לפי טבלת הבחירה.",
+     "מידה חיצונית: (L + 55.4) × (H + 55.4) מ״מ.",
+     "עומק הגריל: 40 מ״מ."
+    ]
+   },
+   {
+    "title": "אביזרים",
+    "items": [
+     "חיבור לתעלת האוויר באמצעות מתאם ADP מתאים, בהתאם להזמנה."
+    ]
+   },
+   {
+    "title": "כיוון האוויר",
+    "items": [
+     "להבי השורה הקדמית מתכווננים בנפרד.",
+     "השורה הנוספת מתכווננת בידית; מעל אורך 500 מ״מ נוספות ידיות."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/eilat.dwg",
+  "pdf_url": "/pdf/original/eilat.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/eilat-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/eilat.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 7-8",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/eilat.pdf",
+  "installation_drawing_image": "/products/drawings/eilat-installation.png"
+ },
+ {
+  "slug": "nrd-nrdd",
+  "code": "NRD, NRDD",
+  "codes": [
+   "NRD",
+   "NRDD"
+  ],
+  "name": "Gravitational grille",
+  "name_he": "תריס גרביטציוני",
+  "subtitle_he": "תריס גרביטציוני",
+  "family": "grilles",
+  "short_he": "תריס עם להבים נופלים הנפתחים בלחץ האוויר ונסגרים בהיעדרו.",
+  "description_he": "תריס עם להבים נופלים הנפתחים בלחץ האוויר ונסגרים בהיעדרו.",
+  "description_en": "Rectangular aluminum grille for air overpressure with NRD mobile blades (normally closed) .",
+  "application_en": "Exhaust/ supply of the airflow",
+  "characteristics_en": [
+   "The standard grille is produced for air flow exhaust NRD/NRDD",
+   "Upon request, if the grid is used for introduction of air, the blades will be placed in reverse.",
+   "Plastic bearing sections to avoid friction.",
+   "Sealing gasket.",
+   "Central reinforcement for lengths over 500 mm.",
+   "Provided with mounting holes."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Anodised frame with natural aluminum blades Plastic bearing sections"
+  ],
+  "assembly_en": [
+   "Countersinking holes on the visible frame of the grille (standard) NRD"
+  ],
+  "catalog_pages": [
+   9,
+   10
+  ],
+  "image": "/products/photos/nrd-nrdd.png",
+  "hero_image": "/products/backgrounds/nrd-nrdd-v1.webp",
+  "drawing_image": "/products/drawings/nrd-nrdd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "שיטת התקנה",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "הגרסה הסטנדרטית מיועדת לפליטת אוויר, עם להבים סגורים במצב מנוחה.",
+     "לשימוש בכניסת אוויר יש להזמין מהספק גרסה עם להבים הפוכים."
+    ]
+   },
+   {
+    "title": "מבנה",
+    "items": [
+     "המסגרת כוללת אטם והלהבים נעים על מיסבי פלסטיק.",
+     "מעל אורך 500 מ״מ משולב חיזוק ביניים."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/nrd-nrdd.dwg",
+  "pdf_url": "/pdf/original/nrd-nrdd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/nrd-nrdd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/nrd-nrdd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 9-10",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/nrd-nrdd.pdf",
+  "installation_drawing_image": "/products/drawings/nrd-nrdd-installation.png"
+ },
+ {
+  "slug": "lbdf",
+  "code": "LBDF",
+  "codes": [
+   "LBDF"
+  ],
+  "name": "Floor linear diffuser",
+  "name_he": "מפזר ליניארי לרצפה",
+  "subtitle_he": "מפזר ליניארי לרצפה",
+  "family": "grilles",
+  "short_he": "מפזר ליניארי דריך להתקנה ברצפה או באדן חלון, מאלומיניום מחוזק.",
+  "description_he": "מפזר ליניארי דריך להתקנה ברצפה או באדן חלון, מאלומיניום מחוזק.",
+  "description_en": "Rectangular aluminum grille for floor mounting",
+  "application_en": "Various air supply/ exhaust systems (eg. floor convector).",
+  "characteristics_en": [
+   "15 degree shaped blades perpendicular to the length \"L\" of the grille",
+   "The grille consists of an outdoor frame and a removable inner rolling core.",
+   "Removable core allows easy installation and easy cleaning."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Extruded aluminum with natural anodised finishing"
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   11,
+   12
+  ],
+  "image": "/products/photos/lbdf.png",
+  "hero_image": "/products/backgrounds/lbdf-v1.webp",
+  "drawing_image": "/products/drawings/lbdf.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "מיקום ההתקנה",
+    "items": [
+     "גריל רצפתי עם מסגרת חיצונית וליבה פנימית נשלפת ומתגלגלת.",
+     "הליבה הנשלפת מאפשרת גישה להתקנה ולניקוי.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   },
+   {
+    "title": "מבנה",
+    "items": [
+     "הלהבים בזווית 15° ומאונכים למידת האורך L."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/lbdf.dwg",
+  "pdf_url": "/pdf/original/lbdf.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/lbdf-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/lbdf.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 11-12",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/lbdf.pdf",
+  "installation_drawing_image": "/products/drawings/lbdf-installation.png"
+ },
+ {
+  "slug": "sd-sdd",
+  "code": "SD, SDD",
+  "codes": [
+   "SD",
+   "SDD"
+  ],
+  "name": "Aspiration grille",
+  "name_he": "תריס יניקה",
+  "subtitle_he": "תריס יניקה",
+  "family": "grilles",
+  "short_he": "תריס יניקה עם להבים קבועים בזווית 45° (SD) ועם דמפר ויסות (SDD).",
+  "description_he": "תריס יניקה עם להבים קבועים בזווית 45° (SD) ועם דמפר ויסות (SDD).",
+  "description_en": "",
+  "application_en": "Exhaust/recirculation of the air.",
+  "characteristics_en": [
+   "The grille is provided with fixed blades and countersinking holes for mounting, except size 595 x 595 mm (paneled ceiling).",
+   "Optionally, can be used a settlement frame for concealed"
+  ],
+  "accessories_en": [
+   "Air filter FIL",
+   "Air control damper with opposable blades OBD.",
+   "Settlement frame CC made of galvanized steel sheet.",
+   "Insulated/Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Extruded aluminum electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request.",
+   "Natural anodised aluminum."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   13,
+   15
+  ],
+  "image": "/products/photos/sd-sdd.png",
+  "hero_image": "/products/backgrounds/sd-sdd-v1.webp",
+  "drawing_image": "/products/drawings/sd-sdd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "שיטת התקנה",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "גרסת 595 × 595 מ״מ לתקרת אריחים מסופקת ללא חורים.",
+     "SD: אפשרות למסגרת CC לחיבור נסתר.",
+     "SDD: אפשרות לברגים בחיבור הכניסה או למסגרת CC."
+    ]
+   },
+   {
+    "title": "גישה וכיוון אוויר",
+    "items": [
+     "דלת הגישה בדגם SDD נפתחת ונסגרת בלחיצה.",
+     "מסנן FIL ודמפר OBD, אם הוזמנו, ממוקמים בכניסת הגריל."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/sd-sdd.dwg",
+  "pdf_url": "/pdf/original/sd-sdd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/sd-sdd-1.png",
+   "/products/drawings/sd-sdd-2.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/sd-sdd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 13-15",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/sd-sdd.pdf",
+  "installation_drawing_image": "/products/drawings/sd-sdd-installation.png"
+ },
+ {
+  "slug": "sd-dd",
+  "code": "SD-DD",
+  "codes": [
+   "SD-DD"
+  ],
+  "name": "Combined grille SD-DD",
+  "name_he": "תריס משולב אספקה ויניקה",
+  "subtitle_he": "תריס משולב אספקה ויניקה",
+  "family": "grilles",
+  "short_he": "תריס משולב: חלק אספקה עם להבים מתכווננים וחלק יניקה בגוף אחד.",
+  "description_he": "תריס משולב: חלק אספקה עם להבים מתכווננים וחלק יניקה בגוף אחד.",
+  "description_en": "Aluminum rectangular grill that consists in simple deflec- tion grille SD combined with a double deflection grille DD",
+  "application_en": "Supply/ exhaust of the airflow",
+  "characteristics_en": [
+   "The DD grille blades are individually adjustable and allow airflow direction and the SD grille blades are fixed.",
+   "Grille is provided with countersunk holes for mounting.",
+   "A settlement frame CC is recommended for concealed"
+  ],
+  "accessories_en": [
+   "Air control damper with opposable blades OBD Settlement frame made of galvanized metal sheet CC Insulated/Non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [
+   "Extruded aluminum material, electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [
+   "Screws for mounting (standard)",
+   "Settlement frame for mounting (optional)"
+  ],
+  "catalog_pages": [
+   16,
+   16
+  ],
+  "image": "/products/photos/sd-dd.png",
+  "hero_image": "/products/backgrounds/sd-dd-v1.webp",
+  "drawing_image": "/products/drawings/sd-dd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "שיטת התקנה",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "אפשרות למסגרת CC כאשר להבי SD מאונכים למידת L."
+    ]
+   },
+   {
+    "title": "כיוון האוויר",
+    "items": [
+     "להבי DD מתכווננים בנפרד.",
+     "דמפר OBD, אם הוזמן, מחובר בכניסת הגריל."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/sd-dd.dwg",
+  "pdf_url": "/pdf/original/sd-dd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/sd-dd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/sd-dd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמוד 16",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/sd-dd.pdf",
+  "installation_drawing_image": "/products/drawings/sd-dd-installation.png"
+ },
+ {
+  "slug": "tg-tgs",
+  "code": "TG, TGS",
+  "codes": [
+   "TG",
+   "TGS"
+  ],
+  "name": "Transfer grille",
+  "name_he": "תריס מעבר",
+  "subtitle_he": "תריס מעבר",
+  "family": "grilles",
+  "short_he": "תריס מעבר אוויר בין חללים עם להבי V למניעת קו ראייה.",
+  "description_he": "תריס מעבר אוויר בין חללים עם להבי V למניעת קו ראייה.",
+  "description_en": "Aluminum transfer grille for door mounting TG/TGS.",
+  "application_en": "Designed to allow air transfer and pressure equalization between rooms",
+  "characteristics_en": [
+   "Grid transfer is provided with \"V\"-shaped blades with no opposite visibility.",
+   "TG is used for doors with thickness of 40-50 mm, and TGS for doors with thickness of 20 mm.",
+   "The standard version of this product is provided with mounting holes."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Extruded aluminum, electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request.",
+   "Natural anodised aluminum."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   17,
+   18
+  ],
+  "image": "/products/photos/tg-tgs.png",
+  "hero_image": "/products/backgrounds/tg-tgs-v1.webp",
+  "drawing_image": "/products/drawings/tg-tgs.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה בדלת",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "דגם TG מיועד לדלת בעובי 40-50 מ״מ.",
+     "דגם TGS מיועד לדלת בעובי 20 מ״מ."
+    ]
+   },
+   {
+    "title": "מבנה",
+    "items": [
+     "להבי V מונעים קו ראייה ישיר דרך פתח האוורור."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/tg-tgs.dwg",
+  "pdf_url": "/pdf/original/tg-tgs.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/tg-tgs-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/tg-tgs.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 17-18",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/tg-tgs.pdf",
+  "installation_drawing_image": "/products/drawings/tg-tgs-installation.png"
+ },
+ {
+  "slug": "wpl-wpls",
+  "code": "WPL, WPLS",
+  "codes": [
+   "WPL",
+   "WPLS"
+  ],
+  "name": "Exterior grille",
+  "name_he": "תריס חוץ",
+  "subtitle_he": "תריס חוץ",
+  "family": "grilles",
+  "short_he": "תריס חוץ נגד גשם עם להבים קבועים ורשת ציפורים.",
+  "description_he": "תריס חוץ נגד גשם עם להבים קבועים ורשת ציפורים.",
+  "description_en": "Weatherproof rectangular aluminum ventilation grille, providing protection against ingress of rain, snow, leaves, birds and insects.",
+  "application_en": "Supply/ exhaust of the airflow",
+  "characteristics_en": [
+   "The grille is provided with weatherproof blades, galvanized steel wire mesh and mounting holes for fixing.",
+   "Wire mesh used for WPL grille is 10 x 10 mm and 6.3 mm x 6.3 mm for WPLS",
+   "Available sizes:",
+   "WPL any size from 800 x 800 mm to 2000 x 2000 mm.",
+   "WPLS any size from 100 x 100 mm to 800 x 800 mm.",
+   "Modular execution for large dimensions"
+  ],
+  "accessories_en": [
+   "Air filter FIL",
+   "Insulated/Non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [
+   "Extruded aluminum, electrostatic field painted white RAL 9016",
+   "Other RAL colors available on request Natural anodised aluminum."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   19,
+   21
+  ],
+  "image": "/products/photos/wpl-wpls.png",
+  "hero_image": "/products/backgrounds/wpl-wpls-v1.webp",
+  "drawing_image": "/products/drawings/wpl-wpls.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "תריס מזג אוויר להתקנה בפתח חיצוני."
+    ]
+   },
+   {
+    "title": "התאמת דגם",
+    "items": [
+     "WPL: מידות 800-2000 מ״מ; WPLS: מידות 100-800 מ״מ, לפי טבלת הספק.",
+     "רשת WPL במרווח 10 × 10 מ״מ; WPLS במרווח 6.3 × 6.3 מ״מ.",
+     "במידות גדולות ניתן להזמין מבנה מודולרי."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/wpl-wpls.dwg",
+  "pdf_url": "/pdf/original/wpl-wpls.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/wpl-wpls-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/wpl-wpls.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 19-21",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/wpl-wpls.pdf",
+  "installation_drawing_image": "/products/drawings/wpl-wpls-installation.png"
+ },
+ {
+  "slug": "wplh",
+  "code": "WPLH",
+  "codes": [
+   "WPLH"
+  ],
+  "name": "Exterior grille with mobile blades",
+  "name_he": "תריס חוץ עם להבים ניידים",
+  "subtitle_he": "תריס חוץ עם להבים ניידים",
+  "family": "grilles",
+  "short_he": "תריס חוץ עם להבים מתכווננים לוויסות פתח יניקה או פליטה.",
+  "description_he": "תריס חוץ עם להבים מתכווננים לוויסות פתח יניקה או פליטה.",
+  "description_en": "Weatherproof rectangular aluminum grille with drive system/ control for the blades. Ensures protection against intrusion of rain, snow, leaves and birds.",
+  "application_en": "Supply/ exhaust of the airflow",
+  "characteristics_en": [
+   "The grille is equipped with weatherproof blades, drive system for adjustment/ locking of the blades, wire mesh and countersinking holes for fixing.",
+   "The drive allows adjustment and locking of the blades in the desired position by operating the control lever.",
+   "Galvanized steel wire mesh with grids of 10 x 10 mm."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Natural anodised aluminum",
+   "Assembly Method",
+   "Standard mounting, with screws."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   22,
+   22
+  ],
+  "image": "/products/photos/wplh.png",
+  "hero_image": "/products/backgrounds/wplh-v1.webp",
+  "drawing_image": "/products/drawings/wplh.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "התריס כולל רשת במרווח 10 × 10 מ״מ."
+    ]
+   },
+   {
+    "title": "כיוון הלהבים",
+    "items": [
+     "כיוון ונעילת הלהבים באמצעות ידית ההפעלה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/wplh.dwg",
+  "pdf_url": "/pdf/original/wplh.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/wplh-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/wplh.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמוד 22",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/wplh.pdf",
+  "installation_drawing_image": "/products/drawings/wplh-installation.png"
+ },
+ {
+  "slug": "wplsr-wplr",
+  "code": "WPLSR, WPLR",
+  "codes": [
+   "WPLSR",
+   "WPLR"
+  ],
+  "name": "Circular exterior grille",
+  "name_he": "תריס חוץ עגול",
+  "subtitle_he": "תריס חוץ עגול",
+  "family": "grilles",
+  "short_he": "תריס חוץ עגול לחיבור ישיר לתעלה עגולה, עם רשת.",
+  "description_he": "תריס חוץ עגול לחיבור ישיר לתעלה עגולה, עם רשת.",
+  "description_en": "Weatherproof circular aluminum grille. Ensures protection against intrusion of rain, snow, leaves, birds and insects. WPLSR",
+  "application_en": "Supply/exhaust of the airflow",
+  "characteristics_en": [
+   "The grille is equipped with weatherproof blades, wire mesh and countersinking holes for fixing.",
+   "The wire mesh is available in multiple sizes (grid: 1.5 x1.5, WPLR 6.3 x 6.3 and 10 x 10 mm)."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Extruded aluminum electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request.",
+   "Assembly Method",
+   "Standard mounting, with screws."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   23,
+   24
+  ],
+  "image": "/products/photos/wplsr-wplr.png",
+  "hero_image": "/products/backgrounds/wplsr-wplr-v1.webp",
+  "drawing_image": "/products/drawings/wplsr-wplr.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "תריס עגול לפתח אוורור חיצוני."
+    ]
+   },
+   {
+    "title": "התאמת רשת",
+    "items": [
+     "רשת במרווח 1.5, 6.3 או 10 מ״מ בהתאם לדגם ולהזמנה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/wplsr-wplr.dwg",
+  "pdf_url": "/pdf/original/wplsr-wplr.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/wplsr-wplr-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/wplsr-wplr.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 23-24",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/wplsr-wplr.pdf",
+  "installation_drawing_image": "/products/drawings/wplsr-wplr-installation.png"
+ },
+ {
+  "slug": "rdd-rdd-1",
+  "code": "RDD, RDD-1",
+  "codes": [
+   "RDD",
+   "RDD-1"
+  ],
+  "name": "Ventilation grille for circular air ducts",
+  "name_he": "תריס לתעלה עגולה",
+  "subtitle_he": "תריס לתעלה עגולה",
+  "family": "grilles",
+  "short_he": "תריס אספקה מעוגל להתקנה ישירה על תעלה עגולה, להבים מתכווננים.",
+  "description_he": "תריס אספקה מעוגל להתקנה ישירה על תעלה עגולה, להבים מתכווננים.",
+  "description_en": "Rectangular aluminum grille for mounting on circular air ducts.",
+  "application_en": "Supply/ exhaust of the air flow.",
+  "characteristics_en": [
+   "The grille is equipped with individually adjustable blades and countersinking holes for mounting.",
+   "Movable blades allow airflow direction in desired areas.",
+   "RDD has two rows of adjustable blades and RDD1 has a single row of blades.",
+   "Grids over 500 mm in length are provided with intermediate reinforcement rods.",
+   "The air flow can be adjusted by mounting a air control damper OBD on the grille's inlet."
+  ],
+  "accessories_en": [
+   "Air control damper with opposable blades OBD."
+  ],
+  "materials_en": [
+   "Extruded aluminum electrostatic field painted white RAL 9016",
+   "Other RAL colors available on request"
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   25,
+   26
+  ],
+  "image": "/products/photos/rdd-rdd-1.png",
+  "hero_image": "/products/backgrounds/rdd-rdd-1-v1.webp",
+  "drawing_image": "/products/drawings/rdd-rdd-1.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "חיבור לתעלה עגולה",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "יש לבחור גריל המתאים לקוטר התעלה, לפי שרטוט וטבלת הספק."
+    ]
+   },
+   {
+    "title": "כיוון האוויר",
+    "items": [
+     "RDD כולל שתי שורות להבים; RDD-1 שורה אחת.",
+     "הלהבים מתכווננים בנפרד.",
+     "אפשרות לדמפר OBD בכניסת הגריל."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/rdd-rdd-1.dwg",
+  "pdf_url": "/pdf/original/rdd-rdd-1.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/rdd-rdd-1-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/rdd-rdd-1.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 25-26",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/rdd-rdd-1.pdf",
+  "installation_drawing_image": "/products/drawings/rdd-rdd-1-installation.png"
+ },
+ {
+  "slug": "rdr-rdr1",
+  "code": "RDR, RDR1",
+  "codes": [
+   "RDR",
+   "RDR1"
+  ],
+  "name": "Ventilation grille for circular air ducts",
+  "name_he": "תריס מעוגל לתעלה עגולה",
+  "subtitle_he": "תריס מעוגל לתעלה עגולה",
+  "family": "grilles",
+  "short_he": "תריס מחורר מעוגל להתקנה על תעלות עגולות חשופות.",
+  "description_he": "תריס מחורר מעוגל להתקנה על תעלות עגולות חשופות.",
+  "description_en": "Rectangular aluminum grille for mounting on circular RDR air ducts.",
+  "application_en": "Supply/ exhaust of the air flow.",
+  "characteristics_en": [
+   "The grille is equipped with individually adjustable blades and countersinking holes for mounting.",
+   "Movable blades allow airflow direction in desired areas.",
+   "RDR has two rows of adjustable blades and RDR1 has a single row of blades.",
+   "Grids over 500 mm in length are provided with intermediate reinforcement rods.",
+   "The air flow can be adjusted by mounting a air control damper OBD on the grille's inlet."
+  ],
+  "accessories_en": [
+   "Air control damper with opposable blades OBD."
+  ],
+  "materials_en": [
+   "Extruded aluminum electrostatic field painted white RAL 9016",
+   "Other RAL colors available on request ."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   27,
+   28
+  ],
+  "image": "/products/photos/rdr-rdr1.png",
+  "hero_image": "/products/backgrounds/rdr-rdr1-v1.webp",
+  "drawing_image": "/products/drawings/rdr-rdr1.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "חיבור לתעלה עגולה",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "מידת הגריל וקוטר התעלה נבחרים יחד לפי טבלת הספק."
+    ]
+   },
+   {
+    "title": "כיוון האוויר",
+    "items": [
+     "RDR כולל שתי שורות להבים; RDR1 שורה אחת.",
+     "הלהבים מתכווננים בנפרד; אפשרות לדמפר OBD בכניסה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/rdr-rdr1.dwg",
+  "pdf_url": "/pdf/original/rdr-rdr1.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/rdr-rdr1-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/rdr-rdr1.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 27-28",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/rdr-rdr1.pdf",
+  "installation_drawing_image": "/products/drawings/rdr-rdr1-installation.png"
+ },
+ {
+  "slug": "d-ss1-d-ss2",
+  "code": "D-SS1, D-SS2",
+  "codes": [
+   "D-SS1",
+   "D-SS2"
+  ],
+  "name": "Decorative grille",
+  "name_he": "תריס דקורטיבי",
+  "subtitle_he": "תריס דקורטיבי",
+  "family": "decorative-grilles",
+  "short_he": "תריס דקורטיבי עם להבים קבועים בפרופיל דק, לאספקה ויניקה.",
+  "description_he": "תריס דקורטיבי עם להבים קבועים בפרופיל דק, לאספקה ויניקה.",
+  "description_en": "Supply/exhaust aluminum grille with fixed blades in 1 or 2 directions D-SS1/ D-SS2.",
+  "application_en": "Supply/ exhaust of the air flow",
+  "characteristics_en": [
+   "Fixed blades in 1 or 2 directions mounted parallel to length \"L\"",
+   "The grille is provided with mounting holes (standard).",
+   "The air flow can be adjusted by mounting an air control damper OBD on the grille inlet."
+  ],
+  "accessories_en": [
+   "Settlement frame made of galvanized sheet metal CC Attachment spring A",
+   "Air control damper with opposable blades OBD Air filter FIL",
+   "Insulated/Non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [
+   "Extruded aluminum material, electrostatic field painted Assembly Methods white RAL 9016",
+   "Other RAL colors available on request Natural anodised aluminum"
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   29,
+   31
+  ],
+  "image": "/products/photos/d-ss1-d-ss2.png",
+  "hero_image": "/products/backgrounds/d-ss1-d-ss2-v1.webp",
+  "drawing_image": "/products/drawings/d-ss1-d-ss2.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "אפשרות לחיבור נסתר באמצעות מסגרת התקנה CC וקליפסים, לפי הדגם וההזמנה.",
+     "אפשרות להתקנה נסתרת באמצעות קפיץ התקנה A."
+    ]
+   },
+   {
+    "title": "מבנה",
+    "items": [
+     "D-SS1: כיוון זרימה אחד; D-SS2: שני כיוונים.",
+     "אפשרות לדמפר OBD בכניסת הגריל."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/d-ss1-d-ss2.dwg",
+  "pdf_url": "/pdf/original/d-ss1-d-ss2.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/d-ss1-d-ss2-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/d-ss1-d-ss2.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 29-31",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/d-ss1-d-ss2.pdf",
+  "installation_drawing_image": "/products/drawings/d-ss1-d-ss2-installation.png"
+ },
+ {
+  "slug": "lbd-lbdb-lbdd",
+  "code": "LBD, LBDB, LBDD",
+  "codes": [
+   "LBD",
+   "LBDB",
+   "LBDD"
+  ],
+  "name": "Linear decorative grille",
+  "name_he": "תריס ליניארי דקורטיבי",
+  "subtitle_he": "תריס ליניארי דקורטיבי",
+  "family": "decorative-grilles",
+  "short_he": "תריס ליניארי דקורטיבי בקו רציף, עם אפשרות ללהבים אחוריים ודמפר.",
+  "description_he": "תריס ליניארי דקורטיבי בקו רציף, עם אפשרות ללהבים אחוריים ודמפר.",
+  "description_en": "Aluminum grille for supply/exhaust of the air flow, with Extruded aluminum electrostatic field painted white 0 or 15 degree fixed blades.",
+  "application_en": "Supply/exhaust of the air flow.",
+  "characteristics_en": [
+   "0 or 15 degree fixed blades, parallel with length \"L\". LBD - 0° The grille is provided with mounting holes (standard)",
+   "The air flow can be adjusted by mounting an air control damper OBD on the inlet connection.",
+   "On demand, the grille can be curved (concave/convex)"
+  ],
+  "accessories_en": [
+   "Settlement frame made of galvanized sheet metal CC Mounting spring A.",
+   "Air control damper with opposable blades OBD Air filter FIL",
+   "Insulated/Non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [
+   "RAL 9016.",
+   "Other RAL colors available on request.",
+   "Natural anodised aluminum."
+  ],
+  "assembly_en": [
+   "Screws (standard).",
+   "Settlement frame (optional)",
+   "Mounting spring (optional)."
+  ],
+  "catalog_pages": [
+   32,
+   34
+  ],
+  "image": "/products/photos/lbd-lbdb-lbdd.png",
+  "hero_image": "/products/backgrounds/lbd-lbdb-lbdd-v1.webp",
+  "drawing_image": "/products/drawings/lbd-lbdb-lbdd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה לפי דגם",
+    "items": [
+     "LBD: ברגים במסגרת, או מסגרת CC / קפיץ A כאפשרויות.",
+     "LBDB: ברגים בחיבור הכניסה, לשילוב שקוע בקיר או בתקרה.",
+     "LBDD: ברגים במסגרת; קפיץ A כאפשרות."
+    ]
+   },
+   {
+    "title": "מבנה וכיוון",
+    "items": [
+     "LBDD כולל שורה קדמית קבועה ושורה אחורית מתכווננת בנפרד.",
+     "הלהבים הקבועים זמינים בזווית 0° או 15° לפי ההזמנה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/lbd-lbdb-lbdd.dwg",
+  "pdf_url": "/pdf/original/lbd-lbdb-lbdd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/lbd-lbdb-lbdd-1.png",
+   "/products/drawings/lbd-lbdb-lbdd-2.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/lbd-lbdb-lbdd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 32-34",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/lbd-lbdb-lbdd.pdf",
+  "installation_drawing_image": "/products/drawings/lbd-lbdb-lbdd-installation.png"
+ },
+ {
+  "slug": "rcd-rcd-r-rcdh-rcd-rh",
+  "code": "RCD, RCD-R, RCDH, RCD-RH",
+  "codes": [
+   "RCD",
+   "RCD-R",
+   "RCDH",
+   "RCD-RH"
+  ],
+  "name": "Circular ceiling diffuser",
+  "name_he": "מפזר תקרה עגול",
+  "subtitle_he": "מפזר תקרה עגול",
+  "family": "diffusers",
+  "short_he": "מפזר תקרה עגול עם קונוסים מתכווננים, לתקרות נמוכות וגבוהות.",
+  "description_he": "מפזר תקרה עגול עם קונוסים מתכווננים, לתקרות נמוכות וגבוהות.",
+  "description_en": "Ceiling diffusers with circular or square front panel and adjustable circular opening.",
+  "application_en": "Supply/ exhaust of the air flow.",
+  "characteristics_en": [
+   "Recommended difference between air temperature and indoor air is ± 10 K .",
+   "Conic shape with removable central core.",
+   "Depending on the type of roof and front panel, the following alternatives are possible:",
+   "RCD - for low ceiling with circular front panel RCD-R - for low ceiling with square front panel 595 X 595 mm.",
+   "RCDH - for high ceiling with circular front panel RCD-RH - for high ceiling with square front panel 595 X 595 mm."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [
+   "Aluminum material electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   35,
+   36
+  ],
+  "image": "/products/photos/rcd-rcd-r-rcdh-rcd-rh.png",
+  "hero_image": "/products/backgrounds/rcd-rcd-r-rcdh-rcd-rh-v1.webp",
+  "drawing_image": "/products/drawings/rcd-rcd-r-rcdh-rcd-rh.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "מיקום ההתקנה",
+    "items": [
+     "מפזר תקרתי עגול או בגרסת לוח מרובע 595 × 595 מ״מ.",
+     "RCD / RCD-R מיועדים לתקרה נמוכה; RCDH / RCD-RH לתקרה גבוהה.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   },
+   {
+    "title": "גישה",
+    "items": [
+     "הליבה הפנימית הקונית נשלפת."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/rcd-rcd-r-rcdh-rcd-rh.dwg",
+  "pdf_url": "/pdf/original/rcd-rcd-r-rcdh-rcd-rh.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/rcd-rcd-r-rcdh-rcd-rh-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/rcd-rcd-r-rcdh-rcd-rh.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 35-36",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/rcd-rcd-r-rcdh-rcd-rh.pdf",
+  "installation_drawing_image": "/products/drawings/rcd-rcd-r-rcdh-rcd-rh-installation.png"
+ },
+ {
+  "slug": "pgp",
+  "code": "PGP",
+  "codes": [
+   "PGP"
+  ],
+  "name": "PGR / Ceiling diffuser",
+  "name_he": "מפזר תקרה PGP / PGR",
+  "subtitle_he": "מפזר תקרה PGP / PGR",
+  "family": "diffusers",
+  "short_he": "מפזר תקרה מחורר עם ליבה מעוצבת, מרובע (PGP) או עגול (PGR).",
+  "description_he": "מפזר תקרה מחורר עם ליבה מעוצבת, מרובע (PGP) או עגול (PGR).",
+  "description_en": "Ceiling diffuser with maneuverable disks/ nozzles and perforated metal sheet, designed for use in crowded areas.",
+  "application_en": "Air supply.",
+  "characteristics_en": [
+   "The speaker is equipped with Ø5 mm circular perfora- tions radially arranged and 18 individually maneuver- able disks/ nozzles , located in the center of the front.",
+   "Specially designed for paneled ceiling size 600 x 600 mm.",
+   "The diffuser is supplied with gasket seals, fastening screw and plastic cover for concealment."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [
+   "Pickled steel sheet electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request.",
+   "Polypropylene disks/ nozzles."
+  ],
+  "assembly_en": [
+   "Paneled ceiling 600 x 600 mm mounting, fitted with a central screw M6 x 100 mm on mounting traverse of the adapter."
+  ],
+  "catalog_pages": [
+   37,
+   38
+  ],
+  "image": "/products/photos/pgp.png",
+  "hero_image": "/products/backgrounds/pgp-v1.webp",
+  "drawing_image": "/products/drawings/pgp.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה בתקרה",
+    "items": [
+     "הגרסה הסטנדרטית מיועדת לתקרת אריחים במודול 600 × 600 מ״מ.",
+     "בורג מרכזי M6 × 100 מתחבר לקושרת ההתקנה שבמתאם.",
+     "המוצר כולל אטם, בורג קיבוע וכיסוי פלסטיק לבורג."
+    ]
+   },
+   {
+    "title": "כיוון האוויר",
+    "items": [
+     "18 דיסקיות / נחירים ניתנים לכיוון בנפרד."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/pgp.dwg",
+  "pdf_url": "/pdf/original/pgp.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/pgp-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/pgp.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 37-38",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/pgp.pdf",
+  "installation_drawing_image": "/products/drawings/pgp-installation.png"
+ },
+ {
+  "slug": "pfd-pf",
+  "code": "PFD, PF",
+  "codes": [
+   "PFD",
+   "PF"
+  ],
+  "name": "Perforated ceiling diffuser",
+  "name_he": "מפזר תקרה מחורר",
+  "subtitle_he": "מפזר תקרה מחורר",
+  "family": "diffusers",
+  "short_he": "מפזר מחורר מרובע להתקנה בתקרה אקוסטית 600×600 או בגבס.",
+  "description_he": "מפזר מחורר מרובע להתקנה בתקרה אקוסטית 600×600 או בגבס.",
+  "description_en": "Rectangular ceiling diffuser with circular perforations for exhaust/ supply of the air flow PFD/PF.",
+  "application_en": "For air supply - PFD, for air exhaust PF.",
+  "characteristics_en": [
+   "PFD/PF is projected for paneled ceiling mounting (600 x 600 mm).",
+   "Circular perforations of 5 mm diameter.",
+   "The PFD diffuser is provided with an air jet orientation system in 1, 2, 3 or 4 directions, without air flow deviations or pressure loss.",
+   "The diffuser connects to the ventilation duct through the adapter."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Galvanized steel sheet painted in electrostatic field (white RAL 9016).",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   39,
+   40
+  ],
+  "image": "/products/photos/pfd-pf.png",
+  "hero_image": "/products/backgrounds/pfd-pf-v1.webp",
+  "drawing_image": "/products/drawings/pfd-pf.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "חיבור לתקרה ולתעלה",
+    "items": [
+     "הגרסה הסטנדרטית מיועדת לתקרת אריחים במודול 600 × 600 מ״מ.",
+     "חיבור לתעלת האוויר באמצעות מתאם ADP מתאים, בהתאם להזמנה."
+    ]
+   },
+   {
+    "title": "כיוון האוויר",
+    "items": [
+     "בדגם PFD ניתן לכוון את הזרימה ל-1 עד 4 כיוונים."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/pfd-pf.dwg",
+  "pdf_url": "/pdf/original/pfd-pf.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/pfd-pf-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/pfd-pf.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 39-40",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/pfd-pf.pdf",
+  "installation_drawing_image": "/products/drawings/pfd-pf-installation.png"
+ },
+ {
+  "slug": "pff-pfdd",
+  "code": "PFF, PFDD",
+  "codes": [
+   "PFF",
+   "PFDD"
+  ],
+  "name": "Perforated diffuser",
+  "name_he": "מפזר מחורר עם מסגרת",
+  "subtitle_he": "מפזר מחורר עם מסגרת",
+  "family": "diffusers",
+  "short_he": "מפזר מחורר עם מסגרת חיצונית, גם בגרסה עם דמפר.",
+  "description_he": "מפזר מחורר עם מסגרת חיצונית, גם בגרסה עם דמפר.",
+  "description_en": "Rectangular ceiling diffuser for exhaust/ supply of the air flow provided with circular perforations and mounting frame PFF/PFDD. PFDD is provided with access door to ease access to the back of the diffuser.",
+  "application_en": "Exhaust/ supply of the air flow.",
+  "characteristics_en": [
+   "The diffusers are executed with mounting holes on the frame, except those with dimensions 595 x 595 mm for paneled ceiling.",
+   "PFDD is provided with access door, in this case the mounting holes will not be executed on the frame, but on the inlet connection of the diffuser.",
+   "The access door is opened via a click type system (open/ close by pressing).",
+   "Circular perforations of 5 mm diameter.",
+   "The air flow can be adjusted by mounting an air control damper OBD on the diffuser inlet.",
+   "An air filter FIL can be optionally mounted on the inlet connection of the diffuser .",
+   "The diffuser connects to the ventilation duct through the adapter."
+  ],
+  "accessories_en": [
+   "Air filter FIL",
+   "Air control damper with opposable blades OBD Insulated/Non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [
+   "Galvanized steel sheet painted in electrostatic field (white RAL 9016).",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   41,
+   42
+  ],
+  "image": "/products/photos/pff-pfdd.png",
+  "hero_image": "/products/backgrounds/pff-pfdd-v1.webp",
+  "drawing_image": "/products/drawings/pff-pfdd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "שיטת התקנה",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "גרסת 595 × 595 מ״מ לתקרת אריחים ללא חורים.",
+     "PFDD: אפשרות לקיבוע בחורי הכניסה.",
+     "חיבור לתעלת האוויר באמצעות מתאם ADP מתאים, בהתאם להזמנה."
+    ]
+   },
+   {
+    "title": "גישה לאביזרים",
+    "items": [
+     "דלת PFDD נפתחת ונסגרת בלחיצה.",
+     "מסנן FIL ודמפר OBD אופציונליים בכניסת המפזר."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/pff-pfdd.dwg",
+  "pdf_url": "/pdf/original/pff-pfdd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/pff-pfdd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/pff-pfdd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 41-42",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/pff-pfdd.pdf",
+  "installation_drawing_image": "/products/drawings/pff-pfdd-installation.png"
+ },
+ {
+  "slug": "pc",
+  "code": "PC",
+  "codes": [
+   "PC"
+  ],
+  "name": "Perforated cylinder diffuser",
+  "name_he": "מפזר גלילי מחורר",
+  "subtitle_he": "מפזר גלילי מחורר",
+  "family": "diffusers",
+  "short_he": "מפזר גלילי מחורר תלוי, לחללים גבוהים וחנויות.",
+  "description_he": "מפזר גלילי מחורר תלוי, לחללים גבוהים וחנויות.",
+  "description_en": "Perforated cylinder for use in industrial areas.",
+  "application_en": "Air supply",
+  "characteristics_en": [
+   "Available diameters: D250, D355, D450 and D560 mm.",
+   "Length of the cylinder: 825 mm.",
+   "Height for mounting is over 3.5 m.",
+   "Suitable for use for both heating and cooling.",
+   "Horizontal and vertical dispersion of air.",
+   "Can function as an air damper, which makes the air supply possible on both horizontal and vertical levels, depending on requirements (heating/ cooling).",
+   "The diffuser is provided with a internal adjustable disk manipulated by a chain drive."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Perforated cylinder made of galvanized steel sheet RAL colors available on request."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   43,
+   44
+  ],
+  "image": "/products/photos/pc.png",
+  "hero_image": "/products/backgrounds/pc-v1.webp",
+  "drawing_image": "/products/drawings/pc.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "מיקום ההתקנה",
+    "items": [
+     "מפזר גלילי למבנים תעשייתיים, להתקנה בגובה מעל 3.5 מ׳.",
+     "קטרים: 250, 355, 450 או 560 מ״מ; אורך 825 מ״מ.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   },
+   {
+    "title": "כיוון האוויר",
+    "items": [
+     "דיסק פנימי מופעל בשרשרת לשינוי זרימה אופקית / אנכית."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/pc.dwg",
+  "pdf_url": "/pdf/original/pc.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/pc-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/pc.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 43-44",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/pc.pdf",
+  "installation_drawing_image": "/products/drawings/pc-installation.png"
+ },
+ {
+  "slug": "pa",
+  "code": "PA",
+  "codes": [
+   "PA"
+  ],
+  "name": "Architectural diffuser",
+  "name_he": "מפזר אדריכלי",
+  "subtitle_he": "מפזר אדריכלי",
+  "family": "diffusers",
+  "short_he": "מפזר תקרה אדריכלי עם לוח מרכזי חלק, כמעט בלתי נראה.",
+  "description_he": "מפזר תקרה אדריכלי עם לוח מרכזי חלק, כמעט בלתי נראה.",
+  "description_en": "Architectural diffuser with circular perforations, for paneled ceiling mounting.",
+  "application_en": "Supply/ exhaust ot the air flow.",
+  "characteristics_en": [
+   "Diffuser is provided with circular perforation of Ø 5 mm placed on the front side.",
+   "Specially designed for paneled ceiling mounting - size 600 x 600 mm.",
+   "Connects to the air ducts through the adapter."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Pickled steel sheet electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [
+   "Paneled ceiling 600 x 600 mm"
+  ],
+  "catalog_pages": [
+   45,
+   46
+  ],
+  "image": "/products/photos/pa.png",
+  "hero_image": "/products/backgrounds/pa-v1.webp",
+  "drawing_image": "/products/drawings/pa.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "חיבור לתקרה ולתעלה",
+    "items": [
+     "הגרסה הסטנדרטית מיועדת לתקרת אריחים במודול 600 × 600 מ״מ.",
+     "חיבור לתעלת האוויר באמצעות מתאם ADP מתאים, בהתאם להזמנה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/pa.dwg",
+  "pdf_url": "/pdf/original/pa.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/pa-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/pa.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 45-46",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/pa.pdf",
+  "installation_drawing_image": "/products/drawings/pa-installation.png"
+ },
+ {
+  "slug": "lcd",
+  "code": "LCD",
+  "codes": [
+   "LCD"
+  ],
+  "name": "Linear ceiling diffuser",
+  "name_he": "מפזר תקרה ליניארי",
+  "subtitle_he": "מפזר תקרה ליניארי",
+  "family": "diffusers",
+  "short_he": "מפזר ליניארי עם שכבות מדורגות לפיזור בשני כיוונים.",
+  "description_he": "מפזר ליניארי עם שכבות מדורגות לפיזור בשני כיוונים.",
+  "description_en": "Rectangular diffuser, paneled ceiling type, with four direction air jet diffuser.",
+  "application_en": "Designed for various air supply or exhaust systems.",
+  "characteristics_en": [
+   "Preferred for paneled ceiling, 600 x 600 mm diffuser with 1, 2 or 3 peripheral slots.",
+   "The air flow can be adjusted by mounting an air control damper OBD on the diffuser inlet."
+  ],
+  "accessories_en": [
+   "Air control damper with opposable blades OBD Insulated/non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [
+   "Extruded aluminum blades, electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [
+   "Paneled ceiling 600 x 600 mm (standard)"
+  ],
+  "catalog_pages": [
+   47,
+   48
+  ],
+  "image": "/products/photos/lcd.png",
+  "hero_image": "/products/backgrounds/lcd-v1.webp",
+  "drawing_image": "/products/drawings/lcd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "הגרסה הסטנדרטית מיועדת לתקרת אריחים במודול 600 × 600 מ״מ.",
+     "המפזר כולל 1-3 חריצים, לפי הדגם.",
+     "אפשרות לדמפר OBD בכניסה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/lcd.dwg",
+  "pdf_url": "/pdf/original/lcd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/lcd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/lcd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 47-48",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/lcd.pdf",
+  "installation_drawing_image": "/products/drawings/lcd-installation.png"
+ },
+ {
+  "slug": "ac",
+  "code": "AC",
+  "codes": [
+   "AC"
+  ],
+  "name": "Decorative diffuser",
+  "name_he": "מפזר דקורטיבי",
+  "subtitle_he": "מפזר דקורטיבי",
+  "family": "diffusers",
+  "short_he": "מפזר דקורטיבי בעל להבים מדורגים, לאספקה בזווית.",
+  "description_he": "מפזר דקורטיבי בעל להבים מדורגים, לאספקה בזווית.",
+  "description_en": "Rectangular diffuser, paneled ceiling type, with four Extruded shaped aluminum blades , electrostatic field direction air jet diffuser.",
+  "application_en": "Supply or exhaust of the airflow.",
+  "characteristics_en": [
+   "Preferred for paneled ceiling, 600 x 600 mm diffuser with 1, 2, 3 or 4 outlying slots around the square core.",
+   "Removable central core.",
+   "The air flow can be adjusted by mounting an air control damper OBD on the diffuser inlet.",
+   "Uniform aspect with adjacent diffusers."
+  ],
+  "accessories_en": [
+   "Air control damper with opposable blades OBD.",
+   "Insulated/non-insulated adaptor ADP IZ/N."
+  ],
+  "materials_en": [
+   "painted white RAL 9016",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [
+   "Paneled ceiling 600 x 600 mm (standard)",
+   "Mounting holes for diffuser connection (optional)"
+  ],
+  "catalog_pages": [
+   49,
+   50
+  ],
+  "image": "/products/photos/ac.png",
+  "hero_image": "/products/backgrounds/ac-v1.webp",
+  "drawing_image": "/products/drawings/ac.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "הגרסה הסטנדרטית מיועדת לתקרת אריחים במודול 600 × 600 מ״מ.",
+     "ניתן להזמין חורי התקנה בחיבור הכניסה."
+    ]
+   },
+   {
+    "title": "גישה",
+    "items": [
+     "הליבה המרכזית נשלפת.",
+     "אפשרות לדמפר OBD בכניסה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/ac.dwg",
+  "pdf_url": "/pdf/original/ac.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/ac-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/ac.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 49-50",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/ac.pdf",
+  "installation_drawing_image": "/products/drawings/ac-installation.png"
+ },
+ {
+  "slug": "cd-ck",
+  "code": "CD - CK",
+  "codes": [
+   "CD - CK"
+  ],
+  "name": "Ceiling diffuser",
+  "name_he": "מפזר תקרה מעוגל",
+  "subtitle_he": "מפזר תקרה מעוגל",
+  "family": "diffusers",
+  "short_he": "מפזר תקרה עם דוגמת חורים מעוגלת, ליבה נשלפת.",
+  "description_he": "מפזר תקרה עם דוגמת חורים מעוגלת, ליבה נשלפת.",
+  "description_en": "Square diffuser preferred for paneled ceiling mounting.",
+  "application_en": "Supply/ exhaust of airflow.",
+  "characteristics_en": [
+   "Specifically designed for paneled ceiling mounting - size 600 x 600 mm.",
+   "Keeps a uniform aspect with adjacent diffusers.",
+   "Connects to the air ducts through the adapter.",
+   "The diffuser is delivered with fitting gaskets."
+  ],
+  "accessories_en": [
+   "Insulated/ Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Pickled steel sheet electrostatic field painted white RAL 9016",
+   "Other RAL colors available on request"
+  ],
+  "assembly_en": [
+   "Paneled ceiling 600 x 600 mm"
+  ],
+  "catalog_pages": [
+   51,
+   52
+  ],
+  "image": "/products/photos/cd-ck.png",
+  "hero_image": "/products/backgrounds/cd-ck-v1.webp",
+  "drawing_image": "/products/drawings/cd-ck.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "חיבור לתקרה ולתעלה",
+    "items": [
+     "הגרסה הסטנדרטית מיועדת לתקרת אריחים במודול 600 × 600 מ״מ.",
+     "חיבור לתעלת האוויר באמצעות מתאם ADP מתאים, בהתאם להזמנה.",
+     "המוצר מסופק עם אטמים."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/cd-ck.dwg",
+  "pdf_url": "/pdf/original/cd-ck.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/cd-ck-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/cd-ck.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 51-52",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/cd-ck.pdf",
+  "installation_drawing_image": "/products/drawings/cd-ck-installation.png"
+ },
+ {
+  "slug": "sl",
+  "code": "SL",
+  "codes": [
+   "SL"
+  ],
+  "name": "4 Direction slot diffuser",
+  "name_he": "מפזר סלוט 4 כיוונים",
+  "subtitle_he": "מפזר סלוט 4 כיוונים",
+  "family": "diffusers",
+  "short_he": "מפזר תקרה מרובע עם ארבעה חריצים, 600×600.",
+  "description_he": "מפזר תקרה מרובע עם ארבעה חריצים, 600×600.",
+  "description_en": "Air diffuser specially designed for paneled ceiling",
+  "application_en": "Supply/ exhaust of the airflow",
+  "characteristics_en": [
+   "The diffuser is designed with two slots perimetrically located around a square center of plasterboard or other material, keeping a uniform aspect with the rest of the ceiling.",
+   "Inside each slot there are individually adjustable twin blades mounted, which allows adjustment of air flow passing through each slot.",
+   "The blades inside the slot can be painted differently from the diffuser, thus giving a decorative look."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Extruded aluminum blades, electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [
+   "Paneled ceiling 600 x 600 mm (standard)"
+  ],
+  "catalog_pages": [
+   53,
+   54
+  ],
+  "image": "/products/photos/sl.png",
+  "hero_image": "/products/backgrounds/sl-v1.webp",
+  "drawing_image": "/products/drawings/sl.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "הגרסה הסטנדרטית מיועדת לתקרת אריחים במודול 600 × 600 מ״מ.",
+     "לוח מרכזי מגבס כחלק ממבנה המפזר."
+    ]
+   },
+   {
+    "title": "כיוון האוויר",
+    "items": [
+     "להבי שני החריצים מתכווננים בנפרד."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/sl.dwg",
+  "pdf_url": "/pdf/original/sl.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/sl-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/sl.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 53-54",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/sl.pdf",
+  "installation_drawing_image": "/products/drawings/sl-installation.png"
+ },
+ {
+  "slug": "fd",
+  "code": "FD",
+  "codes": [
+   "FD"
+  ],
+  "name": "Ceiling diffuser",
+  "name_he": "מפזר תקרה FD",
+  "subtitle_he": "מפזר תקרה FD",
+  "family": "diffusers",
+  "short_he": "מפזר תקרה עם להבים אלכסוניים קבועים לפיזור רחב.",
+  "description_he": "מפזר תקרה עם להבים אלכסוניים קבועים לפיזור רחב.",
+  "description_en": "Aluminum rectangular diffuser with individual adjustable blades.",
+  "application_en": "Designed for air exhaust from ventilation and air conditioning systems.",
+  "characteristics_en": [
+   "The diffuser is equipped with adjustable blades arranged in four directions, causing rotation of the air with Coanda effect, obtaining a high rate of induction and reduced stratification.",
+   "On request the diffuser can be provided with 1, 2 or 3 discharge directions.",
+   "Recommended for rooms with high ceilings (eg. factories, airports, sports halls, etc.)",
+   "Minimum recommended height is 3.8 m.",
+   "Designed specifically for integration into the paneled ceiling box (dimensions 600 x 600 mm), the speaker is provided without mounting holes.",
+   "On request, the diffuser can be produced in custom sizes, in which case it is provided with mounting holes."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Extruded aluminum material, electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [
+   "Paneled ceiling 600 x 600 mm (standard)",
+   "With screws, visible on the diffuser's frame."
+  ],
+  "catalog_pages": [
+   55,
+   56
+  ],
+  "image": "/products/photos/fd.png",
+  "hero_image": "/products/backgrounds/fd-v1.webp",
+  "drawing_image": "/products/drawings/fd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "הגרסה הסטנדרטית מיועדת לתקרת אריחים במודול 600 × 600 מ״מ.",
+     "הגרסה הסטנדרטית מסופקת ללא חורי קיבוע.",
+     "מידות מיוחדות: אפשרות לברגים גלויים במסגרת.",
+     "גובה התקרה המינימלי לפי הספק: 3.8 מ׳."
+    ]
+   },
+   {
+    "title": "כיוון האוויר",
+    "items": [
+     "כיוון הלהבים מאפשר זרימה ל-1 עד 4 כיוונים."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/fd.dwg",
+  "pdf_url": "/pdf/original/fd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/fd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/fd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 55-56",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/fd.pdf",
+  "installation_drawing_image": "/products/drawings/fd-installation.png"
+ },
+ {
+  "slug": "cd",
+  "code": "CD",
+  "codes": [
+   "CD"
+  ],
+  "name": "Ceiling diffuser",
+  "name_he": "מפזר תקרה ארבעה כיוונים",
+  "subtitle_he": "מפזר תקרה ארבעה כיוונים",
+  "family": "diffusers",
+  "short_he": "מפזר תקרה מרובע קלאסי עם קונוסים, 1–4 כיוונים.",
+  "description_he": "מפזר תקרה מרובע קלאסי עם קונוסים, 1–4 כיוונים.",
+  "description_en": "4 direction aluminum ceiling diffuser, for paneled ceiling CD narrow/large frame",
+  "application_en": "Supply or exhaust of the airflow",
+  "characteristics_en": [
+   "Recommended for rooms with a maximum height of 4 meters .",
+   "Removable central cone for easy installation and cleaning.",
+   "The difference between the recommended supply air temperature and the room air temperature is ± 10 K.",
+   "The air flow can be adjusted by mounting an air control damper OBD on the diffuser inlet."
+  ],
+  "accessories_en": [
+   "Air control damper with opposable blades OBD Insulated/Non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [
+   "Extruded aluminum material, electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request.",
+   "Natural anodised aluminum."
+  ],
+  "assembly_en": [
+   "Paneled ceiling 600 x 600 mm (standard)",
+   "Mounting holes on diffuser connection (optional)"
+  ],
+  "catalog_pages": [
+   57,
+   59
+  ],
+  "image": "/products/photos/cd.png",
+  "hero_image": "/products/backgrounds/cd-v1.webp",
+  "drawing_image": "/products/drawings/cd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "הגרסה הסטנדרטית מיועדת לתקרת אריחים במודול 600 × 600 מ״מ.",
+     "ניתן להזמין חורי התקנה בחיבור הכניסה.",
+     "גובה תקרה עד 4 מ׳ לפי הספק."
+    ]
+   },
+   {
+    "title": "גישה",
+    "items": [
+     "החרוט המרכזי נשלף.",
+     "דמפר OBD בכניסה כאפשרות."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/cd.dwg",
+  "pdf_url": "/pdf/original/cd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/cd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/cd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 57-59",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/cd.pdf",
+  "installation_drawing_image": "/products/drawings/cd-installation.png"
+ },
+ {
+  "slug": "cd-s",
+  "code": "CD-S",
+  "codes": [
+   "CD-S"
+  ],
+  "name": "Ceiling diffuser",
+  "name_he": "מפזר תקרה CD-S",
+  "subtitle_he": "מפזר תקרה CD-S",
+  "family": "diffusers",
+  "short_he": "מפזר תקרה מרובע עם ליבה נשלפת ומסגרת דקה.",
+  "description_he": "מפזר תקרה מרובע עם ליבה נשלפת ומסגרת דקה.",
+  "description_en": "1, 2 or 3 direction square diffuser preferred for paneled ceiling mounting.",
+  "application_en": "Supply/ exhaust of airflow.",
+  "characteristics_en": [
+   "Recommended for rooms of a maximum height of 4 meters .",
+   "Removable central cone for easy installation and cleaning.",
+   "Suitable for horizontal air supply.",
+   "The difference between the recommended supply air temperature and the room air temperature is ± 10 K.",
+   "The air flow can be adjusted by mounting a air control damper OBD on the diffuser inlet."
+  ],
+  "accessories_en": [
+   "Air control damper with opposable blades OBD Insulated/Non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [
+   "Extruded aluminum material, electrostatic field painted white RAL 9016",
+   "Other RAL colors available on request.",
+   "Natural anodised aluminum."
+  ],
+  "assembly_en": [
+   "Paneled ceiling 600 x 600 mm (standard)",
+   "Mounting holes on diffuser connection (optional)"
+  ],
+  "catalog_pages": [
+   60,
+   62
+  ],
+  "image": "/products/photos/cd-s.png",
+  "hero_image": "/products/backgrounds/cd-s-v1.webp",
+  "drawing_image": "/products/drawings/cd-s.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "הגרסה הסטנדרטית מיועדת לתקרת אריחים במודול 600 × 600 מ״מ.",
+     "ניתן להזמין חורי התקנה בחיבור הכניסה."
+    ]
+   },
+   {
+    "title": "כיוון ותחזוקה",
+    "items": [
+     "המפזר מיועד לאספקת אוויר אופקית.",
+     "החרוט המרכזי נשלף; אפשרות לדמפר OBD בכניסה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/cd-s.dwg",
+  "pdf_url": "/pdf/original/cd-s.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/cd-s-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/cd-s.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 60-62",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/cd-s.pdf",
+  "installation_drawing_image": "/products/drawings/cd-s-installation.png"
+ },
+ {
+  "slug": "cd-dd",
+  "code": "CD - DD",
+  "codes": [
+   "CD - DD"
+  ],
+  "name": "Ceiling diffuser with double deflection",
+  "name_he": "מפזר תקרה עם להבים מתכווננים",
+  "subtitle_he": "מפזר תקרה עם להבים מתכווננים",
+  "family": "diffusers",
+  "short_he": "מפזר תקרה מרובע עם ליבת תריס דו-כיווני.",
+  "description_he": "מפזר תקרה מרובע עם ליבת תריס דו-כיווני.",
+  "description_en": "Aluminum rectangular diffuser designed for paneled Extruded aluminum material, electrostatic field painted ceiling mounting.",
+  "application_en": "Suitable for supply and exhaust air systems.",
+  "characteristics_en": [
+   "The diffuser is provided with a central core that consists of DD",
+   "-grille (double deflection) with two rows of individu- a",
+   "ally adjustable blades.",
+   "The adjustable baldes allow airflow distribution to desired areas.",
+   "Removable central cone for easy installation and cleaning.",
+   "The air flow can be adjusted by mounting an air control OBD",
+   "damper"
+  ],
+  "accessories_en": [
+   "Air control damper with opposable blades Insulated/Non-insulated adapter"
+  ],
+  "materials_en": [
+   "white RAL 9016",
+   "Other RAL colors available on request Natural anodised aluminum"
+  ],
+  "assembly_en": [
+   "Paneled ceiling 600x600mm (standard)",
+   "Mounting holes on the diffuser inlet connection (optional)"
+  ],
+  "catalog_pages": [
+   63,
+   65
+  ],
+  "image": "/products/photos/cd-dd.png",
+  "hero_image": "/products/backgrounds/cd-dd-v1.webp",
+  "drawing_image": "/products/drawings/cd-dd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "הגרסה הסטנדרטית מיועדת לתקרת אריחים במודול 600 × 600 מ״מ.",
+     "ניתן להזמין חורי התקנה בחיבור הכניסה."
+    ]
+   },
+   {
+    "title": "גישה וכיוון",
+    "items": [
+     "הליבה המרכזית נשלפת וכוללת גריל DD עם שתי שורות להבים.",
+     "אפשרות לדמפר OBD בכניסה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/cd-dd.dwg",
+  "pdf_url": "/pdf/original/cd-dd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/cd-dd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/cd-dd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 63-65",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/cd-dd.pdf",
+  "installation_drawing_image": "/products/drawings/cd-dd-installation.png"
+ },
+ {
+  "slug": "slot",
+  "code": "SLOT",
+  "codes": [
+   "SLOT"
+  ],
+  "name": "Linear slot diffuser",
+  "name_he": "מפזר סלוט ליניארי",
+  "subtitle_he": "מפזר סלוט ליניארי",
+  "family": "slot-diffusers",
+  "short_he": "מפזר סלוט ליניארי דק, 1–8 חריצים, בקו רציף ללא הפרעה.",
+  "description_he": "מפזר סלוט ליניארי דק, 1–8 חריצים, בקו רציף ללא הפרעה.",
+  "description_en": "Linear aluminum diffuser with adjustable blades.",
+  "application_en": "Supply/ exhaust of the airflow",
+  "characteristics_en": [
+   "Recommended for rooms between 2.60 to 4.00 meters in height.",
+   "The recommended temperature difference between supplied air and indoor air is ± 10 K.",
+   "Long run diffusers are made of assembled modules (maximum 3 meters full length). In this case the product is delivered with joining elements between modules.",
+   "Blades are used for air flow control.",
+   "On request, the diffuser can be made perimetral."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N Attachment spring A"
+  ],
+  "materials_en": [
+   "Extruded aluminum, electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request.",
+   "Anodised aluminium"
+  ],
+  "assembly_en": [
+   "Attachment spring."
+  ],
+  "catalog_pages": [
+   66,
+   69
+  ],
+  "image": "/products/photos/slot.png",
+  "hero_image": "/products/backgrounds/slot-v1.webp",
+  "drawing_image": "/products/drawings/slot.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "שיטת התקנה",
+    "items": [
+     "אפשרות להתקנה נסתרת באמצעות קפיץ התקנה A.",
+     "חיבור לתעלת האוויר באמצעות מתאם ADP מתאים, בהתאם להזמנה.",
+     "יחידות באורך עד 3 מ׳ מתחברות באמצעות מחברי החיבור המסופקים."
+    ]
+   },
+   {
+    "title": "כיוון ומיקום",
+    "items": [
+     "גובה חדר לפי הספק: 2.6-4 מ׳.",
+     "הלהבים מאפשרים לכוון את זרימת האוויר."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/slot.dwg",
+  "pdf_url": "/pdf/original/slot.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/slot-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/slot.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 66-69",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/slot.pdf",
+  "installation_drawing_image": "/products/drawings/slot-installation.png"
+ },
+ {
+  "slug": "bd1-bd2-bdv",
+  "code": "BD1, BD2, BDV",
+  "codes": [
+   "BD1",
+   "BD2",
+   "BDV"
+  ],
+  "name": "Linear diffuser with nozzles",
+  "name_he": "מפזר ליניארי עם נחירים",
+  "subtitle_he": "מפזר ליניארי עם נחירים",
+  "family": "slot-diffusers",
+  "short_he": "מפזר ליניארי עם נחירים מתכווננים לכיוון זרימה מדויק.",
+  "description_he": "מפזר ליניארי עם נחירים מתכווננים לכיוון זרימה מדויק.",
+  "description_en": "Aluminum linear diffuser with individually maneuvarable nozzles. Recommended for use in traffic areas, classrooms, laboratories, etc.",
+  "application_en": "Airflow supply.",
+  "characteristics_en": [
+   "Recommended for rooms between 2.40 and 4.00 m in height.",
+   "Long run diffusers are made of assembled modules (maximum 3 m full length). In this case the product is delivered with joining elements between modules.",
+   "The spherical design of the nozzles enables air flow redirection in the desired areas.",
+   "The spherical nozzles are available in two colors: white RAL 9016 and black RAL 9005.",
+   "Depending on the technical and architectural requirements, the diffuser is made with a single row of nozzles - BD1 or two parallel rows of nozzles - BD2/BDV."
+  ],
+  "accessories_en": [
+   "Attachment spring A",
+   "Insulated/Non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [
+   "Extruded aluminum material, electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request.",
+   "Natural/black anodised aluminum.",
+   "Polypropylene nozzles."
+  ],
+  "assembly_en": [
+   "Attachment spring."
+  ],
+  "catalog_pages": [
+   70,
+   71
+  ],
+  "image": "/products/photos/bd1-bd2-bdv.png",
+  "hero_image": "/products/backgrounds/bd1-bd2-bdv-v1.webp",
+  "drawing_image": "/products/drawings/bd1-bd2-bdv.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "שיטת התקנה",
+    "items": [
+     "אפשרות להתקנה נסתרת באמצעות קפיץ התקנה A.",
+     "יחידות באורך עד 3 מ׳ מתחברות במחברים המסופקים.",
+     "גובה חדר לפי הספק: 2.4-4 מ׳."
+    ]
+   },
+   {
+    "title": "כיוון הנחירים",
+    "items": [
+     "נחירים כדוריים מתכווננים בנפרד.",
+     "BD1 כולל שורה אחת; BD2 / BDV שתי שורות."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/bd1-bd2-bdv.dwg",
+  "pdf_url": "/pdf/original/bd1-bd2-bdv.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/bd1-bd2-bdv-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/bd1-bd2-bdv.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 70-71",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/bd1-bd2-bdv.pdf",
+  "installation_drawing_image": "/products/drawings/bd1-bd2-bdv-installation.png"
+ },
+ {
+  "slug": "sp2-sp3",
+  "code": "SP2, SP3",
+  "codes": [
+   "SP2",
+   "SP3"
+  ],
+  "name": "Disc Linear diffuser",
+  "name_he": "מפזר ליניארי דיסקי",
+  "subtitle_he": "מפזר ליניארי דיסקי",
+  "family": "slot-diffusers",
+  "short_he": "מפזר ליניארי עם דיסקיות מתכווננות, 2 או 3 שורות.",
+  "description_he": "מפזר ליניארי עם דיסקיות מתכווננות, 2 או 3 שורות.",
+  "description_en": "Aluminium linear diffuser provided with aerodynamic shaped discs.",
+  "application_en": "Airflow supply.",
+  "characteristics_en": [
+   "Depending on the technical and architectural require- ments, the diffuser is provided with 2 or 3 parallel rows of discs SP2/ SP3",
+   "Each disk can be rotated at 360 degrees, providing unlim- ited possibilities to diffuse the air, without affecting the air flow, pressure loss or noise level.",
+   "Discs are available in two colors: white RAL 9016 and black RAL 9005",
+   "Long run diffusers are made out of assembled modules SP 3 (maximum 3 m full length). In this case the product is delivered with joining elements between modules.",
+   "Diffuser recommended for constant or variable air flow."
+  ],
+  "accessories_en": [
+   "Attachment spring A",
+   "Insulated/ Non-insulated adapter ADP IZ/N"
+  ],
+  "materials_en": [
+   "Extruded aluminum material, electrostatic field painted white RAL 9016",
+   "Other RAL colors available on request Natural/ black anodised aluminum Polypropylene discs."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   72,
+   73
+  ],
+  "image": "/products/photos/sp2-sp3.png",
+  "hero_image": "/products/backgrounds/sp2-sp3-v1.webp",
+  "drawing_image": "/products/drawings/sp2-sp3.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "שיטת התקנה",
+    "items": [
+     "אפשרות להתקנה נסתרת באמצעות קפיץ התקנה A.",
+     "יחידות באורך עד 3 מ׳ מתחברות במחברים המסופקים."
+    ]
+   },
+   {
+    "title": "כיוון האוויר",
+    "items": [
+     "SP2 כולל שתי שורות דיסקיות; SP3 שלוש שורות.",
+     "הדיסקיות ניתנות לסיבוב 360°."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/sp2-sp3.dwg",
+  "pdf_url": "/pdf/original/sp2-sp3.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/sp2-sp3-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/sp2-sp3.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 72-73",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/sp2-sp3.pdf",
+  "installation_drawing_image": "/products/drawings/sp2-sp3-installation.png"
+ },
+ {
+  "slug": "swr",
+  "code": "SWR",
+  "codes": [
+   "SWR"
+  ],
+  "name": "Swirl diffuser",
+  "name_he": "מפזר מערבולת",
+  "subtitle_he": "מפזר מערבולת",
+  "family": "swirl-diffusers",
+  "short_he": "מפזר מערבולת תקרתי לפיזור מהיר ושקט של האוויר.",
+  "description_he": "מפזר מערבולת תקרתי לפיזור מהיר ושקט של האוויר.",
+  "description_en": "Swirl jet diffuser with radial fixed blades",
+  "application_en": "Supply/ exhaust of the air flow",
+  "characteristics_en": [
+   "Recommended for rooms between 2.60 to 4.00 meters in height.",
+   "Depending on the technical and architectural require- ments, the diffuser is produced with round or rectan- gular front",
+   "Blade design, radial layout and swirl action, result in a high level induction rate.",
+   "The diffuser should be embedded into the ceiling to ensure a stable horizontal discharge of air.",
+   "The diffuser is supplied with seals, screw fastening and masking plastic lid.",
+   "Blades are available in two colors: white RAL 9016 and black RAL9005 ."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter"
+  ],
+  "materials_en": [
+   "Pickled steel sheet electrostatic field painted white RAL Assembly Method 9016.",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   74,
+   76
+  ],
+  "image": "/products/photos/swr.png",
+  "hero_image": "/products/backgrounds/swr-v1.webp",
+  "drawing_image": "/products/drawings/swr.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה בתקרה",
+    "items": [
+     "הגרסה הסטנדרטית מיועדת לתקרת אריחים במודול 600 × 600 מ״מ.",
+     "קיבוע בבורג מרכזי M6 × 100.",
+     "יש לשלב בקו התקרה לקבלת זרימה אופקית יציבה.",
+     "המוצר כולל אטם, בורג קיבוע וכיסוי פלסטיק."
+    ]
+   },
+   {
+    "title": "גובה התקנה",
+    "items": [
+     "גובה חדר לפי הספק: 2.6-4 מ׳."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/swr.dwg",
+  "pdf_url": "/pdf/original/swr.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/swr-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/swr.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 74-76",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/swr.pdf",
+  "installation_drawing_image": "/products/drawings/swr-installation.png"
+ },
+ {
+  "slug": "std-std-1",
+  "code": "STD, STD-1",
+  "codes": [
+   "STD",
+   "STD-1"
+  ],
+  "name": "Swirl jet diffuser",
+  "name_he": "מפזר ג׳ט מערבולתי",
+  "subtitle_he": "מפזר ג׳ט מערבולתי",
+  "family": "swirl-diffusers",
+  "short_he": "מפזר מערבולת עם להבים מתכווננים לתקרות גבוהות.",
+  "description_he": "מפזר מערבולת עם להבים מתכווננים לתקרות גבוהות.",
+  "description_en": "Swirl jet diffuser with radial fixed blades STD/STD1.",
+  "application_en": "Supply/ exhaust of the air flow",
+  "characteristics_en": [
+   "Recommended for rooms between 2.60 to 4.00 meters in height.",
+   "Depending on the technical and architectural require- ments, the diffuser is produced with round or rectangular front R/C.",
+   "Blade design, radial layout and swirl action, result in a high level induction rate.",
+   "The diffuser should be embedded into the ceiling to ensure a stable horizontal discharge of air.",
+   "The diffuser is supplied with seals, screw fastening and masking plastic lid."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Pickled steel sheet electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   77,
+   78
+  ],
+  "image": "/products/photos/std-std-1.png",
+  "hero_image": "/products/backgrounds/std-std-1-v2.webp",
+  "drawing_image": "/products/drawings/std-std-1.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה בתקרה",
+    "items": [
+     "יש לשלב בקו התקרה לקבלת זרימה אופקית יציבה.",
+     "המוצר כולל אטם, בורג קיבוע וכיסוי פלסטיק.",
+     "גרסאות עגולות ומרובעות לפי ההזמנה."
+    ]
+   },
+   {
+    "title": "גובה התקנה",
+    "items": [
+     "גובה חדר לפי הספק: 2.6-4 מ׳."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/std-std-1.dwg",
+  "pdf_url": "/pdf/original/std-std-1.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/std-std-1-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/std-std-1.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 77-78",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/std-std-1.pdf",
+  "installation_drawing_image": "/products/drawings/std-std-1-installation.png"
+ },
+ {
+  "slug": "ss",
+  "code": "SS",
+  "codes": [
+   "SS"
+  ],
+  "name": "Swirl jet diffuser",
+  "name_he": "מפזר ג׳ט SS",
+  "subtitle_he": "מפזר ג׳ט SS",
+  "family": "swirl-diffusers",
+  "short_he": "מפזר מערבולת עגול עם להבים מתכווננים ידנית.",
+  "description_he": "מפזר מערבולת עגול עם להבים מתכווננים ידנית.",
+  "description_en": "Rectangular swirl jet diffuser suitable for paneled ceiling",
+  "application_en": "Supply /exhaust of the air flow",
+  "characteristics_en": [
+   "Recommended for rooms between 2.60 to 4.00 m. in height",
+   "The design, radial layout and vortex action of the blades leads to a high level of induction rate.",
+   "The recommended temperature difference between supplied air and indoor air is ± 10 K.",
+   "The blades that guide the air jet are plastic white RAL 9016 or black RAL 9005.",
+   "The diffuser is supplied with gasket seals, fastening screw and plastic cover for concealment."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Pickled steel sheet electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request.",
+   "Polypropylene blades."
+  ],
+  "assembly_en": [
+   "Paneled ceiling 600 x 600 mm mounting, fitted with a central screw M6 x 100 mm on the mounting traverse of the adapter."
+  ],
+  "catalog_pages": [
+   79,
+   80
+  ],
+  "image": "/products/photos/ss.png",
+  "hero_image": "/products/backgrounds/ss-v1.webp",
+  "drawing_image": "/products/drawings/ss.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה בתקרה",
+    "items": [
+     "הגרסה הסטנדרטית מיועדת לתקרת אריחים במודול 600 × 600 מ״מ.",
+     "בורג מרכזי M6 × 100 מתחבר לקושרת המתאם.",
+     "המוצר כולל אטם, בורג קיבוע וכיסוי פלסטיק."
+    ]
+   },
+   {
+    "title": "גובה התקנה",
+    "items": [
+     "גובה חדר לפי הספק: 2.6-4 מ׳."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/ss.dwg",
+  "pdf_url": "/pdf/original/ss.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/ss-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/ss.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 79-80",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/ss.pdf",
+  "installation_drawing_image": "/products/drawings/ss-installation.png"
+ },
+ {
+  "slug": "vs",
+  "code": "VS",
+  "codes": [
+   "VS"
+  ],
+  "name": "Swirl jet diffuser",
+  "name_he": "מפזר ג׳ט VS",
+  "subtitle_he": "מפזר ג׳ט VS",
+  "family": "swirl-diffusers",
+  "short_he": "מפזר מערבולת מרובע עם להבים מתכווננים לחורף ולקיץ.",
+  "description_he": "מפזר מערבולת מרובע עם להבים מתכווננים לחורף ולקיץ.",
+  "description_en": "Swirl jet diffuser with fixed and radial arranged blades.",
+  "application_en": "Supply/ exhaust of the air.",
+  "characteristics_en": [
+   "Recommended for rooms of 2.60 to 4.00 m in height.",
+   "The design, radial layout and vortex action of the blades leads to a high level of induction rate.",
+   "Can be used in systems with both constant or variable air volumes."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Pickled steel sheet electrostatic field painted white RAL 9016 Other RAL colors available on request"
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   81,
+   83
+  ],
+  "image": "/products/photos/vs.png",
+  "hero_image": "/products/backgrounds/vs-v1.webp",
+  "drawing_image": "/products/drawings/vs.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "מיקום ההתקנה",
+    "items": [
+     "מפזר עם להבים רדיאליים קבועים, למערכות בספיקה קבועה או משתנה.",
+     "גובה חדר לפי הספק: 2.6-4 מ׳.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/vs.dwg",
+  "pdf_url": "/pdf/original/vs.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/vs-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/vs.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 81-83",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/vs.pdf",
+  "installation_drawing_image": "/products/drawings/vs-installation.png"
+ },
+ {
+  "slug": "vsr",
+  "code": "VSR",
+  "codes": [
+   "VSR"
+  ],
+  "name": "Swirl jet diffuser",
+  "name_he": "מפזר ג׳ט עגול מתכוונן",
+  "subtitle_he": "מפזר ג׳ט עגול מתכוונן",
+  "family": "swirl-diffusers",
+  "short_he": "מפזר מערבולת עגול מתכוונן לתקרות גבוהות מאוד.",
+  "description_he": "מפזר מערבולת עגול מתכוונן לתקרות גבוהות מאוד.",
+  "description_en": "Swirl jet diffuser with adjustable and radial arranged blades.",
+  "application_en": "Supply/ exhaust of the air.",
+  "characteristics_en": [
+   "Recommended for rooms over 3 m in height.",
+   "Circular and helical design promotes airflow swirling diffusion obtaining a high level of induction rate and reduces air stratification."
+  ],
+  "accessories_en": [
+   "Insulated/Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Aluminum diffuser electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   84,
+   86
+  ],
+  "image": "/products/photos/vsr.png",
+  "hero_image": "/products/backgrounds/vsr-v1.webp",
+  "drawing_image": "/products/drawings/vsr.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "מיקום ההתקנה",
+    "items": [
+     "מפזר עגול עם להבים רדיאליים מתכווננים.",
+     "מיועד לחדרים בגובה מעל 3 מ׳.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/vsr.dwg",
+  "pdf_url": "/pdf/original/vsr.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/vsr-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/vsr.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 84-86",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/vsr.pdf",
+  "installation_drawing_image": "/products/drawings/vsr-installation.png"
+ },
+ {
+  "slug": "ad",
+  "code": "AD",
+  "codes": [
+   "AD"
+  ],
+  "name": "Access grille",
+  "name_he": "תריס שירות",
+  "subtitle_he": "תריס שירות",
+  "family": "access-doors",
+  "short_he": "תריס גישה נפתח על ציר לתחזוקת מערכות.",
+  "description_he": "תריס גישה נפתח על ציר לתחזוקת מערכות.",
+  "description_en": "Aluminum access door is used in areas where regular access is required for installation works maintenance.",
+  "application_en": "To access the desired maintenance area.",
+  "characteristics_en": [
+   "Suitable for wall or ceiling mounting.",
+   "The access door is provided with countersunk holes for mounting the visible frame .",
+   "Size 595 x 595 mm (for paneled ceiling) is provided without mounting holes.",
+   "Opening/closing the door is done by pushing a click type Mounting countersunk holes on the visible frame system."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Extruded aluminum material, electrostatic field painted white RAL 9016.",
+   "Pickled steel sheet.",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [
+   "(standard)",
+   "Mounting holes on the connection frame inlet (optional)"
+  ],
+  "catalog_pages": [
+   87,
+   87
+  ],
+  "image": "/products/photos/ad.png",
+  "hero_image": "/products/backgrounds/ad-v1.webp",
+  "drawing_image": "/products/drawings/ad.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה בקיר או בתקרה",
+    "items": [
+     "התקנה באמצעות ברגים בחורי ההתקנה השקועים במסגרת.",
+     "אפשרות לחורי התקנה בחיבור הכניסה.",
+     "גרסת 595 × 595 מ״מ לתקרת אריחים ללא חורים."
+    ]
+   },
+   {
+    "title": "פתיחה וסגירה",
+    "items": [
+     "דלת הגישה נפתחת ונסגרת בלחיצה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/ad.dwg",
+  "pdf_url": "/pdf/original/ad.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/ad-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/ad.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמוד 87",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/ad.pdf",
+  "installation_drawing_image": "/products/drawings/ad-installation.png"
+ },
+ {
+  "slug": "ag",
+  "code": "AG",
+  "codes": [
+   "AG"
+  ],
+  "name": "Access door",
+  "name_he": "דלת שירות",
+  "subtitle_he": "דלת שירות",
+  "family": "access-doors",
+  "short_he": "דלת שירות עם לוח גבס קדמי, נסתרת לחלוטין בקיר או בתקרה.",
+  "description_he": "דלת שירות עם לוח גבס קדמי, נסתרת לחלוטין בקיר או בתקרה.",
+  "description_en": "Access doors are used in areas where regular access is required for work maintenance and installations.",
+  "application_en": "To access the desired maintenance area.",
+  "characteristics_en": [
+   "Access door is made of an aluminum profile with frontal drywall plate.",
+   "Opening/closing of the roof is carried out via a click type system.",
+   "Perfect incorporation with the wall or ceiling."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Natural aluminum frame",
+   "Gypsum plate"
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   88,
+   88
+  ],
+  "image": "/products/photos/ag.png",
+  "hero_image": "/products/backgrounds/ag-v1.webp",
+  "drawing_image": "/products/drawings/ag.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה בקיר או בתקרה",
+    "items": [
+     "מסגרת אלומיניום עם חזית גבס לשילוב בקיר או בתקרה.",
+     "התאמת הפתח וחתך החיבור לפי שרטוט הספק.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   },
+   {
+    "title": "פתיחה וסגירה",
+    "items": [
+     "דלת הגישה נפתחת ונסגרת בלחיצה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/ag.dwg",
+  "pdf_url": "/pdf/original/ag.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/ag-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/ag.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמוד 88",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/ag.pdf",
+  "installation_drawing_image": "/products/drawings/ag-installation.png"
+ },
+ {
+  "slug": "jr",
+  "code": "JR",
+  "codes": [
+   "JR"
+  ],
+  "name": "Air duct with nozzles",
+  "name_he": "תעלת נחירים",
+  "subtitle_he": "תעלת נחירים",
+  "family": "jets-valves",
+  "short_he": "תעלה עגולה עם נחירים מתכווננים לפיזור ממוקד.",
+  "description_he": "תעלה עגולה עם נחירים מתכווננים לפיזור ממוקד.",
+  "description_en": "Air duct with nozzles.",
+  "application_en": "Air supply",
+  "characteristics_en": [
+   "Available lenghts: 0.5m, 1.0m, 1.5m and 2.0m.",
+   "The nozzles are 32 mm in diameter, available in two colors: white RAL 9016 and black RAL 9005 The ideal temperature difference between supplied air and room air is between 2 and 4K and the velocity between 2.5 and 4.5 m/s.",
+   "Uniform and permanent air distribution.",
+   "Low pressure loss."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Galvanized steel sheet",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   89,
+   90
+  ],
+  "image": "/products/photos/jr.png",
+  "hero_image": "/products/backgrounds/jr-v1.webp",
+  "drawing_image": "/products/drawings/jr.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "חיבור למערכת",
+    "items": [
+     "תעלה עגולה עם נחירים בקוטר 32 מ״מ.",
+     "אורכי היחידות: 0.5, 1, 1.5 או 2 מ׳.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   },
+   {
+    "title": "תנאי פעולה",
+    "items": [
+     "מהירות אוויר לפי הספק: 2.5-4.5 מ׳/שנייה.",
+     "הפרש טמפרטורות לתכנון: 2-4 K."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/jr.dwg",
+  "pdf_url": "/pdf/original/jr.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/jr-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/jr.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 89-90",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/jr.pdf",
+  "installation_drawing_image": "/products/drawings/jr-installation.png"
+ },
+ {
+  "slug": "jd",
+  "code": "JD",
+  "codes": [
+   "JD"
+  ],
+  "name": "Jet diffuser",
+  "name_he": "מפזר ג׳ט",
+  "subtitle_he": "מפזר ג׳ט",
+  "family": "jets-valves",
+  "short_he": "מפזר ג׳ט עגול מתכוונן לטווח זריקה ארוך.",
+  "description_he": "מפזר ג׳ט עגול מתכוונן לטווח זריקה ארוך.",
+  "description_en": "Diffuser with long range air supply capacity. Ideal for use in traffic areas, theaters, discos, museums, concert halls, etc.",
+  "application_en": "Air supply",
+  "characteristics_en": [
+   "Low noise level.",
+   "Spherical nozzle bordered by a ring with mounting holes, allows airflow direction in the desired area.",
+   "Decorative ring for masked mounting.",
+   "Circular inlet connection for mounting to air ducts."
+  ],
+  "accessories_en": [
+   "Insulated/ Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Aluminum nozzle and decorative ring, electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request.",
+   "Polypropylene ring (mounting)",
+   "Galvanized steel sheet connection (for air ducts)"
+  ],
+  "assembly_en": [
+   "Standard mounting, with screws."
+  ],
+  "catalog_pages": [
+   91,
+   92
+  ],
+  "image": "/products/photos/jd.png",
+  "hero_image": "/products/backgrounds/jd-v1.webp",
+  "drawing_image": "/products/drawings/jd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "שיטת התקנה",
+    "items": [
+     "קיבוע בברגים בחורי ההתקנה שבטבעת.",
+     "טבעת דקורטיבית מכסה את אזור הקיבוע.",
+     "חיבור כניסה עגול לתעלה."
+    ]
+   },
+   {
+    "title": "כיוון האוויר",
+    "items": [
+     "כיוון סילון האוויר באמצעות סיבוב הנחיר."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/jd.dwg",
+  "pdf_url": "/pdf/original/jd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/jd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/jd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 91-92",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/jd.pdf",
+  "installation_drawing_image": "/products/drawings/jd-installation.png"
+ },
+ {
+  "slug": "jb",
+  "code": "JB",
+  "codes": [
+   "JB"
+  ],
+  "name": "Jet diffuser with nozzles",
+  "name_he": "מפזר ג׳ט עם נחירים",
+  "subtitle_he": "מפזר ג׳ט עם נחירים",
+  "family": "jets-valves",
+  "short_he": "מפזר ג׳ט עם ליבת נחירים, זווית ותכנון גמישים.",
+  "description_he": "מפזר ג׳ט עם ליבת נחירים, זווית ותכנון גמישים.",
+  "description_en": "Aluminum linear diffuser with individually steerable nozzles. Recommended for use in traffic areas, cinemas, museums, theaters, etc.",
+  "application_en": "Various air supply systems",
+  "characteristics_en": [
+   "The diffuser is produced, depending on technical and architectural requirements, with one or two rows of nozzles.",
+   "Nozzles have a diameter of 40 mm for air passage and are available in two colors: white RAL 9016 and black RAL 9005.",
+   "Due to the spherical design of the nozzle, the air flow can be directed into desired areas.",
+   "Allows unlimited airflow direction settings."
+  ],
+  "accessories_en": [
+   "Attachment spring A.",
+   "Insulated/Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Extruded aluminum material, electrostatic field painted white RAL 9016",
+   "Other RAL colors available on request Polypropylene nozzles"
+  ],
+  "assembly_en": [
+   "Attachment spring."
+  ],
+  "catalog_pages": [
+   93,
+   94
+  ],
+  "image": "/products/photos/jb.png",
+  "hero_image": "/products/backgrounds/jb-v1.webp",
+  "drawing_image": "/products/drawings/jb.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "אפשרות להתקנה נסתרת באמצעות קפיץ התקנה A.",
+     "נחירים בקוטר 40 מ״מ בשורה אחת או בשתי שורות."
+    ]
+   },
+   {
+    "title": "כיוון",
+    "items": [
+     "כל נחיר כדורי מתכוונן בנפרד."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/jb.dwg",
+  "pdf_url": "/pdf/original/jb.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/jb-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/jb.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 93-94",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/jb.pdf",
+  "installation_drawing_image": "/products/drawings/jb-installation.png"
+ },
+ {
+  "slug": "ev",
+  "code": "EV",
+  "codes": [
+   "EV"
+  ],
+  "name": "Circular valve",
+  "name_he": "שסתום יניקה עגול",
+  "subtitle_he": "שסתום יניקה עגול",
+  "family": "jets-valves",
+  "short_he": "שסתום עגול ליניקה עם דיסק מתכוונן.",
+  "description_he": "שסתום עגול ליניקה עם דיסק מתכוונן.",
+  "description_en": "Circular steel valve with adjustable central cone for exhaust of the air, provided with mounting frame EV.",
+  "application_en": "Exhaust the airflow",
+  "characteristics_en": [
+   "Valve is provided with gasket seal and mounting frame The adjustable center cone allows adjustment of air flow The mounting frame is provided with holes for fixing"
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Steel electrostatic field painted in RAL9016 white Other RAL colors available on request.",
+   "Mounting frame made of galvanized metal sheet"
+  ],
+  "assembly_en": [
+   "Screws on the mounting frame."
+  ],
+  "catalog_pages": [
+   95,
+   96
+  ],
+  "image": "/products/photos/ev.png",
+  "hero_image": "/products/backgrounds/ev-v1.webp",
+  "drawing_image": "/products/drawings/ev.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "קיבוע בברגים בחורי מסגרת ההתקנה.",
+     "המוצר מסופק עם אטם."
+    ]
+   },
+   {
+    "title": "ויסות",
+    "items": [
+     "שסתום לפליטת אוויר; ויסות הספיקה באמצעות החרוט המרכזי."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/ev.dwg",
+  "pdf_url": "/pdf/original/ev.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/ev-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/ev.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 95-96",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/ev.pdf",
+  "installation_drawing_image": "/products/drawings/ev-installation.png"
+ },
+ {
+  "slug": "sv",
+  "code": "SV",
+  "codes": [
+   "SV"
+  ],
+  "name": "Circular valve",
+  "name_he": "שסתום אספקה עגול",
+  "subtitle_he": "שסתום אספקה עגול",
+  "family": "jets-valves",
+  "short_he": "שסתום עגול לאספקת אוויר עם דיסק מתכוונן.",
+  "description_he": "שסתום עגול לאספקת אוויר עם דיסק מתכוונן.",
+  "description_en": "Circular steel valve with adjustable central cone for supply of the air, provided with mounting frame SV.",
+  "application_en": "Supply the airflow",
+  "characteristics_en": [
+   "Valve is provided with gasket seal and mounting frame The adjustable center cone allows adjustment of air flow The mounting frame is provided with holes for fixing."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Steel electrostatic field painted in RAL9016 white Other RAL colors available on request.",
+   "Mounting frame made of galvanized metal sheet"
+  ],
+  "assembly_en": [
+   "Screws on the mounting frame"
+  ],
+  "catalog_pages": [
+   97,
+   98
+  ],
+  "image": "/products/photos/sv.png",
+  "hero_image": "/products/backgrounds/sv-v1.webp",
+  "drawing_image": "/products/drawings/sv.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "קיבוע בברגים בחורי מסגרת ההתקנה.",
+     "המוצר מסופק עם אטם."
+    ]
+   },
+   {
+    "title": "ויסות",
+    "items": [
+     "שסתום לאספקת אוויר; ויסות הספיקה באמצעות החרוט המרכזי."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/sv.dwg",
+  "pdf_url": "/pdf/original/sv.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/sv-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/sv.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 97-98",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/sv.pdf",
+  "installation_drawing_image": "/products/drawings/sv-installation.png"
+ },
+ {
+  "slug": "vn",
+  "code": "VN",
+  "codes": [
+   "VN"
+  ],
+  "name": "VLB/VLA/ Circular valve",
+  "name_he": "שסתום עגול VN / VLB / VLA",
+  "subtitle_he": "שסתום עגול VN / VLB / VLA",
+  "family": "jets-valves",
+  "short_he": "שסתומים עגולים ממתכת לאספקה ויניקה בקטרים שונים.",
+  "description_he": "שסתומים עגולים ממתכת לאספקה ויניקה בקטרים שונים.",
+  "description_en": "Stainless steel circular valve for exhaust/supply of the air flow.",
+  "application_en": "Supply/ exhaust of the airflow",
+  "characteristics_en": [
+   "VN - Circular valve with adjustable central cone for air flow adjustments.",
+   "- Mounting frame with mounting holes and clips provided VLA - Exterior valve with blades, 1.5 x 1.5 mm mesh and sealing gasket.",
+   "- Clips on the connector and mounting holes on the outer frame",
+   "VLB - Exterior valve with 10 x 10 mm mesh and sealing gasket.",
+   "- Clips on the connector and mounting holes on the outer frame."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Stainless steel, natural finish."
+  ],
+  "assembly_en": [
+   "Mounting with screw and/or using the clamp located at the connection/framework."
+  ],
+  "catalog_pages": [
+   99,
+   100
+  ],
+  "image": "/products/photos/vn.png",
+  "hero_image": "/products/backgrounds/vn-v1.webp",
+  "drawing_image": "/products/drawings/vn.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "חיבור באמצעות ברגים ו/או קליפסים באזור החיבור, בהתאם לגרסה.",
+     "המוצר כולל אטמים."
+    ]
+   },
+   {
+    "title": "בחירת גרסה",
+    "items": [
+     "VN: חורי התקנה וקליפסים במסגרת.",
+     "VLA: רשת 1.5 מ״מ; VLB: רשת 10 מ״מ."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/vn.dwg",
+  "pdf_url": "/pdf/original/vn.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/vn-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/vn.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 99-100",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/vn.pdf",
+  "installation_drawing_image": "/products/drawings/vn-installation.png"
+ },
+ {
+  "slug": "sjd",
+  "code": "SJD",
+  "codes": [
+   "SJD"
+  ],
+  "name": "Special jet diffuser",
+  "name_he": "מפזר ג׳ט מיוחד",
+  "subtitle_he": "מפזר ג׳ט מיוחד",
+  "family": "jets-valves",
+  "short_he": "מפזר ג׳ט ייעודי לחללים מיוחדים ולזריקה ארוכה.",
+  "description_he": "מפזר ג׳ט ייעודי לחללים מיוחדים ולזריקה ארוכה.",
+  "description_en": "Diffuser with long range air supply capacity. Ideal for use in traffic areas, theaters, discos, museums, concert halls, etc.",
+  "application_en": "Air supply",
+  "characteristics_en": [
+   "Concentric nozzles that allow airflow direction in the desired areas.",
+   "Rectangular or circular air duct mounting.",
+   "Mounting holes on flange.",
+   "Horizontal and vertical 360° rotation.",
+   "Produced in an assembly of 1, 2, 3, 4 pieces.",
+   "Manually adjustable."
+  ],
+  "accessories_en": [
+   "Insulated/ Non-insulated adapter ADP IZ/N."
+  ],
+  "materials_en": [
+   "Aluminum nozzles and galvanized steel sheet connection, electrostatic field painted white RAL 9016.",
+   "Other RAL colors available on request."
+  ],
+  "assembly_en": [
+   "Standard assembly with screws."
+  ],
+  "catalog_pages": [
+   101,
+   102
+  ],
+  "image": "/products/photos/sjd.png",
+  "hero_image": "/products/backgrounds/sjd-v1.webp",
+  "drawing_image": "/products/drawings/sjd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "קיבוע בברגים בחורי האוגן.",
+     "התאמה לתעלה עגולה או מלבנית, בהתאם להזמנה.",
+     "מכלולים של 1-4 נחירים לפי הדגם."
+    ]
+   },
+   {
+    "title": "כיוון",
+    "items": [
+     "כיוון ידני אופקי ואנכי וסיבוב 360°."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/sjd.dwg",
+  "pdf_url": "/pdf/original/sjd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/sjd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/sjd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 101-102",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/sjd.pdf",
+  "installation_drawing_image": "/products/drawings/sjd-installation.png"
+ },
+ {
+  "slug": "sfd",
+  "code": "SFD",
+  "codes": [
+   "SFD"
+  ],
+  "name": "Rectangular fire damper",
+  "name_he": "מדף אש מלבני",
+  "subtitle_he": "מדף אש מלבני",
+  "family": "fire-dampers",
+  "short_he": "מדף אש מלבני עם נתיך תרמי, לתעלות מלבניות.",
+  "description_he": "מדף אש מלבני עם נתיך תרמי, לתעלות מלבניות.",
+  "description_en": "Rectangular fireproof damper designed for automatic isolation of ventilation and air conditioning systems compartments. Suitable for mounting into concrete walls and ceilings.",
+  "application_en": "For closing and sealing the ventilation ducts in case of fire.",
+  "characteristics_en": [
+   "Drive system with fusible element.",
+   "Automatic closing fire damper fusible element is deter- mined to be active at temperatures> 72 ° C.",
+   "Various classes of fire resistance (RF60, RF90, RF120).",
+   "Optional contact signal for start/ end of the cycle.",
+   "Alternatively, an electric actuator can be used."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Galvanized sheet steel case",
+   "Special insulated damper blade"
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   103,
+   104
+  ],
+  "image": "/products/photos/sfd.png",
+  "hero_image": "/products/backgrounds/sfd-v1.webp",
+  "drawing_image": "/products/drawings/sfd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "מיקום ההתקנה",
+    "items": [
+     "דמפר אש מלבני להתקנה בקירות או בתקרות בטון.",
+     "פרטי הקיבוע ואיטום מעבר האש אינם מפורטים בקטלוג המצורף; נדרש פרט התקנה מאושר של הספק."
+    ]
+   },
+   {
+    "title": "התאמת גרסה",
+    "items": [
+     "גרסאות RF60 / RF90 / RF120 בהתאם להזמנה.",
+     "נתיך תרמי מעל 72°C מפעיל סגירה.",
+     "אפשרות לחיווי או למפעיל חשמלי לפי ההזמנה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/sfd.dwg",
+  "pdf_url": "/pdf/original/sfd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/sfd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/sfd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 103-104",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/sfd.pdf",
+  "installation_drawing_image": "/products/drawings/sfd-installation.png"
+ },
+ {
+  "slug": "rfd",
+  "code": "RFD",
+  "codes": [
+   "RFD"
+  ],
+  "name": "Round fire damper",
+  "name_he": "מדף אש עגול",
+  "subtitle_he": "מדף אש עגול",
+  "family": "fire-dampers",
+  "short_he": "מדף אש עגול עם נתיך תרמי, לתעלות עגולות.",
+  "description_he": "מדף אש עגול עם נתיך תרמי, לתעלות עגולות.",
+  "description_en": "Round fireproof damper designed for automatic isolation of ventilation and air conditioning systems compartments. Suitable for mounting into concrete walls and ceilings.",
+  "application_en": "For closing and sealing the ventilation ducts in case of fire.",
+  "characteristics_en": [
+   "Drive system with fusible element.",
+   "Automatic closing fire damper fusible element is deter- mined to be active at temperatures> 72 ° C.",
+   "Various classes of fire resistance (RF60, RF90, RF120).",
+   "Optional contact signal for start/ end of the cycle.",
+   "Alternatively, an electric actuator can be used."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Galvanized sheet steel case",
+   "Special insulated damper blade"
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   105,
+   106
+  ],
+  "image": "/products/photos/rfd.png",
+  "hero_image": "/products/backgrounds/rfd-v1.webp",
+  "drawing_image": "/products/drawings/rfd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "מיקום ההתקנה",
+    "items": [
+     "דמפר אש עגול להתקנה בקירות או בתקרות בטון.",
+     "פרטי הקיבוע ואיטום מעבר האש אינם מפורטים בקטלוג המצורף; נדרש פרט התקנה מאושר של הספק."
+    ]
+   },
+   {
+    "title": "התאמת גרסה",
+    "items": [
+     "גרסאות RF60 / RF90 / RF120 בהתאם להזמנה.",
+     "נתיך תרמי מעל 72°C מפעיל סגירה.",
+     "אפשרות לחיווי או למפעיל חשמלי לפי ההזמנה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/rfd.dwg",
+  "pdf_url": "/pdf/original/rfd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/rfd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/rfd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 105-106",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/rfd.pdf",
+  "installation_drawing_image": "/products/drawings/rfd-installation.png"
+ },
+ {
+  "slug": "vcd",
+  "code": "VCD",
+  "codes": [
+   "VCD"
+  ],
+  "name": "Air flow control damper",
+  "name_he": "ווסת כמות אוויר",
+  "subtitle_he": "ווסת כמות אוויר",
+  "family": "control-dampers",
+  "short_he": "ווסת כמות אוויר עם להבים מקבילים או נגדיים, ידני או ממונע.",
+  "description_he": "ווסת כמות אוויר עם להבים מקבילים או נגדיים, ידני או ממונע.",
+  "description_en": "Aluminum rectangular air flow control damper with opposable blades.",
+  "application_en": "Air flow adjustment in ventilation systems.",
+  "characteristics_en": [
+   "The standard control damper is provided with a drive lever and blocking system, an electric drive (actuator) can be delivered on request.",
+   "Actuator will be selected according to the size of the damper, voltage and other technical details mentioned in the project (return spring, 0-10V control, etc.)",
+   "Control dampers can be made, on request, without drive system - in this case it will be considered the diameter of the blade's drive shaft for coupling the desired actuator. (eg.",
+   "Control damper without drive lever, prepared for actuator)",
+   "Drive lever / actuator operates the opening / closing of the blades through 12 X 12mm and 150mm length shaft .",
+   "Aerodynamic blades are a main characteristic of the control damper.",
+   "The control damper is provided with gasket seals on both the blades and the frame.",
+   "Blade is 100mm height and cannot be adjusted, having the following two cases:",
+   "* Case 1: 200 x 200 mm - the control damper consists of two adjustable blades and the final measurements will become 200 x 212 mm [W (H + 12 mm)].",
+   "* Case 2: 200 x 150 mm - the control damper consists of one adjustable blade and the difference will be covered with a fixed blade (final measurements - 200 x 150 mm)."
+  ],
+  "accessories_en": [
+   "Drive actuator"
+  ],
+  "materials_en": [
+   "Natural aluminum material for frame and blades Polypropylene sprocket wheels"
+  ],
+  "assembly_en": [
+   "Screws on the mounting flange."
+  ],
+  "catalog_pages": [
+   107,
+   108
+  ],
+  "image": "/products/photos/vcd.png",
+  "hero_image": "/products/backgrounds/vcd-v1.webp",
+  "drawing_image": "/products/drawings/vcd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה",
+    "items": [
+     "קיבוע באמצעות ברגים בחורי האוגן."
+    ]
+   },
+   {
+    "title": "הפעלה",
+    "items": [
+     "ויסות באמצעות ידית עם מנגנון נעילה בגרסה הסטנדרטית.",
+     "מפעיל חשמלי אופציונלי נבחר לפי גודל, מתח, בקרה והחזרת קפיץ הנדרשים בפרויקט."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/vcd.dwg",
+  "pdf_url": "/pdf/original/vcd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/vcd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/vcd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 107-108",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/vcd.pdf",
+  "installation_drawing_image": "/products/drawings/vcd-installation.png"
+ },
+ {
+  "slug": "obd",
+  "code": "OBD",
+  "codes": [
+   "OBD"
+  ],
+  "name": "Opposable blades damper",
+  "name_he": "דמפר להבים נגדיים",
+  "subtitle_he": "דמפר להבים נגדיים",
+  "family": "control-dampers",
+  "short_he": "דמפר ויסות עם להבים נגדיים להתקנה מאחורי תריסים ומפזרים.",
+  "description_he": "דמפר ויסות עם להבים נגדיים, המורכב בחיבור התריס ומאפשר שליטה בכמות האוויר במערכת המיזוג.",
+  "description_en": "Air control register is mounted on connection of the grille and it is used to adjust the air flow.",
+  "application_en": "Air flow adjustment in ventilation systems",
+  "characteristics_en": [
+   "Built with aluminium opposable blades and sprocket wheels.",
+   "Manual operation."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Natural aluminium blades and frame Polypropylene sprocket wheels"
+  ],
+  "assembly_en": [
+   "With pop rivets on the inlet connection of the grille."
+  ],
+  "catalog_pages": [
+   109,
+   109
+  ],
+  "image": "/products/photos/obd.png",
+  "hero_image": "/products/backgrounds/obd-v1.webp",
+  "drawing_image": "/products/drawings/obd.png",
+  "features_he": [
+   "ויסות כמות האוויר במערכות אוורור ומיזוג",
+   "להבים נגדיים מאלומיניום",
+   "הפעלה ידנית באמצעות מנגנון גלגלי שיניים",
+   "להבים ומסגרת בגימור אלומיניום טבעי",
+   "חיבור לתריס באמצעות מסמרות פופ"
+  ],
+  "sizes_he": [
+   "מידות לפי הזמנה"
+  ],
+  "accessories_he": [],
+  "materials_he": [
+   "להבים ומסגרת מאלומיניום טבעי",
+   "גלגלי שיניים מפוליפרופילן"
+  ],
+  "usage_he": "ויסות כמות האוויר במערכות אוורור ומיזוג.",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "חיבור לגריל",
+    "items": [
+     "קיבוע במסמרות עיוורות בכניסת הגריל."
+    ]
+   },
+   {
+    "title": "ויסות",
+    "items": [
+     "הפעלה ידנית של להבים הנעים בכיוונים מנוגדים."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/obd.dwg",
+  "pdf_url": "/pdf/original/obd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/obd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/obd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמוד 109",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/obd.pdf",
+  "installation_drawing_image": "/products/drawings/obd-installation.png"
+ },
+ {
+  "slug": "rsd",
+  "code": "RSD",
+  "codes": [
+   "RSD"
+  ],
+  "name": "Non return circular damper",
+  "name_he": "דמפר אל-חזור עגול",
+  "subtitle_he": "דמפר אל-חזור עגול",
+  "family": "control-dampers",
+  "short_he": "דמפר אל-חזור עגול למניעת זרימה חוזרת.",
+  "description_he": "דמפר אל-חזור עגול למניעת זרימה חוזרת.",
+  "description_en": "Non return circular damper for mounting between two circular sections of tubing.",
+  "application_en": "It is used to prevent the return of the air when the fan stops.",
+  "characteristics_en": [
+   "The damper blades will open when exposed to excess pressure.",
+   "The damper is provided with a return spring , which determines closing of the blades when pressure drops.",
+   "By closing the blades return of the air is prevented when the fan stops."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Galvanized steel cylinder",
+   "Aluminium blades",
+   "Natural galvanized finish"
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   110,
+   110
+  ],
+  "image": "/products/photos/rsd.png",
+  "hero_image": "/products/backgrounds/rsd-v1.webp",
+  "drawing_image": "/products/drawings/rsd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "מיקום ההתקנה",
+    "items": [
+     "דמפר אל-חזור הממוקם בין שני מקטעי תעלה עגולה.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   },
+   {
+    "title": "פעולה",
+    "items": [
+     "קפיץ סוגר את הלהבים עם ירידת הלחץ או עצירת המפוח, למניעת זרימה חוזרת."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/rsd.dwg",
+  "pdf_url": "/pdf/original/rsd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/rsd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/rsd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמוד 110",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/rsd.pdf",
+  "installation_drawing_image": "/products/drawings/rsd-installation.png"
+ },
+ {
+  "slug": "rd",
+  "code": "RD",
+  "codes": [
+   "RD"
+  ],
+  "name": "Circular air control damper",
+  "name_he": "ווסת אוויר עגול",
+  "subtitle_he": "ווסת אוויר עגול",
+  "family": "control-dampers",
+  "short_he": "דמפר ויסות עגול ידני לתעלות עגולות.",
+  "description_he": "דמפר ויסות עגול ידני לתעלות עגולות.",
+  "description_en": "Circular air control damper with driving system.",
+  "application_en": "To adjust the air flow in ventilation/air conditioning ducts systems.",
+  "characteristics_en": [
+   "The standard damper is produced with manual driving device (lever), unless electric drive (actuator) is requested.",
+   "The actuator will be selected according to the size of the damper, voltage and other technical details mentioned in the project (return spring, 0-10V control, etc.).",
+   "Actuator operates the opening/ closing of the blade through Ø8 mm shaft.",
+   "The damper is provided with a sealing gasket."
+  ],
+  "accessories_en": [
+   "Electric drive (actuator)."
+  ],
+  "materials_en": [
+   "Galvanized steel sheet"
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   111,
+   112
+  ],
+  "image": "/products/photos/rd.png",
+  "hero_image": "/products/backgrounds/rd-v1.webp",
+  "drawing_image": "/products/drawings/rd.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "חיבור למערכת",
+    "items": [
+     "דמפר ויסות לתעלה עגולה, עם אטם.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   },
+   {
+    "title": "הפעלה",
+    "items": [
+     "ידית ידנית בגרסה הסטנדרטית.",
+     "מפעיל חשמלי כאפשרות, בהתאם למפרט הפרויקט."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/rd.dwg",
+  "pdf_url": "/pdf/original/rd.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/rd-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/rd.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 111-112",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/rd.pdf",
+  "installation_drawing_image": "/products/drawings/rd-installation.png"
+ },
+ {
+  "slug": "iris",
+  "code": "IRIS",
+  "codes": [
+   "IRIS"
+  ],
+  "name": "Air volume control damper",
+  "name_he": "ווסת איריס",
+  "subtitle_he": "ווסת איריס",
+  "family": "control-dampers",
+  "short_he": "ווסת כמות אוויר מסוג איריס עם מדידת לחץ מובנית.",
+  "description_he": "ווסת כמות אוויר מסוג איריס עם מדידת לחץ מובנית.",
+  "description_en": "Iris diaphragm damper allows adjustment of the air flow by measuring pressure at two points. .",
+  "application_en": "Adjustment of the air flow in ventilation and air condition- ing systems.",
+  "characteristics_en": [
+   "The damper is provided with an iris diaphragm, pressure measuring points, operating lever and fitting gaskets.",
+   "Various levels of blade opening.",
+   "The iris is adjusted by operating lever.",
+   "The damper is delivered along with a selection chart (pressure loss/ air flow)."
+  ],
+  "accessories_en": [],
+  "materials_en": [
+   "Galvanized steel sheet",
+   "Plastic adjustment device"
+  ],
+  "assembly_en": [],
+  "catalog_pages": [
+   113,
+   114
+  ],
+  "image": "/products/photos/iris.png",
+  "hero_image": "/products/backgrounds/iris-v1.webp",
+  "drawing_image": "/products/drawings/iris.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "חיבור למערכת",
+    "items": [
+     "דמפר דיאפרגמה לתעלה עגולה, עם אטמים ונקודות מדידת לחץ.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   },
+   {
+    "title": "מדידה וויסות",
+    "items": [
+     "מדידת הפרש לחץ בין שתי נקודות המדידה.",
+     "כיוון הידית לפי תרשים הבחירה של הספק לקבלת הספיקה הנדרשת."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/iris.dwg",
+  "pdf_url": "/pdf/original/iris.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/iris-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/iris.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 113-114",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/iris.pdf",
+  "installation_drawing_image": "/products/drawings/iris-installation.png"
+ },
+ {
+  "slug": "tub",
+  "code": "TUB",
+  "codes": [
+   "TUB"
+  ],
+  "name": "Flexible ducts",
+  "name_he": "תעלות גמישות",
+  "subtitle_he": "תעלות גמישות",
+  "family": "flexible-ducts",
+  "short_he": "תעלות גמישות מאלומיניום, מבודדות ולא מבודדות.",
+  "description_he": "תעלות גמישות מאלומיניום, מבודדות ולא מבודדות.",
+  "description_en": "Aluminum flexible duct used in ventilation and air conditioning installations.",
+  "application_en": "Supply/ exhaust of the air. Pressure loss chart Pa/m",
+  "characteristics_en": [
+   "Flexible tubing is available both non-insulated and insulated.",
+   "The standard length is 10 m/pc.",
+   "Fiberglass insulation.",
+   "The temperature range is - 30°C ÷ 140°C.",
+   "Maximum velocity is 20 m/s.",
+   "Not suitable for air transport with high concentration of acids and bases or for discharge of combustion gases."
+  ],
+  "accessories_en": [],
+  "materials_en": [],
+  "assembly_en": [],
+  "catalog_pages": [
+   115,
+   115
+  ],
+  "image": "/products/photos/tub.png",
+  "hero_image": "/products/backgrounds/tub-v1.webp",
+  "drawing_image": "/products/drawings/tub-illustration.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התאמה למערכת",
+    "items": [
+     "תעלת אוויר גמישה מאלומיניום, מבודדת או לא מבודדת.",
+     "אורך סטנדרטי: 10 מ׳.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   },
+   {
+    "title": "תנאי שימוש",
+    "items": [
+     "טמפרטורת עבודה: מינוס 30°C עד 140°C; מהירות מרבית: 20 מ׳/שנייה.",
+     "הספק אינו מייעד את התעלה לגזי בעירה או לריכוז גבוה של חומצות ובסיסים."
+    ]
+   }
+  ],
+  "dwg_url": "",
+  "pdf_url": "/pdf/original/tub.pdf",
+  "featured": false,
+  "installation_source": "קטלוג הספק, עמוד 115",
+  "drawing_kind": "schematic",
+  "installation_drawing_image": "/products/drawings/tub-illustration.png",
+  "drawing_images": [
+   "/products/drawings/tub-illustration.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/tub.pdf",
+  "drawing_note": "איור סכמטי / תמונת מקור, ללא קנה מידה. קטלוג הספק אינו כולל שרטוט מידות מלא למוצר זה.",
+  "installation_pdf_url": "/products/installation/tub.pdf"
+ },
+ {
+  "slug": "adp",
+  "code": "ADP",
+  "codes": [
+   "ADP"
+  ],
+  "name": "Adapter",
+  "name_he": "מתאם",
+  "subtitle_he": "מתאם",
+  "family": "accessories",
+  "short_he": "מתאם מבודד / לא מבודד לחיבור תריסים ומפזרים לתעלה.",
+  "description_he": "מתאם מבודד / לא מבודד לחיבור תריסים ומפזרים לתעלה.",
+  "description_en": "Adapter (plenum) made of galvanized sheet, used as an intermediary element between the grille and venti- lation ducts. Parts made of galvanized sheet metal for ventilation ducts, type: \"T\", \"Y\", sockets, bent pipes, etc.",
+  "application_en": "",
+  "characteristics_en": [
+   "Adapter can be insulated or non-insulated ADP IZ/N It is made with one or more connections for ventilation ducts.",
+   "The connector (socket) is positioned opposite to the grille (standard) or side (optional)",
+   "On request adapter is provided with mounting flange Can be isolated on request",
+   "Dimensions on request"
+  ],
+  "accessories_en": [],
+  "materials_en": [],
+  "assembly_en": [],
+  "catalog_pages": [
+   116,
+   116
+  ],
+  "image": "/products/photos/adp.png",
+  "hero_image": "/products/backgrounds/adp-v1.webp",
+  "drawing_image": "/products/drawings/adp-illustration.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "חיבור למערכת",
+    "items": [
+     "מתאם מפח מגולוון בין הגריל לתעלת האוויר.",
+     "פתחי החיבור ממוקמים מול הגריל בגרסה הסטנדרטית; חיבור צדדי לפי הזמנה.",
+     "כמות פתחי החיבור ומידות המתאם נקבעות לפי ההזמנה.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   },
+   {
+    "title": "אפשרויות",
+    "items": [
+     "גרסה מבודדת IZ או לא מבודדת N.",
+     "אוגן חיבור כאפשרות לפי הזמנה."
+    ]
+   }
+  ],
+  "dwg_url": "",
+  "pdf_url": "/pdf/original/adp.pdf",
+  "featured": false,
+  "installation_source": "קטלוג הספק, עמוד 116",
+  "drawing_kind": "schematic",
+  "installation_drawing_image": "/products/drawings/adp-illustration.png",
+  "drawing_images": [
+   "/products/drawings/adp-illustration.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/adp.pdf",
+  "drawing_note": "איור סכמטי / תמונת מקור, ללא קנה מידה. קטלוג הספק אינו כולל שרטוט מידות מלא למוצר זה.",
+  "installation_pdf_url": "/products/installation/adp.pdf"
+ },
+ {
+  "slug": "fil",
+  "code": "FIL",
+  "codes": [
+   "FIL"
+  ],
+  "name": "Air filter",
+  "name_he": "מסנן אוויר",
+  "subtitle_he": "מסנן אוויר",
+  "family": "accessories",
+  "short_he": "מסנן אוויר להתקנה מאחורי תריסי יניקה.",
+  "description_he": "מסנן אוויר להתקנה מאחורי תריסי יניקה.",
+  "description_en": "Air filter for grille's inlet connection. Mounting spring is used for wall or ceiling mounting of the grille.",
+  "application_en": "",
+  "characteristics_en": [
+   "The air filter consists of filter material and \"U\" shaped aluminum frame",
+   "Class 2 polyester filter material, with high retention level and thickness of 12 mm.",
+   "Optional accessory used as a way of mounting.",
+   "Not visible after mounting",
+   "Spring length is 105 mm."
+  ],
+  "accessories_en": [],
+  "materials_en": [],
+  "assembly_en": [],
+  "catalog_pages": [
+   117,
+   117
+  ],
+  "image": "/products/photos/fil.png",
+  "hero_image": "/products/backgrounds/fil-v1.webp",
+  "drawing_image": "/products/drawings/fil-illustration.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "מיקום המסנן",
+    "items": [
+     "מסנן אוויר המותקן בכניסת הגריל.",
+     "מסגרת אלומיניום בצורת U ומצע פוליאסטר Class 2 בעובי 12 מ״מ.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   }
+  ],
+  "dwg_url": "",
+  "pdf_url": "/pdf/original/fil.pdf",
+  "featured": false,
+  "installation_source": "קטלוג הספק, עמוד 117",
+  "drawing_kind": "schematic",
+  "installation_drawing_image": "/products/drawings/fil-illustration.png",
+  "drawing_images": [
+   "/products/drawings/fil-illustration.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/fil.pdf",
+  "drawing_note": "איור סכמטי / תמונת מקור, ללא קנה מידה. קטלוג הספק אינו כולל שרטוט מידות מלא למוצר זה.",
+  "installation_pdf_url": "/products/installation/fil.pdf"
+ },
+ {
+  "slug": "cc",
+  "code": "CC",
+  "codes": [
+   "CC"
+  ],
+  "name": "Settlement frame for mounting",
+  "name_he": "מסגרת התקנה",
+  "subtitle_he": "מסגרת התקנה",
+  "family": "accessories",
+  "short_he": "מסגרת התקנה מפח מגולוון עם קליפסים להתקנה נסתרת.",
+  "description_he": "מסגרת התקנה מפח מגולוון עם קליפסים להתקנה נסתרת.",
+  "description_en": "Settlement frame made of galvanized steel sheet used for wall or ceiling mounting with clip mechanism. Clip made of steel sheet for mounting the grille in frame.",
+  "application_en": "",
+  "characteristics_en": [
+   "Optional accessory used as a way of mounting.",
+   "The mounting of the grille with settlement frame is not visible.",
+   "It is mounted in the hole and allows quick detachment of the grille.",
+   "The grille is attached to the settlement frame through A - interior size of the grille the clips mounted on the grille's inlet."
+  ],
+  "accessories_en": [],
+  "materials_en": [],
+  "assembly_en": [],
+  "catalog_pages": [
+   118,
+   119
+  ],
+  "image": "/products/photos/cc.png",
+  "hero_image": "/products/backgrounds/cc-v1.webp",
+  "drawing_image": "/products/drawings/cc.png",
+  "features_he": [],
+  "sizes_he": [],
+  "accessories_he": [],
+  "materials_he": [
+   "אלומיניום אקסטרודר",
+   "גימור סטנדרטי: צביעה אלקטרוסטטית RAL 9016 לבן",
+   "צבעים אחרים לפי דרישה"
+  ],
+  "usage_he": "",
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה נסתרת",
+    "items": [
+     "מסגרת מפח מגולוון המותקנת בפתח בקיר או בתקרה.",
+     "הקליפסים שבכניסת הגריל מתחברים למסגרת CC.",
+     "המסגרת מאפשרת ניתוק מהיר של הגריל."
+    ]
+   },
+   {
+    "title": "התאמת מידות",
+    "items": [
+     "A בשרטוט מציין את המידה הפנימית של הגריל; B מציין את מידת המסגרת.",
+     "מידות המסגרת מותאמות לגריל לפי הזמנה."
+    ]
+   }
+  ],
+  "dwg_url": "/products/cad/cc.dwg",
+  "pdf_url": "/pdf/original/cc.pdf",
+  "featured": false,
+  "drawing_images": [
+   "/products/drawings/cc-1.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/cc.pdf",
+  "drawing_note": "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "installation_source": "קטלוג הספק, עמודים 118-119",
+  "drawing_kind": "manufacturer",
+  "installation_pdf_url": "/products/installation/cc.pdf",
+  "installation_drawing_image": "/products/drawings/cc-installation.png"
+ },
+ {
+  "codes": [
+   "T / Y"
+  ],
+  "subtitle_he": "חלקי חיבור מיוחדים",
+  "family": "accessories",
+  "short_he": "חלקי חיבור מפח מגולוון לתעלות אוורור, לרבות הסתעפויות T ו־Y, מחברים וברכיים.",
+  "application_en": "",
+  "characteristics_en": [],
+  "accessories_en": [],
+  "materials_en": [],
+  "assembly_en": [],
+  "image": "/products/photos/special-parts.png",
+  "hero_image": "/products/backgrounds/special-parts-v1.webp",
+  "drawing_image": "/products/drawings/special-parts-illustration.png",
+  "accessories_he": [],
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התאמה למערכת",
+    "items": [
+     "אביזרי תעלה מפח מגולוון: מחברי T / Y, שרוולים וצינורות מכופפים.",
+     "מידות האביזרים נקבעות לפי ההזמנה.",
+     "פרטי הקיבוע אינם מפורטים בקטלוג הספק המצורף."
+    ]
+   },
+   {
+    "title": "אפשרויות",
+    "items": [
+     "בידוד לפי דרישה."
+    ]
+   }
+  ],
+  "dwg_url": "",
+  "featured": false,
+  "slug": "special-parts",
+  "code": "T / Y",
+  "name": "Special Parts",
+  "name_he": "חלקי חיבור מיוחדים",
+  "description_he": "חלקי חיבור מפח מגולוון לתעלות אוורור, לרבות הסתעפויות T ו־Y, מחברים וברכיים.",
+  "description_en": "Parts made of galvanized sheet metal for ventilation ducts, type T, Y, sockets, bent pipes, etc.",
+  "features_he": [
+   "הסתעפויות T ו־Y לתעלות אוורור",
+   "מחברים וברכיים לחיבור התעלות",
+   "מיוצרים מפח מגולוון",
+   "אפשרות לבידוד לפי דרישה",
+   "מידות לפי הזמנה"
+  ],
+  "sizes_he": [
+   "מידות לפי הזמנה"
+  ],
+  "materials_he": [
+   "פח מגולוון",
+   "אפשרות לבידוד לפי דרישה"
+  ],
+  "usage_he": "חיבור והסתעפות של תעלות אוורור ומיזוג.",
+  "catalog_pages": [
+   116,
+   116
+  ],
+  "pdf_url": "/pdf/original/adp.pdf",
+  "installation_source": "קטלוג הספק, עמוד 116",
+  "drawing_kind": "schematic",
+  "installation_drawing_image": "/products/drawings/special-parts-illustration.png",
+  "drawing_images": [
+   "/products/drawings/special-parts-illustration.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/special-parts.pdf",
+  "drawing_note": "איור סכמטי / תמונת מקור, ללא קנה מידה. קטלוג הספק אינו כולל שרטוט מידות מלא למוצר זה.",
+  "installation_pdf_url": "/products/installation/special-parts.pdf"
+ },
+ {
+  "codes": [
+   "Mounting Spring"
+  ],
+  "subtitle_he": "קפיץ התקנה לתריס",
+  "family": "accessories",
+  "short_he": "קפיץ להתקנת תריס בקיר או בתקרה, שאינו נראה לאחר ההתקנה.",
+  "application_en": "",
+  "characteristics_en": [],
+  "accessories_en": [],
+  "materials_en": [],
+  "assembly_en": [],
+  "image": "/products/photos/mounting-spring.png",
+  "hero_image": "/products/backgrounds/mounting-spring-v1.webp",
+  "drawing_image": "/products/drawings/mounting-spring-illustration.png",
+  "accessories_he": [],
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "התקנה נסתרת",
+    "items": [
+     "קפיץ A להתקנה אופציונלית של גריל בקיר או בתקרה.",
+     "אורך הקפיץ המופיע בקטלוג: 105 מ״מ.",
+     "מיקום הקפיץ ופרטי העיגון אינם מפורטים בקטלוג; יש להתאים לגריל שהוזמן."
+    ]
+   }
+  ],
+  "dwg_url": "",
+  "featured": false,
+  "slug": "mounting-spring",
+  "code": "Mounting Spring",
+  "name": "Mounting Spring",
+  "name_he": "קפיץ התקנה לתריס",
+  "description_he": "קפיץ להתקנת תריס בקיר או בתקרה, שאינו נראה לאחר ההתקנה.",
+  "description_en": "Mounting spring is used for wall or ceiling mounting of the grille.",
+  "features_he": [
+   "להתקנת תריס בקיר או בתקרה",
+   "חיבור נסתר לאחר ההתקנה",
+   "אביזר התקנה אופציונלי",
+   "אורך הקפיץ: 105 מ״מ"
+  ],
+  "sizes_he": [
+   "אורך הקפיץ: 105 מ״מ"
+  ],
+  "materials_he": [],
+  "usage_he": "קיבוע תריס בקיר או בתקרה.",
+  "catalog_pages": [
+   117,
+   117
+  ],
+  "pdf_url": "/pdf/original/fil.pdf",
+  "installation_source": "קטלוג הספק, עמוד 117",
+  "drawing_kind": "schematic",
+  "installation_drawing_image": "/products/drawings/mounting-spring-illustration.png",
+  "drawing_images": [
+   "/products/drawings/mounting-spring-illustration.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/mounting-spring.pdf",
+  "drawing_note": "איור סכמטי / תמונת מקור, ללא קנה מידה. קטלוג הספק אינו כולל שרטוט מידות מלא למוצר זה.",
+  "installation_pdf_url": "/products/installation/mounting-spring.pdf"
+ },
+ {
+  "codes": [
+   "Mounting Clips"
+  ],
+  "subtitle_he": "קליפסים להתקנת תריס",
+  "family": "accessories",
+  "short_he": "קליפסים מפח פלדה לקיבוע תריס במסגרת התקנה.",
+  "application_en": "",
+  "characteristics_en": [],
+  "accessories_en": [],
+  "materials_en": [],
+  "assembly_en": [],
+  "image": "/products/photos/mounting-clips.png",
+  "hero_image": "/products/backgrounds/mounting-clips-v1.webp",
+  "drawing_image": "/products/drawings/mounting-clips-illustration.png",
+  "accessories_he": [],
+  "lengths": [],
+  "heights": [],
+  "install_he": [
+   {
+    "title": "חיבור למסגרת",
+    "items": [
+     "קליפסים מפח פלדה לחיבור הגריל למסגרת התקנה.",
+     "במערכת CC הקליפסים שבכניסת הגריל נתפסים במסגרת.",
+     "פרטי חיבור CC מוצגים באיור הספק; מידות הקליפס אינן מפורטות בקטלוג."
+    ]
+   }
+  ],
+  "dwg_url": "",
+  "featured": false,
+  "slug": "mounting-clips",
+  "code": "Mounting Clips",
+  "name": "Mounting Clips",
+  "name_he": "קליפסים להתקנת תריס",
+  "description_he": "קליפסים מפח פלדה לקיבוע תריס במסגרת התקנה.",
+  "description_en": "Clip made of steel sheet for mounting the grille in frame.",
+  "features_he": [
+   "לקיבוע תריס במסגרת התקנה",
+   "מיוצרים מפח פלדה",
+   "חיבור הקליפסים בכניסת התריס",
+   "התקנה נסתרת בתוך המסגרת"
+  ],
+  "sizes_he": [],
+  "materials_he": [
+   "פח פלדה"
+  ],
+  "usage_he": "חיבור תריס למסגרת התקנה.",
+  "catalog_pages": [
+   118,
+   118
+  ],
+  "pdf_url": "/pdf/original/cc.pdf",
+  "drawing_images": [
+   "/products/drawings/mounting-clips-illustration.png"
+  ],
+  "drawing_pdf_url": "/products/drawings/mounting-clips.pdf",
+  "drawing_note": "פרט חיבור למסגרת CC מתוך קטלוג הספק. אין בקטלוג שרטוט מידות של הקליפס עצמו.",
+  "installation_source": "קטלוג הספק, עמוד 118",
+  "drawing_kind": "connection",
+  "installation_drawing_image": "/products/drawings/mounting-clips-illustration.png",
+  "installation_pdf_url": "/products/installation/mounting-clips.pdf"
+ }
+]

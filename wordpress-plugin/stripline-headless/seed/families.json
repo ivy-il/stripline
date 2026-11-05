@@ -1,0 +1,79 @@
+[
+ {
+  "slug": "grilles",
+  "name": "GRILLES",
+  "name_he": "תריסים",
+  "description_he": "תריסי אספקה, יניקה וחוץ מאלומיניום, בגימור לבן או אנודייז, לכל סוגי החללים.",
+  "order": 0
+ },
+ {
+  "slug": "decorative-grilles",
+  "name": "DECORATIVE GRILLES",
+  "name_he": "תריסים דקורטיביים",
+  "description_he": "תריסים ליניאריים ודקורטיביים שנעלמים בקו התקרה והקיר.",
+  "order": 1
+ },
+ {
+  "slug": "diffusers",
+  "name": "DIFFUSERS",
+  "name_he": "מפזרי אוויר",
+  "description_he": "מפזרי תקרה עגולים, מרובעים ומחוררים לפיזור אוויר אחיד ושקט.",
+  "order": 2
+ },
+ {
+  "slug": "slot-diffusers",
+  "name": "SLOT DIFFUSERS",
+  "name_he": "מפזרי סלוט",
+  "description_he": "מפזרים ליניאריים דקים בקו נקי, אחד עד ארבעה חריצים.",
+  "order": 3
+ },
+ {
+  "slug": "swirl-diffusers",
+  "name": "SWIRL DIFFUSERS",
+  "name_he": "מפזרי מערבולת",
+  "description_he": "מפזרי מערבולת וג׳ט לתקרות גבוהות ולחללים גדולים.",
+  "order": 4
+ },
+ {
+  "slug": "access-doors",
+  "name": "ACCESS DOORS",
+  "name_he": "דלתות שירות",
+  "description_he": "דלתות ותריסי גישה לתחזוקה, משתלבים בקיר ובתקרה.",
+  "order": 5
+ },
+ {
+  "slug": "jets-valves",
+  "name": "JETS & VALVES",
+  "name_he": "ג׳טים ושסתומים",
+  "description_he": "מפזרי ג׳ט לטווח ארוך ושסתומים עגולים לאספקה ויניקה.",
+  "order": 6
+ },
+ {
+  "slug": "fire-dampers",
+  "name": "FIRE DAMPERS",
+  "name_he": "מדפי אש",
+  "description_he": "מדפי אש מלבניים ועגולים לתעלות מיזוג, בהתאם לתקן.",
+  "order": 7
+ },
+ {
+  "slug": "control-dampers",
+  "name": "CONTROL DAMPERS",
+  "name_he": "ווסתים",
+  "description_he": "ווסתי כמות אוויר, דמפרים ומדפי אל-חזור.",
+  "order": 8
+ },
+ {
+  "slug": "flexible-ducts",
+  "name": "FLEXIBLE DUCTS",
+  "name_he": "תעלות גמישות",
+  "description_he": "תעלות גמישות מבודדות ולא מבודדות לחיבור מפזרים.",
+  "order": 9
+ },
+ {
+  "slug": "accessories",
+  "name": "ACCESSORIES",
+  "name_he": "אביזרים",
+  "description_he": "מתאמים, מסננים, מסגרות התקנה וקליפסים.",
+  "order": 10
+ }
+]

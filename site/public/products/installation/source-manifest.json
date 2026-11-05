@@ -1,0 +1,542 @@
+[
+  {
+    "slug": "dd-dd1",
+    "pdf": "/products/installation/dd-dd1.pdf",
+    "source_catalog_pages": [
+      3,
+      4
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "egg-eggd",
+    "pdf": "/products/installation/egg-eggd.pdf",
+    "source_catalog_pages": [
+      5,
+      6
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "eilat",
+    "pdf": "/products/installation/eilat.pdf",
+    "source_catalog_pages": [
+      7,
+      8
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "nrd-nrdd",
+    "pdf": "/products/installation/nrd-nrdd.pdf",
+    "source_catalog_pages": [
+      9,
+      10
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "lbdf",
+    "pdf": "/products/installation/lbdf.pdf",
+    "source_catalog_pages": [
+      11,
+      12
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "sd-sdd",
+    "pdf": "/products/installation/sd-sdd.pdf",
+    "source_catalog_pages": [
+      13,
+      15
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "sd-dd",
+    "pdf": "/products/installation/sd-dd.pdf",
+    "source_catalog_pages": [
+      16,
+      16
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "tg-tgs",
+    "pdf": "/products/installation/tg-tgs.pdf",
+    "source_catalog_pages": [
+      17,
+      18
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "wpl-wpls",
+    "pdf": "/products/installation/wpl-wpls.pdf",
+    "source_catalog_pages": [
+      19,
+      21
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "wplh",
+    "pdf": "/products/installation/wplh.pdf",
+    "source_catalog_pages": [
+      22,
+      22
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "wplsr-wplr",
+    "pdf": "/products/installation/wplsr-wplr.pdf",
+    "source_catalog_pages": [
+      23,
+      24
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "rdd-rdd-1",
+    "pdf": "/products/installation/rdd-rdd-1.pdf",
+    "source_catalog_pages": [
+      25,
+      26
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "rdr-rdr1",
+    "pdf": "/products/installation/rdr-rdr1.pdf",
+    "source_catalog_pages": [
+      27,
+      28
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "d-ss1-d-ss2",
+    "pdf": "/products/installation/d-ss1-d-ss2.pdf",
+    "source_catalog_pages": [
+      29,
+      31
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "lbd-lbdb-lbdd",
+    "pdf": "/products/installation/lbd-lbdb-lbdd.pdf",
+    "source_catalog_pages": [
+      32,
+      34
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "rcd-rcd-r-rcdh-rcd-rh",
+    "pdf": "/products/installation/rcd-rcd-r-rcdh-rcd-rh.pdf",
+    "source_catalog_pages": [
+      35,
+      36
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "pgp",
+    "pdf": "/products/installation/pgp.pdf",
+    "source_catalog_pages": [
+      37,
+      38
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "pfd-pf",
+    "pdf": "/products/installation/pfd-pf.pdf",
+    "source_catalog_pages": [
+      39,
+      40
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "pff-pfdd",
+    "pdf": "/products/installation/pff-pfdd.pdf",
+    "source_catalog_pages": [
+      41,
+      42
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "pc",
+    "pdf": "/products/installation/pc.pdf",
+    "source_catalog_pages": [
+      43,
+      44
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "pa",
+    "pdf": "/products/installation/pa.pdf",
+    "source_catalog_pages": [
+      45,
+      46
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "lcd",
+    "pdf": "/products/installation/lcd.pdf",
+    "source_catalog_pages": [
+      47,
+      48
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "ac",
+    "pdf": "/products/installation/ac.pdf",
+    "source_catalog_pages": [
+      49,
+      50
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "cd-ck",
+    "pdf": "/products/installation/cd-ck.pdf",
+    "source_catalog_pages": [
+      51,
+      52
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "sl",
+    "pdf": "/products/installation/sl.pdf",
+    "source_catalog_pages": [
+      53,
+      54
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "fd",
+    "pdf": "/products/installation/fd.pdf",
+    "source_catalog_pages": [
+      55,
+      56
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "cd",
+    "pdf": "/products/installation/cd.pdf",
+    "source_catalog_pages": [
+      57,
+      59
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "cd-s",
+    "pdf": "/products/installation/cd-s.pdf",
+    "source_catalog_pages": [
+      60,
+      62
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "cd-dd",
+    "pdf": "/products/installation/cd-dd.pdf",
+    "source_catalog_pages": [
+      63,
+      65
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "slot",
+    "pdf": "/products/installation/slot.pdf",
+    "source_catalog_pages": [
+      66,
+      69
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "bd1-bd2-bdv",
+    "pdf": "/products/installation/bd1-bd2-bdv.pdf",
+    "source_catalog_pages": [
+      70,
+      71
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "sp2-sp3",
+    "pdf": "/products/installation/sp2-sp3.pdf",
+    "source_catalog_pages": [
+      72,
+      73
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "swr",
+    "pdf": "/products/installation/swr.pdf",
+    "source_catalog_pages": [
+      74,
+      76
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "std-std-1",
+    "pdf": "/products/installation/std-std-1.pdf",
+    "source_catalog_pages": [
+      77,
+      78
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "ss",
+    "pdf": "/products/installation/ss.pdf",
+    "source_catalog_pages": [
+      79,
+      80
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "vs",
+    "pdf": "/products/installation/vs.pdf",
+    "source_catalog_pages": [
+      81,
+      83
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "vsr",
+    "pdf": "/products/installation/vsr.pdf",
+    "source_catalog_pages": [
+      84,
+      86
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "ad",
+    "pdf": "/products/installation/ad.pdf",
+    "source_catalog_pages": [
+      87,
+      87
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "ag",
+    "pdf": "/products/installation/ag.pdf",
+    "source_catalog_pages": [
+      88,
+      88
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "jr",
+    "pdf": "/products/installation/jr.pdf",
+    "source_catalog_pages": [
+      89,
+      90
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "jd",
+    "pdf": "/products/installation/jd.pdf",
+    "source_catalog_pages": [
+      91,
+      92
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "jb",
+    "pdf": "/products/installation/jb.pdf",
+    "source_catalog_pages": [
+      93,
+      94
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "ev",
+    "pdf": "/products/installation/ev.pdf",
+    "source_catalog_pages": [
+      95,
+      96
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "sv",
+    "pdf": "/products/installation/sv.pdf",
+    "source_catalog_pages": [
+      97,
+      98
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "vn",
+    "pdf": "/products/installation/vn.pdf",
+    "source_catalog_pages": [
+      99,
+      100
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "sjd",
+    "pdf": "/products/installation/sjd.pdf",
+    "source_catalog_pages": [
+      101,
+      102
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "sfd",
+    "pdf": "/products/installation/sfd.pdf",
+    "source_catalog_pages": [
+      103,
+      104
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "rfd",
+    "pdf": "/products/installation/rfd.pdf",
+    "source_catalog_pages": [
+      105,
+      106
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "vcd",
+    "pdf": "/products/installation/vcd.pdf",
+    "source_catalog_pages": [
+      107,
+      108
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "obd",
+    "pdf": "/products/installation/obd.pdf",
+    "source_catalog_pages": [
+      109,
+      109
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "rsd",
+    "pdf": "/products/installation/rsd.pdf",
+    "source_catalog_pages": [
+      110,
+      110
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "rd",
+    "pdf": "/products/installation/rd.pdf",
+    "source_catalog_pages": [
+      111,
+      112
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "iris",
+    "pdf": "/products/installation/iris.pdf",
+    "source_catalog_pages": [
+      113,
+      114
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "tub",
+    "pdf": "/products/installation/tub.pdf",
+    "source_catalog_pages": [
+      115,
+      115
+    ],
+    "drawing_kind": "schematic"
+  },
+  {
+    "slug": "adp",
+    "pdf": "/products/installation/adp.pdf",
+    "source_catalog_pages": [
+      116,
+      116
+    ],
+    "drawing_kind": "schematic"
+  },
+  {
+    "slug": "fil",
+    "pdf": "/products/installation/fil.pdf",
+    "source_catalog_pages": [
+      117,
+      117
+    ],
+    "drawing_kind": "schematic"
+  },
+  {
+    "slug": "cc",
+    "pdf": "/products/installation/cc.pdf",
+    "source_catalog_pages": [
+      118,
+      119
+    ],
+    "drawing_kind": "manufacturer"
+  },
+  {
+    "slug": "special-parts",
+    "pdf": "/products/installation/special-parts.pdf",
+    "source_catalog_pages": [
+      116,
+      116
+    ],
+    "drawing_kind": "schematic"
+  },
+  {
+    "slug": "mounting-spring",
+    "pdf": "/products/installation/mounting-spring.pdf",
+    "source_catalog_pages": [
+      117,
+      117
+    ],
+    "drawing_kind": "schematic"
+  },
+  {
+    "slug": "mounting-clips",
+    "pdf": "/products/installation/mounting-clips.pdf",
+    "source_catalog_pages": [
+      118,
+      118
+    ],
+    "drawing_kind": "connection"
+  }
+]

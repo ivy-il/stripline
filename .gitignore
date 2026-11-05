@@ -1,0 +1,19 @@
+# Local copies, scratch and reference material (not part of the source)
+/site - Copy/
+/tmm/
+/tmp/
+/output/
+/.playwright-mcp/
+/client-feedback/
+/hdr.png
+/pdftext.txt
+
+# Tool binaries and caches
+/tools/bin/
+__pycache__/
+
+# Build output (the plugin zip is built from wordpress-plugin/stripline-headless)
+/wordpress-plugin/*.zip
+
+.DS_Store
+Thumbs.db
