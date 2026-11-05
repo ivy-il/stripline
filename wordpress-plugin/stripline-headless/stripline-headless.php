@@ -13,7 +13,7 @@ define('STRIPLINE_VER', '1.5.0');
 define('STRIPLINE_DIR', plugin_dir_path(__FILE__));
 define('STRIPLINE_URL', plugin_dir_url(__FILE__));
 // The Next.js site, for previewing its default images when "חיבור" has no site address.
-if (!defined('STRIPLINE_SITE_URL')) define('STRIPLINE_SITE_URL', 'https://stripline.olas.co.il');
+if (!defined('STRIPLINE_SITE_URL')) define('STRIPLINE_SITE_URL', 'https://stripline.co.il');
 
 require_once STRIPLINE_DIR . 'includes/fields.php';
 require_once STRIPLINE_DIR . 'includes/post-types.php';
