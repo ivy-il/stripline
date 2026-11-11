@@ -76,10 +76,11 @@ export function productHasDrawing(product: Product): boolean {
 /**
  * PDF sheet colour chips come from a global settings list. Show them only when the product's
  * materials actually mention paint / RAL — not for galvanized, stainless, etc.
+ * `RAL` must not match inside English "natural".
  */
 export function productHasPaintFinishes(product: Product): boolean {
   const blob = [...(product.materials_he ?? []), ...(product.materials_en ?? [])].join(" ");
-  return /RAL|צבע|צביעה|paint|powder\s*coat|electrostatic/i.test(blob);
+  return /(?<![A-Za-z])RAL(?![A-Za-z])|צבע|צביעה|\bpaint\b|powder\s*coat|electrostatic/i.test(blob);
 }
 
 /** The drawing as a PDF: the uploaded file, the one exported beside the drawing image, or the product sheet. */
