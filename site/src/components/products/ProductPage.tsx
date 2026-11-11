@@ -3,7 +3,7 @@ import { Download, PencilRuler } from "lucide-react";
 import Arrow, { WhatsAppIcon } from "@/components/design/Arrow";
 import { fill, Rich } from "@/components/design/Rich";
 import { agentButtonLabel, familyScene, productImage } from "@/lib/design";
-import { drawingPdf, productAccessories, productFeatures, productSizes, productUsage } from "@/lib/product-text";
+import { drawingPdf, productAccessories, productContactRef, productFeatures, productHasDrawing, productLabel, productSizes, productUsage } from "@/lib/product-text";
 import { productLabels } from "@/lib/product-labels";
 import type { Family, Product, Settings } from "@/lib/types";
 import ProductActions from "./ProductActions";
@@ -20,13 +20,15 @@ export default function ProductPage({ product, family, related, s }: { product: 
   const lead = product.description_he || product.short_he;
   const features = productFeatures(product).filter((f) => f !== lead && f !== product.short_he);
   const drawings = product.drawing_images?.length ? product.drawing_images : [product.drawing_image].filter(Boolean);
+  const hasDrawing = productHasDrawing(product);
   const sheet = `/products/${product.slug}/sheet?download=1`;
   const scene = product.hero_image || familyScene(family, s.default_scene);
   const waTitle = s.pp_wa_title.trim() || "מעוניינים במוצר הזה? יש לכם שאלה?";
   const waSub = s.pp_wa_sub.trim() || "צוות STRIPLINE זמין לכם בוואטסאפ";
   const productUrl = `https://stripline.co.il/products/${product.slug}`;
-  const waMessage = fill(s.pp_whatsapp_msg, { product: `${product.name_he} (${product.code})`, url: productUrl });
+  const waMessage = fill(s.pp_whatsapp_msg, { product: productLabel(product), url: productUrl });
   const waText = encodeURIComponent(waMessage.includes(productUrl) ? waMessage : `${waMessage}\n${productUrl}`);
+  const code = product.code?.trim();
 
   return (
     <>
@@ -37,7 +39,7 @@ export default function ProductPage({ product, family, related, s }: { product: 
             <Arrow className="flip" /> {family?.name_he ?? s.products_title}
           </Link>
           <h1>{product.name_he}</h1>
-          <p className="pp-code lat" dir="ltr">{product.code}</p>
+          {code ? <p className="pp-code lat" dir="ltr">{code}</p> : null}
         </div>
       </div>
 
@@ -88,26 +90,28 @@ export default function ProductPage({ product, family, related, s }: { product: 
           </div>
         </div>
 
-        <section className="prod-draw" aria-labelledby="draw-h">
-          <div className="prod-draw-head">
-            <h2 id="draw-h"><PencilRuler className="size-6" strokeWidth={1.2} aria-hidden="true" /> {s.pp_drawing}</h2>
-            <p>{product.drawing_note || s.pp_drawing_note}</p>
-            <div className="acts">
-              <a className="btn ghost" href={drawingPdf(product)} download><Download className="size-4" strokeWidth={1.4} /> {s.pp_drawing_pdf}</a>
+        {hasDrawing && (
+          <section className="prod-draw" aria-labelledby="draw-h">
+            <div className="prod-draw-head">
+              <h2 id="draw-h"><PencilRuler className="size-6" strokeWidth={1.2} aria-hidden="true" /> {s.pp_drawing}</h2>
+              <p>{product.drawing_note || s.pp_drawing_note}</p>
+              <div className="acts">
+                <a className="btn ghost" href={drawingPdf(product)} download><Download className="size-4" strokeWidth={1.4} /> {s.pp_drawing_pdf}</a>
+              </div>
             </div>
-          </div>
-          {drawings.length > 0 ? (
-            <div className={`prod-draw-figs n${Math.min(drawings.length, 3)}`}>
-              {drawings.map((src, i) => (
-                <a key={src} href={src} target="_blank" rel="noopener" className="prod-draw-fig" aria-label={`פתיחת השרטוט ${i + 1} בגודל מלא`}>
-                  <img src={src} alt={`שרטוט ${product.code}${drawings.length > 1 ? `, איור ${i + 1}` : ""}`} loading="lazy" />
-                </a>
-              ))}
-            </div>
-          ) : (
-            <p className="prod-draw-empty">{s.pp_drawing_empty}</p>
-          )}
-        </section>
+            {drawings.length > 0 ? (
+              <div className={`prod-draw-figs n${Math.min(drawings.length, 3)}`}>
+                {drawings.map((src, i) => (
+                  <a key={src} href={src} target="_blank" rel="noopener" className="prod-draw-fig" aria-label={`פתיחת השרטוט ${i + 1} בגודל מלא`}>
+                    <img src={src} alt={`שרטוט ${code || product.name_he}${drawings.length > 1 ? `, איור ${i + 1}` : ""}`} loading="lazy" />
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <p className="prod-draw-empty">{s.pp_drawing_empty}</p>
+            )}
+          </section>
+        )}
 
         {related.length > 0 && (
           <section className="prod-rel" aria-labelledby="rel-h">
@@ -127,7 +131,7 @@ export default function ProductPage({ product, family, related, s }: { product: 
           <div>
             {s.pp_cta_text && <p>{s.pp_cta_text}</p>}
             <div className="acts">
-              {s.pp_cta_contact && <Link className="btn light" href={`/contact?product=${encodeURIComponent(product.code)}`}>{s.pp_cta_contact}</Link>}
+              {s.pp_cta_contact && <Link className="btn light" href={`/contact?product=${encodeURIComponent(productContactRef(product))}`}>{s.pp_cta_contact}</Link>}
               {s.pp_cta_catalog && <Link className="btn ghost-l" href="/catalog">{s.pp_cta_catalog}</Link>}
             </div>
           </div>

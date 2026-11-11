@@ -18,6 +18,11 @@ add_action('save_post', function ($post_id, $post) {
     if ($post->post_type === 'sl_product') stripline_revalidate(['products']);
     if ($post->post_type === 'sl_project') stripline_revalidate(['projects']);
 }, 20, 2);
+// Draft / trash / restore must drop cached product & sheet pages, not only full deletes.
+add_action('transition_post_status', function ($new, $old, $post) {
+    if ($new === $old || !in_array($post->post_type, ['sl_product', 'sl_project'], true)) return;
+    stripline_revalidate($post->post_type === 'sl_product' ? ['products'] : ['projects']);
+}, 10, 3);
 add_action('deleted_post', function ($post_id, $post) {
     if ($post && in_array($post->post_type, ['sl_product', 'sl_project'], true)) stripline_revalidate(['products', 'projects']);
 }, 10, 2);

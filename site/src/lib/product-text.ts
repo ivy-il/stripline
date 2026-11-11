@@ -53,6 +53,35 @@ export function productSizes(p: Product): string[] {
   return out;
 }
 
+/** Name for WhatsApp / CTAs: include מק״ט in parentheses only when it exists. */
+export function productLabel(product: Product): string {
+  const code = product.code?.trim();
+  return code ? `${product.name_he} (${code})` : product.name_he;
+}
+
+/** Value passed to /contact?product= — code when present, otherwise the Hebrew name. */
+export function productContactRef(product: Product): string {
+  return product.code?.trim() || product.name_he;
+}
+
+/** True when the product has a real technical drawing to show or download. */
+export function productHasDrawing(product: Product): boolean {
+  return Boolean(
+    product.drawing_pdf_url?.trim()
+    || product.drawing_image?.trim()
+    || product.drawing_images?.some((src) => src?.trim()),
+  );
+}
+
+/**
+ * PDF sheet colour chips come from a global settings list. Show them only when the product's
+ * materials actually mention paint / RAL — not for galvanized, stainless, etc.
+ */
+export function productHasPaintFinishes(product: Product): boolean {
+  const blob = [...(product.materials_he ?? []), ...(product.materials_en ?? [])].join(" ");
+  return /RAL|צבע|צביעה|paint|powder\s*coat|electrostatic/i.test(blob);
+}
+
 /** The drawing as a PDF: the uploaded file, the one exported beside the drawing image, or the product sheet. */
 export function drawingPdf(product: Product): string {
   if (product.drawing_pdf_url) return product.drawing_pdf_url;

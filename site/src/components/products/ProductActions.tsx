@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Download, FileText, PencilRuler } from "lucide-react";
 import Modal from "@/components/Modal";
-import { drawingPdf, productAccessories } from "@/lib/product-text";
+import { drawingPdf, productAccessories, productHasDrawing } from "@/lib/product-text";
 import { fill } from "@/components/design/Rich";
 import type { ProductLabels } from "@/lib/product-labels";
 import type { Product } from "@/lib/types";
@@ -13,25 +13,29 @@ export default function ProductActions({ product, labels: t }: { product: Produc
   const [drawing, setDrawing] = useState(false);
   const [install, setInstall] = useState(false);
   const sheetUrl = `/products/${product.slug}/sheet?download=1`;
+  const hasDrawing = productHasDrawing(product);
 
   const drawingImages = product.drawing_images?.length ? product.drawing_images : [product.drawing_image].filter(Boolean);
   const installationDrawing = product.installation_drawing_image || product.drawing_image;
   const drawingEl = installationDrawing ? (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src={installationDrawing} alt={`איור טכני ${product.code}`} className="w-full max-h-64 object-contain" />
+    <img src={installationDrawing} alt={`איור טכני ${product.code || product.name_he}`} className="w-full max-h-64 object-contain" />
   ) : (
     <p className="p-6 text-sm text-muted">{t.pp_install_empty}</p>
   );
 
   return (
     <>
-      <button type="button" onClick={() => setDrawing(true)} className="btn ghost">
-        <PencilRuler className="size-4" strokeWidth={1.4} /> {t.pp_drawing}
-      </button>
+      {hasDrawing && (
+        <button type="button" onClick={() => setDrawing(true)} className="btn ghost">
+          <PencilRuler className="size-4" strokeWidth={1.4} /> {t.pp_drawing}
+        </button>
+      )}
       <button type="button" onClick={() => setInstall(true)} className="btn ghost">
         <FileText className="size-4" strokeWidth={1.4} /> {t.pp_install}
       </button>
 
+      {hasDrawing && (
       <Modal
         open={drawing}
         onClose={() => setDrawing(false)}
@@ -43,19 +47,20 @@ export default function ProductActions({ product, labels: t }: { product: Produc
         }
       >
         <div className="rounded-lg border border-line bg-cream-2 p-4 text-center text-sm text-muted mb-4">
-          <span dir="ltr" className="font-medium text-ink">{product.code}</span>
+          {product.code?.trim() ? <span dir="ltr" className="font-medium text-ink">{product.code}</span> : null}
           <p className="mt-1">{product.drawing_note || t.pp_modal_note}</p>
         </div>
         <div className="flex flex-col gap-4">
           {drawingImages.length ? drawingImages.map((src, index) => (
             <figure key={src} className="rounded-lg border border-line bg-white p-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt={`שרטוט ${product.code}, איור ${index + 1}`} className="w-full max-h-[60vh] object-contain" />
+              <img src={src} alt={`שרטוט ${product.code || product.name_he}, איור ${index + 1}`} className="w-full max-h-[60vh] object-contain" />
               {drawingImages.length > 1 && <figcaption className="mt-2 text-center text-xs text-muted">{fill(t.pp_modal_figure, { n: index + 1, total: drawingImages.length })}</figcaption>}
             </figure>
           )) : drawingEl}
         </div>
       </Modal>
+      )}
 
       <Modal
         open={install}
@@ -68,7 +73,7 @@ export default function ProductActions({ product, labels: t }: { product: Produc
         }
       >
         <div className="mb-5 rounded-lg border border-line bg-cream-2 px-4 py-3 text-center">
-          <span className="font-medium" dir="ltr">{product.code}</span>
+          {product.code?.trim() ? <span className="font-medium" dir="ltr">{product.code}</span> : <span className="font-medium">{product.name_he}</span>}
           <p className="mt-1 text-xs text-muted">{product.installation_source || t.pp_install_source}</p>
         </div>
         <div className="grid sm:grid-cols-2 gap-6">
