@@ -108,10 +108,20 @@ export async function getProducts(): Promise<Product[]> {
 
 export async function getProduct(slug: string): Promise<Product | undefined> {
   if (!WP) return seedProducts().find((p) => p.slug === slug);
-  // Same seed fallback as getProducts(), or an unreachable CMS lists products whose pages then 404.
-  const seed = seedProducts().find((p) => p.slug === slug) ?? null;
-  const p = await wpGet<Product | null>(`/products/${encodeURIComponent(slug)}`, "products", seed);
-  return p ? (p === seed ? p : withProductDocuments(p)) : undefined;
+  // Do not fall back to seed on 404: draft/trash products must disappear from direct URLs.
+  try {
+    const res = await fetch(`${WP}/products/${encodeURIComponent(slug)}`, {
+      next: { revalidate: REVALIDATE, tags: ["products", "stripline"] },
+      headers: { Accept: "application/json" },
+    });
+    if (res.status === 404) return undefined;
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    return withProductDocuments(proxyMedia(await res.json()) as Product);
+  } catch (err) {
+    console.error(`[wp] /products/${slug} failed:`, err);
+    // CMS unreachable: keep seed so local/preview still works; published list remains the source of truth for nav.
+    return seedProducts().find((p) => p.slug === slug);
+  }
 }
 
 export async function getProductsByFamily(family: string): Promise<Product[]> {

@@ -69,7 +69,7 @@ export default function ContactForm({ email, labels: t }: { email: string; label
 
   return (
     <form className="ct-r" id="cform" noValidate ref={form} onSubmit={submit}>
-      {product && <p className="cf-product">{t.form_about} <bdi dir="ltr">{product}</bdi></p>}
+      {product && <p className="cf-product">{t.form_about} <bdi dir="auto">{product}</bdi></p>}
       <div className={`fld${err("name")}`}>
         <label htmlFor="f-name">{t.form_name}</label>
         <input id="f-name" name="name" autoComplete="name" required aria-invalid={!!errors.name} aria-describedby="e-name" onInput={() => clear("name")} />

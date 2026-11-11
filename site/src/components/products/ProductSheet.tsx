@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Download, Loader2 } from "lucide-react";
 import { FEATURE_ICONS } from "@/components/icons";
 import { defaultInstall } from "./ProductActions";
-import { productAccessories, productFeatures, productSizes, productUsage } from "@/lib/product-text";
+import { productAccessories, productFeatures, productHasPaintFinishes, productSizes, productUsage } from "@/lib/product-text";
 import type { Family, Product, Settings } from "@/lib/types";
 
 /** When the sheet is built inside SheetDownloader's hidden frame, it tells the page that opened it how it went. */
@@ -130,12 +130,17 @@ export default function ProductSheet({
         {/* hero */}
         <div data-sheet-block dir="ltr" style={{ display: "grid", gridTemplateColumns: "1fr 1.1fr", gap: 20, marginTop: 22 }}>
           <div dir="rtl">
-            <div dir="ltr" style={{ fontSize: 36, fontWeight: 500, letterSpacing: "0.04em", lineHeight: 1.1, textAlign: "right" }}>{product.code}</div>
+            {product.code?.trim() ? (
+              <div dir="ltr" style={{ fontSize: 36, fontWeight: 500, letterSpacing: "0.04em", lineHeight: 1.1, textAlign: "right" }}>{product.code}</div>
+            ) : (
+              <div style={{ fontSize: 28, fontWeight: 500, lineHeight: 1.15, textAlign: "right" }}>{product.name_he}</div>
+            )}
             <div style={{ color: gold, fontSize: 18, marginTop: 6 }}>{product.subtitle_he}</div>
             <p style={{ fontSize: 12, lineHeight: 1.7, marginTop: 12, whiteSpace: "pre-line", color: "#2c2926" }}>{product.description_he}</p>
             {family && (
               <div style={{ fontSize: 11, color: muted, marginTop: 10 }}>
-                {settings.sheet_family} {family.name_he} · {settings.sheet_code} <span dir="ltr">{product.code}</span>
+                {settings.sheet_family} {family.name_he}
+                {product.code?.trim() ? <> · {settings.sheet_code} <span dir="ltr">{product.code}</span></> : null}
               </div>
             )}
           </div>
@@ -216,18 +221,20 @@ export default function ProductSheet({
                 <p style={{ fontSize: 10, lineHeight: 1.6 }}>{settings.sheet_drawing_empty}</p>
               )}
             </div>
-            <div style={{ marginTop: 12 }}>
-              <div style={{ color: gold, fontWeight: 600, fontSize: 12, marginBottom: 6 }}>{settings.sheet_finishes}</div>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8, fontSize: 9, textAlign: "center", color: muted }}>
-                {settings.sheet_finish_list.map(([n, d, c]) => (
-                  <div key={n}>
-                    <div style={{ height: 34, borderRadius: 6, border: `1px solid ${line}`, background: c }} />
-                    <div style={{ marginTop: 4, color: "#2c2926" }}>{n}</div>
-                    <div>{d}</div>
-                  </div>
-                ))}
+            {productHasPaintFinishes(product) && settings.sheet_finish_list.length > 0 && (
+              <div style={{ marginTop: 12 }}>
+                <div style={{ color: gold, fontWeight: 600, fontSize: 12, marginBottom: 6 }}>{settings.sheet_finishes}</div>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8, fontSize: 9, textAlign: "center", color: muted }}>
+                  {settings.sheet_finish_list.map(([n, d, c]) => (
+                    <div key={n}>
+                      <div style={{ height: 34, borderRadius: 6, border: `1px solid ${line}`, background: c }} />
+                      <div style={{ marginTop: 4, color: "#2c2926" }}>{n}</div>
+                      <div>{d}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
           </div>
         </div>
 
