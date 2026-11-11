@@ -1,23 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Arrow from "@/components/design/Arrow";
 import { fill } from "@/components/design/Rich";
+import { filterProducts, type SearchableProduct } from "@/lib/product-search";
 
 export type BrowserFamily = { slug: string; name: string; text: string; image: string };
-export type BrowserProduct = { slug: string; code: string; name: string; family: string; familyName: string };
-
-const norm = (t: string) => (t || "").toLowerCase().replace(/[\s\-–/,׳'״"]/g, "");
+export type BrowserProduct = SearchableProduct;
 
 /** The families grid with the design's search: matching products are listed, families without a match step aside. */
-export default function FamilyBrowser({ families, products, labels }: { families: BrowserFamily[]; products: BrowserProduct[]; labels: { search: string; none: string; more: string } }) {
-  const [q, setQ] = useState("");
-  const hits = useMemo(() => {
-    const v = norm(q);
-    if (!v) return null;
-    return products.filter((p) => norm(p.code).includes(v) || norm(p.name).includes(v));
-  }, [q, products]);
+export default function FamilyBrowser({
+  families,
+  products,
+  labels,
+  initialQuery = "",
+}: {
+  families: BrowserFamily[];
+  products: BrowserProduct[];
+  labels: { search: string; none: string; more: string };
+  initialQuery?: string;
+}) {
+  const [q, setQ] = useState(initialQuery);
+  useEffect(() => {
+    setQ(initialQuery);
+  }, [initialQuery]);
+  const hits = useMemo(() => filterProducts(products, q), [q, products]);
   const famHit = hits && new Set(hits.map((p) => p.family));
 
   return (

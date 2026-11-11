@@ -8,8 +8,15 @@ export async function generateMetadata(): Promise<Metadata> {
   return { title: s.products_title, description: s.seo_products_desc };
 }
 
-export default async function ProductsPage() {
+export default async function ProductsPage({
+  searchParams,
+}: {
+  searchParams?: Promise<{ q?: string | string[] }>;
+}) {
   const [families, products, s] = await Promise.all([getFamilies(), getProducts(), getSettings()]);
+  const params = searchParams ? await searchParams : undefined;
+  const raw = params?.q;
+  const initialQuery = Array.isArray(raw) ? (raw[0] ?? "") : (raw ?? "");
   const names = Object.fromEntries(families.map((f) => [f.slug, f.name_he]));
   return (
     <>
@@ -21,10 +28,19 @@ export default async function ProductsPage() {
       <div data-section="products-grid" className="wrap">
         <FamilyBrowser
           labels={{ search: s.products_search, none: s.products_none, more: s.products_more }}
+          initialQuery={initialQuery}
           families={families
             .filter((f) => products.some((p) => p.family === f.slug))
             .map((f) => ({ slug: f.slug, name: f.name_he, text: f.description_he, image: familyTile(f, products, s.default_scene) }))}
-          products={products.map((p) => ({ slug: p.slug, code: p.code, name: p.name_he, family: p.family, familyName: names[p.family] ?? "" }))}
+          products={products.map((p) => ({
+            slug: p.slug,
+            code: p.code,
+            name: p.name_he,
+            family: p.family,
+            familyName: names[p.family] ?? "",
+            nameEn: p.name,
+            codes: p.codes,
+          }))}
         />
       </div>
     </>
