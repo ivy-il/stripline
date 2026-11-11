@@ -17,7 +17,6 @@ export default async function ProductsPage({
   const params = searchParams ? await searchParams : undefined;
   const raw = params?.q;
   const initialQuery = Array.isArray(raw) ? (raw[0] ?? "") : (raw ?? "");
-  const names = Object.fromEntries(families.map((f) => [f.slug, f.name_he]));
   return (
     <>
       <div data-section="products-hero" className="phero">
@@ -27,20 +26,12 @@ export default async function ProductsPage({
       </div>
       <div data-section="products-grid" className="wrap">
         <FamilyBrowser
-          labels={{ search: s.products_search, none: s.products_none, more: s.products_more }}
+          labels={{ search: s.products_search, none: s.products_none, cardMore: s.card_more }}
           initialQuery={initialQuery}
           families={families
             .filter((f) => products.some((p) => p.family === f.slug))
             .map((f) => ({ slug: f.slug, name: f.name_he, text: f.description_he, image: familyTile(f, products, s.default_scene) }))}
-          products={products.map((p) => ({
-            slug: p.slug,
-            code: p.code,
-            name: p.name_he,
-            family: p.family,
-            familyName: names[p.family] ?? "",
-            nameEn: p.name,
-            codes: p.codes,
-          }))}
+          products={products}
         />
       </div>
     </>

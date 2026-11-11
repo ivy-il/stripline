@@ -8,6 +8,7 @@ import { productLabels } from "@/lib/product-labels";
 import type { Family, Product, Settings } from "@/lib/types";
 import ProductActions from "./ProductActions";
 import ProductCard from "./ProductCard";
+import ProductGallery from "./ProductGallery";
 
 /* eslint-disable @next/next/no-img-element */
 /**
@@ -45,9 +46,7 @@ export default function ProductPage({ product, family, related, s }: { product: 
 
       <div data-section="product-main" className="wrap">
         <div className="prod">
-          <div className="prod-ph">
-            <img src={productImage(product)} alt={product.name_he} />
-          </div>
+          <ProductGallery main={productImage(product)} gallery={product.gallery} alt={product.name_he} />
           <div className="prod-tx">
             <p className="prod-lead">{lead}</p>
             {features.length > 0 && (
