@@ -24,6 +24,7 @@ function stripline_product_fields(): array {
         'install_he'        => ['label' => 'הוראות התקנה – כותרת ואחריה שורות עם "- " (ראו דוגמה)', 'type' => 'install'],
         'image'             => ['label' => 'תמונת מוצר (על רקע בהיר)', 'type' => 'image'],
         'hero_image'        => ['label' => 'תמונת אווירה לעמוד המוצר (אופציונלי)', 'type' => 'image'],
+        'gallery'           => ['label' => 'גלריית תמונות נוספות (גררו לשינוי הסדר)', 'type' => 'gallery'],
         'drawing_image'     => ['label' => 'שרטוט טכני (תמונה, אופציונלי)', 'type' => 'image'],
         'drawing_images'    => ['label' => 'שרטוטים נוספים (גררו לשינוי הסדר)', 'type' => 'gallery'],
         'drawing_pdf_url'   => ['label' => 'שרטוט טכני PDF', 'type' => 'file'],

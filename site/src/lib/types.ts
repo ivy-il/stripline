@@ -35,6 +35,8 @@ export type Product = {
   hero_image: string;
   /** More hero photos; they cross-fade after `hero_image`. */
   hero_slides: string[];
+  /** Extra product angles from WP; main `image` stays first in the viewer. */
+  gallery?: string[];
   drawing_image: string;
   drawing_images?: string[];
   drawing_pdf_url?: string;
