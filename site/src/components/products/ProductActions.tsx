@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Download, FileText, PencilRuler } from "lucide-react";
 import Modal from "@/components/Modal";
-import { drawingPdf, productAccessories, productHasDrawing } from "@/lib/product-text";
+import { drawingPdf, productAccessories, productHasAttachedCatalog, productHasDrawing } from "@/lib/product-text";
 import { fill } from "@/components/design/Rich";
 import type { ProductLabels } from "@/lib/product-labels";
 import type { Product } from "@/lib/types";
@@ -108,10 +108,11 @@ export default function ProductActions({ product, labels: t }: { product: Produc
 
 /** Installation steps when none were written for the product: the supplier's assembly notes and the accessories. */
 export function defaultInstall(p: Product, t: Pick<ProductLabels, "pp_install_title" | "pp_install_text" | "pp_install_acc">) {
+  const catalogNote = productHasAttachedCatalog(p) && t.pp_install_text ? [t.pp_install_text] : [];
   return [
     {
       title: t.pp_install_title,
-      items: p.assembly_en.length ? p.assembly_en : [t.pp_install_text].filter(Boolean),
+      items: p.assembly_en.length ? p.assembly_en : catalogNote,
     },
     { title: t.pp_install_acc, items: productAccessories(p) },
   ].filter((section) => section.items.length);

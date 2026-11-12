@@ -38,7 +38,7 @@ export default function ProductHero({ product, settings }: { product: Product; s
           {accessories.length > 0 && <Spec title="אביזרים"><ul>{accessories.map((s) => <li key={s}>{s}</li>)}</ul></Spec>}
           {accessories.length === 0 && product.install_he.length > 0 && <Spec title="התקנה"><p>{product.install_he[0].items.join(" ")}</p></Spec>}
           {product.materials_he.length > 0 && <Spec title="חומרים וגימור"><ul>{product.materials_he.map((s) => <li key={s}>{s}</li>)}</ul></Spec>}
-          <Spec title="שימוש"><p>{productUsage(product)}</p></Spec>
+          {productUsage(product) && <Spec title="שימוש"><p>{productUsage(product)}</p></Spec>}
           <div className="product-spec-actions"><ProductActions product={product} labels={productLabels(settings)} /></div>
         </div>
       </aside>

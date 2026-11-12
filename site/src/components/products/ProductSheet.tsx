@@ -1,10 +1,17 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
 import { Download, Loader2 } from "lucide-react";
 import { FEATURE_ICONS } from "@/components/icons";
 import { defaultInstall } from "./ProductActions";
-import { productAccessories, productFeatures, productHasPaintFinishes, productSizes, productUsage } from "@/lib/product-text";
+import {
+  productAccessories,
+  productFeatures,
+  productHasAttachedCatalog,
+  productSheetFileStem,
+  productSizes,
+  productUsage,
+} from "@/lib/product-text";
 import type { Family, Product, Settings } from "@/lib/types";
 
 /** When the sheet is built inside SheetDownloader's hidden frame, it tells the page that opened it how it went. */
@@ -32,8 +39,41 @@ export default function ProductSheet({
   const [error, setError] = useState("");
   const features = productFeatures(product);
   const sizes = productSizes(product);
-  const install = product.install_he.length ? product.install_he : defaultInstall(product, settings);
+  const usage = productUsage(product);
+  const materials = product.materials_he ?? [];
+  const install = (product.install_he.length ? product.install_he : defaultInstall(product, settings))
+    .filter((section) => section.items.length > 0);
   const accessories = productAccessories(product);
+  const specCols = [
+    usage ? { key: "usage", title: settings.pp_usage, body: <p>{usage}</p> } : null,
+    materials.length ? {
+      key: "materials",
+      title: settings.pp_materials,
+      body: (
+        <ul style={{ paddingRight: 12, margin: 0 }}>
+          {materials.map((m) => <li key={m}>{m}</li>)}
+        </ul>
+      ),
+    } : null,
+    accessories.length ? {
+      key: "accessories",
+      title: settings.pp_accessories,
+      body: (
+        <ul style={{ paddingRight: 12, margin: 0 }}>
+          {accessories.map((m) => <li key={m}>{m}</li>)}
+        </ul>
+      ),
+    } : null,
+    sizes.length ? {
+      key: "sizes",
+      title: settings.pp_sizes,
+      body: (
+        <ul style={{ paddingRight: 12, margin: 0 }}>
+          {sizes.map((m) => <li key={m}>{m}</li>)}
+        </ul>
+      ),
+    } : null,
+  ].filter((col): col is { key: string; title: string; body: ReactNode } => Boolean(col));
 
   const website = settings.website.replace(/^https?:\/\//, "").replace(/\/$/, "");
   const productUrl = `https://${website}/products/${product.slug}`;
@@ -76,7 +116,7 @@ export default function ProductSheet({
         pdf.addImage(slice.toDataURL("image/png"), "PNG", (210 - width) / 2, 0, width, slice.height * width / slice.width, undefined, "FAST");
         top = end;
       }
-      pdf.save(`STRIPLINE-${product.code.replace(/[^\w-]+/g, "_")}.pdf`);
+      pdf.save(`STRIPLINE-${productSheetFileStem(product)}.pdf`);
       notifyHost(true);
     } catch {
       setError(settings.sheet_error);
@@ -85,7 +125,7 @@ export default function ProductSheet({
       downloading.current = false;
       setBusy(false);
     }
-  }, [drawQr, product.code, settings.sheet_error]);
+  }, [drawQr, product, settings.sheet_error]);
 
   useEffect(() => {
     void drawQr().catch(() => {});
@@ -168,73 +208,61 @@ export default function ProductSheet({
           })}
         </div>
 
-        {/* 4 columns */}
-        <div data-sheet-block style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 18, marginTop: 20, fontSize: 10.5, lineHeight: 1.7 }}>
-          <Col title={settings.pp_usage} gold={gold} line={line}>
-            <p>{productUsage(product)}</p>
-          </Col>
-          <Col title={settings.pp_materials} gold={gold} line={line}>
-            <ul style={{ paddingRight: 12, margin: 0 }}>
-              {product.materials_he.map((m) => (
-                <li key={m}>{m}</li>
-              ))}
-            </ul>
-          </Col>
-          <Col title={settings.pp_accessories} gold={gold} line={line}>
-            <ul style={{ paddingRight: 12, margin: 0 }}>
-              {accessories.map((m) => (
-                <li key={m}>{m}</li>
-              ))}
-            </ul>
-          </Col>
-          <Col title={settings.pp_sizes} gold={gold} line={line}>
-            <ul style={{ paddingRight: 12, margin: 0 }}>
-              {sizes.map((m) => (
-                <li key={m}>{m}</li>
-              ))}
-            </ul>
-          </Col>
-        </div>
-
-        {/* install + drawing */}
-        <div data-sheet-block style={{ display: "grid", gridTemplateColumns: "1.1fr 1fr", gap: 20, marginTop: 20 }}>
-          <div style={{ border: `1px solid ${line}`, borderRadius: 10, padding: 14, fontSize: 10, lineHeight: 1.6 }}>
-            <div style={{ color: gold, fontWeight: 600, fontSize: 12, marginBottom: 6 }}>{settings.pp_install}</div>
-            {install.map((s) => (
-              <div key={s.title} style={{ marginBottom: 6 }}>
-                <div style={{ fontWeight: 600, color: "#2c2926" }}>{s.title}</div>
-                <ul style={{ paddingRight: 12, margin: 0 }}>
-                  {s.items.map((it) => (
-                    <li key={it}>{it}</li>
-                  ))}
-                </ul>
-              </div>
+        {specCols.length > 0 && (
+          <div
+            data-sheet-block
+            style={{
+              display: "grid",
+              gridTemplateColumns: `repeat(${Math.min(specCols.length, 4)}, 1fr)`,
+              gap: 18,
+              marginTop: 20,
+              fontSize: 10.5,
+              lineHeight: 1.7,
+            }}
+          >
+            {specCols.map((col) => (
+              <Col key={col.key} title={col.title} gold={gold} line={line}>
+                {col.body}
+              </Col>
             ))}
           </div>
+        )}
+
+        {/* install + drawing */}
+        <div
+          data-sheet-block
+          style={{
+            display: "grid",
+            gridTemplateColumns: install.length ? "1.1fr 1fr" : "1fr",
+            gap: 20,
+            marginTop: 20,
+          }}
+        >
+          {install.length > 0 && (
+            <div style={{ border: `1px solid ${line}`, borderRadius: 10, padding: 14, fontSize: 10, lineHeight: 1.6 }}>
+              <div style={{ color: gold, fontWeight: 600, fontSize: 12, marginBottom: 6 }}>{settings.pp_install}</div>
+              {install.map((s) => (
+                <div key={s.title} style={{ marginBottom: 6 }}>
+                  <div style={{ fontWeight: 600, color: "#2c2926" }}>{s.title}</div>
+                  <ul style={{ paddingRight: 12, margin: 0 }}>
+                    {s.items.map((it) => (
+                      <li key={it}>{it}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
           <div>
             <div style={{ border: `1px solid ${line}`, borderRadius: 10, padding: 10 }}>
               <div style={{ color: gold, fontWeight: 600, fontSize: 12, marginBottom: 4 }}>{settings.pp_drawing}</div>
               {product.drawing_image ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={product.drawing_image} alt={`שרטוט היצרן ${product.code}`} crossOrigin="anonymous" style={{ width: "100%", height: 200, objectFit: "contain" }} />
-              ) : (
+              ) : productHasAttachedCatalog(product) ? (
                 <p style={{ fontSize: 10, lineHeight: 1.6 }}>{settings.sheet_drawing_empty}</p>
-              )}
+              ) : null}
             </div>
-            {productHasPaintFinishes(product) && settings.sheet_finish_list.length > 0 && (
-              <div style={{ marginTop: 12 }}>
-                <div style={{ color: gold, fontWeight: 600, fontSize: 12, marginBottom: 6 }}>{settings.sheet_finishes}</div>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8, fontSize: 9, textAlign: "center", color: muted }}>
-                  {settings.sheet_finish_list.map(([n, d, c]) => (
-                    <div key={n}>
-                      <div style={{ height: 34, borderRadius: 6, border: `1px solid ${line}`, background: c }} />
-                      <div style={{ marginTop: 4, color: "#2c2926" }}>{n}</div>
-                      <div>{d}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </div>
 
@@ -258,7 +286,7 @@ export default function ProductSheet({
   );
 }
 
-function Col({ title, gold, line, children }: { title: string; gold: string; line: string; children: React.ReactNode }) {
+function Col({ title, gold, line, children }: { title: string; gold: string; line: string; children: ReactNode }) {
   return (
     <div>
       <div style={{ color: gold, fontWeight: 600, fontSize: 12, borderBottom: `1px solid ${line}`, paddingBottom: 4, marginBottom: 6 }}>{title}</div>

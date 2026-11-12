@@ -18,30 +18,16 @@ export function productAccessories(p: Product): string[] {
   });
 }
 
-/** Hebrew for the supplier's "application" line, matched from the most specific wording to the most general. */
-const USAGE_TERMS: [RegExp, string][] = [
-  [/floor convector/i, "מערכות שונות לאספקה / יניקה של אוויר, למשל קונבקטור רצפתי."],
-  [/pressure equalization/i, "מעבר אוויר ואיזון לחצים בין חדרים."],
-  [/PFD/, "PFD לאספקת אוויר, PF ליניקת אוויר."],
-  [/maintenance/i, "גישה לאזור התחזוקה הנדרש."],
-  [/fire/i, "סגירה ואיטום של תעלות האוורור במקרה של שריפה."],
-  [/fan stops/i, "מניעת חזרת אוויר כאשר המאוורר נעצר."],
-  [/adjust/i, "ויסות זרימת האוויר במערכות אוורור ומיזוג אוויר."],
-  [/recirculation/i, "יניקה וסחרור של אוויר."],
-  [/supply.*exhaust|exhaust.*supply/i, "אספקה / יניקה של אוויר."],
-  [/supply/i, "אספקת אוויר."],
-  [/exhaust/i, "יניקת אוויר."],
-];
-
+/** Authored Hebrew usage only — never invent a default when the CMS field is empty. */
 export function productUsage(p: Product): string {
-  if (p.usage_he) return p.usage_he;
-  return USAGE_TERMS.find(([term]) => term.test(p.application_en))?.[1] ?? "מערכות מיזוג אוויר לאספקה / יניקה.";
+  return (p.usage_he || "").trim();
 }
 
 /** Explicit authored features, otherwise only facts present in the source data. */
 export function productFeatures(p: Product): string[] {
   if (p.features_he.length) return p.features_he.slice(0, 5);
-  return [p.short_he, `שימוש: ${productUsage(p)}`, ...p.materials_he.slice(0, 2)].filter(Boolean).slice(0, 5);
+  const usage = productUsage(p);
+  return [p.short_he, usage ? `שימוש: ${usage}` : "", ...p.materials_he.slice(0, 2)].filter(Boolean).slice(0, 5);
 }
 
 export function productSizes(p: Product): string[] {
@@ -49,7 +35,6 @@ export function productSizes(p: Product): string[] {
   const out: string[] = [];
   if (p.lengths.length) out.push(`אורך: ${p.lengths[0]}–${p.lengths[p.lengths.length - 1]} מ״מ`);
   if (p.heights.length) out.push(`גובה: ${p.heights.join(", ")} מ״מ`);
-  if (!out.length) out.push("המידות מפורטות בטבלת הבחירה שבדף הקטלוג הטכני");
   return out;
 }
 
@@ -73,14 +58,20 @@ export function productHasDrawing(product: Product): boolean {
   );
 }
 
-/**
- * PDF sheet colour chips come from a global settings list. Show them only when the product's
- * materials actually mention paint / RAL — not for galvanized, stainless, etc.
- * `RAL` must not match inside English "natural".
- */
-export function productHasPaintFinishes(product: Product): boolean {
-  const blob = [...(product.materials_he ?? []), ...(product.materials_en ?? [])].join(" ");
-  return /(?<![A-Za-z])RAL(?![A-Za-z])|צבע|צביעה|\bpaint\b|powder\s*coat|electrostatic/i.test(blob);
+/** Downloadable catalog / install / drawing file attached to the product. */
+export function productHasAttachedCatalog(product: Product): boolean {
+  return Boolean(
+    product.drawing_pdf_url?.trim()
+    || product.installation_pdf_url?.trim()
+    || product.pdf_url?.trim(),
+  );
+}
+
+/** Safe download stem for the product PDF sheet. */
+export function productSheetFileStem(product: Product): string {
+  const raw = product.code?.trim() || product.slug?.trim() || product.name_he?.trim() || "product";
+  const safe = raw.replace(/[^\w\u0590-\u05FF-]+/g, "_").replace(/^_+|_+$/g, "");
+  return safe || "product";
 }
 
 /** The drawing as a PDF: the uploaded file, the one exported beside the drawing image, or the product sheet. */
