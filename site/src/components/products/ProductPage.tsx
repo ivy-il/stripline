@@ -55,17 +55,19 @@ export default function ProductPage({ product, family, related, s }: { product: 
               </ul>
             )}
             <dl className="prod-spec">
-              <div>
-                <dt>{s.pp_sizes}</dt>
-                <dd>
-                  {sizes.map((s) => <span key={s}>{s}</span>)}
-                  {product.lengths.length > 0 && <span>{s.pp_length} <bdi dir="ltr">{product.lengths.join(" | ")}</bdi> {s.pp_mm}</span>}
-                  {product.heights.length > 0 && <span>{s.pp_height} <bdi dir="ltr">{product.heights.join(" | ")}</bdi> {s.pp_mm}</span>}
-                </dd>
-              </div>
+              {(sizes.length > 0 || product.lengths.length > 0 || product.heights.length > 0) && (
+                <div>
+                  <dt>{s.pp_sizes}</dt>
+                  <dd>
+                    {sizes.map((s) => <span key={s}>{s}</span>)}
+                    {product.lengths.length > 0 && <span>{s.pp_length} <bdi dir="ltr">{product.lengths.join(" | ")}</bdi> {s.pp_mm}</span>}
+                    {product.heights.length > 0 && <span>{s.pp_height} <bdi dir="ltr">{product.heights.join(" | ")}</bdi> {s.pp_mm}</span>}
+                  </dd>
+                </div>
+              )}
               {product.materials_he.length > 0 && <div><dt>{s.pp_materials}</dt><dd>{product.materials_he.map((s) => <span key={s}>{s}</span>)}</dd></div>}
               {accessories.length > 0 && <div><dt>{s.pp_accessories}</dt><dd>{accessories.map((s) => <span key={s}>{s}</span>)}</dd></div>}
-              <div><dt>{s.pp_usage}</dt><dd><span>{productUsage(product)}</span></dd></div>
+              {productUsage(product) && <div><dt>{s.pp_usage}</dt><dd><span>{productUsage(product)}</span></dd></div>}
             </dl>
             <div className="prod-cta">
               <div className="prod-acts">
