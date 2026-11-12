@@ -74,7 +74,9 @@ export default function ProductActions({ product, labels: t }: { product: Produc
       >
         <div className="mb-5 rounded-lg border border-line bg-cream-2 px-4 py-3 text-center">
           {product.code?.trim() ? <span className="font-medium" dir="ltr">{product.code}</span> : <span className="font-medium">{product.name_he}</span>}
-          <p className="mt-1 text-xs text-muted">{product.installation_source || t.pp_install_source}</p>
+          {product.installation_source?.trim() ? (
+            <p className="mt-1 text-xs text-muted">{product.installation_source.trim()}</p>
+          ) : null}
         </div>
         <div className="grid sm:grid-cols-2 gap-6">
           <div className="flex flex-col gap-4">
