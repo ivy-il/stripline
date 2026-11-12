@@ -44,36 +44,51 @@ export default function ProductSheet({
   const install = (product.install_he.length ? product.install_he : defaultInstall(product, settings))
     .filter((section) => section.items.length > 0);
   const accessories = productAccessories(product);
-  const specCols = [
-    usage ? { key: "usage", title: settings.pp_usage, body: <p>{usage}</p> } : null,
-    materials.length ? {
-      key: "materials",
-      title: settings.pp_materials,
-      body: (
-        <ul style={{ paddingRight: 12, margin: 0 }}>
-          {materials.map((m) => <li key={m}>{m}</li>)}
-        </ul>
-      ),
-    } : null,
-    accessories.length ? {
-      key: "accessories",
-      title: settings.pp_accessories,
-      body: (
-        <ul style={{ paddingRight: 12, margin: 0 }}>
-          {accessories.map((m) => <li key={m}>{m}</li>)}
-        </ul>
-      ),
-    } : null,
-    sizes.length ? {
-      key: "sizes",
-      title: settings.pp_sizes,
-      body: (
-        <ul style={{ paddingRight: 12, margin: 0 }}>
-          {sizes.map((m) => <li key={m}>{m}</li>)}
-        </ul>
-      ),
-    } : null,
-  ].filter((col): col is { key: string; title: string; body: ReactNode } => Boolean(col));
+  type SpecCol = { key: string; title: string; body: ReactNode };
+  const specCols: SpecCol[] = (
+    [
+      usage ? { key: "usage", title: settings.pp_usage, body: <p>{usage}</p> } : null,
+      materials.length
+        ? {
+            key: "materials",
+            title: settings.pp_materials,
+            body: (
+              <ul style={{ paddingRight: 12, margin: 0 }}>
+                {materials.map((m) => (
+                  <li key={m}>{m}</li>
+                ))}
+              </ul>
+            ),
+          }
+        : null,
+      accessories.length
+        ? {
+            key: "accessories",
+            title: settings.pp_accessories,
+            body: (
+              <ul style={{ paddingRight: 12, margin: 0 }}>
+                {accessories.map((m) => (
+                  <li key={m}>{m}</li>
+                ))}
+              </ul>
+            ),
+          }
+        : null,
+      sizes.length
+        ? {
+            key: "sizes",
+            title: settings.pp_sizes,
+            body: (
+              <ul style={{ paddingRight: 12, margin: 0 }}>
+                {sizes.map((m) => (
+                  <li key={m}>{m}</li>
+                ))}
+              </ul>
+            ),
+          }
+        : null,
+    ] as (SpecCol | null)[]
+  ).filter((col): col is SpecCol => col != null);
 
   const website = settings.website.replace(/^https?:\/\//, "").replace(/\/$/, "");
   const productUrl = `https://${website}/products/${product.slug}`;
