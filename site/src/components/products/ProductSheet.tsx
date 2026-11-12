@@ -7,7 +7,7 @@ import { defaultInstall } from "./ProductActions";
 import {
   productAccessories,
   productFeatures,
-  productHasAttachedCatalog,
+  productHasDrawing,
   productSheetFileStem,
   productSizes,
   productUsage,
@@ -43,6 +43,8 @@ export default function ProductSheet({
   const materials = product.materials_he ?? [];
   const install = (product.install_he.length ? product.install_he : defaultInstall(product, settings))
     .filter((section) => section.items.length > 0);
+  const hasDrawing = productHasDrawing(product);
+  const sheetDrawing = product.drawing_image || product.drawing_images?.find((src) => src?.trim()) || "";
   const accessories = productAccessories(product);
   type SpecCol = { key: string; title: string; body: ReactNode };
   const specCols: SpecCol[] = (
@@ -243,43 +245,45 @@ export default function ProductSheet({
           </div>
         )}
 
-        {/* install + drawing */}
-        <div
-          data-sheet-block
-          style={{
-            display: "grid",
-            gridTemplateColumns: install.length ? "1.1fr 1fr" : "1fr",
-            gap: 20,
-            marginTop: 20,
-          }}
-        >
-          {install.length > 0 && (
-            <div style={{ border: `1px solid ${line}`, borderRadius: 10, padding: 14, fontSize: 10, lineHeight: 1.6 }}>
-              <div style={{ color: gold, fontWeight: 600, fontSize: 12, marginBottom: 6 }}>{settings.pp_install}</div>
-              {install.map((s) => (
-                <div key={s.title} style={{ marginBottom: 6 }}>
-                  <div style={{ fontWeight: 600, color: "#2c2926" }}>{s.title}</div>
-                  <ul style={{ paddingRight: 12, margin: 0 }}>
-                    {s.items.map((it) => (
-                      <li key={it}>{it}</li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
-          <div>
-            <div style={{ border: `1px solid ${line}`, borderRadius: 10, padding: 10 }}>
-              <div style={{ color: gold, fontWeight: 600, fontSize: 12, marginBottom: 4 }}>{settings.pp_drawing}</div>
-              {product.drawing_image ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={product.drawing_image} alt={`שרטוט היצרן ${product.code}`} crossOrigin="anonymous" style={{ width: "100%", height: 200, objectFit: "contain" }} />
-              ) : productHasAttachedCatalog(product) ? (
-                <p style={{ fontSize: 10, lineHeight: 1.6 }}>{settings.sheet_drawing_empty}</p>
-              ) : null}
-            </div>
+        {(install.length > 0 || hasDrawing) && (
+          <div
+            data-sheet-block
+            style={{
+              display: "grid",
+              gridTemplateColumns: install.length && hasDrawing ? "1.1fr 1fr" : "1fr",
+              gap: 20,
+              marginTop: 20,
+            }}
+          >
+            {install.length > 0 && (
+              <div style={{ border: `1px solid ${line}`, borderRadius: 10, padding: 14, fontSize: 10, lineHeight: 1.6 }}>
+                <div style={{ color: gold, fontWeight: 600, fontSize: 12, marginBottom: 6 }}>{settings.pp_install}</div>
+                {install.map((s) => (
+                  <div key={s.title} style={{ marginBottom: 6 }}>
+                    <div style={{ fontWeight: 600, color: "#2c2926" }}>{s.title}</div>
+                    <ul style={{ paddingRight: 12, margin: 0 }}>
+                      {s.items.map((it) => (
+                        <li key={it}>{it}</li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            )}
+            {hasDrawing && (
+              <div style={{ border: `1px solid ${line}`, borderRadius: 10, padding: 10 }}>
+                <div style={{ color: gold, fontWeight: 600, fontSize: 12, marginBottom: 4 }}>{settings.pp_drawing}</div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={sheetDrawing}
+                  alt={`שרטוט היצרן ${product.code || product.name_he}`}
+                  crossOrigin="anonymous"
+                  style={{ width: "100%", height: 200, objectFit: "contain" }}
+                />
+              </div>
+            )}
           </div>
-        </div>
+        )}
 
         {/* footer */}
         <div data-sheet-block dir="ltr" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, marginTop: 26, paddingTop: 12, borderTop: `1px solid ${line}`, fontSize: 9, color: muted }}>
