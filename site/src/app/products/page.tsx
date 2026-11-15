@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import FamilyBrowser from "@/components/products/FamilyBrowser";
-import { familyTile } from "@/lib/design";
+import { familyTile, inFamily } from "@/lib/design";
 import { getFamilies, getProducts, getSettings } from "@/lib/wp";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -29,7 +29,7 @@ export default async function ProductsPage({
           labels={{ search: s.products_search, none: s.products_none, cardMore: s.card_more }}
           initialQuery={initialQuery}
           families={families
-            .filter((f) => products.some((p) => p.family === f.slug))
+            .filter((f) => products.some((p) => inFamily(p, f.slug)))
             .map((f) => ({ slug: f.slug, name: f.name_he, text: f.description_he, image: familyTile(f, products, s.default_scene) }))}
           products={products}
         />

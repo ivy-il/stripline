@@ -21,7 +21,13 @@ export type Product = {
   name: string;
   name_he: string;
   subtitle_he: string;
+  /** Main family: breadcrumbs, related products, the digital catalog and search group by it. */
   family: string;
+  /**
+   * Every family the product is assigned to in WordPress (the main one included). A product can also
+   * be listed in a second family (a jet in both "תריסי אספקה" and "ג׳אטים") without a second product page.
+   */
+  families?: string[];
   short_he: string;
   description_he: string;
   description_en: string;
