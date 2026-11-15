@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Download, FileText, PencilRuler } from "lucide-react";
 import Modal from "@/components/Modal";
-import { drawingPdf, productAccessories, productHasAttachedCatalog, productHasDrawing } from "@/lib/product-text";
+import { drawingPdf, productAccessories, productHasAttachedCatalog, productHasDrawing, productHasInstallation } from "@/lib/product-text";
 import { fill } from "@/components/design/Rich";
 import type { ProductLabels } from "@/lib/product-labels";
 import type { Product } from "@/lib/types";
@@ -14,6 +14,8 @@ export default function ProductActions({ product, labels: t }: { product: Produc
   const [install, setInstall] = useState(false);
   const sheetUrl = `/products/${product.slug}/sheet?download=1`;
   const hasDrawing = productHasDrawing(product);
+  // Accessories alone are not installation content: without real steps, notes or files the button stays hidden.
+  const hasInstall = productHasInstallation(product);
 
   const drawingImages = product.drawing_images?.length ? product.drawing_images : [product.drawing_image].filter(Boolean);
   const installationDrawing = product.installation_drawing_image || product.drawing_image;
@@ -31,9 +33,11 @@ export default function ProductActions({ product, labels: t }: { product: Produc
           <PencilRuler className="size-4" strokeWidth={1.4} /> {t.pp_drawing}
         </button>
       )}
-      <button type="button" onClick={() => setInstall(true)} className="btn ghost">
-        <FileText className="size-4" strokeWidth={1.4} /> {t.pp_install}
-      </button>
+      {hasInstall && (
+        <button type="button" onClick={() => setInstall(true)} className="btn ghost">
+          <FileText className="size-4" strokeWidth={1.4} /> {t.pp_install}
+        </button>
+      )}
 
       {hasDrawing && (
       <Modal
@@ -62,6 +66,7 @@ export default function ProductActions({ product, labels: t }: { product: Produc
       </Modal>
       )}
 
+      {hasInstall && (
       <Modal
         open={install}
         onClose={() => setInstall(false)}
@@ -92,10 +97,12 @@ export default function ProductActions({ product, labels: t }: { product: Produc
             ))}
           </div>
           <div className="flex flex-col gap-4 self-start">
+            {installationDrawing ? (
             <figure className="rounded-lg border border-line bg-white p-3">
               {drawingEl}
               <figcaption className="mt-2 text-center text-xs text-muted">{product.drawing_kind === "schematic" ? t.pp_fig_schematic : product.drawing_kind === "connection" ? t.pp_fig_connection : t.pp_fig_maker}</figcaption>
             </figure>
+            ) : null}
             <figure className="rounded-lg border border-line bg-white p-3">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={product.image} alt={product.name_he} className="w-full max-h-44 object-contain" />
@@ -104,6 +111,7 @@ export default function ProductActions({ product, labels: t }: { product: Produc
           </div>
         </div>
       </Modal>
+      )}
     </>
   );
 }

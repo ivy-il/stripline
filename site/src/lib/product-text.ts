@@ -58,6 +58,19 @@ export function productHasDrawing(product: Product): boolean {
   );
 }
 
+/**
+ * True when the product has real installation content: written steps, the supplier's assembly notes, an
+ * installation PDF or an installation drawing. Accessories alone do not count.
+ */
+export function productHasInstallation(product: Product): boolean {
+  return Boolean(
+    product.install_he?.some((s) => s.items?.some((it) => it?.trim()))
+    || product.assembly_en?.some((line) => line?.trim())
+    || product.installation_pdf_url?.trim()
+    || product.installation_drawing_image?.trim(),
+  );
+}
+
 /** Downloadable catalog / install / drawing file attached to the product. */
 export function productHasAttachedCatalog(product: Product): boolean {
   return Boolean(
