@@ -3,7 +3,7 @@ import { Download, PencilRuler } from "lucide-react";
 import Arrow, { WhatsAppIcon } from "@/components/design/Arrow";
 import { fill, Rich } from "@/components/design/Rich";
 import { agentButtonLabel, familyScene, productImage } from "@/lib/design";
-import { drawingPdf, productAccessories, productContactRef, productFeatures, productHasDrawing, productLabel, productSizes, productUsage } from "@/lib/product-text";
+import { drawingPdf, isUsageLine, productAccessories, productContactRef, productFeatures, productHasDrawing, productLabel, productSizes, productUsage } from "@/lib/product-text";
 import { productLabels } from "@/lib/product-labels";
 import type { Family, Product, Settings } from "@/lib/types";
 import ProductActions from "./ProductActions";
@@ -19,7 +19,9 @@ export default function ProductPage({ product, family, related, s }: { product: 
   const sizes = productSizes(product);
   const accessories = productAccessories(product);
   const lead = product.description_he || product.short_he;
-  const features = productFeatures(product).filter((f) => f !== lead && f !== product.short_he);
+  const features = productFeatures(product).filter((f) => f !== lead && f !== product.short_he).slice(0, 4);
+  // The usage row in the specification is skipped only when the same text is already shown in the features above.
+  const usage = features.some((f) => isUsageLine(product, f)) ? "" : productUsage(product);
   const drawings = product.drawing_images?.length ? product.drawing_images : [product.drawing_image].filter(Boolean);
   const hasDrawing = productHasDrawing(product);
   const sheet = `/products/${product.slug}/sheet?download=1`;
@@ -51,7 +53,7 @@ export default function ProductPage({ product, family, related, s }: { product: 
             <p className="prod-lead">{lead}</p>
             {features.length > 0 && (
               <ul className="prod-feat">
-                {features.slice(0, 4).map((f) => <li key={f}>{f}</li>)}
+                {features.map((f) => <li key={f}>{f}</li>)}
               </ul>
             )}
             <dl className="prod-spec">
@@ -67,7 +69,7 @@ export default function ProductPage({ product, family, related, s }: { product: 
               )}
               {product.materials_he.length > 0 && <div><dt>{s.pp_materials}</dt><dd>{product.materials_he.map((s) => <span key={s}>{s}</span>)}</dd></div>}
               {accessories.length > 0 && <div><dt>{s.pp_accessories}</dt><dd>{accessories.map((s) => <span key={s}>{s}</span>)}</dd></div>}
-              {productUsage(product) && <div><dt>{s.pp_usage}</dt><dd><span>{productUsage(product)}</span></dd></div>}
+              {usage && <div><dt>{s.pp_usage}</dt><dd><span>{usage}</span></dd></div>}
             </dl>
             <div className="prod-cta">
               <div className="prod-acts">

@@ -12,7 +12,10 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const p = await getProduct((await params).slug);
   if (!p) return {};
-  return { title: `${p.name} – ${p.name_he}`, description: p.short_he };
+  // The CMS falls back to the Hebrew name when no English name was written; show it once in that case.
+  const he = p.name_he.trim();
+  const en = p.name?.trim();
+  return { title: en && en !== he ? `${en} – ${he}` : he, description: p.short_he };
 }
 
 export default async function Page({ params }: Params) {

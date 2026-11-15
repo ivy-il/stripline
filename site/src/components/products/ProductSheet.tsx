@@ -6,8 +6,10 @@ import { FEATURE_ICONS } from "@/components/icons";
 import { defaultInstall } from "./ProductActions";
 import {
   productAccessories,
+  isUsageLine,
   productFeatures,
   productHasDrawing,
+  productHasInstallation,
   productSheetFileStem,
   productSizes,
   productUsage,
@@ -37,12 +39,15 @@ export default function ProductSheet({
   const downloading = useRef(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
-  const features = productFeatures(product);
+  // The usage line is dropped here because the sheet shows usage in its own column.
+  const features = productFeatures(product).filter((f) => !isUsageLine(product, f));
   const sizes = productSizes(product);
   const usage = productUsage(product);
   const materials = product.materials_he ?? [];
-  const install = (product.install_he.length ? product.install_he : defaultInstall(product, settings))
-    .filter((section) => section.items.length > 0);
+  // Same rule as the product page: no installation block when the product has only accessories.
+  const install = productHasInstallation(product)
+    ? (product.install_he.length ? product.install_he : defaultInstall(product, settings)).filter((section) => section.items.length > 0)
+    : [];
   const hasDrawing = productHasDrawing(product);
   const sheetDrawing = product.drawing_image || product.drawing_images?.find((src) => src?.trim()) || "";
   const accessories = productAccessories(product);
@@ -213,6 +218,7 @@ export default function ProductSheet({
         </div>
 
         {/* feature icons */}
+        {features.length > 0 && (
         <div data-sheet-block style={{ display: "grid", gridTemplateColumns: `repeat(${features.length}, 1fr)`, gap: 8, marginTop: 22, borderTop: `1px solid ${line}`, borderBottom: `1px solid ${line}`, padding: "14px 0" }}>
           {features.map((f, i) => {
             const Icon = FEATURE_ICONS[i % FEATURE_ICONS.length];
@@ -224,6 +230,7 @@ export default function ProductSheet({
             );
           })}
         </div>
+        )}
 
         {specCols.length > 0 && (
           <div

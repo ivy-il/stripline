@@ -30,6 +30,16 @@ export function productFeatures(p: Product): string[] {
   return [p.short_he, usage ? `שימוש: ${usage}` : "", ...p.materials_he.slice(0, 2)].filter(Boolean).slice(0, 5);
 }
 
+/**
+ * True for a feature line that only repeats the usage field: "שימוש: …" with exactly the same text.
+ * A different text, or a product without a usage field, is never treated as a repeat.
+ */
+export function isUsageLine(p: Product, line: string): boolean {
+  const usage = productUsage(p);
+  const match = line.match(/^\s*שימוש\s*:\s*(.*)$/);
+  return Boolean(usage && match && match[1].trim() === usage);
+}
+
 export function productSizes(p: Product): string[] {
   if (p.sizes_he.length) return p.sizes_he;
   const out: string[] = [];
