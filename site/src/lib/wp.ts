@@ -9,6 +9,7 @@ import familiesSeed from "@/data/families.json";
 import productsSeed from "@/data/products.json";
 import projectsSeed from "@/data/projects.json";
 import settingsSeed from "@/data/settings.json";
+import { inFamily } from "./design";
 import { eilatOverrides } from "./eilat";
 
 const WP = process.env.WP_API_URL?.replace(/\/$/, "");
@@ -102,8 +103,57 @@ export async function getFamily(slug: string): Promise<Family | undefined> {
   return (await getFamilies()).find((f) => f.slug === slug);
 }
 
+/**
+ * The plugin's product feed names one family per product (the first WordPress term, by name). A product can be
+ * assigned to more than one family in WordPress, so the full list comes from the core REST API (published products
+ * only). The main family is the one listed first on the products page (lowest "סדר"), so a jet assigned to both
+ * "תריסי אספקה" and "ג׳אטים" keeps "תריסי אספקה" for its breadcrumb, related products and the digital catalog.
+ * If that call fails, every product keeps the plugin's single family.
+ */
+const WP_CORE = WP ? WP.replace(/\/stripline\/v1$/, "/wp/v2") : "";
+
+async function familyAssignments(): Promise<Map<string, string[]> | null> {
+  if (!WP_CORE || WP_CORE === WP) return null;
+  const get = async <T,>(path: string): Promise<T> => {
+    const res = await fetch(`${WP_CORE}${path}`, {
+      next: { revalidate: REVALIDATE, tags: ["products", "families", "stripline"] },
+      headers: { Accept: "application/json" },
+    });
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    return (await res.json()) as T;
+  };
+  try {
+    const terms = await get<{ id: number; slug: string }[]>("/sl_family?per_page=100&_fields=id,slug");
+    const slugOf = new Map(terms.map((t) => [t.id, t.slug]));
+    const out = new Map<string, string[]>();
+    for (let page = 1; page < 20; page++) {
+      const rows = await get<{ slug: string; sl_family: number[] }[]>(
+        `/sl_product?per_page=100&page=${page}&_fields=slug,sl_family`,
+      );
+      for (const r of rows) out.set(r.slug, r.sl_family.map((id) => slugOf.get(id)).filter((s): s is string => Boolean(s)));
+      if (rows.length < 100) break;
+    }
+    return out;
+  } catch (err) {
+    console.error("[wp] family assignments failed, using one family per product:", err);
+    return null;
+  }
+}
+
+async function withFamilies(products: Product[]): Promise<Product[]> {
+  const assigned = await familyAssignments();
+  if (!assigned) return products;
+  const order = new Map((await getFamilies()).map((f) => [f.slug, f.order]));
+  return products.map((p) => {
+    const families = assigned.get(p.slug);
+    if (!families || families.length < 2) return p;
+    const main = [...families].sort((a, b) => (order.get(a) ?? 999) - (order.get(b) ?? 999))[0];
+    return { ...p, family: main, families };
+  });
+}
+
 export async function getProducts(): Promise<Product[]> {
-  return (await wpGet<Product[]>("/products", "products", seedProducts())).map(withProductDocuments);
+  return withFamilies((await wpGet<Product[]>("/products", "products", seedProducts())).map(withProductDocuments));
 }
 
 export async function getProduct(slug: string): Promise<Product | undefined> {
@@ -116,7 +166,8 @@ export async function getProduct(slug: string): Promise<Product | undefined> {
     });
     if (res.status === 404) return undefined;
     if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-    return withProductDocuments(proxyMedia(await res.json()) as Product);
+    const [product] = await withFamilies([withProductDocuments(proxyMedia(await res.json()) as Product)]);
+    return product;
   } catch (err) {
     console.error(`[wp] /products/${slug} failed:`, err);
     // CMS unreachable: keep seed so local/preview still works; published list remains the source of truth for nav.
@@ -125,7 +176,7 @@ export async function getProduct(slug: string): Promise<Product | undefined> {
 }
 
 export async function getProductsByFamily(family: string): Promise<Product[]> {
-  return (await getProducts()).filter((p) => p.family === family);
+  return (await getProducts()).filter((p) => inFamily(p, family));
 }
 
 /** WordPress keeps non-Latin slugs percent-encoded (יפעתי → %d7%99…); links and folders use the readable form. */

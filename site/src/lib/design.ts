@@ -10,9 +10,14 @@ export function familyScene(f: Pick<Family, "image"> | undefined, fallback: stri
   return f?.image || fallback;
 }
 
+/** Is the product listed in this family: its main family or any other family it is assigned to. */
+export function inFamily(p: Pick<Product, "family" | "families">, slug: string): boolean {
+  return p.family === slug || (p.families ?? []).includes(slug);
+}
+
 /** A family's tile on the products page: its own tile image, else its first product. */
 export function familyTile(f: Family, products: Product[], fallback: string): string {
-  const first = products.find((p) => p.family === f.slug);
+  const first = products.find((p) => inFamily(p, f.slug));
   return f.tile || (first ? productImage(first) : fallback);
 }
 

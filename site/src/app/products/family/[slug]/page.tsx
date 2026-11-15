@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Arrow from "@/components/design/Arrow";
 import ProductCard from "@/components/products/ProductCard";
-import { familyScene } from "@/lib/design";
+import { familyScene, inFamily } from "@/lib/design";
 import { getFamilies, getProducts, getSettings } from "@/lib/wp";
 
 type Params = { params: Promise<{ slug: string }> };
@@ -24,11 +24,11 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 export default async function FamilyPage({ params }: Params) {
   const { slug } = await params;
   const [families, products, s] = await Promise.all([getFamilies(), getProducts(), getSettings()]);
-  const withProducts = families.filter((f) => products.some((p) => p.family === f.slug));
+  const withProducts = families.filter((f) => products.some((p) => inFamily(p, f.slug)));
   const index = withProducts.findIndex((f) => f.slug === slug);
   const family = withProducts[index];
   if (!family) notFound();
-  const members = products.filter((p) => p.family === slug);
+  const members = products.filter((p) => inFamily(p, slug));
   const next = withProducts[(index + 1) % withProducts.length];
 
   return (
