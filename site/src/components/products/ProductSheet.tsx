@@ -29,10 +29,13 @@ export default function ProductSheet({
   product,
   settings,
   family,
+  bannerCutout = false,
 }: {
   product: Product;
   settings: Settings;
   family?: Family;
+  /** The banner is a product cut-out on a transparent background (checked on the server), not a photo. */
+  bannerCutout?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const qrRef = useRef<HTMLCanvasElement>(null);
@@ -49,6 +52,8 @@ export default function ProductSheet({
     ? (product.install_he.length ? product.install_he : defaultInstall(product, settings)).filter((section) => section.items.length > 0)
     : [];
   const hasDrawing = productHasDrawing(product);
+  // A photo banner fills the dark frame; a cut-out (or no banner) is shown whole on a light background.
+  const bannerPhoto = Boolean(product.hero_image) && !bannerCutout;
   const sheetDrawing = product.drawing_image || product.drawing_images?.find((src) => src?.trim()) || "";
   const accessories = productAccessories(product);
   type SpecCol = { key: string; title: string; body: ReactNode };
@@ -212,7 +217,7 @@ export default function ProductSheet({
               src={product.hero_image || product.image}
               alt=""
               crossOrigin="anonymous"
-              style={{ width: "100%", height: "100%", objectFit: product.hero_image ? "cover" : "contain", background: product.hero_image ? undefined : "#f8f6f2", padding: product.hero_image ? 0 : 20, boxSizing: "border-box" }}
+              style={{ width: "100%", height: "100%", objectFit: bannerPhoto ? "cover" : "contain", background: bannerPhoto ? undefined : "#f8f6f2", padding: bannerPhoto ? 0 : 20, boxSizing: "border-box" }}
             />
           </div>
         </div>
