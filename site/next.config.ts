@@ -29,6 +29,10 @@ const nextConfig: NextConfig = {
     async rewrites() {
       return wpUrl ? [{ source: "/wp-media/:path*", destination: `${wpUrl.origin}/wp-content/uploads/:path*` }] : [];
     },
+    // Families merged in WordPress: the old family page points to the family that took its products.
+    async redirects() {
+      return [{ source: "/products/family/flexible-ducts", destination: "/products/family/accessories", statusCode: 301 }];
+    },
   }),
   images: {
     unoptimized: isStatic,

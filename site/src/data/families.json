@@ -63,17 +63,10 @@
   "order": 8
  },
  {
-  "slug": "flexible-ducts",
-  "name": "FLEXIBLE DUCTS",
-  "name_he": "תעלות גמישות",
-  "description_he": "תעלות גמישות מבודדות ולא מבודדות לחיבור מפזרים.",
-  "order": 9
- },
- {
   "slug": "accessories",
-  "name": "ACCESSORIES",
-  "name_he": "אביזרים",
-  "description_he": "מתאמים, מסננים, מסגרות התקנה וקליפסים.",
+  "name": "DUCTS & ACCESSORIES",
+  "name_he": "תעלות ואביזרים",
+  "description_he": "תעלות גמישות מבודדות ולא מבודדות לחיבור מפזרים, ואביזרים: מתאמים, מסננים, מסגרות התקנה וקליפסים.",
   "order": 10
  }
 ]

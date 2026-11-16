@@ -9,7 +9,7 @@ import familiesSeed from "@/data/families.json";
 import productsSeed from "@/data/products.json";
 import projectsSeed from "@/data/projects.json";
 import settingsSeed from "@/data/settings.json";
-import { inFamily } from "./design";
+import { familyMembers, mainFamily } from "./design";
 import { eilatOverrides } from "./eilat";
 
 const WP = process.env.WP_API_URL?.replace(/\/$/, "");
@@ -108,6 +108,7 @@ export async function getFamily(slug: string): Promise<Family | undefined> {
  * assigned to more than one family in WordPress, so the full list comes from the core REST API (published products
  * only). The main family is the one listed first on the products page (lowest "סדר"), so a jet assigned to both
  * "תריסי אספקה" and "ג׳אטים" keeps "תריסי אספקה" for its breadcrumb, related products and the digital catalog.
+ * Exceptions are set by hand in data/primary-families.json (see PRIMARY_FAMILY in lib/design.ts).
  * If that call fails, every product keeps the plugin's single family.
  */
 const WP_CORE = WP ? WP.replace(/\/stripline\/v1$/, "/wp/v2") : "";
@@ -147,8 +148,7 @@ async function withFamilies(products: Product[]): Promise<Product[]> {
   return products.map((p) => {
     const families = assigned.get(p.slug);
     if (!families || families.length < 2) return p;
-    const main = [...families].sort((a, b) => (order.get(a) ?? 999) - (order.get(b) ?? 999))[0];
-    return { ...p, family: main, families };
+    return { ...p, family: mainFamily(p.slug, families, order), families };
   });
 }
 
@@ -176,7 +176,7 @@ export async function getProduct(slug: string): Promise<Product | undefined> {
 }
 
 export async function getProductsByFamily(family: string): Promise<Product[]> {
-  return (await getProducts()).filter((p) => inFamily(p, family));
+  return familyMembers(await getProducts(), family);
 }
 
 /** WordPress keeps non-Latin slugs percent-encoded (יפעתי → %d7%99…); links and folders use the readable form. */
