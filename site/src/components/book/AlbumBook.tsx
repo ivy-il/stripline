@@ -193,6 +193,15 @@ const PaperBook = forwardRef<PaperBookHandle, {
           autoSize: true,
         });
         pf.loadFromHTML(pageEls);
+        // A press without a drag is a click: it opens the product (onClick below) and never turns the page.
+        // page-flip turns on a click in a page corner even with disableFlipByClick, so a click near a corner
+        // turned the page instead of opening the product. Drags, arrows, the contents and swipes do not pass here.
+        const book = pf as unknown as { isUserTouch: boolean; isUserMove: boolean; userStop: (pos: unknown, isSwipe?: boolean) => void };
+        const userStop = book.userStop.bind(pf);
+        book.userStop = (pos, isSwipe = false) => {
+          if (book.isUserTouch && !book.isUserMove && !isSwipe) { book.isUserTouch = false; return; }
+          userStop(pos, isSwipe);
+        };
         pf.on("flip", (event) => {
           if (deck !== active.current) return; // the hidden deck being kept in step
           current.current = spreadOf(event.data as number, deck);
@@ -262,8 +271,12 @@ const PaperBook = forwardRef<PaperBookHandle, {
         press.current = null;
         if (!p || p.moved || Math.hypot(event.clientX - p.x, event.clientY - p.y) > 6) return;
         if ((event.target as HTMLElement).closest("a,button")) return;
-        const page = (event.target as HTMLElement).closest<HTMLElement>("[data-spread]");
-        if (page) onOpen(Number(page.dataset.spread));
+        // Not mid-turn: the open spread is only settled once the leaf has landed. A corner folded on hover is fine.
+        const still = (pf: import("page-flip").PageFlip) => ["read", "fold_corner"].includes((pf as unknown as { getState(): string }).getState());
+        if (!flips.current.every(still)) return;
+        // The open spread, not the page under the pointer: a folded corner shows the next page underneath, and
+        // page-flip lays its fold shadows (.stf__block) over the pages, so a click on them opens the product too.
+        if ((event.target as HTMLElement).closest("[data-spread], .stf__block")) onOpen(current.current);
       }}
     >
       {single ? (
