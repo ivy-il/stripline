@@ -137,6 +137,18 @@ li.open>.cflip-topic .chev{transform:rotate(180deg)}
 
 /* ---------- product page ---------- */
 .phero .pp-code{align-self:flex-start;color:#D9BE8E;font-size:var(--fs-small)}
+/* The navigation row under the banner: the path on the start side, back to the flip book on the end side. */
+.pnav{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 24px;padding-top:max(14px,1.6vw);font-size:var(--fs-small);line-height:var(--lh-small);color:var(--muted)}
+.pnav ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;min-height:44px}
+.pnav li+li::before{content:"/";margin-inline-end:10px;color:var(--line)}
+.pnav a{transition:color .2s}
+.pnav a:hover{color:var(--ink)}
+.pnav [aria-current]{color:var(--ink)}
+.pnav .pnav-book{color:var(--ink)}
+.pnav+[data-section="product-main"] .prod{padding-top:max(16px,1.8vw)}
+@media (max-width:767px){
+  .pnav li[aria-current]{display:none}
+}
 .prod{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--sp-block) var(--sp-section);padding-block:var(--after-hero) var(--sp-section);border-bottom:1px solid var(--line);align-items:start}
 .prod-ph{position:sticky;top:calc(var(--hdr-h) + 24px);background:var(--stone);aspect-ratio:1.1;display:grid;place-items:center;padding:10%;overflow:hidden}
 .prod-ph>img{mix-blend-mode:multiply;max-height:100%;object-fit:contain;width:100%}

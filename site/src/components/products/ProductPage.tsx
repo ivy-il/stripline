@@ -33,23 +33,31 @@ export default function ProductPage({ product, family, related, s }: { product: 
   const waMessage = fill(s.pp_whatsapp_msg, { product: productLabel(product), url: productUrl });
   const waText = encodeURIComponent(waMessage.includes(productUrl) ? waMessage : `${waMessage}\n${productUrl}`);
   const code = product.code?.trim();
+  // The products link as the site menu names it (products_title is the page's long heading).
+  const productsLabel = s.nav_links?.find((l) => l.href === "/products")?.label || "מוצרים";
 
   return (
     <>
       <div data-section="product-hero" className="phero">
         <img src={scene} alt="" />
         <div className="wrap">
-          <Link className="arrow back" href={family ? `/products/family/${family.slug}` : "/products"}>
-            <Arrow className="flip" /> {family?.name_he ?? s.products_title}
-          </Link>
-          {/* Shown after opening this product from the flip book: back to the same page in the book. */}
-          <BackToBook slug={product.slug} className="arrow back" fromBookOnly>
-            <Arrow className="flip" /> חזרה לקטלוג
-          </BackToBook>
           <h1>{product.name_he}</h1>
           {code ? <p className="pp-code lat" dir="ltr">{code}</p> : null}
         </div>
       </div>
+
+      {/* The page's way back, under the banner: products › family › this product, and the flip book. */}
+      <nav className="wrap pnav" aria-label="ניווט בעמוד המוצר">
+        <ol>
+          <li><Link href="/products">{productsLabel}</Link></li>
+          {family ? <li><Link href={`/products/family/${family.slug}`}>{family.name_he}</Link></li> : null}
+          <li aria-current="page">{product.name_he}</li>
+        </ol>
+        {/* Shown after opening this product from the flip book: back to the same page in the book. */}
+        <BackToBook slug={product.slug} className="arrow pnav-book" fromBookOnly>
+          <Arrow className="flip" /> חזרה לקטלוג
+        </BackToBook>
+      </nav>
 
       <div data-section="product-main" className="wrap">
         <div className="prod">
