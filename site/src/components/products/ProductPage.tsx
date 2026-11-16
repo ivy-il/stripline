@@ -6,6 +6,7 @@ import { agentButtonLabel, familyScene, productImage } from "@/lib/design";
 import { drawingPdf, isUsageLine, productAccessories, productContactRef, productFeatures, productHasDrawing, productLabel, productSizes, productUsage } from "@/lib/product-text";
 import { productLabels } from "@/lib/product-labels";
 import type { Family, Product, Settings } from "@/lib/types";
+import BackToBook from "./BackToBook";
 import ProductActions from "./ProductActions";
 import ProductCard from "./ProductCard";
 import ProductGallery from "./ProductGallery";
@@ -41,6 +42,10 @@ export default function ProductPage({ product, family, related, s }: { product: 
           <Link className="arrow back" href={family ? `/products/family/${family.slug}` : "/products"}>
             <Arrow className="flip" /> {family?.name_he ?? s.products_title}
           </Link>
+          {/* Shown after opening this product from the flip book: back to the same page in the book. */}
+          <BackToBook slug={product.slug} className="arrow back" fromBookOnly>
+            <Arrow className="flip" /> חזרה לקטלוג
+          </BackToBook>
           <h1>{product.name_he}</h1>
           {code ? <p className="pp-code lat" dir="ltr">{code}</p> : null}
         </div>
@@ -135,7 +140,7 @@ export default function ProductPage({ product, family, related, s }: { product: 
             {s.pp_cta_text && <p>{s.pp_cta_text}</p>}
             <div className="acts">
               {s.pp_cta_contact && <Link className="btn light" href={`/contact?product=${encodeURIComponent(productContactRef(product))}`}>{s.pp_cta_contact}</Link>}
-              {s.pp_cta_catalog && <Link className="btn ghost-l" href="/catalog">{s.pp_cta_catalog}</Link>}
+              {s.pp_cta_catalog && <BackToBook slug={product.slug} className="btn ghost-l">{s.pp_cta_catalog}</BackToBook>}
             </div>
           </div>
         </div>

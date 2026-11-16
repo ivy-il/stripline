@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import HomeHero from "@/components/home/HomeHero";
 import AlbumBook from "@/components/book/AlbumBook";
+import CatalogBook from "@/components/book/CatalogBook";
 import SolFrame from "@/components/home/SolFrame";
 import Arrow, { WhatsAppIcon } from "@/components/design/Arrow";
 import { HeadLines, Rich, lines } from "@/components/design/Rich";
@@ -12,6 +14,7 @@ import { getFamilies, getProducts, getSettings } from "@/lib/wp";
 export default async function HomePage() {
   const [s, families, products] = await Promise.all([getSettings(), getFamilies(), getProducts()]);
   const spreads = buildAlbumSpreads(s, families, products);
+  const bookCta = s.book_cta ? <Link className="btn" href="/catalog">{s.book_cta} <Arrow size={22} weight={1.4} /></Link> : null;
 
   return (
     <>
@@ -45,7 +48,10 @@ export default async function HomePage() {
       <section data-section="home-catalog" className="catalog" id="catalog" aria-labelledby="cat-h">
         <div className="wrap cat2">
           <h2 id="cat-h">{lines(s.book_title).join(" ")}</h2>
-          <AlbumBook spreads={spreads} labels={albumLabels(s)} tools cta={s.book_cta ? <Link className="btn" href="/catalog">{s.book_cta} <Arrow size={22} weight={1.4} /></Link> : null} />
+          {/* Opened on the product in ?product=slug: Back from a product opened here returns to its page. */}
+          <Suspense fallback={<AlbumBook spreads={spreads} labels={albumLabels(s)} tools cta={bookCta} />}>
+            <CatalogBook spreads={spreads} labels={albumLabels(s)} tools cta={bookCta} />
+          </Suspense>
         </div>
       </section>
 
