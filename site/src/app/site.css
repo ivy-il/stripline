@@ -144,7 +144,7 @@ li.open>.cflip-topic .chev{transform:rotate(180deg)}
 .pnav a{transition:color .2s}
 .pnav a:hover{color:var(--ink)}
 .pnav [aria-current]{color:var(--ink)}
-.pnav .pnav-book{color:var(--ink)}
+.pnav .pnav-book{color:var(--ink);margin-inline-start:auto}
 .pnav+[data-section="product-main"] .prod{padding-top:max(16px,1.8vw)}
 @media (max-width:767px){
   .pnav li[aria-current]{display:none}
