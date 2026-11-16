@@ -6,6 +6,7 @@ import { Download } from "lucide-react";
 import CatalogTools from "./CatalogTools";
 import { Lg } from "@/components/design/Arrow";
 import { optimizedImage, originalImage } from "@/lib/image-url";
+import { rememberBookPlace, restoreBookPlace } from "@/lib/book-place";
 import type { AlbumLabels, AlbumSpread } from "@/lib/album";
 
 const MOBILE = "(max-width: 767px)";
@@ -34,11 +35,21 @@ export default function AlbumBook({ spreads, labels, tools = false, start = 0, c
   const mobile = useSyncExternalStore(subscribeMobile, () => window.matchMedia(MOBILE).matches, () => false);
   const router = useRouter();
   const paper = useRef<PaperBookHandle>(null);
+  const root = useRef<HTMLDivElement>(null);
   const [index, setIndex] = useState(start);
   const last = spreads.length - 1;
 
   const go = useCallback((target: number) => paper.current?.goTo(Math.max(0, Math.min(last, target))), [last]);
-  const open = useCallback((spread: number) => { if (spreads[spread]) router.push(`/products/${spreads[spread].slug}`); }, [router, spreads]);
+  // The page is kept in the address first, so Back (or the product page's link) reopens the book on it.
+  const open = useCallback((spread: number) => {
+    const slug = spreads[spread]?.slug;
+    if (!slug) return;
+    rememberBookPlace(slug);
+    router.push(`/products/${slug}`);
+  }, [router, spreads]);
+
+  // Back from a product opened here: the page scrolls back to where the reader was.
+  useEffect(() => restoreBookPlace(root.current), []);
 
   // Warm the neighbouring spreads so a turn never reveals an empty page.
   useEffect(() => {
@@ -53,7 +64,7 @@ export default function AlbumBook({ spreads, labels, tools = false, start = 0, c
   const current = spreads[index] ?? spreads[0];
 
   return (
-    <div className="album" data-mobile={mobile}>
+    <div ref={root} className="album" data-mobile={mobile}>
       {tools && <CatalogTools spreads={spreads} labels={labels} current={index} onGo={go} part={mobile ? "toc" : "both"} />}
       {/* Remounted when the layout changes: a phone shows single pages, a wider screen the open spread. */}
       <PaperBook key={mobile ? "single" : "spread"} ref={paper} spreads={spreads} pdfLabel={labels.pp_pdf} start={index} single={mobile} onIndex={setIndex} onOpen={open} />
@@ -193,15 +204,8 @@ const PaperBook = forwardRef<PaperBookHandle, {
           autoSize: true,
         });
         pf.loadFromHTML(pageEls);
-        // A press without a drag is a click: it opens the product (onClick below) and never turns the page.
-        // page-flip turns on a click in a page corner even with disableFlipByClick, so a click near a corner
-        // turned the page instead of opening the product. Drags, arrows, the contents and swipes do not pass here.
-        const book = pf as unknown as { isUserTouch: boolean; isUserMove: boolean; userStop: (pos: unknown, isSwipe?: boolean) => void };
-        const userStop = book.userStop.bind(pf);
-        book.userStop = (pos, isSwipe = false) => {
-          if (book.isUserTouch && !book.isUserMove && !isSwipe) { book.isUserTouch = false; return; }
-          userStop(pos, isSwipe);
-        };
+        // A click in a page corner (folded on hover) turns the page, as page-flip does by itself even with
+        // disableFlipByClick; the turn marks the press as moved, so onClick below does not open the product.
         pf.on("flip", (event) => {
           if (deck !== active.current) return; // the hidden deck being kept in step
           current.current = spreadOf(event.data as number, deck);
@@ -271,7 +275,7 @@ const PaperBook = forwardRef<PaperBookHandle, {
         press.current = null;
         if (!p || p.moved || Math.hypot(event.clientX - p.x, event.clientY - p.y) > 6) return;
         if ((event.target as HTMLElement).closest("a,button")) return;
-        // Not mid-turn: the open spread is only settled once the leaf has landed. A corner folded on hover is fine.
+        // Not mid-turn (a corner click has just started one): the open spread is only settled once the leaf has landed.
         const still = (pf: import("page-flip").PageFlip) => ["read", "fold_corner"].includes((pf as unknown as { getState(): string }).getState());
         if (!flips.current.every(still)) return;
         // The open spread, not the page under the pointer: a folded corner shows the next page underneath, and
