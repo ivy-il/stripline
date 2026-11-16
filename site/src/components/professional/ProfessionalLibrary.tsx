@@ -124,19 +124,22 @@ export default function ProfessionalLibrary({
                     </span>
                   </Link>
                   <div className="pro-actions">
-                    <a
-                      href={`${catalogPdf}#page=${p.pages[0] + pageOffset}`}
-                      target="_blank"
-                      rel="noopener"
-                      className="pro-action pro-action-pages"
-                      title="פתיחת העמוד בקטלוג הטכני"
-                    >
-                      <BookOpen className="size-3.5" strokeWidth={1.5} />
-                      <span>עמ׳</span>
-                      <span dir="ltr" className="tabular-nums">
-                        {p.pages[0] === p.pages[1] ? p.pages[0] : `${p.pages[0]}–${p.pages[1]}`}
-                      </span>
-                    </a>
+                    {/* Only when the product has catalogue pages; 0 means there is no page to open. */}
+                    {p.pages?.[0] > 0 && (
+                      <a
+                        href={`${catalogPdf}#page=${p.pages[0] + pageOffset}`}
+                        target="_blank"
+                        rel="noopener"
+                        className="pro-action pro-action-pages"
+                        title="פתיחת העמוד בקטלוג הטכני"
+                      >
+                        <BookOpen className="size-3.5" strokeWidth={1.5} />
+                        <span>עמ׳</span>
+                        <span dir="ltr" className="tabular-nums">
+                          {p.pages[0] === p.pages[1] ? p.pages[0] : `${p.pages[0]}–${p.pages[1]}`}
+                        </span>
+                      </a>
+                    )}
                     <a href={`/products/${p.slug}/sheet?download=1`} target="_blank" rel="noopener" className="pro-action">
                       <FileText className="size-3.5" strokeWidth={1.5} />
                       דף מוצר
@@ -147,16 +150,11 @@ export default function ProfessionalLibrary({
                         דף טכני
                       </a>
                     )}
-                    {p.dwg ? (
+                    {p.dwg && (
                       <a href={p.dwg} download className="pro-action pro-action-dwg">
                         <PencilRuler className="size-3.5" strokeWidth={1.5} />
                         DWG
                       </a>
-                    ) : (
-                      <span className="pro-action" aria-disabled="true" data-muted>
-                        <PencilRuler className="size-3.5" strokeWidth={1.5} />
-                        DWG בקרוב
-                      </span>
                     )}
                   </div>
                 </li>
