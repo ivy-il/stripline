@@ -293,7 +293,8 @@ export default function ProductSheet({
                   src={sheetDrawing}
                   alt={`שרטוט היצרן ${product.code || product.name_he}`}
                   crossOrigin="anonymous"
-                  style={{ width: "100%", height: 200, objectFit: "contain" }}
+                  // A little shorter when a note sits under it, so the sheet still fits one A4 page.
+                  style={{ width: "100%", height: drawingClarification ? 168 : 200, objectFit: "contain" }}
                 />
                 {drawingClarification && (
                   <p style={{ margin: "6px 0 0", fontSize: 10, lineHeight: 1.4, color: muted }}>{drawingClarification}</p>
