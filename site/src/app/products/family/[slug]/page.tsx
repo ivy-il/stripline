@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Arrow from "@/components/design/Arrow";
 import ProductCard from "@/components/products/ProductCard";
-import { familyScene, inFamily } from "@/lib/design";
+import { familyMembers, familyScene, inFamily } from "@/lib/design";
 import { getFamilies, getProducts, getSettings } from "@/lib/wp";
 
 type Params = { params: Promise<{ slug: string }> };
@@ -28,7 +28,7 @@ export default async function FamilyPage({ params }: Params) {
   const index = withProducts.findIndex((f) => f.slug === slug);
   const family = withProducts[index];
   if (!family) notFound();
-  const members = products.filter((p) => inFamily(p, slug));
+  const members = familyMembers(products, slug);
   const next = withProducts[(index + 1) % withProducts.length];
 
   return (
