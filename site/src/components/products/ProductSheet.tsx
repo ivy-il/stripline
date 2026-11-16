@@ -6,6 +6,7 @@ import { FEATURE_ICONS } from "@/components/icons";
 import { defaultInstall } from "./ProductActions";
 import {
   productAccessories,
+  productDrawingClarification,
   isUsageLine,
   productFeatures,
   productHasDrawing,
@@ -55,6 +56,8 @@ export default function ProductSheet({
   // A photo banner fills the dark frame; a cut-out (or no banner) is shown whole on a light background.
   const bannerPhoto = Boolean(product.hero_image) && !bannerCutout;
   const sheetDrawing = product.drawing_image || product.drawing_images?.find((src) => src?.trim()) || "";
+  // A product-specific note (which models the drawing covers, which sizes govern) travels with the drawing.
+  const drawingClarification = productDrawingClarification(product, settings.pp_drawing_note);
   const accessories = productAccessories(product);
   type SpecCol = { key: string; title: string; body: ReactNode };
   const specCols: SpecCol[] = (
@@ -290,8 +293,12 @@ export default function ProductSheet({
                   src={sheetDrawing}
                   alt={`שרטוט היצרן ${product.code || product.name_he}`}
                   crossOrigin="anonymous"
-                  style={{ width: "100%", height: 200, objectFit: "contain" }}
+                  // A little shorter when a note sits under it, so the sheet still fits one A4 page.
+                  style={{ width: "100%", height: drawingClarification ? 168 : 200, objectFit: "contain" }}
                 />
+                {drawingClarification && (
+                  <p style={{ margin: "6px 0 0", fontSize: 10, lineHeight: 1.4, color: muted }}>{drawingClarification}</p>
+                )}
               </div>
             )}
           </div>

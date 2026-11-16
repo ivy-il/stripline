@@ -59,6 +59,24 @@ export function productContactRef(product: Product): string {
   return product.code?.trim() || product.name_he;
 }
 
+/**
+ * Standard drawing captions the product page already shows. They are left off the product sheet so its
+ * layout does not change; only a product-specific clarification (anything else) is printed there.
+ */
+const STANDARD_DRAWING_NOTES = new Set([
+  "שרטוט היצרן מתוך הקטלוג. המידות במ״מ אלא אם צוין אחרת.",
+  "למוצר זה אין שרטוט טכני. המידות מפורטות בדף המוצר.",
+  "איור סכמטי / תמונת מקור, ללא קנה מידה. קטלוג הספק אינו כולל שרטוט מידות מלא למוצר זה.",
+  "פרט חיבור למסגרת CC מתוך קטלוג הספק. אין בקטלוג שרטוט מידות של הקליפס עצמו.",
+]);
+
+/** The product's own clarification about its drawing (for example which models it shows), or "" if it has none. */
+export function productDrawingClarification(product: Product, defaultNote = ""): string {
+  const note = product.drawing_note?.trim() ?? "";
+  if (!note || STANDARD_DRAWING_NOTES.has(note) || note === defaultNote.trim()) return "";
+  return note;
+}
+
 /** True when the product has a real technical drawing to show or download. */
 export function productHasDrawing(product: Product): boolean {
   return Boolean(
