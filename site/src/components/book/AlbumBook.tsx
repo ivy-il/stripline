@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Download } from "lucide-react";
 import CatalogTools from "./CatalogTools";
 import { Lg } from "@/components/design/Arrow";
-import { optimizedImage, originalImage } from "@/lib/image-url";
+import { BOOK_PRODUCT_SIZES, BOOK_SCENE_SIZES } from "@/lib/media-sizes";
 import { rememberBookPlace, restoreBookPlace } from "@/lib/book-place";
 import type { AlbumLabels, AlbumSpread } from "@/lib/album";
 
@@ -16,13 +16,22 @@ const subscribeMobile = (notify: () => void) => {
   return () => query.removeEventListener("change", notify);
 };
 
-/** Falls back to the source file when the resized copy is unavailable. */
+/** Falls back to the original file (the src) when a resized copy from the srcset fails to load. */
 function useOriginalOnError() {
   return (event: React.SyntheticEvent<HTMLImageElement>) => {
     const img = event.currentTarget;
-    const original = originalImage(img.getAttribute("src") || "");
-    if (original) img.src = original;
+    if (img.hasAttribute("srcset")) img.removeAttribute("srcset");
   };
+}
+
+/** Loads an image the way the book will show it, so the browser picks the same copy from the srcset. */
+function warm(src: string, srcSet: string | undefined, sizes: string) {
+  const image = new Image();
+  if (srcSet) {
+    image.sizes = sizes;
+    image.srcset = srcSet;
+  }
+  image.src = src;
 }
 
 /**
@@ -55,8 +64,8 @@ export default function AlbumBook({ spreads, labels, tools = false, start = 0, c
   useEffect(() => {
     for (const spread of [spreads[index + 1], spreads[index - 1]]) {
       if (!spread) continue;
-      new Image().src = optimizedImage(spread.scene, 828);
-      new Image().src = optimizedImage(spread.image, 384);
+      warm(spread.scene, spread.sceneSrcSet, BOOK_SCENE_SIZES);
+      warm(spread.image, spread.imageSrcSet, BOOK_PRODUCT_SIZES);
     }
   }, [index, mobile, spreads]);
 
@@ -300,13 +309,14 @@ function showDeck(decks: React.RefObject<HTMLDivElement | null>[], visible: numb
   decks.forEach((deck, i) => { if (deck.current) deck.current.style.visibility = i === visible ? "" : "hidden"; });
 }
 
-/** `sharp` loads the photos of the first pages eagerly and larger; the rest load as they are reached. */
+/** `sharp` loads the photos of the first pages eagerly; the rest load as they are reached. The browser
+ * picks each photo's copy from the srcset by its shown size and the screen's pixel density. */
 function ScenePage({ spread, sharp = false }: { spread: AlbumSpread; sharp?: boolean }) {
   const onError = useOriginalOnError();
   return (
     <span className="album-face album-scene">
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={optimizedImage(spread.scene, sharp ? 1920 : 828)} alt="" loading={sharp ? "eager" : "lazy"} onError={onError} />
+      <img src={spread.scene} srcSet={spread.sceneSrcSet} sizes={BOOK_SCENE_SIZES} alt="" loading={sharp ? "eager" : "lazy"} onError={onError} />
       <span className="album-scene-copy">
         <span className="album-scene-family">{spread.familyName}</span>
         <span className="album-scene-name">{spread.name}</span>
@@ -324,7 +334,7 @@ function ProductPage({ spread, number, total, pdfLabel, sharp = false, withScene
       {withScene && (
         <span className="album-phone-scene">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={optimizedImage(spread.scene, 828)} alt="" loading={sharp ? "eager" : "lazy"} onError={onError} />
+          <img src={spread.scene} srcSet={spread.sceneSrcSet} sizes={BOOK_SCENE_SIZES} alt="" loading={sharp ? "eager" : "lazy"} onError={onError} />
         </span>
       )}
       <span className="album-product">
@@ -335,7 +345,7 @@ function ProductPage({ spread, number, total, pdfLabel, sharp = false, withScene
       <span className="album-product-main">
         <span className="album-product-image">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={optimizedImage(spread.image, sharp ? 640 : 384)} alt={spread.name} loading={sharp ? "eager" : "lazy"} onError={onError} />
+          <img src={spread.image} srcSet={spread.imageSrcSet} sizes={BOOK_PRODUCT_SIZES} alt={spread.name} loading={sharp ? "eager" : "lazy"} onError={onError} />
           <a
             href={`/products/${spread.slug}/sheet?download=1`}
             target="_blank"

@@ -11,6 +11,7 @@ import projectsSeed from "@/data/projects.json";
 import settingsSeed from "@/data/settings.json";
 import { familyMembers, mainFamily } from "./design";
 import { eilatOverrides } from "./eilat";
+import { mediaEntry, mediaKey, type MediaSizes } from "./media-sizes";
 
 const WP = process.env.WP_API_URL?.replace(/\/$/, "");
 const REVALIDATE = Number(process.env.WP_REVALIDATE_SECONDS ?? 300);
@@ -197,4 +198,37 @@ export async function getProject(slug: string): Promise<Project | undefined> {
   // The route param can still be encoded (the static export prerenders /projects/%D7%99…).
   const wanted = decodeSlug(slug);
   return (await getProjects()).find((p) => p.slug === wanted);
+}
+
+/**
+ * The resized copies WordPress keeps of each image (see media-sizes.ts). Read from the plugin's
+ * /media route when it has one, otherwise from WordPress's own media listing, page by page. Any
+ * failure leaves the map empty, and the images are shown at their original size.
+ */
+export async function getMediaSizes(): Promise<MediaSizes> {
+  if (!WP) return {};
+  const cache = { next: { revalidate: REVALIDATE, tags: ["media", "stripline"] }, headers: { Accept: "application/json" } };
+  try {
+    const own = await fetch(`${WP}/media`, cache);
+    if (own.ok) {
+      const map = proxyMedia(await own.json()) as MediaSizes;
+      return Object.fromEntries(Object.entries(map).map(([url, entry]) => [mediaKey(url), entry]));
+    }
+    const core = `${new URL(WP).origin}/wp-json/wp/v2/media?per_page=100&_fields=source_url,media_details`;
+    const out: MediaSizes = {};
+    for (let page = 1, pages = 1; page <= pages && page <= 50; page++) {
+      const res = await fetch(`${core}&page=${page}`, cache);
+      if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+      pages = Number(res.headers.get("x-wp-totalpages")) || 1;
+      const items = proxyMedia(await res.json()) as { source_url?: string; media_details?: Parameters<typeof mediaEntry>[0] }[];
+      for (const item of items) {
+        const entry = item.source_url && item.media_details ? mediaEntry(item.media_details) : null;
+        if (entry) out[mediaKey(item.source_url!)] = entry;
+      }
+    }
+    return out;
+  } catch (err) {
+    console.error("[wp] media sizes failed, showing original images:", err);
+    return {};
+  }
 }
