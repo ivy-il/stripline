@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Download, PencilRuler } from "lucide-react";
 import Arrow, { WhatsAppIcon } from "@/components/design/Arrow";
 import { fill, Rich } from "@/components/design/Rich";
+import { bannerFocus } from "@/lib/banner-focus";
 import { agentButtonLabel, familyScene, productImage } from "@/lib/design";
 import { drawingPdf, isUsageLine, productAccessories, productContactRef, productFeatures, productHasDrawing, productLabel, productSizes, productUsage } from "@/lib/product-text";
 import { productLabels } from "@/lib/product-labels";
@@ -27,6 +28,8 @@ export default function ProductPage({ product, family, related, s }: { product: 
   const hasDrawing = productHasDrawing(product);
   const sheet = `/products/${product.slug}/sheet?download=1`;
   const scene = product.hero_image || familyScene(family, s.default_scene);
+  // A wide screen shows only a band of the banner: keep the product in it (top / upper / low, else centred).
+  const focus = bannerFocus(scene);
   const waTitle = s.pp_wa_title.trim() || "מעוניינים במוצר הזה? יש לכם שאלה?";
   const waSub = s.pp_wa_sub.trim() || "צוות STRIPLINE זמין לכם בוואטסאפ";
   const productUrl = `https://stripline.co.il/products/${product.slug}`;
@@ -39,7 +42,7 @@ export default function ProductPage({ product, family, related, s }: { product: 
   return (
     <>
       <div data-section="product-hero" className="phero">
-        <img src={scene} alt="" />
+        <img src={scene} alt="" className={focus ? `focus-${focus}` : undefined} />
         <div className="wrap">
           <h1>{product.name_he}</h1>
           {code ? <p className="pp-code lat" dir="ltr">{code}</p> : null}
