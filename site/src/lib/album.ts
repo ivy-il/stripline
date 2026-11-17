@@ -1,6 +1,7 @@
 import type { Family, Product, Settings } from "./types";
 import { productImage } from "./design";
 import { productFeatures, productSizes, productUsage } from "./product-text";
+import { srcSetFor, type MediaSizes } from "./media-sizes";
 
 /** One open spread of the flip book: an atmosphere photo facing the product's page. */
 export type AlbumSpread = {
@@ -11,6 +12,9 @@ export type AlbumSpread = {
   familyNameEn: string;
   image: string;
   scene: string;
+  /** Resized copies from WordPress for the browser to choose from (undefined: only the original). */
+  imageSrcSet?: string;
+  sceneSrcSet?: string;
   description: string;
   features: string[];
   sizes: string[];
@@ -18,9 +22,9 @@ export type AlbumSpread = {
   usage: string;
 };
 
-export function buildAlbumSpreads(settings: Settings, families: Family[], products: Product[]): AlbumSpread[] {
+export function buildAlbumSpreads(settings: Settings, families: Family[], products: Product[], media?: MediaSizes): AlbumSpread[] {
   return families.flatMap((family) =>
-    products.filter((p) => p.family === family.slug).map((p) => ({
+    products.filter((p) => p.family === family.slug).map((p) => withSrcSets({
       slug: p.slug,
       code: p.code,
       name: p.name_he,
@@ -33,8 +37,12 @@ export function buildAlbumSpreads(settings: Settings, families: Family[], produc
       sizes: productSizes(p),
       materials: p.materials_he,
       usage: productUsage(p),
-    })),
+    }, media)),
   );
+}
+
+function withSrcSets(spread: AlbumSpread, media?: MediaSizes): AlbumSpread {
+  return { ...spread, imageSrcSet: srcSetFor(spread.image, media), sceneSrcSet: srcSetFor(spread.scene, media) };
 }
 
 /** What the phone flip book shows around the product pages; every field is a WordPress setting. */

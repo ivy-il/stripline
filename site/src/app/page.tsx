@@ -8,12 +8,12 @@ import Arrow, { WhatsAppIcon } from "@/components/design/Arrow";
 import { HeadLines, Rich, lines } from "@/components/design/Rich";
 import { albumLabels, buildAlbumSpreads } from "@/lib/album";
 import { agentButtonLabel } from "@/lib/design";
-import { getFamilies, getProducts, getSettings } from "@/lib/wp";
+import { getFamilies, getMediaSizes, getProducts, getSettings } from "@/lib/wp";
 
 /** Every text, image and the film on this page come from WordPress > תוכן האתר > עמוד הבית. */
 export default async function HomePage() {
-  const [s, families, products] = await Promise.all([getSettings(), getFamilies(), getProducts()]);
-  const spreads = buildAlbumSpreads(s, families, products);
+  const [s, families, products, media] = await Promise.all([getSettings(), getFamilies(), getProducts(), getMediaSizes()]);
+  const spreads = buildAlbumSpreads(s, families, products, media);
   const bookCta = s.book_cta ? <Link className="btn" href="/catalog">{s.book_cta} <Arrow size={22} weight={1.4} /></Link> : null;
 
   return (
