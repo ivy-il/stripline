@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Arrow from "@/components/design/Arrow";
 import ProductCard from "@/components/products/ProductCard";
 import { familyMembers, familyScene, inFamily } from "@/lib/design";
+import { bannerFocusClass } from "@/lib/banner-focus";
 import { getFamilies, getProducts, getSettings } from "@/lib/wp";
 
 type Params = { params: Promise<{ slug: string }> };
@@ -34,7 +35,7 @@ export default async function FamilyPage({ params }: Params) {
   return (
     <>
       <div data-section="family-hero" className="phero">
-        <img src={familyScene(family, s.default_scene)} alt="" />
+        <img src={familyScene(family, s.default_scene)} alt="" className={bannerFocusClass(familyScene(family, s.default_scene))} />
         <div className="wrap">
           <Link className="arrow back" href="/products"><Arrow className="flip" /> {s.products_title}</Link>
           <h1>{family.name_he}</h1>

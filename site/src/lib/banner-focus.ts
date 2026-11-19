@@ -20,3 +20,9 @@ export function bannerFocus(url: string): BannerFocus | undefined {
   const name = fileName(url);
   return (Object.keys(LISTS) as BannerFocus[]).find((k) => LISTS[k].includes(name));
 }
+
+/** The banner image class for its listed position (see app/site.css), or undefined to keep it centred. */
+export function bannerFocusClass(url: string | undefined): string | undefined {
+  const focus = url ? bannerFocus(url) : undefined;
+  return focus ? `focus-${focus}` : undefined;
+}

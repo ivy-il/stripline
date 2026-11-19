@@ -2,6 +2,15 @@ import type { Family, Product, Settings } from "./types";
 import { productImage } from "./design";
 import { productFeatures, productSizes, productUsage } from "./product-text";
 import { srcSetFor, type MediaSizes } from "./media-sizes";
+import bookHidden from "@/data/book-hidden.json";
+
+/** Products left out of the flip book only (data/book-hidden.json); they stay on the rest of the site. */
+const HIDDEN = new Set<string>(bookHidden.slugs);
+
+/** Left out of the flip book: such a product has no page in the book to link to. */
+export function isHiddenFromBook(slug: string): boolean {
+  return HIDDEN.has(slug);
+}
 
 /** One open spread of the flip book: an atmosphere photo facing the product's page. */
 export type AlbumSpread = {
@@ -24,7 +33,7 @@ export type AlbumSpread = {
 
 export function buildAlbumSpreads(settings: Settings, families: Family[], products: Product[], media?: MediaSizes): AlbumSpread[] {
   return families.flatMap((family) =>
-    products.filter((p) => p.family === family.slug).map((p) => withSrcSets({
+    products.filter((p) => p.family === family.slug && !HIDDEN.has(p.slug)).map((p) => withSrcSets({
       slug: p.slug,
       code: p.code,
       name: p.name_he,

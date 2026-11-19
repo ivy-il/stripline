@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Rich } from "@/components/design/Rich";
+import { bannerFocusClass } from "@/lib/banner-focus";
 import { getProjects, getSettings } from "@/lib/wp";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -17,7 +18,7 @@ export default async function ProjectsPage() {
   return (
     <div id="p-projects">
       <div data-section="projects-hero" className="phero">
-        {s.projects_image && <img src={s.projects_image} alt="" />}
+        {s.projects_image && <img src={s.projects_image} alt="" className={bannerFocusClass(s.projects_image)} />}
         <div className="wrap"><h1>{s.projects_title}</h1></div>
       </div>
       <div data-section="projects-list" className="wrap fam-body">

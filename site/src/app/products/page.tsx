@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import FamilyBrowser from "@/components/products/FamilyBrowser";
 import { familyTile, inFamily } from "@/lib/design";
+import { bannerFocusClass } from "@/lib/banner-focus";
 import { getFamilies, getProducts, getSettings } from "@/lib/wp";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -21,7 +22,7 @@ export default async function ProductsPage({
     <>
       <div data-section="products-hero" className="phero">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        {s.products_image && <img src={s.products_image} alt="" />}
+        {s.products_image && <img src={s.products_image} alt="" className={bannerFocusClass(s.products_image)} />}
         <div className="wrap"><h1>{s.products_title}</h1></div>
       </div>
       <div data-section="products-grid" className="wrap">

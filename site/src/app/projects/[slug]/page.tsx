@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Arrow from "@/components/design/Arrow";
 import { productImage } from "@/lib/design";
+import { bannerFocusClass } from "@/lib/banner-focus";
 import { getFamilies, getProducts, getProject, getProjects, getSettings } from "@/lib/wp";
 
 type Params = { params: Promise<{ slug: string }> };
@@ -32,7 +33,7 @@ export default async function ProjectPage({ params }: Params) {
   return (
     <div id="p-project">
       <div data-section="project-hero" className="phero">
-        <img src={project.image} alt={project.title} />
+        <img src={project.image} alt={project.title} className={bannerFocusClass(project.image)} />
         <div className="wrap">
           <Link className="arrow back" href="/projects"><Arrow className="flip" /> {s.project_back}</Link>
           <h1>{project.title}</h1>
