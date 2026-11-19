@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Download, PencilRuler } from "lucide-react";
 import Arrow, { WhatsAppIcon } from "@/components/design/Arrow";
 import { fill, Rich } from "@/components/design/Rich";
+import { isHiddenFromBook } from "@/lib/album";
 import { bannerFocus } from "@/lib/banner-focus";
 import { agentButtonLabel, familyScene, productImage } from "@/lib/design";
 import { drawingPdf, isUsageLine, productAccessories, productContactRef, productFeatures, productHasDrawing, productLabel, productSizes, productUsage } from "@/lib/product-text";
@@ -30,6 +31,8 @@ export default function ProductPage({ product, family, related, s }: { product: 
   const scene = product.hero_image || familyScene(family, s.default_scene);
   // A wide screen shows only a band of the banner: keep the product in it (top / upper / low, else centred).
   const focus = bannerFocus(scene);
+  // A product left out of the flip book (data/book-hidden.json) has no page there: no links into the book.
+  const inBook = !isHiddenFromBook(product.slug);
   const waTitle = s.pp_wa_title.trim() || "מעוניינים במוצר הזה? יש לכם שאלה?";
   const waSub = s.pp_wa_sub.trim() || "צוות STRIPLINE זמין לכם בוואטסאפ";
   const productUrl = `https://stripline.co.il/products/${product.slug}`;
@@ -57,9 +60,11 @@ export default function ProductPage({ product, family, related, s }: { product: 
           <li aria-current="page">{product.name_he}</li>
         </ol>
         {/* Shown after opening this product from the flip book: back to the same page in the book. */}
-        <BackToBook slug={product.slug} className="arrow pnav-book" fromBookOnly>
-          <Arrow className="flip" /> חזרה לקטלוג
-        </BackToBook>
+        {inBook && (
+          <BackToBook slug={product.slug} className="arrow pnav-book" fromBookOnly>
+            <Arrow className="flip" /> חזרה לקטלוג
+          </BackToBook>
+        )}
       </nav>
 
       <div data-section="product-main" className="wrap">
@@ -151,7 +156,7 @@ export default function ProductPage({ product, family, related, s }: { product: 
             {s.pp_cta_text && <p>{s.pp_cta_text}</p>}
             <div className="acts">
               {s.pp_cta_contact && <Link className="btn light" href={`/contact?product=${encodeURIComponent(productContactRef(product))}`}>{s.pp_cta_contact}</Link>}
-              {s.pp_cta_catalog && <BackToBook slug={product.slug} className="btn ghost-l">{s.pp_cta_catalog}</BackToBook>}
+              {inBook && s.pp_cta_catalog && <BackToBook slug={product.slug} className="btn ghost-l">{s.pp_cta_catalog}</BackToBook>}
             </div>
           </div>
         </div>

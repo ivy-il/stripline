@@ -7,6 +7,11 @@ import bookHidden from "@/data/book-hidden.json";
 /** Products left out of the flip book only (data/book-hidden.json); they stay on the rest of the site. */
 const HIDDEN = new Set<string>(bookHidden.slugs);
 
+/** Left out of the flip book: such a product has no page in the book to link to. */
+export function isHiddenFromBook(slug: string): boolean {
+  return HIDDEN.has(slug);
+}
+
 /** One open spread of the flip book: an atmosphere photo facing the product's page. */
 export type AlbumSpread = {
   slug: string;
