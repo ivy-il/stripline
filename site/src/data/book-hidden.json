@@ -1,0 +1,8 @@
+{
+  "_about": [
+    "Products left out of the flip book only (home page and /catalog), by slug.",
+    "They stay published: their product page, family page, search and PDF sheet are unchanged.",
+    "To show a product in the book again, remove its slug from the list."
+  ],
+  "slugs": ["shachar", "narrow-plinth-slot", "cd-dd", "swci"]
+}
