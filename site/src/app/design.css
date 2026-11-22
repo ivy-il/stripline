@@ -4,6 +4,7 @@
 :root{
   --bone:#F1EDE7;      /* page ground */
   --stone:#E1E0DC;     /* product tiles, quiet panels */
+  --tile-grey:#DEDEDC; /* product and family tiles: neutral, matches the grey studio renders */
   --paper:#F7F4EF;     /* catalog paper, form fields */
   --ink:#1F1B17;
   --muted:#6B6259;
@@ -292,7 +293,7 @@ h1,h2,h3{text-wrap:balance;font-weight:var(--fw-reg)}
 .presults .none{display:block;color:var(--muted)}
 .bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:max(10px,1.1vw);margin-block:max(22px,2.4vw) var(--sec)}
 .tile{position:relative;display:flex;flex-direction:column;color:var(--ink);min-width:0}
-.tile .ph{position:relative;background:var(--stone);aspect-ratio:1.35;overflow:hidden}
+.tile .ph{position:relative;background:var(--tile-grey);aspect-ratio:1.35;overflow:hidden}
 .tile img{position:absolute;inset:10%;width:80%;height:80%;object-fit:contain;mix-blend-mode:multiply;transition:transform .4s}
 .tile:hover img{transform:scale(1.05)}
 .tile .tx{padding-top:12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;align-items:start}
@@ -309,10 +310,12 @@ h1,h2,h3{text-wrap:balance;font-weight:var(--fw-reg)}
 .pc:nth-child(4n+1){border-inline-start:0}
 .pc.wide{grid-column:span 2;grid-row:span 2;border-inline-start:0}
 .pc:hover{background:var(--paper)}
-.pc .ph{aspect-ratio:1.35;background:var(--stone);display:grid;place-items:center;padding:12%;margin-bottom:10px;overflow:hidden}
+.pc .ph{aspect-ratio:1.35;background:var(--tile-grey);display:grid;place-items:center;padding:12%;margin-bottom:10px;overflow:hidden}
 .pc.wide .ph{aspect-ratio:auto;flex:1;min-height:max(260px,24svh)}
 .pc .ph img{mix-blend-mode:multiply;max-height:100%;object-fit:contain;transition:transform .4s}
 .pc:hover .ph img{transform:scale(1.05)}
+/* A product shot on its own grey background (data/grey-backdrop.json): darken merges its grey into the tile, multiply would leave a darker square. */
+.tile img.on-grey,.pc .ph img.on-grey{mix-blend-mode:darken}
 .pc h3{font-size:var(--fs-card);font-weight:var(--fw-med);line-height:var(--lh-card)}
 .pc .code{direction:ltr;text-align:right;font-size:var(--fs-xs);letter-spacing:.08em;color:var(--brass);font-weight:var(--fw-med);line-height:var(--lh-xs)}
 .pc p{color:var(--muted);font-size:var(--fs-small);line-height:var(--lh-small)}

@@ -1,0 +1,15 @@
+{
+  "_comment": "Product images (file names) rendered on their own grey studio background rather than white. On the grey product tiles they blend with 'darken' instead of 'multiply', so no darker square shows inside the tile. Add a file name here when a new grey-background image is used.",
+  "files": [
+    "slot-1-slot-render.jpeg",
+    "slot-2-slots-render.jpeg",
+    "slot-3-slots-render.jpeg",
+    "slot-4-slots-render.jpeg",
+    "pfd-pf-trim.webp",
+    "ac-trim.webp",
+    "cd-s-trim.webp",
+    "sl-trim.webp",
+    "nrd-nrdd-trim.webp",
+    "swci.png"
+  ]
+}

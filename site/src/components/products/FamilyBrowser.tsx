@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import Arrow from "@/components/design/Arrow";
 import ProductCard from "@/components/products/ProductCard";
+import { backdropClass } from "@/lib/grey-backdrop";
 import { filterProducts, type SearchableProduct } from "@/lib/product-search";
 import type { Product } from "@/lib/types";
 
@@ -91,7 +92,7 @@ export default function FamilyBrowser({
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <div className="ph">
-                <img src={f.image} alt="" />
+                <img src={f.image} alt="" className={backdropClass(f.image)} />
               </div>
               <div className="tx">
                 <h2>{f.name}</h2>
