@@ -2,7 +2,7 @@
   "_about": [
     "Where the product sits in a product page banner (WordPress > מוצר > תמונת אווירה), by the image file name.",
     "On a wide screen the banner shows only a band of the image; a product near the ceiling is cut off at the default centre.",
-    "top: product at the ceiling or high on the wall · upper: product a third of the way down · low: product near the floor.",
+    "top: product at the ceiling or high on the wall · high: product just below the ceiling, a little lower than top · upper: product a third of the way down · low: product near the floor.",
     "A file not listed stays centred. A new banner is listed by adding its file name to one of the lists."
   ],
   "top": [
@@ -60,7 +60,9 @@
     "שדרות-אווירה.png",
     "תקרתי-4-כיוונים-אווירה.png",
     "תריס-יניקה.png",
-    "תריס-משולב-אספקה-ויניקה-אווירה.png",
+    "תריס-משולב-אספקה-ויניקה-אווירה.png"
+  ],
+  "high": [
     "תריס-מעוגל-עם-להבים-מתכווננים-אווירה.png"
   ],
   "upper": [
