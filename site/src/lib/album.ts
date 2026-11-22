@@ -79,8 +79,12 @@ export function buildPhoneBook(settings: Settings): PhoneBook {
 }
 
 /** The book's own words (WordPress > תוכן האתר > קטלוג), picked so the client bundle stays small. */
-export type AlbumLabels = Pick<Settings, "pp_pdf" | "catalog_toc" | "catalog_page" | "catalog_jump" | "catalog_go" | "catalog_jump_err">;
+export type AlbumLabels = Pick<Settings, "pp_pdf" | "catalog_toc" | "catalog_page" | "catalog_jump" | "catalog_go" | "catalog_jump_err" | "product_open">;
 
 export function albumLabels(s: Settings): AlbumLabels {
-  return { pp_pdf: s.pp_pdf, catalog_toc: s.catalog_toc, catalog_page: s.catalog_page, catalog_jump: s.catalog_jump, catalog_go: s.catalog_go, catalog_jump_err: s.catalog_jump_err };
+  return {
+    pp_pdf: s.pp_pdf, catalog_toc: s.catalog_toc, catalog_page: s.catalog_page, catalog_jump: s.catalog_jump, catalog_go: s.catalog_go, catalog_jump_err: s.catalog_jump_err,
+    // WordPress > תוכן האתר > קטלוג: "popup" opens a product over the book, anything else its own page.
+    product_open: s.product_open === "popup" ? "popup" : "page",
+  };
 }

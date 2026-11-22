@@ -43,6 +43,7 @@ add_action('admin_init', function () {
             if (!isset($in[$k])) continue;
             $v = wp_unslash($in[$k]);
             if ($def['type'] === 'html') $out[$k] = wp_kses_post($v);
+            elseif ($def['type'] === 'choice') $out[$k] = array_key_exists($v, stripline_field_choices($k)) ? $v : array_key_first(stripline_field_choices($k));
             elseif (in_array($def['type'], ['text', 'image', 'file', 'video'], true)) $out[$k] = sanitize_text_field($v);
             else $out[$k] = sanitize_textarea_field($v);
         }
@@ -93,6 +94,13 @@ function stripline_settings_page() {
                         <td>
                             <?php if ($def['type'] === 'html') : ?>
                                 <?php wp_editor($val !== '' ? $val : $def['default'], $id, ['textarea_name' => $name, 'textarea_rows' => 12, 'media_buttons' => true]); ?>
+                            <?php elseif ($def['type'] === 'choice') :
+                                $current = $val !== '' ? $val : $def['default']; ?>
+                                <select id="<?php echo $id; ?>" name="<?php echo esc_attr($name); ?>">
+                                    <?php foreach (stripline_field_choices($k) as $opt => $optLabel) : ?>
+                                        <option value="<?php echo esc_attr($opt); ?>" <?php selected($current, $opt); ?>><?php echo esc_html($optLabel); ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             <?php elseif (in_array($def['type'], stripline_media_types(), true)) : ?>
                                 <?php // A picker never saved starts from the default, so saving the tab keeps it.
                                 echo stripline_media_control($def['type'], $name, array_key_exists($k, $saved) ? (string) $val : $def['default'], $id); ?>

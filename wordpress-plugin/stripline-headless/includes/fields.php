@@ -211,6 +211,7 @@ function stripline_settings_fields(): array {
         'catalog_jump' => ['catalog', '"מעבר לעמוד"', 'text'],
         'catalog_go' => ['catalog', 'כפתור "מעבר"', 'text'],
         'catalog_jump_err' => ['catalog', 'שגיאת מספר עמוד ({total} = מספר העמודים)', 'text'],
+        'product_open' => ['catalog', 'לחיצה על מוצר בקטלוג פותחת', 'choice'],
         'projects_title' => ['projects', 'כותרת העמוד', 'text'],
         'projects_image' => ['projects', 'תמונה ראשית', 'image', 'ltr'],
         'projects_empty' => ['projects', 'כשאין פרויקטים', 'text'],
@@ -291,6 +292,17 @@ function stripline_settings_fields(): array {
         $out[$k] = ['group' => $d[0], 'label' => $d[1], 'type' => $d[2], 'dir' => $d[3] ?? '', 'default' => stripline_setting_to_text($d[2], $seed[$k] ?? '')];
     }
     return $out;
+}
+
+/** Options of the 'choice' fields (a select box): saved value => label. The first is the default. */
+function stripline_field_choices(string $key): array {
+    $choices = [
+        'product_open' => [
+            'page'  => 'עמוד מוצר נפרד, עם כתובת משלו',
+            'popup' => 'חלון קופץ (Pop-up) מעל הקטלוג',
+        ],
+    ];
+    return $choices[$key] ?? [];
 }
 
 /** The site's default copy (seed/settings.json), used for placeholders and the first import. */

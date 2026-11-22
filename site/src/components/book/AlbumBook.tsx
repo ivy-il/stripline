@@ -4,6 +4,7 @@ import { forwardRef, memo, useCallback, useEffect, useImperativeHandle, useRef, 
 import { useRouter } from "next/navigation";
 import { Download } from "lucide-react";
 import CatalogTools from "./CatalogTools";
+import ProductPopup from "@/components/products/ProductPopup";
 import { Lg } from "@/components/design/Arrow";
 import { BOOK_PRODUCT_SIZES, BOOK_SCENE_SIZES } from "@/lib/media-sizes";
 import { rememberBookPlace, restoreBookPlace } from "@/lib/book-place";
@@ -50,12 +51,20 @@ export default function AlbumBook({ spreads, labels, tools = false, start = 0, c
 
   const go = useCallback((target: number) => paper.current?.goTo(Math.max(0, Math.min(last, target))), [last]);
   // The page is kept in the address first, so Back (or the product page's link) reopens the book on it.
+  // WordPress > תוכן האתר > קטלוג: a popup over the book, or the product's own page.
+  const [popup, setPopup] = useState<string | null>(null);
+  const toPage = useCallback((slug: string) => {
+    setPopup(null);
+    rememberBookPlace(slug);
+    router.push(`/products/${slug}`);
+  }, [router]);
+  const closePopup = useCallback(() => setPopup(null), []);
   const open = useCallback((spread: number) => {
     const slug = spreads[spread]?.slug;
     if (!slug) return;
-    rememberBookPlace(slug);
-    router.push(`/products/${slug}`);
-  }, [router, spreads]);
+    if (labels.product_open === "popup") setPopup(slug);
+    else toPage(slug);
+  }, [labels.product_open, spreads, toPage]);
 
   // Back from a product opened here: the page scrolls back to where the reader was.
   useEffect(() => restoreBookPlace(root.current), []);
@@ -98,6 +107,7 @@ export default function AlbumBook({ spreads, labels, tools = false, start = 0, c
           </div>
         </div>
       )}
+      {popup && <ProductPopup key={popup} slug={popup} onClose={closePopup} onFail={toPage} />}
     </div>
   );
 }

@@ -240,6 +240,8 @@ export type CmsSettings = {
   catalog_go: string;
   /** קטלוג: שגיאת מספר עמוד ({total} = מספר העמודים) */
   catalog_jump_err: string;
+  /** קטלוג: לחיצה על מוצר בקטלוג פותחת – "page" (עמוד מוצר) או "popup" (חלון קופץ) */
+  product_open: string;
   /** פרויקטים: כותרת העמוד */
   projects_title: string;
   /** פרויקטים: תמונה ראשית */
