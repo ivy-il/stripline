@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { productImage } from "@/lib/design";
+import { backdropClass } from "@/lib/grey-backdrop";
 import type { Product } from "@/lib/types";
 
 /**
@@ -11,7 +12,7 @@ export default function ProductCard({ product: p, more }: { product: Product; mo
   return (
     <div className="pc">
       <div className="ph">
-        <img src={productImage(p)} alt="" loading="lazy" />
+        <img src={productImage(p)} alt="" loading="lazy" className={backdropClass(productImage(p))} />
         <span className="pc-acts">
           <span className="go" aria-hidden="true">{more}<svg width="16" height="8" viewBox="0 0 26 12" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M26 6H1M6 1L1 6l5 5" /></svg></span>
           <a className="pdf" href={`/products/${p.slug}/sheet?download=1`} target="_blank" rel="noopener" aria-label={`הורדת דף מוצר PDF: ${p.name_he}`}>
