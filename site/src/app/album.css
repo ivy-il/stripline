@@ -292,3 +292,4 @@ html:has(.album[data-mobile="true"]){overflow-x:visible}
 .album-decks>div{grid-area:1/1;min-width:0}
 .album-mirror{transform:scaleX(-1)}
 .album-mirror .album-face{transform:scaleX(-1)}
+.album-mirror .album-face .album-face{transform:none}  /* a face inside a face (the card in the wide page) is already the right way round */
