@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, Download, X } from "lucide-react";
 import CatalogTools from "./CatalogTools";
 import ProductPopup from "@/components/products/ProductPopup";
 import ProductActions from "@/components/products/ProductActions";
-import { BookInfoPage, BookWidePage, type BookAct } from "./BookPopupPages";
+import { BookInfoPage, BookSpreadPage, BookWidePage, type BookAct } from "./BookPopupPages";
 import type { ProductLabels } from "@/lib/product-labels";
 import type { Product } from "@/lib/types";
 import { Lg } from "@/components/design/Arrow";
@@ -15,6 +15,11 @@ import { rememberBookPlace, restoreBookPlace } from "@/lib/book-place";
 import type { AlbumLabels, AlbumSpread } from "@/lib/album";
 
 const MOBILE = "(max-width: 767px)";
+/**
+ * The book in the popup's design on a wider screen: false = the open book as a magazine spread (the photo across
+ * both pages, turning on the middle); true = one wide 70/30 page per product that turns as a whole.
+ */
+const BOOK_WIDE_PAGE = false;
 const subscribeMobile = (notify: () => void) => {
   const query = window.matchMedia(MOBILE);
   query.addEventListener("change", notify);
@@ -108,7 +113,7 @@ export default function AlbumBook({ spreads, labels, tools = false, start = 0, c
   if (!spreads.length) return null;
   const current = spreads[index] ?? spreads[0];
   // The book in the popup's design on a wider screen: one wide page per product (photo 70%, card 30%).
-  const wide = labels.product_open === "book" && !mobile;
+  const wide = labels.product_open === "book" && !mobile && BOOK_WIDE_PAGE;
 
   return (
     <div ref={root} className="album" data-mobile={mobile}>
@@ -172,13 +177,21 @@ const Pages = memo(function Pages({ spreads, single, wide = false, labels, onAct
   if (labels.product_open === "book") {
     return (
       <>
-        {order.map(({ spread, i }) => (
+        {order.flatMap(({ spread, i }) => single ? [
           <div key={`p-${spread.slug}`} className="sp-page" data-density="soft" data-spread={i}>
             {wide
               ? <BookWidePage spread={spread} labels={labels} onAct={onAct} sharp={i < 2} />
               : <BookInfoPage spread={spread} labels={labels} onAct={onAct} sharp={i < 2} phone />}
-          </div>
-        ))}
+          </div>,
+        ] : [
+          // The open spread: the card's page on the left, the photo's page on the right.
+          <div key={`p-${spread.slug}`} className="sp-page" data-density="soft" data-spread={i}>
+            <BookSpreadPage spread={spread} labels={labels} onAct={onAct} sharp={i < 2} side="left" />
+          </div>,
+          <div key={`s-${spread.slug}`} className="sp-page" data-density="soft" data-spread={i}>
+            <BookSpreadPage spread={spread} labels={labels} onAct={onAct} sharp={i < 2} side="right" />
+          </div>,
+        ])}
       </>
     );
   }
