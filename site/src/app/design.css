@@ -395,11 +395,11 @@ h1,h2,h3{text-wrap:balance;font-weight:var(--fw-reg)}
 .ab-intro .l .big{font-size:var(--fs-title);line-height:var(--lh-title);font-weight:var(--fw-thin);direction:ltr;text-align:right}
 .ab-intro .l .big b{font-weight:var(--fw-bold)}
 .ab-intro .l p{color:#4a433c}
-.ab-cells{display:grid;grid-template-columns:1fr 1fr;border-inline-start:1px solid var(--line)}
+.ab-cells{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;border-inline-start:1px solid var(--line)}  /* the numbers hug their text; the dark block and photo below take the rest */
 .ab-cells>div{border-bottom:1px solid var(--line);border-inline-end:1px solid var(--line);padding:24px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-height:max(220px,20svh)}
 .ab-cells>div:nth-child(2n){border-inline-end:0}
 .ab-cells>div:nth-last-child(-n+2){border-bottom:0}
-.ab-cells .stat{justify-content:flex-end;gap:10px}
+.ab-cells .stat{justify-content:flex-start;gap:10px;min-height:0}
 .ab-cells .num{font-size:var(--fs-title);font-weight:var(--fw-thin);line-height:var(--lh-title);font-variant-numeric:tabular-nums}
 .ab-cells .lbl{font-size:var(--fs-small);color:var(--muted);max-width:24ch;line-height:var(--lh-small)}
 .ab-cells .dark{background:var(--earth);color:var(--earth-ink)}
