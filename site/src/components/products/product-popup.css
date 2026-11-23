@@ -142,3 +142,4 @@
   .ppop-info { overflow: visible; padding: 20px 16px 28px; }
   .ppop-head { grid-template-columns: minmax(0, 1fr) 96px; }
 }
+.ppop-ico-img { object-fit: contain; }

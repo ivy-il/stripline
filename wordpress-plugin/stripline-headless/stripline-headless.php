@@ -2,14 +2,14 @@
 /**
  * Plugin Name: STRIPLINE Headless CMS
  * Description: מוצרים, משפחות, פרויקטים וטקסטי האתר של STRIPLINE, חשופים ל-Next.js דרך REST API (stripline/v1) עם רענון אוטומטי (ISR).
- * Version: 1.8.0
+ * Version: 1.9.0
  * Author: STRIPLINE
  * Text Domain: stripline
  */
 
 if (!defined('ABSPATH')) exit;
 
-define('STRIPLINE_VER', '1.8.0');
+define('STRIPLINE_VER', '1.9.0');
 define('STRIPLINE_DIR', plugin_dir_path(__FILE__));
 define('STRIPLINE_URL', plugin_dir_url(__FILE__));
 // The Next.js site, for previewing its default images when "חיבור" has no site address.

@@ -18,16 +18,17 @@ function stripline_media_types(): array {
  * Upload / choose / remove control for a media field. The value (a URL, or one URL per line for a
  * gallery, or "name | URL" lines for logos) sits in a hidden input; the script below draws the preview.
  */
-function stripline_media_control(string $type, string $name, string $value, string $id = ''): string {
+function stripline_media_control(string $type, string $name, string $value, string $id = '', array $words = []): string {
     $conn = stripline_get_connection();
     $base = $conn['next_url'] ?: STRIPLINE_SITE_URL;
-    $attrs = ' class="sl-media sl-media-' . esc_attr($type) . '" data-type="' . esc_attr($type) . '" data-base="' . esc_attr($base) . '"';
+    $attrs = ' class="sl-media sl-media-' . esc_attr($type) . '" data-type="' . esc_attr($type) . '" data-base="' . esc_attr($base) . '"'
+        . (isset($words['name']) ? ' data-name="' . esc_attr($words['name']) . '"' : '');
     $id = $id !== '' ? ' id="' . esc_attr($id) . '"' : '';
     if ($type === 'gallery' || $type === 'logos') {
         return '<div' . $attrs . '>'
             . '<textarea class="sl-media-value" name="' . esc_attr($name) . '"' . $id . ' hidden>' . esc_textarea($value) . '</textarea>'
             . '<ul class="sl-media-list"></ul>'
-            . '<button type="button" class="button button-primary sl-media-add">' . ($type === 'gallery' ? 'העלאת תמונות' : 'הוספת לוגו') . '</button>'
+            . '<button type="button" class="button button-primary sl-media-add">' . esc_html($words['add'] ?? ($type === 'gallery' ? 'העלאת תמונות' : 'הוספת לוגו')) . '</button>'
             . '</div>';
     }
     return '<div' . $attrs . '>'
@@ -144,7 +145,7 @@ jQuery(function($){
   function item(box, url, name){
     var li = $('<li class="sl-media-item">').attr('data-url', url);
     li.append($('<img alt="" title="לחיצה להחלפת התמונה">').attr('src', abs(box, url)));
-    if (box.data('type') === 'logos') li.append($('<input type="text" class="sl-media-name" placeholder="שם החברה">').val(name));
+    if (box.data('type') === 'logos') li.append($('<input type="text" class="sl-media-name" ">').attr('placeholder', box.data('name') || 'שם החברה').val(name));
     li.append($('<button type="button" class="sl-media-remove" aria-label="הסרה" title="הסרה">×</button>'));
     return li;
   }

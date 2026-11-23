@@ -437,12 +437,7 @@
   "catalog_go": "מעבר",
   "catalog_jump_err": "יש להזין מספר עמוד בין 1 ל־{total}",
   "product_open": "page",
-  "popup_desc": "תיאור",
-  "popup_models": "דגמים",
-  "popup_sizes": "מידות",
-  "popup_accessories": "אביזרים נלווים",
-  "popup_materials": "חומרים",
-  "popup_usage": "שימוש",
+  "popup_icons": [],
   "projects_image": "/n/n-office.webp",
   "project_link": "לעמוד הפרויקט",
   "projects_cta_links": [

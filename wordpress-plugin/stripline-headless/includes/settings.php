@@ -103,7 +103,8 @@ function stripline_settings_page() {
                                 </select>
                             <?php elseif (in_array($def['type'], stripline_media_types(), true)) : ?>
                                 <?php // A picker never saved starts from the default, so saving the tab keeps it.
-                                echo stripline_media_control($def['type'], $name, array_key_exists($k, $saved) ? (string) $val : $def['default'], $id); ?>
+                                echo stripline_media_control($def['type'], $name, array_key_exists($k, $saved) ? (string) $val : $def['default'], $id,
+                                    $k === 'popup_icons' ? ['add' => 'הוספת אייקון', 'name' => 'שם (מילה אחת)'] : []); ?>
                             <?php elseif ($multi) : ?>
                                 <textarea id="<?php echo $id; ?>" name="<?php echo esc_attr($name); ?>" rows="<?php echo (int) $rows; ?>" class="large-text" placeholder="<?php echo esc_attr($def['default']); ?>"<?php echo $ltr; ?>><?php echo esc_textarea($val); ?></textarea>
                             <?php else : ?>

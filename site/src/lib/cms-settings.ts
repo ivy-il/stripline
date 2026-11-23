@@ -242,18 +242,8 @@ export type CmsSettings = {
   catalog_jump_err: string;
   /** קטלוג: לחיצה על מוצר בקטלוג פותחת – "page" (עמוד מוצר) או "popup" (חלון קופץ) */
   product_open: string;
-  /** קטלוג: חלון קופץ – כותרת התיאור */
-  popup_desc: string;
-  /** קטלוג: חלון קופץ – כותרת הדגמים */
-  popup_models: string;
-  /** קטלוג: חלון קופץ – כותרת המידות */
-  popup_sizes: string;
-  /** קטלוג: חלון קופץ – כותרת האביזרים */
-  popup_accessories: string;
-  /** קטלוג: חלון קופץ – כותרת החומרים */
-  popup_materials: string;
-  /** קטלוג: חלון קופץ – כותרת השימוש */
-  popup_usage: string;
+  /** קטלוג: אייקונים לנקודות הבולטות – שם | קובץ */
+  popup_icons: { title: string; text: string }[];
   /** פרויקטים: כותרת העמוד */
   projects_title: string;
   /** פרויקטים: תמונה ראשית */

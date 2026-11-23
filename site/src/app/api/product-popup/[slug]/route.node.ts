@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { familyScene } from "@/lib/design";
 import { productLabels } from "@/lib/product-labels";
+import { iconKey } from "@/lib/product-text";
 import { getFamilies, getProduct, getSettings } from "@/lib/wp";
 
 /**
@@ -16,17 +17,11 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
   return NextResponse.json({
     product,
     scene: product.hero_image || familyScene(family, s.default_scene),
+    // Icons uploaded in WordPress (תוכן האתר > קטלוג): name → image.
+    icons: Object.fromEntries((s.popup_icons ?? []).filter((i) => i.title?.trim() && i.text?.trim()).map((i) => [iconKey(i.title), i.text.trim()])),
     labels: {
       ...productLabels(s),
       pp_length: s.pp_length, pp_height: s.pp_height, pp_mm: s.pp_mm, pp_sheet_btn: s.pp_sheet_btn,
-      // The popup's section headings (WordPress > תוכן האתר > קטלוג). Saving that tab with a heading left
-      // empty would hide it, so an empty one keeps the default.
-      popup_desc: s.popup_desc?.trim() || "תיאור",
-      popup_models: s.popup_models?.trim() || "דגמים",
-      popup_sizes: s.popup_sizes?.trim() || "מידות",
-      popup_accessories: s.popup_accessories?.trim() || "אביזרים נלווים",
-      popup_materials: s.popup_materials?.trim() || "חומרים",
-      popup_usage: s.popup_usage?.trim() || "שימוש",
     },
   });
 }

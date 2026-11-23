@@ -24,8 +24,9 @@ export function productUsage(p: Product): string {
 }
 
 /**
- * Icons a highlight can name in WordPress ("אייקון | טקסט", English or Hebrew name), shown beside it in the
- * product popup. Keys match the icon list in ProductPopup.tsx.
+ * Built-in icons a highlight can name in WordPress ("אייקון | טקסט", English or Hebrew name), shown beside it
+ * in the product popup. Keys match the icon list in ProductPopup.tsx. Icons uploaded in WordPress
+ * (תוכן האתר > קטלוג) are named there and take precedence.
  */
 export const FEATURE_ICON_NAMES: Record<string, string> = {
   grid: "grid", "רשת": "grid",
@@ -48,11 +49,18 @@ export const FEATURE_ICON_NAMES: Record<string, string> = {
   gauge: "gauge", "לחץ": "gauge", "ביצועים": "gauge",
 };
 
-/** "אייקון | טקסט" → its icon and text; any other line is all text, without an icon. */
+/** An icon's name as written in WordPress, for matching: trimmed, lower case, inner spaces collapsed. */
+export function iconKey(name: string): string {
+  return name.trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+/**
+ * "שם | טקסט" → the icon's name and the text; any other line is all text. The name is short (up to 24
+ * characters, no colon), so a sentence that only contains "|" stays whole.
+ */
 export function splitFeature(line: string): { icon?: string; text: string } {
-  const m = line.match(/^\s*([^|]{1,24}?)\s*\|\s*(.+)$/);
-  const icon = m ? FEATURE_ICON_NAMES[m[1].trim().toLowerCase()] : undefined;
-  return icon ? { icon, text: m![2].trim() } : { text: line };
+  const m = line.match(/^\s*([^|:]{1,24}?)\s*\|\s*(.+)$/);
+  return m ? { icon: iconKey(m[1]), text: m[2].trim() } : { text: line };
 }
 
 /** The highlights with the icons chosen in WordPress (the popup); every other place shows only the text. */

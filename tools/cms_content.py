@@ -219,12 +219,7 @@ F = [
     ("catalog_go", "catalog", "כפתור \"מעבר\"", "text", "מעבר"),
     ("catalog_jump_err", "catalog", "שגיאת מספר עמוד ({total} = מספר העמודים)", "text", "יש להזין מספר עמוד בין 1 ל־{total}"),
     ("product_open", "catalog", "לחיצה על מוצר בקטלוג פותחת", "choice", "page"),
-    ("popup_desc", "catalog", "חלון קופץ – כותרת התיאור", "text", "תיאור"),
-    ("popup_models", "catalog", "חלון קופץ – כותרת הדגמים", "text", "דגמים"),
-    ("popup_sizes", "catalog", "חלון קופץ – כותרת המידות", "text", "מידות"),
-    ("popup_accessories", "catalog", "חלון קופץ – כותרת האביזרים", "text", "אביזרים נלווים"),
-    ("popup_materials", "catalog", "חלון קופץ – כותרת החומרים", "text", "חומרים"),
-    ("popup_usage", "catalog", "חלון קופץ – כותרת השימוש", "text", "שימוש"),
+    ("popup_icons", "catalog", "אייקונים לנקודות הבולטות בחלון הקופץ – העלו אייקון ותנו לו שם במילה אחת", "logos", []),
 
     # ---- projects
     ("projects_title", "projects", "כותרת העמוד", "text", "פרויקטים"),
