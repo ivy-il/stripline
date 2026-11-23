@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import {
-  BadgeCheck, Building2, Check, Download, Droplets, Filter, Gauge, Layers, LayoutGrid, Leaf, Lightbulb, Palette,
+  BadgeCheck, Building2, Download, Droplets, Filter, Gauge, Layers, LayoutGrid, Leaf, Lightbulb, Palette,
   Ruler, Settings2, ShieldCheck, Sparkles, Star, Thermometer, VolumeX, Wind, X, type LucideIcon,
 } from "lucide-react";
 import ProductActions from "./ProductActions";
@@ -15,7 +15,7 @@ type PopupLabels = ProductLabels & Pick<Settings, "pp_length" | "pp_height" | "p
 type PopupData = { product: Product; scene: string; icons: Record<string, string>; labels: PopupLabels };
 
 /** The popup's section headings. */
-const HEAD = { desc: "תיאור", models: "דגמים", sizes: "מידות", accessories: "אביזרים נלווים", materials: "חומרים", usage: "שימוש" };
+const HEAD = { desc: "תיאור", sizes: "מידות", accessories: "אביזרים נלווים", materials: "חומרים", usage: "שימוש" };
 
 /** The built-in icons a highlight can name in WordPress ("אייקון | טקסט", names in product-text.ts FEATURE_ICON_NAMES). */
 const ICONS: Record<string, LucideIcon> = {
@@ -79,14 +79,21 @@ export default function ProductPopup({ slug, onClose, onFail }: { slug: string; 
 function PopupBody({ product: p, scene, icons, t }: { product: Product; scene: string; icons: Record<string, string>; t: PopupLabels }) {
   const lead = (p.description_he || p.short_he || "").trim();
   const features = productFeatureItems(p).filter(({ text }) => text !== lead && text !== p.short_he && !isUsageLine(p, text)).slice(0, 5);
-  const models = p.codes?.length > 1 ? p.codes : [];
-  const sizes = productSizes(p);
-  // Size lines written as "cell | cell | …" form the technical table; its first line is the header row.
-  const table = sizes.length > 1 && sizes.every((l) => l.includes("|")) ? sizes.map((l) => l.split("|").map((c) => c.trim())) : null;
+  const hasSizes = productSizes(p).length > 0 || p.lengths.length > 0 || p.heights.length > 0;
+  // The full sizes live on the product page; the popup links to its full address.
+  const permalink = `${window.location.origin}/products/${encodeURIComponent(p.slug)}`;
   const accessories = productAccessories(p);
   const usage = productUsage(p);
   const sheet = `/products/${p.slug}/sheet?download=1`;
   const code = p.code?.trim();
+  const [zoom, setZoom] = useState(false);
+
+  useEffect(() => {
+    if (!zoom) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setZoom(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [zoom]);
 
   return (
     <div className="ppop-grid">
@@ -101,31 +108,15 @@ function PopupBody({ product: p, scene, icons, t }: { product: Product; scene: s
               </p>
             )}
           </div>
-          <div className="ppop-thumb"><img src={p.image} alt={p.name_he} /></div>
+          <button type="button" className="ppop-thumb" onClick={() => setZoom(true)} aria-label="הגדלת התמונה">
+            <img src={p.image} alt={p.name_he} />
+          </button>
         </header>
 
         {lead && <Block title={HEAD.desc}><p>{lead}</p></Block>}
-        {models.length > 0 && (
-          <Block title={HEAD.models}>
-            <ul className="ppop-checks">
-              {models.map((m) => <li key={m}><Check className="size-4" aria-hidden="true" /> <bdi dir="ltr">{m}</bdi></li>)}
-            </ul>
-          </Block>
-        )}
-        {(sizes.length > 0 || p.lengths.length > 0 || p.heights.length > 0) && (
+        {hasSizes && (
           <Block title={HEAD.sizes}>
-            {table ? (
-              <div className="ppop-table-wrap">
-                <table className="ppop-table">
-                  <thead><tr>{table[0].map((c, i) => <th key={i}>{c}</th>)}</tr></thead>
-                  <tbody>{table.slice(1).map((row, r) => <tr key={r}>{row.map((c, i) => <td key={i}>{c}</td>)}</tr>)}</tbody>
-                </table>
-              </div>
-            ) : (
-              <ul className="ppop-lines">{sizes.map((s) => <li key={s}>{s}</li>)}</ul>
-            )}
-            {p.lengths.length > 0 && <p>{t.pp_length} <bdi dir="ltr">{p.lengths.join(" | ")}</bdi> {t.pp_mm}</p>}
-            {p.heights.length > 0 && <p>{t.pp_height} <bdi dir="ltr">{p.heights.join(" | ")}</bdi> {t.pp_mm}</p>}
+            <p><a className="ppop-link" href={permalink}>לפירוט המידות לחץ כאן</a></p>
           </Block>
         )}
         {accessories.length > 0 && <Block title={HEAD.accessories}><p>{accessories.join(", ")}.</p></Block>}
@@ -160,6 +151,13 @@ function PopupBody({ product: p, scene, icons, t }: { product: Product; scene: s
           </a>
         </div>
       </section>
+
+      {zoom && (
+        <div className="ppop-zoom" role="dialog" aria-modal="true" aria-label={p.name_he} onClick={() => setZoom(false)}>
+          <img src={p.image} alt={p.name_he} />
+          <button type="button" className="ppop-close" aria-label="סגירת התמונה"><X className="size-5" /></button>
+        </div>
+      )}
     </div>
   );
 }
