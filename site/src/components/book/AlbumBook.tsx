@@ -358,7 +358,7 @@ const PaperBook = forwardRef<PaperBookHandle, {
   return (
     <div
       ref={box}
-      className={phone ? "album-phone" : wide ? "album-paper album-wide" : "album-paper"}
+      className={phone ? "album-phone" : wide ? "album-paper album-wide" : labels.product_open === "book" ? "album-paper album-magazine" : "album-paper"}
       dir="ltr"
       role="group"
       tabIndex={0}
