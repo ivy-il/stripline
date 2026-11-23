@@ -167,3 +167,38 @@
 .bp-spread .bp-desc { -webkit-line-clamp: 3; }
 .bp-spread .bp-card { padding-block: 4.4cqh 4cqh; }
 .bp-spread .bp-thumb, .bp-phone .bp-thumb { display: block; }  /* a block, so the image fills the box height (in a grid its 100% has nothing to resolve against) */
+
+/* A larger product image on the book's card; the spacing around it is tightened so the details still fit. */
+.bp-spread .bp-thumb { width: 72%; height: 29cqh; }
+.bp-spread .bp-card { padding-block: 3.6cqh 3.4cqh; }
+.bp-spread .bp-head { gap: 1.4cqh; padding-bottom: 1.2cqh; }
+.bp-spread .bp-block { padding-block: 1.2cqh; }
+.bp-spread .bp-acts { padding-top: 2cqh; }
+.bp-phone .bp-thumb { width: 72%; height: 32vw; }
+
+/* The open book: the fold's shading on both pages, deepest at the spine (as a printed catalogue). */
+.bp-spread::after { position: absolute; inset: 0; z-index: 2; content: ''; pointer-events: none; }
+.bp-spread-left::after { background: linear-gradient(to left, rgba(0, 0, 0, .26), rgba(0, 0, 0, .1) 2.5%, rgba(0, 0, 0, .03) 7%, transparent 12%); }
+.bp-spread-right::after { background: linear-gradient(to right, rgba(0, 0, 0, .3), rgba(0, 0, 0, .12) 2%, rgba(0, 0, 0, .04) 6%, transparent 11%), linear-gradient(to right, transparent 0, rgba(255, 255, 255, .18) .6%, transparent 1.4%); }
+
+/* The book in the popup's design, as an open printed catalogue: no dark cover, the page block's edges on both
+   sides (a few sheets showing under the open pages) and a soft shadow under the book. */
+.album-paper.album-magazine {
+  padding: 0;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow:
+    -2px 1px 0 #fff, -3px 1px 0 #d9d4cc, -5px 2px 0 #fff, -6px 2px 0 #d3cdc4, -8px 3px 0 #fbfaf8, -9px 3px 0 #cdc6bb,
+    2px 1px 0 #fff, 3px 1px 0 #d9d4cc, 5px 2px 0 #fff, 6px 2px 0 #d3cdc4, 8px 3px 0 #fbfaf8, 9px 3px 0 #cdc6bb,
+    0 34px 60px -28px rgba(24, 23, 22, .45), 0 10px 24px -12px rgba(24, 23, 22, .25);
+}
+.album-magazine .sp-page { background: #fff; }
+/* Stronger fold and page edges (closer to the printed reference). */
+.bp-spread-left::after { background: linear-gradient(to left, rgba(0, 0, 0, .42), rgba(0, 0, 0, .2) 2.2%, rgba(0, 0, 0, .08) 6%, rgba(0, 0, 0, .02) 11%, transparent 16%); }
+.bp-spread-right::after { background: linear-gradient(to right, rgba(0, 0, 0, .45), rgba(0, 0, 0, .22) 1.8%, rgba(0, 0, 0, .08) 5%, rgba(0, 0, 0, .02) 10%, transparent 15%), linear-gradient(to right, transparent 0, rgba(255, 255, 255, .22) .8%, transparent 2%); }
+.album-paper.album-magazine {
+  box-shadow:
+    -2px 1px 0 #fff, -3px 1px 0 #c9c2b6, -5px 2px 0 #fff, -6px 2px 0 #c3bbae, -8px 3px 0 #fff, -9px 3px 0 #bdb4a6, -11px 4px 0 #faf8f5, -12px 4px 0 #b5ab9c,
+    2px 1px 0 #fff, 3px 1px 0 #c9c2b6, 5px 2px 0 #fff, 6px 2px 0 #c3bbae, 8px 3px 0 #fff, 9px 3px 0 #bdb4a6, 11px 4px 0 #faf8f5, 12px 4px 0 #b5ab9c,
+    0 40px 70px -30px rgba(24, 23, 22, .5), 0 12px 28px -14px rgba(24, 23, 22, .3);
+}
