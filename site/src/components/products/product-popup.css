@@ -42,7 +42,7 @@
 .ppop-grid {
   display: grid;
   height: 100%;
-  grid-template-columns: minmax(0, 1.75fr) minmax(360px, 1fr);
+  grid-template-columns: minmax(0, 7fr) minmax(320px, 3fr); /* photo 70% on the right, specification 30% */
   grid-template-areas: "visual info";
 }
 .ppop-info {
@@ -143,3 +143,20 @@
   .ppop-head { grid-template-columns: minmax(0, 1fr) 96px; }
 }
 .ppop-ico-img { object-fit: contain; }
+
+/* The thumbnail opens the product image large. */
+button.ppop-thumb { cursor: zoom-in; transition: border-color 0.15s; }
+button.ppop-thumb:hover { border-color: var(--pp-accent); }
+.ppop-zoom {
+  position: fixed;
+  inset: 0;
+  z-index: 65;
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 4vw, 56px);
+  background: rgba(255, 255, 255, 0.97);
+  cursor: zoom-out;
+}
+.ppop-zoom img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.ppop-link { color: var(--pp-accent); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.ppop-link:hover { filter: brightness(0.9); }
