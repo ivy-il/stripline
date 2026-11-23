@@ -1,6 +1,6 @@
 /* The flip book in the popup's design (BookPopupPages.tsx). Sizes follow the page (container units), so the
    spread scales with the book; the accent is the site's brass, as in the popup. */
-.bp-info, .bp-scene-page { --bp-accent: var(--brass); }
+.bp-info, .bp-wide { --bp-accent: var(--brass); }
 
 /* Left page: the specification card. */
 .bp-info { background: #fff; color: var(--ink); }
@@ -52,8 +52,7 @@
 .bp-btn:hover { background: var(--ink); color: #fff; }
 .bp-btn svg { width: 1.1em; height: 1.1em; }
 
-/* Right page: the room photo with the highlights and the PDF button in a dark panel. */
-.bp-scene-page { background: #222; }
+/* The room photo with the highlights and the PDF button in a dark panel. */
 .bp-scene { position: absolute; inset: 0; display: block; }
 .bp-scene-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .bp-feat {
@@ -107,3 +106,24 @@
 .bp-phone .bp-acts { gap: 2.4cqw; margin-top: 0; }
 .bp-phone .bp-btn { padding: .6em .8em; }
 .bp-phone .bp-pdf { flex: 1 1 100%; margin-top: 0; border-radius: 999px; }
+
+/* A wider screen: one wide page – the photo 70% on the right, the card 30% on the left (as the popup). Sizes here
+   follow the whole wide page (container units of .bp-wide). */
+.bp-wide { display: grid; grid-template-columns: 70% 30%; background: #fff; }
+.bp-wide-visual { position: relative; display: block; min-height: 0; background: #222; }
+.bp-wide .bp-info { position: relative; height: 100%; min-height: 0; overflow: hidden; container-type: normal; }  /* units from the whole page */
+.bp-wide .bp-card { padding: 4cqh 2cqw 3.6cqh; font-size: max(12px, 1.1cqw); }
+.bp-wide .bp-head { grid-template-columns: minmax(0, 1fr) 7cqw; gap: 1.2cqw; padding-bottom: 2cqh; }
+.bp-wide .bp-name { font-size: 1.9em; }
+.bp-wide .bp-thumb { padding: .5cqw; border-radius: .5cqw; }
+.bp-wide .bp-block { padding-block: 1.8cqh; }
+.bp-wide .bp-acts { gap: .7cqw; padding-top: 2.4cqh; }
+.bp-wide .bp-btn { padding: .65em .8em; }
+.bp-wide .bp-feat { inset-inline-start: 2cqw; bottom: 4cqh; width: 25cqw; padding: .8cqh 1.5cqw 1.5cqw; border-radius: .9cqw; font-size: max(11.5px, 1.05cqw); }
+.bp-wide .bp-feat-item { gap: 1.1cqw; padding-block: 1.7cqh; }
+.bp-wide .bp-ico { width: 2.1cqw; height: 2.1cqw; }
+.bp-wide .bp-pdf { margin-top: 2.2cqh; border-radius: .6cqw; }
+
+/* The wide book's arrows, between the product name and the catalogue button. */
+.album-arrows { display: flex; align-items: center; gap: 14px; color: #6f6555; font-size: 13px; }
+.bp-wide img, .bp-info img { -webkit-user-drag: none; user-select: none; }  /* a drag on a photo turns the page, it does not lift the image */

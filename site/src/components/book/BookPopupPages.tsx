@@ -12,9 +12,9 @@ export type BookAct = "zoom" | "drawing" | "install";
 type Props = { spread: AlbumSpread; labels: AlbumLabels; onAct: (slug: string, act: BookAct) => void; sharp?: boolean };
 
 /**
- * The book in the popup's design (WordPress > תוכן האתר > קטלוג > "ספר מדפדף בעיצוב החלון הקופץ"): every open
- * spread is the product's specification card on the left and its room photo with the highlights on the right,
- * so the book itself shows everything the popup did. A phone gets both on one page.
+ * The book in the popup's design (WordPress > תוכן האתר > קטלוג > "ספר מדפדף בעיצוב החלון הקופץ"): every page is
+ * one product, its specification card beside its room photo with the highlights, so the book itself shows
+ * everything the popup did. Inside BookWidePage on a wider screen; a phone's page has the photo on top.
  */
 export function BookInfoPage({ spread: s, labels, onAct, sharp = false, phone = false }: Props & { phone?: boolean }) {
   return (
@@ -32,7 +32,7 @@ export function BookInfoPage({ spread: s, labels, onAct, sharp = false, phone = 
             )}
           </span>
           <button type="button" className="bp-thumb" onClick={(e) => { e.stopPropagation(); onAct(s.slug, "zoom"); }} aria-label="הגדלת התמונה">
-            <img src={s.image} srcSet={s.imageSrcSet} sizes={BOOK_PRODUCT_SIZES} alt={s.name} loading={sharp ? "eager" : "lazy"} />
+            <img draggable={false} src={s.image} srcSet={s.imageSrcSet} sizes={BOOK_PRODUCT_SIZES} alt={s.name} loading={sharp ? "eager" : "lazy"} />
           </button>
         </span>
 
@@ -64,11 +64,12 @@ export function BookInfoPage({ spread: s, labels, onAct, sharp = false, phone = 
   );
 }
 
-/** The right page of a spread: the room photo, the highlights and the product sheet PDF. */
-export function BookScenePage({ spread, labels, sharp = false }: Omit<Props, "onAct">) {
+/** A wider screen: one wide page per product, the room photo (70%, on the right) beside the specification card (30%). */
+export function BookWidePage({ spread, labels, onAct, sharp = false }: Props) {
   return (
-    <span className="album-face bp-scene-page">
-      <Scene spread={spread} labels={labels} sharp={sharp} />
+    <span className="album-face bp-wide">
+      <span className="bp-wide-visual"><Scene spread={spread} labels={labels} sharp={sharp} /></span>
+      <BookInfoPage spread={spread} labels={labels} onAct={onAct} sharp={sharp} />
     </span>
   );
 }
@@ -77,7 +78,7 @@ export function BookScenePage({ spread, labels, sharp = false }: Omit<Props, "on
 function Scene({ spread: s, labels, sharp, compact = false }: { spread: AlbumSpread; labels: AlbumLabels; sharp: boolean; compact?: boolean }) {
   return (
     <span className={compact ? "bp-scene bp-scene-compact" : "bp-scene"}>
-      <img className="bp-scene-img" src={s.scene} srcSet={s.sceneSrcSet} sizes={BOOK_SCENE_SIZES} alt="" loading={sharp ? "eager" : "lazy"} />
+      <img className="bp-scene-img" draggable={false} src={s.scene} srcSet={s.sceneSrcSet} sizes={BOOK_SCENE_SIZES} alt="" loading={sharp ? "eager" : "lazy"} />
       {(s.highlights.length > 0 || !compact) && (
         <span className="bp-feat">
           {s.highlights.length > 0 && (
