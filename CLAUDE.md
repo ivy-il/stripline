@@ -7,7 +7,7 @@
 | | איפה | הערות |
 |---|---|---|
 | אתר | `site/` | Next.js 16 (App Router, Turbopack, Tailwind v4, Three.js). לפני שכותבים קוד קוראים את `site/AGENTS.md`, כי ה-API שונה ממה שמוכר |
-| תוסף וורדפרס | `wordpress-plugin/stripline-headless/` | REST בכתובת `/wp-json/stripline/v1`, וקריאה ל-`/api/revalidate` אחרי כל שמירה. בונים zip עם `C:\Windows\System32	ar.exe -a -c -f stripline-headless.zip stripline-headless`, מתוך `wordpress-plugin/`. ב-Git Bash `tar.exe` הוא GNU tar, שיוצר tar במקום zip, ווורדפרס דוחה אותו (Incompatible Archive) |
+| תוסף וורדפרס | `wordpress-plugin/stripline-headless/` | REST בכתובת `/wp-json/stripline/v1`, וקריאה ל-`/api/revalidate` אחרי כל שמירה. בונים zip עם `C:\Windows\System32\tar.exe -a -c -f stripline-headless.zip stripline-headless`, מתוך `wordpress-plugin/`. ב-Git Bash `tar.exe` הוא GNU tar, שיוצר tar במקום zip, ווורדפרס דוחה אותו (Incompatible Archive) |
 | כלי חילוץ | `tools/` | סקריפטי Python חד-פעמיים שחילצו את הקטלוג |
 | פריסה חלופית | `deploy/`, `DEPLOY-DIRECTADMIN.md` | גרסה סטטית ושרת Node עם root. **לא בשימוש כרגע** |
 
