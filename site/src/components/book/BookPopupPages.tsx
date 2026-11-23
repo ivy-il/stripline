@@ -74,26 +74,47 @@ export function BookWidePage({ spread, labels, onAct, sharp = false }: Props) {
   );
 }
 
+/**
+ * The open book as a magazine spread: the room photo runs across both pages (the right page and 40% of the left),
+ * the specification card sits on the rest of the left page, so the spread reads 70/30 while the pages turn on the
+ * middle as in any book. Each page shows its own part of the same photo box (140% of a page wide).
+ */
+export function BookSpreadPage({ spread: s, labels, onAct, sharp = false, side }: Props & { side: "left" | "right" }) {
+  return (
+    <span className={`album-face bp-spread bp-spread-${side}`}>
+      <img className="bp-spread-photo" draggable={false} src={s.scene} srcSet={s.sceneSrcSet} sizes={BOOK_SCENE_SIZES} alt="" loading={sharp ? "eager" : "lazy"} />
+      {side === "left"
+        ? <BookInfoPage spread={s} labels={labels} onAct={onAct} sharp={sharp} />
+        : <Feat spread={s} labels={labels} pdf />}
+    </span>
+  );
+}
+
 /** `compact` (the phone's page): the photo as a band on top, the highlights in a strip under it, no PDF button there. */
 function Scene({ spread: s, labels, sharp, compact = false }: { spread: AlbumSpread; labels: AlbumLabels; sharp: boolean; compact?: boolean }) {
   return (
     <span className={compact ? "bp-scene bp-scene-compact" : "bp-scene"}>
       <img className="bp-scene-img" draggable={false} src={s.scene} srcSet={s.sceneSrcSet} sizes={BOOK_SCENE_SIZES} alt="" loading={sharp ? "eager" : "lazy"} />
-      {(s.highlights.length > 0 || !compact) && (
-        <span className="bp-feat">
-          {s.highlights.length > 0 && (
-            <span className="bp-feat-list">
-              {s.highlights.map(({ icon, text }, i) => (
-                <span key={text} className="bp-feat-item">
-                  <span>{text}</span>
-                  <HighlightIcon icon={icon} index={i} icons={labels.icons} className="bp-ico" />
-                </span>
-              ))}
+      {(s.highlights.length > 0 || !compact) && <Feat spread={s} labels={labels} pdf={!compact} />}
+    </span>
+  );
+}
+
+/** The dark panel over the photo: the highlights with their icons and, unless on the phone, the PDF button. */
+function Feat({ spread: s, labels, pdf }: { spread: AlbumSpread; labels: AlbumLabels; pdf: boolean }) {
+  return (
+    <span className="bp-feat">
+      {s.highlights.length > 0 && (
+        <span className="bp-feat-list">
+          {s.highlights.map(({ icon, text }, i) => (
+            <span key={text} className="bp-feat-item">
+              <span>{text}</span>
+              <HighlightIcon icon={icon} index={i} icons={labels.icons} className="bp-ico" />
             </span>
-          )}
-          {!compact && <Pdf slug={s.slug} label={labels.pp_sheet_btn} />}
+          ))}
         </span>
       )}
+      {pdf && <Pdf slug={s.slug} label={labels.pp_sheet_btn} />}
     </span>
   );
 }
