@@ -2,11 +2,11 @@
 
 import { forwardRef, memo, useCallback, useEffect, useImperativeHandle, useRef, useState, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
-import { Download, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, Download, X } from "lucide-react";
 import CatalogTools from "./CatalogTools";
 import ProductPopup from "@/components/products/ProductPopup";
 import ProductActions from "@/components/products/ProductActions";
-import { BookInfoPage, BookScenePage, type BookAct } from "./BookPopupPages";
+import { BookInfoPage, BookWidePage, type BookAct } from "./BookPopupPages";
 import type { ProductLabels } from "@/lib/product-labels";
 import type { Product } from "@/lib/types";
 import { Lg } from "@/components/design/Arrow";
@@ -107,12 +107,14 @@ export default function AlbumBook({ spreads, labels, tools = false, start = 0, c
 
   if (!spreads.length) return null;
   const current = spreads[index] ?? spreads[0];
+  // The book in the popup's design on a wider screen: one wide page per product (photo 70%, card 30%).
+  const wide = labels.product_open === "book" && !mobile;
 
   return (
     <div ref={root} className="album" data-mobile={mobile}>
       {tools && <CatalogTools spreads={spreads} labels={labels} current={index} onGo={go} part={mobile ? "toc" : "both"} />}
       {/* Remounted when the layout changes: a phone shows single pages, a wider screen the open spread. */}
-      <PaperBook key={mobile ? "single" : "spread"} ref={paper} spreads={spreads} labels={labels} start={index} single={mobile} onIndex={setIndex} onOpen={open} onAct={onAct} />
+      <PaperBook key={mobile ? "single" : wide ? "wide" : "spread"} ref={paper} spreads={spreads} labels={labels} start={index} single={mobile} wide={wide} onIndex={setIndex} onOpen={open} onAct={onAct} />
       {mobile ? (
         <>
           <div className="book-cap" aria-live="polite">
@@ -129,6 +131,14 @@ export default function AlbumBook({ spreads, labels, tools = false, start = 0, c
             <div className="bfam">{current.familyName}</div>
             <h3>{current.name}</h3>
           </div>
+          {wide && (
+            // Hebrew book: the left arrow is the next product.
+            <div className="album-arrows">
+              <button type="button" className="album-nav" onClick={() => go(index - 1)} disabled={index === 0} aria-label="המוצר הקודם"><ChevronRight size={18} /></button>
+              <span className="tabular-nums" dir="ltr">{index + 1} / {spreads.length}</span>
+              <button type="button" className="album-nav" onClick={() => go(index + 1)} disabled={index === last} aria-label="המוצר הבא"><ChevronLeft size={18} /></button>
+            </div>
+          )}
           <div className="album-foot-acts">
             {cta}
           </div>
@@ -155,23 +165,20 @@ type PaperBookHandle = { goTo: (spread: number) => void };
  * last leaf; a spread is then the product page on the left and its photo on the right.
  * `forward` mounts them in reading order instead, for the phone's mirrored deck.
  */
-const Pages = memo(function Pages({ spreads, single, labels, onAct, forward = false }: { spreads: AlbumSpread[]; single: boolean; labels: AlbumLabels; onAct: (slug: string, act: BookAct) => void; forward?: boolean }) {
+const Pages = memo(function Pages({ spreads, single, wide = false, labels, onAct, forward = false }: { spreads: AlbumSpread[]; single: boolean; wide?: boolean; labels: AlbumLabels; onAct: (slug: string, act: BookAct) => void; forward?: boolean }) {
   const order = spreads.map((spread, i) => ({ spread, i }));
   if (!forward) order.reverse();
   const pdfLabel = labels.pp_pdf;
   if (labels.product_open === "book") {
     return (
       <>
-        {order.flatMap(({ spread, i }) => [
+        {order.map(({ spread, i }) => (
           <div key={`p-${spread.slug}`} className="sp-page" data-density="soft" data-spread={i}>
-            <BookInfoPage spread={spread} labels={labels} onAct={onAct} sharp={i < 2} phone={single} />
-          </div>,
-          ...(single ? [] : [
-            <div key={`s-${spread.slug}`} className="sp-page" data-density="soft" data-spread={i}>
-              <BookScenePage spread={spread} labels={labels} sharp={i < 2} />
-            </div>,
-          ]),
-        ])}
+            {wide
+              ? <BookWidePage spread={spread} labels={labels} onAct={onAct} sharp={i < 2} />
+              : <BookInfoPage spread={spread} labels={labels} onAct={onAct} sharp={i < 2} phone />}
+          </div>
+        ))}
       </>
     );
   }
@@ -198,8 +205,11 @@ const Pages = memo(function Pages({ spreads, single, labels, onAct, forward = fa
  * forward. The one not turning is kept on the same page, hidden.
  */
 const PaperBook = forwardRef<PaperBookHandle, {
-  spreads: AlbumSpread[]; labels: AlbumLabels; start: number; single: boolean; onIndex: (index: number) => void; onOpen: (spread: number) => void; onAct: (slug: string, act: BookAct) => void;
-}>(function PaperBook({ spreads, labels, start, single, onIndex, onOpen, onAct }, ref) {
+  spreads: AlbumSpread[]; labels: AlbumLabels; start: number; single: boolean; wide?: boolean; onIndex: (index: number) => void; onOpen: (spread: number) => void; onAct: (slug: string, act: BookAct) => void;
+}>(function PaperBook({ spreads, labels, start, single: phone, wide = false, onIndex, onOpen, onAct }, ref) {
+  // One page at a time: the phone's portrait page, or the wide page of the book in the popup's design. Both turn
+  // on the two stacked decks below, and by our own swipe / drag (page-flip's own drag turns them badly).
+  const single = phone || wide;
   const back = useRef<HTMLDivElement>(null);
   const fwd = useRef<HTMLDivElement>(null);
   const box = useRef<HTMLDivElement>(null);
@@ -265,13 +275,16 @@ const PaperBook = forwardRef<PaperBookHandle, {
         const host = document.createElement("div");
         el.appendChild(host);
         const pf = new PageFlip(host, {
-          width: single ? 560 : 600,
-          height: single ? 780 : 484,  // design: each page is 1.24 wide to 1 high (.book .leaf)
+          // design: each page is 1.24 wide to 1 high (.book .leaf); the wide page is about 2 to 1, as the popup
+          width: wide ? 1200 : phone ? 560 : 600,
+          height: wide ? 580 : phone ? 780 : 484,
           size: "stretch",
-          minWidth: single ? 240 : 200,
-          maxWidth: single ? 1200 : 1500,
-          minHeight: single ? 320 : 140,
-          maxHeight: single ? 1640 : 1000,
+          // page-flip shows one page only when the book is narrower than two minimum pages: the wide page sets a
+          // minimum no screen reaches, and the host's matching CSS minimum is lifted right after.
+          minWidth: wide ? 100000 : phone ? 240 : 200,
+          maxWidth: wide ? 1600 : phone ? 1200 : 1500,
+          minHeight: wide ? 290 : phone ? 320 : 140,
+          maxHeight: wide ? 774 : phone ? 1640 : 1000,
           showCover: false,
           usePortrait: single,
           drawShadow: true,
@@ -290,6 +303,10 @@ const PaperBook = forwardRef<PaperBookHandle, {
           autoSize: true,
         });
         pf.loadFromHTML(pageEls);
+        if (wide) {
+          host.style.minWidth = "0";
+          pf.update();
+        }
         // A click in a page corner (folded on hover) turns the page, as page-flip does by itself even with
         // disableFlipByClick; the turn marks the press as moved, so onClick below does not open the product.
         pf.on("flip", (event) => {
@@ -328,7 +345,7 @@ const PaperBook = forwardRef<PaperBookHandle, {
   return (
     <div
       ref={box}
-      className={single ? "album-phone" : "album-paper"}
+      className={phone ? "album-phone" : wide ? "album-paper album-wide" : "album-paper"}
       dir="ltr"
       role="group"
       tabIndex={0}
@@ -340,6 +357,17 @@ const PaperBook = forwardRef<PaperBookHandle, {
         if (event.key === "ArrowRight") { event.preventDefault(); turnTo(Math.max(0, current.current - 1)); }
       }}
       onPointerDownCapture={(event) => { press.current = { x: event.clientX, y: event.clientY, moved: false }; }}
+      onPointerUp={(event) => {
+        // The wide page turns on a sideways mouse drag, read here like the phone's swipe below.
+        const p = press.current;
+        if (!wide || event.pointerType !== "mouse" || !p) return;
+        const dx = event.clientX - p.x;
+        const dy = event.clientY - p.y;
+        if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+        p.moved = true;
+        const target = Math.max(0, Math.min(last, current.current + (dx > 0 ? 1 : -1)));
+        if (target !== current.current) turnTo(target);
+      }}
       onTouchStart={(event) => {
         const t = event.touches[0];
         swipe.current = event.touches.length === 1 && t ? { x: t.clientX, y: t.clientY, time: Date.now() } : null;
@@ -372,8 +400,8 @@ const PaperBook = forwardRef<PaperBookHandle, {
     >
       {single ? (
         <div className="album-decks">
-          <div ref={back}><Pages spreads={spreads} labels={labels} onAct={onAct} single /></div>
-          <div ref={fwd} className="album-mirror"><Pages spreads={spreads} labels={labels} onAct={onAct} single forward /></div>
+          <div ref={back}><Pages spreads={spreads} labels={labels} onAct={onAct} single wide={wide} /></div>
+          <div ref={fwd} className="album-mirror"><Pages spreads={spreads} labels={labels} onAct={onAct} single wide={wide} forward /></div>
         </div>
       ) : (
         <div ref={back}><Pages spreads={spreads} labels={labels} onAct={onAct} single={false} /></div>
