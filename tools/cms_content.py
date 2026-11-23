@@ -218,7 +218,7 @@ F = [
     ("catalog_jump", "catalog", "\"מעבר לעמוד\"", "text", "מעבר לעמוד"),
     ("catalog_go", "catalog", "כפתור \"מעבר\"", "text", "מעבר"),
     ("catalog_jump_err", "catalog", "שגיאת מספר עמוד ({total} = מספר העמודים)", "text", "יש להזין מספר עמוד בין 1 ל־{total}"),
-    ("product_open", "catalog", "לחיצה על מוצר בקטלוג פותחת", "choice", "page"),
+    ("product_open", "catalog", "תצוגת המוצרים בקטלוג", "choice", "book"),
     ("popup_icons", "catalog", "אייקונים לנקודות הבולטות בחלון הקופץ – העלו אייקון ותנו לו שם במילה אחת", "logos", []),
 
     # ---- projects

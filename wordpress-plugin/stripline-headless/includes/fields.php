@@ -211,7 +211,7 @@ function stripline_settings_fields(): array {
         'catalog_jump' => ['catalog', '"מעבר לעמוד"', 'text'],
         'catalog_go' => ['catalog', 'כפתור "מעבר"', 'text'],
         'catalog_jump_err' => ['catalog', 'שגיאת מספר עמוד ({total} = מספר העמודים)', 'text'],
-        'product_open' => ['catalog', 'לחיצה על מוצר בקטלוג פותחת', 'choice'],
+        'product_open' => ['catalog', 'תצוגת המוצרים בקטלוג', 'choice'],
         'popup_icons' => ['catalog', 'אייקונים לנקודות הבולטות בחלון הקופץ – העלו אייקון (SVG או PNG שקוף) ותנו לו שם במילה אחת. בשדה הנקודות הבולטות של המוצר כותבים: שם | טקסט', 'logos'],
         'projects_title' => ['projects', 'כותרת העמוד', 'text'],
         'projects_image' => ['projects', 'תמונה ראשית', 'image', 'ltr'],
@@ -299,8 +299,9 @@ function stripline_settings_fields(): array {
 function stripline_field_choices(string $key): array {
     $choices = [
         'product_open' => [
-            'page'  => 'עמוד מוצר נפרד, עם כתובת משלו',
+            'book'  => 'ספר מדפדף בעיצוב החלון הקופץ – כל המידע בתוך דפי הספר',
             'popup' => 'חלון קופץ (Pop-up) מעל הקטלוג',
+            'page'  => 'עמוד מוצר נפרד, עם כתובת משלו',
         ],
     ];
     return $choices[$key] ?? [];
