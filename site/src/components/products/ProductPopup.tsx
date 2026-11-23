@@ -134,13 +134,10 @@ function PopupBody({ product: p, scene, icons, t }: { product: Product; scene: s
           {features.length > 0 && (
             <ul>
               {features.map(({ icon, text }, i) => {
-                // An icon uploaded in WordPress under this name, else a built-in one, else the next default.
-                const uploaded = icon ? icons[icon] : undefined;
-                const Icon = (icon && ICONS[FEATURE_ICON_NAMES[icon]]) || DEFAULT_ICONS[i % DEFAULT_ICONS.length];
                 return (
                   <li key={text}>
                     <span>{text}</span>
-                    {uploaded ? <img src={uploaded} alt="" className="ppop-ico ppop-ico-img" /> : <Icon className="ppop-ico" strokeWidth={1.3} aria-hidden="true" />}
+                    <HighlightIcon icon={icon} index={i} icons={icons} className="ppop-ico" />
                   </li>
                 );
               })}
@@ -160,6 +157,14 @@ function PopupBody({ product: p, scene, icons, t }: { product: Product; scene: s
       )}
     </div>
   );
+}
+
+/** A highlight's icon: one uploaded in WordPress under its name, else a built-in one, else the next default. */
+export function HighlightIcon({ icon, index, icons, className }: { icon?: string; index: number; icons: Record<string, string>; className: string }) {
+  const uploaded = icon ? icons[icon] : undefined;
+  if (uploaded) return <img src={uploaded} alt="" className={`${className} ppop-ico-img`} />;
+  const Icon = (icon && ICONS[FEATURE_ICON_NAMES[icon]]) || DEFAULT_ICONS[index % DEFAULT_ICONS.length];
+  return <Icon className={className} strokeWidth={1.3} aria-hidden="true" />;
 }
 
 function Block({ title, children }: { title: string; children: React.ReactNode }) {

@@ -2,9 +2,13 @@
 
 import { forwardRef, memo, useCallback, useEffect, useImperativeHandle, useRef, useState, useSyncExternalStore } from "react";
 import { useRouter } from "next/navigation";
-import { Download } from "lucide-react";
+import { Download, X } from "lucide-react";
 import CatalogTools from "./CatalogTools";
 import ProductPopup from "@/components/products/ProductPopup";
+import ProductActions from "@/components/products/ProductActions";
+import { BookInfoPage, BookScenePage, type BookAct } from "./BookPopupPages";
+import type { ProductLabels } from "@/lib/product-labels";
+import type { Product } from "@/lib/types";
 import { Lg } from "@/components/design/Arrow";
 import { BOOK_PRODUCT_SIZES, BOOK_SCENE_SIZES } from "@/lib/media-sizes";
 import { rememberBookPlace, restoreBookPlace } from "@/lib/book-place";
@@ -61,10 +65,33 @@ export default function AlbumBook({ spreads, labels, tools = false, start = 0, c
   const closePopup = useCallback(() => setPopup(null), []);
   const open = useCallback((spread: number) => {
     const slug = spreads[spread]?.slug;
-    if (!slug) return;
+    // The book in the popup's design already shows everything: a click on a page opens nothing.
+    if (!slug || labels.product_open === "book") return;
     if (labels.product_open === "popup") setPopup(slug);
     else toPage(slug);
   }, [labels.product_open, spreads, toPage]);
+
+  // The buttons on the pages of the book in the popup's design: the image large, or the drawing / installation
+  // window, read like the popup's (the full product is fetched only then). Kept in a ref so the pages never re-render.
+  const [zoom, setZoom] = useState<AlbumSpread | null>(null);
+  const [action, setAction] = useState<{ act: "drawing" | "install"; product: Product; labels: ProductLabels } | null>(null);
+  const actRef = useRef<(slug: string, act: BookAct) => void>(() => {});
+  useEffect(() => {
+    actRef.current = (slug, act) => {
+      if (act === "zoom") { setZoom(spreads.find((s) => s.slug === slug) ?? null); return; }
+      fetch(`/api/product-popup/${encodeURIComponent(slug)}`)
+        .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
+        .then((d: { product: Product; labels: ProductLabels }) => setAction({ act, product: d.product, labels: d.labels }))
+        .catch(() => toPage(slug));
+    };
+  }, [spreads, toPage]);
+  const onAct = useCallback((slug: string, act: BookAct) => actRef.current(slug, act), []);
+  useEffect(() => {
+    if (!zoom) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setZoom(null);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [zoom]);
 
   // Back from a product opened here: the page scrolls back to where the reader was.
   useEffect(() => restoreBookPlace(root.current), []);
@@ -85,7 +112,7 @@ export default function AlbumBook({ spreads, labels, tools = false, start = 0, c
     <div ref={root} className="album" data-mobile={mobile}>
       {tools && <CatalogTools spreads={spreads} labels={labels} current={index} onGo={go} part={mobile ? "toc" : "both"} />}
       {/* Remounted when the layout changes: a phone shows single pages, a wider screen the open spread. */}
-      <PaperBook key={mobile ? "single" : "spread"} ref={paper} spreads={spreads} pdfLabel={labels.pp_pdf} start={index} single={mobile} onIndex={setIndex} onOpen={open} />
+      <PaperBook key={mobile ? "single" : "spread"} ref={paper} spreads={spreads} labels={labels} start={index} single={mobile} onIndex={setIndex} onOpen={open} onAct={onAct} />
       {mobile ? (
         <>
           <div className="book-cap" aria-live="polite">
@@ -108,6 +135,14 @@ export default function AlbumBook({ spreads, labels, tools = false, start = 0, c
         </div>
       )}
       {popup && <ProductPopup key={popup} slug={popup} onClose={closePopup} onFail={toPage} />}
+      {action && <ProductActions key={action.product.slug + action.act} product={action.product} labels={action.labels} open={action.act} onDone={() => setAction(null)} />}
+      {zoom && (
+        <div className="ppop-zoom" role="dialog" aria-modal="true" aria-label={zoom.name} onClick={() => setZoom(null)}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={zoom.image} alt={zoom.name} />
+          <button type="button" className="ppop-close" aria-label="סגירת התמונה"><X className="size-5" /></button>
+        </div>
+      )}
     </div>
   );
 }
@@ -120,9 +155,26 @@ type PaperBookHandle = { goTo: (spread: number) => void };
  * last leaf; a spread is then the product page on the left and its photo on the right.
  * `forward` mounts them in reading order instead, for the phone's mirrored deck.
  */
-const Pages = memo(function Pages({ spreads, single, pdfLabel, forward = false }: { spreads: AlbumSpread[]; single: boolean; pdfLabel: string; forward?: boolean }) {
+const Pages = memo(function Pages({ spreads, single, labels, onAct, forward = false }: { spreads: AlbumSpread[]; single: boolean; labels: AlbumLabels; onAct: (slug: string, act: BookAct) => void; forward?: boolean }) {
   const order = spreads.map((spread, i) => ({ spread, i }));
   if (!forward) order.reverse();
+  const pdfLabel = labels.pp_pdf;
+  if (labels.product_open === "book") {
+    return (
+      <>
+        {order.flatMap(({ spread, i }) => [
+          <div key={`p-${spread.slug}`} className="sp-page" data-density="soft" data-spread={i}>
+            <BookInfoPage spread={spread} labels={labels} onAct={onAct} sharp={i < 2} phone={single} />
+          </div>,
+          ...(single ? [] : [
+            <div key={`s-${spread.slug}`} className="sp-page" data-density="soft" data-spread={i}>
+              <BookScenePage spread={spread} labels={labels} sharp={i < 2} />
+            </div>,
+          ]),
+        ])}
+      </>
+    );
+  }
   return (
     <>
       {order.flatMap(({ spread, i }) => [
@@ -146,10 +198,25 @@ const Pages = memo(function Pages({ spreads, single, pdfLabel, forward = false }
  * forward. The one not turning is kept on the same page, hidden.
  */
 const PaperBook = forwardRef<PaperBookHandle, {
-  spreads: AlbumSpread[]; pdfLabel: string; start: number; single: boolean; onIndex: (index: number) => void; onOpen: (spread: number) => void;
-}>(function PaperBook({ spreads, pdfLabel, start, single, onIndex, onOpen }, ref) {
+  spreads: AlbumSpread[]; labels: AlbumLabels; start: number; single: boolean; onIndex: (index: number) => void; onOpen: (spread: number) => void; onAct: (slug: string, act: BookAct) => void;
+}>(function PaperBook({ spreads, labels, start, single, onIndex, onOpen, onAct }, ref) {
   const back = useRef<HTMLDivElement>(null);
   const fwd = useRef<HTMLDivElement>(null);
+  const box = useRef<HTMLDivElement>(null);
+
+  // A press on a button or link in a page is for that control: page-flip (listening below) must not take it as
+  // the start of a fold or a corner turn. Stopped on the way down, before it reaches page-flip.
+  useEffect(() => {
+    const el = box.current;
+    if (!el) return;
+    const keep = (event: Event) => { if ((event.target as HTMLElement).closest?.(".sp-page a, .sp-page button")) event.stopPropagation(); };
+    el.addEventListener("mousedown", keep, true);
+    el.addEventListener("touchstart", keep, true);
+    return () => {
+      el.removeEventListener("mousedown", keep, true);
+      el.removeEventListener("touchstart", keep, true);
+    };
+  }, []);
   // flips[0] is the reversed deck (the only one on wider screens), flips[1] the phone's forward deck.
   const flips = useRef<import("page-flip").PageFlip[]>([]);
   const active = useRef(0);
@@ -260,11 +327,12 @@ const PaperBook = forwardRef<PaperBookHandle, {
 
   return (
     <div
+      ref={box}
       className={single ? "album-phone" : "album-paper"}
       dir="ltr"
       role="group"
       tabIndex={0}
-      aria-label="קטלוג מדפדף. גררו את הדף או השתמשו בחיצים כדי לדפדף; לחיצה על מוצר פותחת את העמוד שלו"
+      aria-label={labels.product_open === "book" ? "קטלוג מדפדף. גררו את הדף או השתמשו בחיצים כדי לדפדף" : "קטלוג מדפדף. גררו את הדף או השתמשו בחיצים כדי לדפדף; לחיצה על מוצר פותחת את העמוד שלו"}
       style={{ opacity: ready ? 1 : 0 }}
       onKeyDown={(event) => {
         // Hebrew book: the left arrow turns forward.
@@ -304,11 +372,11 @@ const PaperBook = forwardRef<PaperBookHandle, {
     >
       {single ? (
         <div className="album-decks">
-          <div ref={back}><Pages spreads={spreads} pdfLabel={pdfLabel} single /></div>
-          <div ref={fwd} className="album-mirror"><Pages spreads={spreads} pdfLabel={pdfLabel} single forward /></div>
+          <div ref={back}><Pages spreads={spreads} labels={labels} onAct={onAct} single /></div>
+          <div ref={fwd} className="album-mirror"><Pages spreads={spreads} labels={labels} onAct={onAct} single forward /></div>
         </div>
       ) : (
-        <div ref={back}><Pages spreads={spreads} pdfLabel={pdfLabel} single={false} /></div>
+        <div ref={back}><Pages spreads={spreads} labels={labels} onAct={onAct} single={false} /></div>
       )}
     </div>
   );

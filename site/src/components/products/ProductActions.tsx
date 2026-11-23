@@ -8,10 +8,15 @@ import { fill } from "@/components/design/Rich";
 import type { ProductLabels } from "@/lib/product-labels";
 import type { Product } from "@/lib/types";
 
-/** "שרטוט טכני" + "הוראות התקנה" buttons with their modals (behaviour per design PDF). */
-export default function ProductActions({ product, labels: t }: { product: Product; labels: ProductLabels }) {
-  const [drawing, setDrawing] = useState(false);
-  const [install, setInstall] = useState(false);
+/**
+ * "שרטוט טכני" + "הוראות התקנה" buttons with their modals (behaviour per design PDF). With `open` only that
+ * modal is shown, already open, without the buttons (the flip book's own buttons); closing it calls `onDone`.
+ */
+export default function ProductActions({ product, labels: t, open, onDone }: { product: Product; labels: ProductLabels; open?: "drawing" | "install"; onDone?: () => void }) {
+  const [drawing, setDrawingState] = useState(open === "drawing");
+  const [install, setInstallState] = useState(open === "install");
+  const setDrawing = (v: boolean) => { setDrawingState(v); if (!v) onDone?.(); };
+  const setInstall = (v: boolean) => { setInstallState(v); if (!v) onDone?.(); };
   const sheetUrl = `/products/${product.slug}/sheet?download=1`;
   const hasDrawing = productHasDrawing(product);
   // Accessories alone are not installation content: without real steps, notes or files the button stays hidden.
@@ -28,12 +33,12 @@ export default function ProductActions({ product, labels: t }: { product: Produc
 
   return (
     <>
-      {hasDrawing && (
+      {!open && hasDrawing && (
         <button type="button" onClick={() => setDrawing(true)} className="btn ghost">
           <PencilRuler className="size-4" strokeWidth={1.4} /> {t.pp_drawing}
         </button>
       )}
-      {hasInstall && (
+      {!open && hasInstall && (
         <button type="button" onClick={() => setInstall(true)} className="btn ghost">
           <FileText className="size-4" strokeWidth={1.4} /> {t.pp_install}
         </button>

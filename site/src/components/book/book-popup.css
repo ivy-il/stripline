@@ -1,0 +1,109 @@
+/* The flip book in the popup's design (BookPopupPages.tsx). Sizes follow the page (container units), so the
+   spread scales with the book; the accent is the site's brass, as in the popup. */
+.bp-info, .bp-scene-page { --bp-accent: var(--brass); }
+
+/* Left page: the specification card. */
+.bp-info { background: #fff; color: var(--ink); }
+.bp-card {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding: 6cqh 6.5cqw 5cqh;
+  font-size: 2.35cqw;
+  line-height: 1.55;
+}
+.bp-head { display: grid; grid-template-columns: minmax(0, 1fr) 21cqw; gap: 4cqw; align-items: start; padding-bottom: 2.4cqh; }
+.bp-title { display: flex; min-width: 0; flex-direction: column; gap: .5em; }
+.bp-name { font-size: 2.05em; font-weight: 600; line-height: 1.12; text-wrap: balance; }
+.bp-code { color: var(--bp-accent); font-weight: 600; font-size: 1.15em; }
+.bp-thumb {
+  display: grid;
+  aspect-ratio: 1;
+  place-items: center;
+  padding: 1.4cqw;
+  border: 1px solid var(--line);
+  border-radius: 1.2cqw;
+  background: #fff;
+  cursor: zoom-in;
+  transition: border-color .15s;
+}
+.bp-thumb:hover { border-color: var(--bp-accent); }
+.bp-thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.bp-block { display: flex; flex-direction: column; flex-shrink: 0; gap: .3em; padding-block: 2cqh; border-top: 1px solid var(--line); }
+.bp-h { font-weight: 700; }
+.bp-desc { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 4; }
+.bp-usage { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.bp-link { align-self: flex-start; color: var(--bp-accent); font-weight: 600; text-decoration: underline; text-underline-offset: .2em; }
+.bp-link:hover { filter: brightness(.9); }
+.bp-acts { display: flex; flex-wrap: wrap; gap: 2cqw; margin-top: auto; padding-top: 2.6cqh; border-top: 1px solid var(--line); }
+.bp-btn {
+  display: inline-flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  gap: .5em;
+  padding: .7em 1em;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: .92em;
+  white-space: nowrap;
+  transition: background .15s, color .15s;
+}
+.bp-btn:hover { background: var(--ink); color: #fff; }
+.bp-btn svg { width: 1.1em; height: 1.1em; }
+
+/* Right page: the room photo with the highlights and the PDF button in a dark panel. */
+.bp-scene-page { background: #222; }
+.bp-scene { position: absolute; inset: 0; display: block; }
+.bp-scene-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.bp-feat {
+  position: absolute;
+  inset-inline-start: 5cqw;
+  bottom: 5cqh;
+  display: flex;
+  width: 52cqw;
+  flex-direction: column;
+  padding: 1cqh 3.4cqw 3.4cqw;
+  border-radius: 1.8cqw;
+  background: rgba(22, 20, 18, .88);
+  color: #fff;
+  font-size: 2.2cqw;
+  line-height: 1.4;
+  backdrop-filter: blur(6px);
+}
+.bp-feat-list { display: flex; flex-direction: column; }
+.bp-feat-item { display: flex; align-items: center; justify-content: space-between; gap: 2.4cqw; padding-block: 1.9cqh; border-bottom: 1px solid rgba(255, 255, 255, .14); }
+.bp-ico { flex: none; width: 4.4cqw; height: 4.4cqw; color: var(--bp-accent); }
+.bp-pdf {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6em;
+  margin-top: 2.6cqh;
+  padding: .8em 1em;
+  border-radius: 1.2cqw;
+  background: var(--bp-accent);
+  color: #fff;
+  font-weight: 600;
+}
+.bp-pdf:hover { filter: brightness(1.08); }
+.bp-pdf svg { width: 1.25em; height: 1.25em; }
+
+/* Phone: one portrait page – the photo on top, the highlights in a dark strip, then the specification. */
+.bp-phone { display: flex; flex-direction: column; }
+.bp-phone .bp-scene-compact { position: relative; display: flex; flex: none; flex-direction: column; }
+.bp-phone .bp-scene-compact .bp-scene-img { position: static; height: 19cqh; }
+.bp-phone .bp-scene-compact .bp-feat { position: static; width: auto; padding: .4cqh 6cqw; border-radius: 0; background: #1b1917; font-size: 3.4cqw; backdrop-filter: none; }
+.bp-phone .bp-feat-item { padding-block: .8cqh; }
+.bp-phone .bp-feat-item:last-child { border-bottom: 0; }
+.bp-phone .bp-feat-item:nth-child(n + 4) { display: none; }  /* three on a phone page */
+.bp-phone .bp-ico { width: 5.6cqw; height: 5.6cqw; }
+/* The card scrolls up and down inside the page; a sideways swipe still turns it. */
+.bp-phone .bp-card { height: auto; min-height: 0; flex: 1; overflow-y: auto; overscroll-behavior: contain; padding: 3cqh 6cqw 3.6cqh; font-size: 4cqw; }
+.bp-phone .bp-head { grid-template-columns: minmax(0, 1fr) 24cqw; }
+.bp-phone .bp-name { font-size: 1.75em; }
+.bp-phone .bp-block { padding-block: 1.4cqh; }
+.bp-phone .bp-desc { -webkit-line-clamp: 3; }
+.bp-phone .bp-acts { gap: 2.4cqw; margin-top: 0; }
+.bp-phone .bp-btn { padding: .6em .8em; }
+.bp-phone .bp-pdf { flex: 1 1 100%; margin-top: 0; border-radius: 999px; }

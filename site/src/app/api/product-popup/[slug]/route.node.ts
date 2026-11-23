@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { familyScene } from "@/lib/design";
 import { productLabels } from "@/lib/product-labels";
-import { iconKey } from "@/lib/product-text";
+import { uploadedIcons } from "@/lib/album";
 import { getFamilies, getProduct, getSettings } from "@/lib/wp";
 
 /**
@@ -18,7 +18,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
     product,
     scene: product.hero_image || familyScene(family, s.default_scene),
     // Icons uploaded in WordPress (תוכן האתר > קטלוג): name → image.
-    icons: Object.fromEntries((s.popup_icons ?? []).filter((i) => i.title?.trim() && i.text?.trim()).map((i) => [iconKey(i.title), i.text.trim()])),
+    icons: uploadedIcons(s),
     labels: {
       ...productLabels(s),
       pp_length: s.pp_length, pp_height: s.pp_height, pp_mm: s.pp_mm, pp_sheet_btn: s.pp_sheet_btn,
