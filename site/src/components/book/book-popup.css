@@ -148,3 +148,22 @@
 .bp-spread .bp-ico { width: 4cqw; height: 4cqw; }
 .bp-spread .bp-pdf { margin-top: 2.4cqh; border-radius: 1cqw; }
 .bp-spread img { -webkit-user-drag: none; user-select: none; }
+
+/* The card's head: the name and subtitle centred, the product image under them, large and without a frame.
+   The image box is 60% of the card wide; its height keeps tall products from pushing the details off the page. */
+.bp-spread .bp-head, .bp-phone .bp-head { display: flex; flex-direction: column; align-items: center; gap: 2.4cqh; text-align: center; }
+.bp-spread .bp-title, .bp-phone .bp-title { align-items: center; }
+.bp-spread .bp-thumb, .bp-phone .bp-thumb { width: 60%; aspect-ratio: auto; padding: 0; border: 0; border-radius: 0; background: none; }
+.bp-spread .bp-thumb { height: 24cqh; }
+.bp-phone .bp-thumb { height: 26vw; }  /* the phone page's face measures its width only */
+.bp-spread .bp-thumb img, .bp-phone .bp-thumb img { width: 100%; height: 100%; object-fit: contain; }
+.bp-spread .bp-thumb:hover img, .bp-phone .bp-thumb:hover img { transform: scale(1.03); }
+.bp-thumb img { transition: transform .2s; }
+.bp-spread .bp-head, .bp-phone .bp-head { flex-shrink: 0; }
+/* Room for the larger image on the book's page: tighter blocks, three lines of description. */
+.bp-spread .bp-thumb { height: 22cqh; }
+.bp-spread .bp-head { gap: 1.8cqh; padding-bottom: 1.6cqh; }
+.bp-spread .bp-block { padding-block: 1.4cqh; }
+.bp-spread .bp-desc { -webkit-line-clamp: 3; }
+.bp-spread .bp-card { padding-block: 4.4cqh 4cqh; }
+.bp-spread .bp-thumb, .bp-phone .bp-thumb { display: block; }  /* a block, so the image fills the box height (in a grid its 100% has nothing to resolve against) */
