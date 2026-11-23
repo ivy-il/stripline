@@ -1,18 +1,29 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Check, Download, LayoutGrid, Lightbulb, Palette, ShieldCheck, Wind, X } from "lucide-react";
+import {
+  BadgeCheck, Building2, Check, Download, Droplets, Filter, Gauge, Layers, LayoutGrid, Leaf, Lightbulb, Palette,
+  Ruler, Settings2, ShieldCheck, Sparkles, Star, Thermometer, VolumeX, Wind, X, type LucideIcon,
+} from "lucide-react";
 import ProductActions from "./ProductActions";
-import { isUsageLine, productAccessories, productFeatures, productSizes, productUsage } from "@/lib/product-text";
+import { isUsageLine, productAccessories, productFeatureItems, productSizes, productUsage } from "@/lib/product-text";
 import type { ProductLabels } from "@/lib/product-labels";
 import type { Product, Settings } from "@/lib/types";
 import "./product-popup.css";
 
-type PopupLabels = ProductLabels & Pick<Settings, "pp_sizes" | "pp_length" | "pp_height" | "pp_mm" | "pp_materials" | "pp_accessories" | "pp_usage" | "pp_sheet_btn">;
+type PopupLabels = ProductLabels & Pick<Settings,
+  | "pp_length" | "pp_height" | "pp_mm" | "pp_sheet_btn"
+  | "popup_desc" | "popup_models" | "popup_sizes" | "popup_accessories" | "popup_materials" | "popup_usage">;
 type PopupData = { product: Product; scene: string; labels: PopupLabels };
 
-/** Icons beside the highlights, in turn (the highlights are free text, so the icons are decorative). */
-const FEATURE_ICONS = [LayoutGrid, Wind, ShieldCheck, Lightbulb, Palette];
+/** The icons a highlight can name in WordPress ("אייקון | טקסט", names in product-text.ts FEATURE_ICON_NAMES). */
+const ICONS: Record<string, LucideIcon> = {
+  grid: LayoutGrid, airflow: Wind, shield: ShieldCheck, light: Lightbulb, palette: Palette, ruler: Ruler,
+  quiet: VolumeX, temp: Thermometer, water: Droplets, layers: Layers, star: Star, leaf: Leaf,
+  settings: Settings2, check: BadgeCheck, building: Building2, sparkles: Sparkles, filter: Filter, gauge: Gauge,
+};
+/** A highlight without a chosen icon gets these in turn. */
+const DEFAULT_ICONS = [LayoutGrid, Wind, ShieldCheck, Lightbulb, Palette];
 
 /**
  * A product over the flip book (WordPress > תוכן האתר > קטלוג > "חלון קופץ"), instead of its own page:
@@ -66,7 +77,7 @@ export default function ProductPopup({ slug, onClose, onFail }: { slug: string; 
 /* eslint-disable @next/next/no-img-element */
 function PopupBody({ product: p, scene, t }: { product: Product; scene: string; t: PopupLabels }) {
   const lead = (p.description_he || p.short_he || "").trim();
-  const features = productFeatures(p).filter((f) => f !== lead && f !== p.short_he && !isUsageLine(p, f)).slice(0, 5);
+  const features = productFeatureItems(p).filter(({ text }) => text !== lead && text !== p.short_he && !isUsageLine(p, text)).slice(0, 5);
   const models = p.codes?.length > 1 ? p.codes : [];
   const sizes = productSizes(p);
   // Size lines written as "cell | cell | …" form the technical table; its first line is the header row.
@@ -92,16 +103,16 @@ function PopupBody({ product: p, scene, t }: { product: Product; scene: string; 
           <div className="ppop-thumb"><img src={p.image} alt={p.name_he} /></div>
         </header>
 
-        {lead && <Block title="תיאור"><p>{lead}</p></Block>}
+        {lead && <Block title={t.popup_desc}><p>{lead}</p></Block>}
         {models.length > 0 && (
-          <Block title="דגמים">
+          <Block title={t.popup_models}>
             <ul className="ppop-checks">
               {models.map((m) => <li key={m}><Check className="size-4" aria-hidden="true" /> <bdi dir="ltr">{m}</bdi></li>)}
             </ul>
           </Block>
         )}
         {(sizes.length > 0 || p.lengths.length > 0 || p.heights.length > 0) && (
-          <Block title={t.pp_sizes}>
+          <Block title={t.popup_sizes}>
             {table ? (
               <div className="ppop-table-wrap">
                 <table className="ppop-table">
@@ -116,9 +127,9 @@ function PopupBody({ product: p, scene, t }: { product: Product; scene: string; 
             {p.heights.length > 0 && <p>{t.pp_height} <bdi dir="ltr">{p.heights.join(" | ")}</bdi> {t.pp_mm}</p>}
           </Block>
         )}
-        {accessories.length > 0 && <Block title={t.pp_accessories}><p>{accessories.join(", ")}.</p></Block>}
-        {p.materials_he.length > 0 && <Block title={t.pp_materials}><ul className="ppop-lines">{p.materials_he.map((m) => <li key={m}>{m}</li>)}</ul></Block>}
-        {usage && <Block title={t.pp_usage}><p>{usage}</p></Block>}
+        {accessories.length > 0 && <Block title={t.popup_accessories}><p>{accessories.join(", ")}.</p></Block>}
+        {p.materials_he.length > 0 && <Block title={t.popup_materials}><ul className="ppop-lines">{p.materials_he.map((m) => <li key={m}>{m}</li>)}</ul></Block>}
+        {usage && <Block title={t.popup_usage}><p>{usage}</p></Block>}
 
         <div className="ppop-acts">
           <ProductActions product={p} labels={t} />
@@ -130,9 +141,9 @@ function PopupBody({ product: p, scene, t }: { product: Product; scene: string; 
         <div className="ppop-feat">
           {features.length > 0 && (
             <ul>
-              {features.map((f, i) => {
-                const Icon = FEATURE_ICONS[i % FEATURE_ICONS.length];
-                return <li key={f}><span>{f}</span><Icon className="ppop-ico" strokeWidth={1.3} aria-hidden="true" /></li>;
+              {features.map(({ icon, text }, i) => {
+                const Icon = (icon && ICONS[icon]) || DEFAULT_ICONS[i % DEFAULT_ICONS.length];
+                return <li key={text}><span>{text}</span><Icon className="ppop-ico" strokeWidth={1.3} aria-hidden="true" /></li>;
               })}
             </ul>
           )}

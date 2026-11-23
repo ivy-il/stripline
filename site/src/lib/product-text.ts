@@ -23,9 +23,47 @@ export function productUsage(p: Product): string {
   return (p.usage_he || "").trim();
 }
 
+/**
+ * Icons a highlight can name in WordPress ("אייקון | טקסט", English or Hebrew name), shown beside it in the
+ * product popup. Keys match the icon list in ProductPopup.tsx.
+ */
+export const FEATURE_ICON_NAMES: Record<string, string> = {
+  grid: "grid", "רשת": "grid",
+  airflow: "airflow", "זרימה": "airflow", "אוויר": "airflow",
+  shield: "shield", "מגן": "shield",
+  light: "light", "תאורה": "light", "נורה": "light",
+  palette: "palette", "צבע": "palette", "גימור": "palette",
+  ruler: "ruler", "סרגל": "ruler", "מידות": "ruler",
+  quiet: "quiet", "שקט": "quiet",
+  temp: "temp", "טמפרטורה": "temp",
+  water: "water", "מים": "water", "לחות": "water",
+  layers: "layers", "שכבות": "layers",
+  star: "star", "כוכב": "star",
+  leaf: "leaf", "עלה": "leaf", "אקולוגי": "leaf",
+  settings: "settings", "הגדרות": "settings", "כיוון": "settings",
+  check: "check", "וי": "check", "תקן": "check",
+  building: "building", "בניין": "building",
+  sparkles: "sparkles", "עיצוב": "sparkles",
+  filter: "filter", "מסנן": "filter", "פילטר": "filter",
+  gauge: "gauge", "לחץ": "gauge", "ביצועים": "gauge",
+};
+
+/** "אייקון | טקסט" → its icon and text; any other line is all text, without an icon. */
+export function splitFeature(line: string): { icon?: string; text: string } {
+  const m = line.match(/^\s*([^|]{1,24}?)\s*\|\s*(.+)$/);
+  const icon = m ? FEATURE_ICON_NAMES[m[1].trim().toLowerCase()] : undefined;
+  return icon ? { icon, text: m![2].trim() } : { text: line };
+}
+
+/** The highlights with the icons chosen in WordPress (the popup); every other place shows only the text. */
+export function productFeatureItems(p: Product): { icon?: string; text: string }[] {
+  if (p.features_he.length) return p.features_he.slice(0, 5).map(splitFeature);
+  return productFeatures(p).map((text) => ({ text }));
+}
+
 /** Explicit authored features, otherwise only facts present in the source data. */
 export function productFeatures(p: Product): string[] {
-  if (p.features_he.length) return p.features_he.slice(0, 5);
+  if (p.features_he.length) return p.features_he.slice(0, 5).map((line) => splitFeature(line).text);
   const usage = productUsage(p);
   return [p.short_he, usage ? `שימוש: ${usage}` : "", ...p.materials_he.slice(0, 2)].filter(Boolean).slice(0, 5);
 }
