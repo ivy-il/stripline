@@ -225,7 +225,7 @@ JS
 
 /*
  * The edit screen's side column (Publish with "Update", then families, image…) stays in view while the long
- * form scrolls, so "Update" is always one click away. A column taller than the window scrolls on its own.
+ * form scrolls, so "Update" is always one click away.
  * Wide screens only: below 851px WordPress stacks the columns. #post-body holds only floats, so it has no height
  * of its own and a sticky column inside it could not move; flow-root makes it as tall as its columns.
  */
@@ -236,7 +236,7 @@ add_action('admin_head', function () {
 @media (min-width: 851px) {
   #poststuff #post-body.columns-2 { display: flow-root; }
   #poststuff #post-body.columns-2 #postbox-container-1 {
-    position: sticky; top: 46px; max-height: calc(100vh - 56px); overflow-y: auto; overscroll-behavior: contain;
+    position: sticky; top: 46px;
   }
 }
 </style>';
