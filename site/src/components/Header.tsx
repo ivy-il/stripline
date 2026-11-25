@@ -106,6 +106,8 @@ export default function Header({
               <circle cx="10.5" cy="10.5" r="6.5" />
               <path d="M20 20l-4.8-4.8" />
             </svg>
+            <span className="hdr-search-ph" aria-hidden="true">{searchLabels.search}</span>
+            <span className="hdr-search-ph hdr-search-ph-s" aria-hidden="true">חיפוש</span>
           </button>
         </div>
         <nav aria-label="ניווט ראשי" id="mainnav">
