@@ -70,8 +70,9 @@ export default function AlbumBook({ spreads, labels, tools = false, start = 0, c
   const closePopup = useCallback(() => setPopup(null), []);
   const open = useCallback((spread: number) => {
     const slug = spreads[spread]?.slug;
-    // The book in the popup's design already shows everything: a click on a page opens nothing.
-    if (!slug || labels.product_open === "book") return;
+    // A click on the page (not on its buttons and links, see PaperBook) opens the product's own page; in the
+    // popup mode it opens the popup over the book instead.
+    if (!slug) return;
     if (labels.product_open === "popup") setPopup(slug);
     else toPage(slug);
   }, [labels.product_open, spreads, toPage]);
@@ -362,7 +363,7 @@ const PaperBook = forwardRef<PaperBookHandle, {
       dir="ltr"
       role="group"
       tabIndex={0}
-      aria-label={labels.product_open === "book" ? "קטלוג מדפדף. גררו את הדף או השתמשו בחיצים כדי לדפדף" : "קטלוג מדפדף. גררו את הדף או השתמשו בחיצים כדי לדפדף; לחיצה על מוצר פותחת את העמוד שלו"}
+      aria-label="קטלוג מדפדף. גררו את הדף או השתמשו בחיצים כדי לדפדף; לחיצה על מוצר פותחת את העמוד שלו"
       style={{ opacity: ready ? 1 : 0 }}
       onKeyDown={(event) => {
         // Hebrew book: the left arrow turns forward.
