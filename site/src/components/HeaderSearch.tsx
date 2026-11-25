@@ -24,7 +24,7 @@ export default function HeaderSearch({
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
-  const barRef = useRef<HTMLDivElement>(null);
+  const fieldRef = useRef<HTMLLabelElement>(null);
   const listId = useId();
   const [q, setQ] = useState("");
   const [active, setActive] = useState(-1);
@@ -35,15 +35,39 @@ export default function HeaderSearch({
   const hasMore = Boolean(hits && hits.length > limit);
   const allHref = `/products?q=${encodeURIComponent(q.trim())}`;
 
+  // The field lives in the header itself: typing there shows the results under the header, nothing else opens.
+  const [phone, setPhone] = useState(false);
+  const showing = open && Boolean(hits);
+
   useEffect(() => {
+    const mq = window.matchMedia("(max-width:820px)");
+    const update = () => setPhone(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
+  // Closing (Escape, a click outside, a pick, a new page) empties the field.
+  const [wasOpen, setWasOpen] = useState(open);
+  if (wasOpen !== open) {
+    setWasOpen(open);
     if (!open) {
       setQ("");
       setActive(-1);
-      return;
     }
-    const id = window.setTimeout(() => inputRef.current?.focus(), 0);
-    return () => window.clearTimeout(id);
+  }
+  useEffect(() => {
+    if (!open) inputRef.current?.blur();
   }, [open]);
+
+  useEffect(() => {
+    if (!showing) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [showing]);
 
   useEffect(() => {
     if (!open) return;
@@ -52,11 +76,10 @@ export default function HeaderSearch({
       const nextH = Math.ceil(hdr?.getBoundingClientRect().height ?? varHdr());
       setHeaderH(nextH);
       const sheetTop = nextH;
-      const barH = barRef.current?.offsetHeight ?? 54;
       // Keep room for the "view all" CTA under the list so the panel never scrolls.
       const foot = 72;
       const pad = 64;
-      const avail = Math.max(ROW, window.innerHeight - sheetTop - barH - foot - pad);
+      const avail = Math.max(ROW, window.innerHeight - sheetTop - foot - pad);
       setLimit(Math.max(1, Math.min(MAX_PREVIEW, Math.floor(avail / ROW))));
     };
     measure();
@@ -75,8 +98,7 @@ export default function HeaderSearch({
     const onPointer = (e: MouseEvent | TouchEvent) => {
       const node = e.target as Node | null;
       if (!node) return;
-      if (panelRef.current?.contains(node)) return;
-      if ((node as Element).closest?.("[data-hdr-search-toggle]")) return;
+      if (panelRef.current?.contains(node) || fieldRef.current?.contains(node)) return;
       onOpenChange(false);
     };
     document.addEventListener("keydown", onKey);
@@ -88,12 +110,6 @@ export default function HeaderSearch({
       document.removeEventListener("touchstart", onPointer);
     };
   }, [open, onOpenChange]);
-
-  useEffect(() => {
-    setActive(-1);
-  }, [q]);
-
-  if (!open) return null;
 
   const go = (slug: string) => {
     onOpenChange(false);
@@ -124,48 +140,46 @@ export default function HeaderSearch({
   };
 
   return (
-    <div
-      className="hdr-search"
-      role="dialog"
-      aria-modal="true"
-      aria-label={labels.search}
-      style={{ paddingTop: headerH }}
-      onMouseDown={(e) => {
-        if (e.target === e.currentTarget) onOpenChange(false);
-      }}
-    >
-      <div className="hdr-search-sheet" ref={panelRef}>
-        <div className="hdr-search-inner wrap">
-          <div className="hdr-search-bar" ref={barRef}>
-            <label className="hdr-search-field" htmlFor="hdr-sq">
-              <span className="sr-only">{labels.search}</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                <circle cx="10.5" cy="10.5" r="6.5" />
-                <path d="M20 20l-4.8-4.8" />
-              </svg>
-              <input
-                ref={inputRef}
-                id="hdr-sq"
-                type="search"
-                role="combobox"
-                aria-expanded={Boolean(hits)}
-                aria-controls={listId}
-                aria-autocomplete="list"
-                aria-activedescendant={active >= 0 ? `${listId}-${shown[active]?.slug}` : undefined}
-                placeholder={labels.search}
-                autoComplete="off"
-                value={q}
-                onChange={(e) => setQ(e.target.value)}
-                onKeyDown={onKeyDown}
-              />
-            </label>
-            <button type="button" className="hdr-search-close" onClick={() => onOpenChange(false)} aria-label="סגירה">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
+    <>
+      <label className="hdr-search-btn" htmlFor="hdr-sq" ref={fieldRef}>
+        <span className="sr-only">{labels.search}</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+          <circle cx="10.5" cy="10.5" r="6.5" />
+          <path d="M20 20l-4.8-4.8" />
+        </svg>
+        <input
+          ref={inputRef}
+          id="hdr-sq"
+          type="search"
+          role="combobox"
+          aria-expanded={showing}
+          aria-controls={listId}
+          aria-autocomplete="list"
+          aria-activedescendant={showing && active >= 0 ? `${listId}-${shown[active]?.slug}` : undefined}
+          placeholder={phone ? "חיפוש" : labels.search}
+          autoComplete="off"
+          enterKeyHint="search"
+          value={q}
+          onFocus={() => onOpenChange(true)}
+          onChange={(e) => {
+            setQ(e.target.value);
+            setActive(-1);
+            if (!open) onOpenChange(true);
+          }}
+          onKeyDown={onKeyDown}
+        />
+      </label>
 
-          {hits && (
-            <>
+      {showing && hits && (
+        <div
+          className="hdr-search"
+          style={{ top: headerH }}
+          onMouseDown={(e) => {
+            if (e.target === e.currentTarget) onOpenChange(false);
+          }}
+        >
+          <div className="hdr-search-sheet" ref={panelRef}>
+            <div className="hdr-search-inner wrap">
               <ul className="hdr-hits" id={listId} role="listbox" aria-label={labels.search}>
                 {hits.length === 0 && (
                   <li className="hdr-hits-empty">
@@ -201,11 +215,11 @@ export default function HeaderSearch({
                   </Link>
                 </div>
               )}
-            </>
-          )}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
 
