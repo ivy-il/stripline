@@ -263,7 +263,6 @@ li.open>.cflip-topic .chev{transform:rotate(180deg)}
 .hdr.search-open.on-photo{--hl:var(--line)}
 .hdr.search-open .logo .ld{display:block}
 .hdr.search-open .logo .lw{display:none}
-.hdr.search-open .hdr-search-btn{background:transparent;color:inherit}
 
 /* ---------- small pieces ---------- */
 .pp-prod{display:flex;flex-direction:column;gap:8px}
