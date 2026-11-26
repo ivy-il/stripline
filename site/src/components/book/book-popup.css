@@ -202,3 +202,11 @@
     2px 1px 0 #fff, 3px 1px 0 #c9c2b6, 5px 2px 0 #fff, 6px 2px 0 #c3bbae, 8px 3px 0 #fff, 9px 3px 0 #bdb4a6, 11px 4px 0 #faf8f5, 12px 4px 0 #b5ab9c,
     0 40px 70px -30px rgba(24, 23, 22, .5), 0 12px 28px -14px rgba(24, 23, 22, .3);
 }
+
+/* The buttons always stay on the card: when a lower screen (or a longer text) leaves less height, the product
+   image gives way, never the drawing / installation buttons at the bottom. */
+.bp-spread .bp-card { min-height: 0; overflow: hidden; font-size: max(10.5px, 2.1cqw); }  /* a 12px floor overflowed small pages */
+.bp-spread .bp-head { flex: 0 1 auto; min-height: 0; }
+.bp-spread .bp-title { flex-shrink: 0; }
+.bp-spread .bp-thumb { flex: 0 1 29cqh; height: auto; min-height: 9cqh; }
+.bp-spread .bp-acts { flex-shrink: 0; }
